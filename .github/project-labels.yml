@@ -1,0 +1,12 @@
+# Repository labels for issue categorization / agent orchestration.
+# Synced by .github/workflows/sync-labels.yml — create or update by name; never prune.
+# Docs: docs/labels.md
+- name: type:epic
+  color: "6F42C1"
+  description: "Broad orchestration epic"
+- name: type:task
+  color: "0366D6"
+  description: "Concrete unit of agent work"
+- name: type:defect
+  color: "D73A4A"
+  description: "Bug, problem, or issue with any deliverable (code, game, spec, etc.)"
