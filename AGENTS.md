@@ -24,12 +24,13 @@ Issue labels for categorization and agent orchestration. Source of truth: `.gith
 | `type:epic` | Broad orchestration epic |
 | `type:task` | Concrete unit of agent work |
 | `type:defect` | Bug/problem with any deliverable (code, game, spec, etc.) |
+| `status:*` | Workflow state (see [`docs/issues/workflow.md`](docs/issues/workflow.md)) |
 
 Synced by `.github/workflows/sync-labels.yml` (push to `main` when label config changes, or `workflow_dispatch`). Add labels with the `create-project-label` skill.
 
 ## Issues
 
-Epic / Task / Defect forms live in `.github/ISSUE_TEMPLATE/`. Agents create issues with the matching `create-project-*` skill (sub-issues + native blocked-by). Contract: [`docs/issues/`](docs/issues/).
+Epic / Task / Defect forms live in `.github/ISSUE_TEMPLATE/`. Agents create issues with the matching `create-project-*` skill (sub-issues + native blocked-by). Contract: [`docs/issues/`](docs/issues/). Status workflow: [`docs/issues/workflow.md`](docs/issues/workflow.md).
 
 ## Skills
 

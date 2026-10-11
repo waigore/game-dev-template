@@ -26,17 +26,18 @@ Create a repository **Defect** (`type:defect`).
 2. **Collect** `title` and content for every required Defect section; optional reproduction, context, `related`, `parent`, `blocked_by`, `blocking`. Ask if required content is missing.
 3. **Build** the body exactly as specified in `body-shapes.md`.
 4. If `--no-create` / "draft only": print title + body and stop.
-5. **Create**: `gh issue create --title "…" --label "type:defect" --body "…"`.
+5. **Create**: `gh issue create --title "…" --label "type:defect" --label "status:pending-review" --body "…"`.
 6. If `parent` is set: attach as sub-issue (linking reference); enforce depth rules from `hierarchy.md` when nesting under a task chain.
 7. **Blocked-by**: for each true blocker, follow the linking reference. Related-only issues stay in `## Related tasks or defects` per the docs.
-8. **Report** URL, label, parent (if any), related links, and dependency wiring.
+8. **Report** URL, labels (`type:defect`, `status:pending-review`), parent (if any), related links, and dependency wiring.
 
 ## Rules
 
-- Apply label `type:defect`.
+- Apply labels `type:defect` and `status:pending-review`.
 - Default: create on GitHub.
 
 ## Related
 
 - Form: `.github/ISSUE_TEMPLATE/defect.yml`
 - Contract: `docs/issues/`
+- Workflow: `docs/issues/workflow.md`

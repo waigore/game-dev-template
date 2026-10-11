@@ -13,5 +13,12 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 | [`create-project-epic`](create-project-epic/SKILL.md) | Create an Epic issue (`type:epic`) on GitHub |
 | [`create-project-task`](create-project-task/SKILL.md) | Create a Task issue (`type:task`) with parent/blocked-by wiring |
 | [`create-project-defect`](create-project-defect/SKILL.md) | Create a Defect issue (`type:defect`) with related/blocked-by wiring |
+| [`enforce-task-workflow-status`](enforce-task-workflow-status/SKILL.md) | Gate or audit `status:*` labels for typed issues |
+| [`review-project-issue`](review-project-issue/SKILL.md) | Review pass / fail / clarify → next status |
+| [`refine-project-issue`](refine-project-issue/SKILL.md) | Refine issue body → pending-review |
+| [`clarify-project-issue`](clarify-project-issue/SKILL.md) | Record PO clarification → review or refinement |
+| [`implement-project-issue`](implement-project-issue/SKILL.md) | Implementation summary → pending-verification |
+| [`verify-project-issue`](verify-project-issue/SKILL.md) | Independent verify pass / fail |
+| [`accept-project-issue`](accept-project-issue/SKILL.md) | Accept / fail / clarify after verification |
 
 When adding or renaming a skill: update this table, add facades per `docs/skills.md`, and keep the thin Skills pointer in [`AGENTS.md`](../../AGENTS.md) unchanged unless the path to this catalog moves.

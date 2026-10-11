@@ -55,7 +55,8 @@ for i in $(seq 0 $((count - 1))); do
     exit 1
   fi
 
-  match="$(echo "$existing_json" | yq -r --arg n "$name" '.[] | select(.name == $n) | [.color, (.description // "")] | @tsv')"
+  # mikefarah/yq v4: bind name via env (no jq-style --arg).
+  match="$(echo "$existing_json" | n="$name" yq -r -p=json -o=tsv '.[] | select(.name == strenv(n)) | [.color, (.description // "")]')"
 
   if [[ -z "$match" ]]; then
     echo "  create: $name"

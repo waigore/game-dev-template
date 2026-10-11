@@ -27,13 +27,13 @@ Create a repository **Task** (`type:task`).
 3. If `parent` is set: **validate depth** per `hierarchy.md` and the linking reference; abort if the new task would exceed 3 levels from epic to leaf.
 4. **Build** the body exactly as specified in `body-shapes.md`.
 5. If `--no-create` / "draft only": print title + body and stop.
-6. **Create**: `gh issue create --title "…" --label "type:task" --body "…"`, with parent at create time when supported; otherwise attach sub-issue after create (linking reference).
+6. **Create**: `gh issue create --title "…" --label "type:task" --label "status:pending-review" --body "…"`, with parent at create time when supported; otherwise attach sub-issue after create (linking reference).
 7. **Blocked-by**: for each blocker, follow the linking reference.
-8. **Report** URL, label, parent, and dependency wiring.
+8. **Report** URL, labels (`type:task`, `status:pending-review`), parent, and dependency wiring.
 
 ## Rules
 
-- Apply label `type:task`.
+- Apply labels `type:task` and `status:pending-review`.
 - Default: create on GitHub.
 - Do not invent a parent; only attach when the user names one.
 
@@ -41,4 +41,5 @@ Create a repository **Task** (`type:task`).
 
 - Form: `.github/ISSUE_TEMPLATE/task.yml`
 - Contract: `docs/issues/`
+- Workflow: `docs/issues/workflow.md`
 - Parent skill: `create-project-epic`

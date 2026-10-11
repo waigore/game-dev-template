@@ -34,6 +34,15 @@ bash .github/scripts/sync-labels.sh
 | `type:epic` | `6F42C1` | Broad orchestration epic |
 | `type:task` | `0366D6` | Concrete unit of agent work |
 | `type:defect` | `D73A4A` | Bug, problem, or issue with any deliverable (code, game, spec, etc.) |
+| `status:pending-review` | `FBCA04` | Pending review |
+| `status:pending-refinement` | `E4A8FF` | Reviewed; refinements needed |
+| `status:pending-clarification` | `D93F0B` | Needs product-owner clarification |
+| `status:pending-implementation` | `1D76DB` | Ready or in progress |
+| `status:pending-verification` | `0E8A16` | Implemented; awaiting verification |
+| `status:pending-acceptance` | `006B75` | Verified; awaiting acceptance testing |
+| `status:accepted` | `5319E7` | Accepted; leave open |
+
+Status transitions: [`docs/issues/workflow.md`](issues/workflow.md).
 
 ## Adding a label
 

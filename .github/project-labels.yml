@@ -10,3 +10,24 @@
 - name: type:defect
   color: "D73A4A"
   description: "Bug, problem, or issue with any deliverable (code, game, spec, etc.)"
+- name: status:pending-review
+  color: "FBCA04"
+  description: "Pending review"
+- name: status:pending-refinement
+  color: "E4A8FF"
+  description: "Reviewed; refinements needed"
+- name: status:pending-clarification
+  color: "D93F0B"
+  description: "Needs product-owner clarification"
+- name: status:pending-implementation
+  color: "1D76DB"
+  description: "Ready or in progress"
+- name: status:pending-verification
+  color: "0E8A16"
+  description: "Implemented; awaiting verification"
+- name: status:pending-acceptance
+  color: "006B75"
+  description: "Verified; awaiting acceptance testing"
+- name: status:accepted
+  color: "5319E7"
+  description: "Accepted; leave open"

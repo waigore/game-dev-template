@@ -26,13 +26,13 @@ Create a repository **Epic** (`type:epic`).
 2. **Collect** `title` and content for every required Epic section; optional notes, `blocked_by`, `blocking`. Ask if required content is missing.
 3. **Build** the body exactly as specified in `body-shapes.md`.
 4. If `--no-create` / "draft only": print title + body and stop.
-5. **Create**: `gh issue create --title "…" --label "type:epic" --body "…"`.
+5. **Create**: `gh issue create --title "…" --label "type:epic" --label "status:pending-review" --body "…"`.
 6. **Blocked-by**: for each blocker, follow the linking reference.
-7. **Report** URL, label, and dependency wiring.
+7. **Report** URL, labels (`type:epic`, `status:pending-review`), and dependency wiring.
 
 ## Rules
 
-- Apply label `type:epic`.
+- Apply labels `type:epic` and `status:pending-review`.
 - Default: create on GitHub.
 - Do not create child tasks unless asked; use `create-project-task` for children.
 
@@ -40,3 +40,4 @@ Create a repository **Epic** (`type:epic`).
 
 - Form: `.github/ISSUE_TEMPLATE/epic.yml`
 - Contract: `docs/issues/`
+- Workflow: `docs/issues/workflow.md`

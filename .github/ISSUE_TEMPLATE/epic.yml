@@ -1,7 +1,7 @@
 name: Epic
 description: Broad orchestration of work composed of multiple tasks (sub-issues).
 title: ""
-labels: ["type:epic"]
+labels: ["type:epic", "status:pending-review"]
 body:
   - type: markdown
     attributes:
