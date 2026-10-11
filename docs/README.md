@@ -1,6 +1,6 @@
-# Docs
+# `docs/`
 
-Project and process documentation for this repository (labels, issues, skills, and similar). Product/technical specifications live in [`specs/`](../specs/).
+Project and process documentation (labels, issues, skills, repo setup). Product/technical specifications live in [`specs/`](../specs/).
 
 ## Concise docs
 
@@ -10,6 +10,7 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 
 | Path | Covers |
 |------|--------|
+| [github-repo-setup.md](github-repo-setup.md) | First-time GitHub workflow (protection, squash, auto-merge, labels) |
 | [issues/](issues/) | Epic / Task / Defect contract |
 | [labels.md](labels.md) | Label catalog and sync |
 | [skills.md](skills.md) | Skill authoring and native wiring |

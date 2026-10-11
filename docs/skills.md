@@ -40,4 +40,4 @@ Read that file and its `references/` as needed, then run the workflow there. Do 
 1. Create `.agents/skills/<skill-name>/SKILL.md` (`name` must match the folder).
 2. Add optional `scripts/`, `references/`, or `assets/` next to that `SKILL.md`.
 3. Add Cursor, OpenCode, and Grok facades using the template above.
-4. List the skill in [`AGENTS.md`](../AGENTS.md) under Skills.
+4. List the skill in [`.agents/skills/README.md`](../.agents/skills/README.md) (catalog). Do not maintain a full skill list in `AGENTS.md`.
