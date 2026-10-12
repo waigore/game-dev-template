@@ -1,0 +1,35 @@
+name: Auto-merge
+
+# PRs labeled `automerge` get squash auto-merge; removing the label turns it off.
+# Merges made with GITHUB_TOKEN do not trigger other workflows (e.g. Sync labels);
+# run those via workflow_dispatch after merging.
+
+on:
+  pull_request:
+    types: [opened, reopened, labeled, unlabeled, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: automerge-${{ github.event.pull_request.number }}
+
+jobs:
+  automerge:
+    if: github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge
+        if: contains(github.event.pull_request.labels.*.name, 'automerge')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --auto --squash "$PR_URL"
+
+      - name: Disable auto-merge
+        if: github.event.action == 'unlabeled' && github.event.label.name == 'automerge'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --disable-auto "$PR_URL"

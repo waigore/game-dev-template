@@ -10,7 +10,7 @@ Agents: use the `setup-github-repo` skill. Default is guide + verify only; do no
 
 - Enable **Allow squash merging** only.
 - Disable **Allow merge commits** and **Allow rebase merging**.
-- Enable **Allow auto-merge**.
+- Enable **Allow auto-merge**. PRs labeled `automerge` then squash-merge once mergeable ([`automerge.yml`](../.github/workflows/automerge.yml)).
 
 ## 2. Protect `main`
 
