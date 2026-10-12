@@ -1,0 +1,20 @@
+---
+name: review-spec
+description: |-
+  Review a spec document (or the whole spec set) under specs/ against its review
+  instructions in .agents/specs/, then report the verdict back to the requester
+  (chat, GitHub issue, PR, or calling agent).
+  Use when the user asks to review, check, or validate a spec such as the vision,
+  definition, or design docs.
+
+  Examples:
+    - user: "Review specs/vision.md" → run vision review, reply in chat
+    - user: "Review the whole spec" → review every indexed spec, upstream first
+    - issue #14: "Review the design spec" → run design review, comment on #14
+---
+
+# Review spec (facade)
+
+Canonical instructions: [`.agents/skills/review-spec/SKILL.md`](../../../.agents/skills/review-spec/SKILL.md).
+
+Read that file and its `references/` as needed, then run the workflow there. Do not invent a parallel process.
