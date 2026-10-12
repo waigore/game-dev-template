@@ -23,11 +23,13 @@ How each level changes parameters from [`configuration.md`](configuration.md). C
 
 ## Rule adjustments
 
-<!-- fill in: changes beyond parameter values, such as extra opponent behaviors, removed aids, or different end conditions; link the affected specs -->
+IDs: see [`ids.md`](ids.md).
+
+- **R1**: <!-- fill in: a change beyond parameter values, such as an extra opponent behavior, a removed aid, or a different end condition; name the level and cite the affected element IDs -->
 
 ## Dynamic adjustment
 
-<!-- fill in: signals observed (e.g. repeated failures), what changes, limits, and whether the player knows; or "None" -->
+- **Y1**: <!-- fill in: signal observed (e.g. repeated failures), what changes, limits, and whether the player knows; or "None" -->
 
 ## Challenge curve
 
@@ -35,7 +37,7 @@ How each level changes parameters from [`configuration.md`](configuration.md). C
 
 ## Changing difficulty
 
-<!-- fill in: when the player may change difficulty and the consequences (e.g. rewards, progress, records) -->
+- **C1**: <!-- fill in: when the player may change difficulty and the consequences (e.g. rewards, progress, records) -->
 
 ## Fairness
 

@@ -20,19 +20,21 @@ A sequence of game phases the player moves through, and the transitions between 
 
 ## Transitions
 
-| From | To | Trigger | Conditions | Carries over / resets | Experience intent |
-|------|----|---------|------------|-----------------------|-------------------|
-| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in: game-state fields --> | <!-- fill in: e.g. "release of tension" --> |
+IDs: see [`../ids.md`](../ids.md).
+
+| ID | From | To | Trigger | Conditions | Carries over / resets | Experience intent |
+|----|------|----|---------|------------|-----------------------|-------------------|
+| <!-- fill in: T1 --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in: game-state fields --> | <!-- fill in: e.g. "release of tension" --> |
 
 Every phase must be reachable and have at least one exit, unless it ends the flow.
 
 ## Entry and exit
 
-<!-- fill in: how this flow starts, its starting state, and every way it ends; link end-conditions.md -->
+- **N1**: <!-- fill in: how this flow starts and its starting state; add one entry per way it ends, linking end-conditions.md -->
 
 ## Interruptions
 
-<!-- fill in: what happens to game state if play is suspended, abandoned, or interrupted mid-flow (e.g. progress kept or lost); link progression.md -->
+- **U1**: <!-- fill in: what happens to game state if play is suspended, abandoned, or interrupted mid-flow (e.g. progress kept or lost); link progression.md -->
 
 ## Diagram (optional)
 

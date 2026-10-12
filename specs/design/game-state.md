@@ -30,9 +30,9 @@ Values computed from fields, never stored independently.
 
 ## Global invariants
 
-Rules that must hold at all times across fields.
+Rules that must hold at all times across fields. Field invariants are referenced by field name (e.g. `GS.health`); IDs: see [`ids.md`](ids.md).
 
-- <!-- fill in -->
+- **V1**: <!-- fill in -->
 
 ## Hidden and visible state
 
@@ -40,7 +40,7 @@ Rules that must hold at all times across fields.
 
 ## Randomness and determinism
 
-<!-- fill in: which outcomes are random, what range or distribution, and whether identical setups must produce identical outcomes (e.g. for fairness or shared challenges) -->
+- **Q1**: <!-- fill in: one random outcome, its range or distribution, and whether identical setups must produce identical outcomes (e.g. for fairness or shared challenges) -->
 
 ## Splitting this document
 

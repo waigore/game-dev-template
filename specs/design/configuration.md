@@ -26,7 +26,9 @@ Balance values a designer adjusts; not player-selectable.
 
 ## Dependencies and restrictions
 
-<!-- fill in: combinations that are not allowed, options that depend on others, and options that affect rewards or progression -->
+Modes and options are referenced by name (e.g. `CFG.permadeath`); IDs: see [`ids.md`](ids.md).
+
+- **K1**: <!-- fill in: a combination that is not allowed, an option that depends on another, or an option that affects rewards or progression -->
 
 ## Splitting this document
 

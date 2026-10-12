@@ -14,11 +14,11 @@ Every way a unit of play ends. Must match the win/lose conditions in [`../defini
 |----|------|------|-----------|--------------|---------|
 | <!-- fill in: e.g. W1 --> | <!-- fill in --> | <!-- win / loss / draw / other --> | <!-- fill in: precise, in game-state terms --> | <!-- fill in: e.g. "end of each turn" --> | <!-- fill in: state changes and transition; link flow --> |
 
-Other specs refer to conditions by ID.
+Other specs refer to conditions by qualified ID (e.g. `END.L1`); see [`ids.md`](ids.md).
 
 ## Precedence
 
-<!-- fill in: how simultaneous conditions resolve (e.g. "loss beats win in the same moment") and why -->
+- **P1**: <!-- fill in: how a set of simultaneous conditions resolves (e.g. "loss beats win in the same moment") and why -->
 
 ## Rewards and penalties
 

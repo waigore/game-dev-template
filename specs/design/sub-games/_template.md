@@ -13,13 +13,15 @@ A self-contained game within the game (minigame, side activity, bonus round) wit
 
 ## Entry and exit
 
-<!-- fill in: where and when the player can enter (link flow and stage), whether it is optional, and how play returns to the main game -->
+IDs: see [`../ids.md`](../ids.md).
+
+- **N1**: <!-- fill in: where and when the player can enter (link flow and stage) and whether it is optional; add one entry per way play returns to the main game -->
 
 ## Rules
 
-Numbered, precise, and complete.
+Precise and complete.
 
-1. <!-- fill in -->
+- **R1**: <!-- fill in -->
 
 ## Characters and entities
 
@@ -33,9 +35,9 @@ Numbered, precise, and complete.
 
 ## End conditions and rewards
 
-| Outcome | Condition | Effect on main game |
-|---------|-----------|---------------------|
-| <!-- fill in: win / loss / other --> | <!-- fill in --> | <!-- fill in --> |
+| ID | Outcome | Condition | Effect on main game |
+|----|---------|-----------|---------------------|
+| <!-- fill in: O1 --> | <!-- fill in: win / loss / other --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Difficulty and configuration
 

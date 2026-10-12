@@ -11,9 +11,11 @@ A repeating cycle of player activity, such as the core loop (seconds to minutes)
 
 ## Steps
 
-| # | Player does | Game responds | Player gains or learns |
-|---|-------------|---------------|------------------------|
-| 1 | <!-- fill in: verb --> | <!-- fill in --> | <!-- fill in --> |
+In order. IDs: see [`../ids.md`](../ids.md).
+
+| ID | Player does | Game responds | Player gains or learns |
+|----|-------------|---------------|------------------------|
+| <!-- fill in: K1 --> | <!-- fill in: verb --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Motivation
 

@@ -35,6 +35,22 @@ Instructions for agents reviewing the game design ([`specs/design/design.md`](..
 - [ ] Progression persistence agrees with flows, end conditions, and game-state scopes.
 - [ ] No two specs contradict each other.
 
+### Element IDs
+
+- [ ] Every section listed in [`ids.md`](../../specs/design/ids.md) gives each element an ID in the prescribed form, unique within its spec.
+- [ ] Qualified IDs cited anywhere (e.g. `F-movement.R3`) exist.
+
+### Player stories
+
+Rules: [`stories.md`](../../specs/design/stories.md).
+
+- [ ] Every design spec with element IDs has a story file at the mirrored path under `stories/`, listed in the `stories.md` index; no story file lacks a design spec.
+- [ ] Every element ID is proven by at least one scenario, and each coverage table agrees with its scenarios' **Proves** lines.
+- [ ] Conditional elements have a holds and a does-not-hold scenario; numeric thresholds have boundary scenarios; difficulty levels and options that change an element have their own scenarios.
+- [ ] Each scenario has a complete Given, one When (a player verb or design-defined game event; chained only in walkthrough stories), and a Then with concrete values that match `configuration.md` or the Given.
+- [ ] Each scenario is falsifiable: an implementation that breaks the element it proves would fail it. No subjective wording.
+- [ ] No scenario asserts behavior absent from the design, or mentions screens, inputs, or presentation.
+
 ### Alignment with vision and definition
 
 - [ ] Every essential quality, in-scope item, and player objective is served by at least one spec, and `traceability.md` reflects this.

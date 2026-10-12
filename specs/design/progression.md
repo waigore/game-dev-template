@@ -4,29 +4,33 @@ How the player advances, and how progress is kept, lost, or reset. Must match th
 
 ## Progression axes
 
-| Axis | Kind | Advanced by | Cap |
-|------|------|-------------|-----|
-| <!-- fill in --> | <!-- fill in: skill / character power / content unlock / story / collection / rank --> | <!-- fill in --> | <!-- fill in, or "None" --> |
+IDs: see [`ids.md`](ids.md).
+
+| ID | Axis | Kind | Advanced by | Cap |
+|----|------|------|-------------|-----|
+| <!-- fill in: A1 --> | <!-- fill in --> | <!-- fill in: skill / character power / content unlock / story / collection / rank --> | <!-- fill in --> | <!-- fill in, or "None" --> |
 
 ## Unlocks
 
-| Unlock | Requirement | Effect |
-|--------|-------------|--------|
-| <!-- fill in --> | <!-- fill in --> | <!-- fill in: link to the spec it enables --> |
+| ID | Unlock | Requirement | Effect |
+|----|--------|-------------|--------|
+| <!-- fill in: U1 --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in: link to the spec it enables --> |
 
 ## Persistence
 
-| What | Persists across | Lost or reset when |
-|------|-----------------|--------------------|
-| <!-- fill in: game-state field --> | <!-- fill in: stage / session / run / playthrough --> | <!-- fill in --> |
+| ID | What | Persists across | Lost or reset when |
+|----|------|-----------------|--------------------|
+| <!-- fill in: P1 --> | <!-- fill in: game-state field --> | <!-- fill in: stage / session / run / playthrough --> | <!-- fill in --> |
 
 ## Committing progress
 
-<!-- fill in: when progress becomes permanent (checkpoints, stage end, at any moment) and where play resumes after interruption. Conceptual only, not save-file design. -->
+Conceptual only, not save-file design.
+
+- **M1**: <!-- fill in: when progress becomes permanent (checkpoints, stage end, at any moment) and where play resumes after interruption -->
 
 ## Failure consequences
 
-<!-- fill in: what is lost, kept, or converted on failure, and why that cost suits the vision -->
+- **F1**: <!-- fill in: what is lost, kept, or converted on a failure, and why that cost suits the vision -->
 
 ## Completion
 

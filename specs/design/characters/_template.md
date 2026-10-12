@@ -22,23 +22,27 @@ Values are defined in [`../configuration.md`](../configuration.md); reference th
 
 ## Actions and abilities
 
-| Action | Available when | Effect | Cost / limit |
-|--------|----------------|--------|--------------|
-| <!-- fill in: verb --> | <!-- fill in: condition --> | <!-- fill in: precise rule --> | <!-- fill in --> |
+IDs: see [`../ids.md`](../ids.md).
+
+| ID | Action | Available when | Effect | Cost / limit |
+|----|--------|----------------|--------|--------------|
+| <!-- fill in: A1 --> | <!-- fill in: verb --> | <!-- fill in: condition --> | <!-- fill in: precise rule --> | <!-- fill in --> |
 
 ## States
 
-| State | Entered when | Behavior in state | Exits to |
-|-------|--------------|-------------------|----------|
-| <!-- fill in: e.g. Stunned --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
+| ID | State | Entered when | Behavior in state | Exits to |
+|----|-------|--------------|-------------------|----------|
+| <!-- fill in: S1 --> | <!-- fill in: e.g. Stunned --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Behavior
 
-<!-- fill in for non-player characters: goals, what it perceives, decision rules in priority order, how it reacts to the player, and what is random vs fixed. For player characters: "N/A — player-controlled". -->
+<!-- fill in for non-player characters: goals, what it perceives, and what is random vs fixed; then decision rules in priority order, one per ID below. For player characters: "N/A — player-controlled" and delete the list. -->
+
+- **B1**: <!-- fill in: when <perceived situation>, it <does what> -->
 
 ## Interactions
 
-<!-- fill in: how it affects and is affected by other characters, entities, and the world; link their specs -->
+- **I1**: <!-- fill in: how it affects or is affected by another character, entity, or the world; link their specs -->
 
 ## Appearances and variation
 

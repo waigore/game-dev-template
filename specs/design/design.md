@@ -9,6 +9,7 @@ The complete, self-contained description of how the game works and how it should
 - **Conceptual, logical, experiential**: no engines, frameworks, code, data formats, or platform APIs. Platforms appear only as design implications (see profile below).
 - **Shared language**: define each term once in [`glossary.md`](glossary.md), each character in [`characters/`](characters/), each entity in [`entities/`](entities/). Other specs link; they never redefine.
 - **Traceable**: every spec states which vision qualities and definition scope items it serves; [`traceability.md`](traceability.md) maps all of them.
+- **Identified and proven**: every behavior-defining element carries a stable ID per [`ids.md`](ids.md) and is proven by Given/When/Then [player stories](stories.md).
 - **Concise files**: each file under 500 words; decompose by logical unit and link.
 
 ## Genre and platform profile
@@ -24,7 +25,7 @@ The complete, self-contained description of how the game works and how it should
 
 ## Index
 
-Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md), [`game-state.md`](game-state.md), [`configuration.md`](configuration.md), [`difficulty.md`](difficulty.md), [`progression.md`](progression.md), [`end-conditions.md`](end-conditions.md), [`world.md`](world.md), [`experience.md`](experience.md).
+Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md), [`ids.md`](ids.md), [`stories.md`](stories.md) (indexes the story files), [`game-state.md`](game-state.md), [`configuration.md`](configuration.md), [`difficulty.md`](difficulty.md), [`progression.md`](progression.md), [`end-conditions.md`](end-conditions.md), [`world.md`](world.md), [`experience.md`](experience.md).
 
 Unit specs: copy the folder's `_template.md` to `<kebab-name>.md`, fill it in, and list it below.
 
