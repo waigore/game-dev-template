@@ -14,23 +14,23 @@ The single definition of a non-character thing in the game: item, pickup, object
 
 ## Properties
 
-Values are defined in [`../configuration.md`](../configuration.md); reference them by name.
+Values are defined in [`../configuration.md`](../configuration.md); reference them by name. IDs: see [`../ids.md`](../ids.md).
 
-| Property | Meaning | Parameter |
-|----------|---------|-----------|
-| <!-- fill in --> | <!-- fill in --> | <!-- fill in: configuration parameter name --> |
+| ID | Property | Meaning | Parameter |
+|----|----------|---------|-----------|
+| <!-- fill in: P1 --> | <!-- fill in --> | <!-- fill in: what it governs --> | <!-- fill in: configuration parameter name --> |
 
 ## Lifecycle and states
 
-| State | Entered when | Behavior in state | Exits to |
-|-------|--------------|-------------------|----------|
-| <!-- fill in: e.g. Spawned / Active / Consumed --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
+| ID | State | Entered when | Behavior in state | Exits to |
+|----|-------|--------------|-------------------|----------|
+| <!-- fill in: S1 --> | <!-- fill in: e.g. Spawned / Active / Consumed --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Interactions
 
-| Interacts with | Trigger | Outcome |
-|----------------|---------|---------|
-| <!-- fill in: character, entity, or feature link --> | <!-- fill in --> | <!-- fill in: precise rule --> |
+| ID | Interacts with | Trigger | Outcome |
+|----|----------------|---------|---------|
+| <!-- fill in: I1 --> | <!-- fill in: character, entity, or feature link --> | <!-- fill in --> | <!-- fill in: precise rule --> |
 
 ## Placement and availability
 

@@ -15,9 +15,9 @@ A mechanic or system: a coherent set of rules such as movement, combat, scoring,
 
 ## Rules
 
-Numbered, precise, and complete: two readers must reach the same outcome for any situation.
+Precise and complete: two readers must reach the same outcome for any situation. IDs `R1`, `R2`, …; see [`../ids.md`](../ids.md).
 
-1. <!-- fill in: who or what, when, what changes -->
+- **R1**: <!-- fill in: who or what, when, what changes -->
 
 ## Parameters
 
@@ -35,17 +35,17 @@ Fields this feature reads or changes, as defined in [`../game-state.md`](../game
 
 ## Interactions with other features
 
-<!-- fill in: ordering, priority, and conflicts with other features; link them -->
+- **I1**: <!-- fill in: ordering, priority, or conflict with another feature; link it and cite its rule IDs -->
 
 ## Edge cases
 
-| Situation | Outcome |
-|-----------|---------|
-| <!-- fill in --> | <!-- fill in --> |
+| ID | Situation | Outcome |
+|----|-----------|---------|
+| <!-- fill in: X1 --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Difficulty and configuration effects
 
-<!-- fill in: how difficulty levels and game options change these rules; link difficulty.md and configuration.md -->
+- **D1**: <!-- fill in: how a difficulty level or game option changes a rule; cite the rule ID and link difficulty.md or configuration.md -->
 
 ## Experience intent
 

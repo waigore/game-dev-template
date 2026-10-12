@@ -19,13 +19,13 @@ A defined play setup plus worked walkthroughs that show the design in action. Sc
 
 ## Walkthroughs
 
-At least one. Include a success path and a failure path where both are possible.
+At least one. Include a success path and a failure path where both are possible. Step IDs are `W<walkthrough>.<step>`; see [`../ids.md`](../ids.md).
 
 ### Walkthrough 1: <!-- fill in: name, e.g. "Clean win" -->
 
-| # | Player does | Game responds (rule applied) | Resulting state |
-|---|-------------|------------------------------|-----------------|
-| 1 | <!-- fill in: verb --> | <!-- fill in: link the rule --> | <!-- fill in --> |
+| ID | Player does | Game responds (rule applied) | Resulting state |
+|----|-------------|------------------------------|-----------------|
+| <!-- fill in: W1.1 --> | <!-- fill in: verb or game event --> | <!-- fill in: link the rule and cite its qualified ID --> | <!-- fill in --> |
 
 - **Outcome**: <!-- fill in: end condition reached and its consequences -->
 - **Player experience**: <!-- fill in: what the player should have felt at key moments -->
