@@ -31,7 +31,7 @@ In order. IDs: see [`../ids.md`](../ids.md).
 
 ## Exits
 
-<!-- fill in: how the player leaves the loop (win, loss, choice, transition); link flows and end conditions -->
+- **E1**: <!-- fill in: one way the player leaves the loop (win, loss, choice, transition) and its condition; link flows and end conditions -->
 
 ## Experience intent
 

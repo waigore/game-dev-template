@@ -14,13 +14,13 @@ A sequence of game phases the player moves through, and the transitions between 
 
 ## Phases
 
-| Phase | Purpose | What the player can do | Detailed in |
-|-------|---------|------------------------|-------------|
-| <!-- fill in --> | <!-- fill in --> | <!-- fill in: verbs --> | <!-- fill in: link to stage, loop, sub-game, or child flow --> |
+IDs: see [`../ids.md`](../ids.md).
+
+| ID | Phase | Purpose | What the player can do | Detailed in |
+|----|-------|---------|------------------------|-------------|
+| <!-- fill in: P1 --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in: verbs available; name any verbs explicitly unavailable --> | <!-- fill in: link to stage, loop, sub-game, or child flow --> |
 
 ## Transitions
-
-IDs: see [`../ids.md`](../ids.md).
 
 | ID | From | To | Trigger | Conditions | Carries over / resets | Experience intent |
 |----|------|----|---------|------------|-----------------------|-------------------|

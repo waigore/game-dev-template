@@ -14,15 +14,13 @@ The single definition of a non-character thing in the game: item, pickup, object
 
 ## Properties
 
-Values are defined in [`../configuration.md`](../configuration.md); reference them by name.
+Values are defined in [`../configuration.md`](../configuration.md); reference them by name. IDs: see [`../ids.md`](../ids.md).
 
-| Property | Meaning | Parameter |
-|----------|---------|-----------|
-| <!-- fill in --> | <!-- fill in --> | <!-- fill in: configuration parameter name --> |
+| ID | Property | Meaning | Parameter |
+|----|----------|---------|-----------|
+| <!-- fill in: P1 --> | <!-- fill in --> | <!-- fill in: what it governs --> | <!-- fill in: configuration parameter name --> |
 
 ## Lifecycle and states
-
-IDs: see [`../ids.md`](../ids.md).
 
 | ID | State | Entered when | Behavior in state | Exits to |
 |----|-------|--------------|-------------------|----------|

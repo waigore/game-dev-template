@@ -20,6 +20,8 @@ Delete scopes that do not apply to this game.
 |-------|-------|---------|---------------|------------|------------|
 | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in: links to specs --> | <!-- fill in: e.g. "0 ≤ value ≤ max" --> |
 
+Fields are referenced by name (e.g. `GS.health`). Player stories prove each field's initial value, its reset when its scope's lifetime ends, and its invariants.
+
 ## Derived values
 
 Values computed from fields, never stored independently.
@@ -30,13 +32,15 @@ Values computed from fields, never stored independently.
 
 ## Global invariants
 
-Rules that must hold at all times across fields. Field invariants are referenced by field name (e.g. `GS.health`); IDs: see [`ids.md`](ids.md).
+Rules that must hold at all times across fields. IDs: see [`ids.md`](ids.md).
 
 - **V1**: <!-- fill in -->
 
 ## Hidden and visible state
 
-<!-- fill in: which state the player knows, can infer, or cannot know (e.g. opponent hands, fog of war), and why; not how it is displayed -->
+What the player can know, not how it is displayed.
+
+- **H1**: <!-- fill in: a field the player knows, can infer, or cannot know (e.g. opponent hands, fog of war), the condition that reveals or hides it, and why -->
 
 ## Randomness and determinism
 

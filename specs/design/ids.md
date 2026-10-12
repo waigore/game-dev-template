@@ -19,18 +19,18 @@ Stable IDs for the design elements that define behavior, so [player stories](sto
 
 | Spec | Key | Sections and their ID letters |
 |------|-----|-------------------------------|
-| [`characters/`](characters/) | `C-<name>` | Actions and abilities `A`, States `S`, Behavior `B`, Interactions `I` |
-| [`entities/`](entities/) | `E-<name>` | Lifecycle and states `S`, Interactions `I` |
-| [`loops/`](loops/) | `L-<name>` | Steps `K` |
+| [`characters/`](characters/) | `C-<name>` | Attributes `P`, Actions and abilities `A`, States `S`, Behavior `B`, Interactions `I` |
+| [`entities/`](entities/) | `E-<name>` | Properties `P`, Lifecycle and states `S`, Interactions `I` |
+| [`loops/`](loops/) | `L-<name>` | Steps `K`, Exits `E` |
 | [`features/`](features/) | `F-<name>` | Rules `R`, Interactions with other features `I`, Edge cases `X`, Difficulty and configuration effects `D` |
-| [`flows/`](flows/) | `FL-<name>` | Transitions `T`, Entry and exit `N`, Interruptions `U` |
-| [`stages/`](stages/) | `ST-<name>` | Objectives `O`, Stage rules `R`, Entry and exit `N` |
+| [`flows/`](flows/) | `FL-<name>` | Phases `P`, Transitions `T`, Entry and exit `N`, Interruptions `U` |
+| [`stages/`](stages/) | `ST-<name>` | Contents `C`, Objectives `O`, Stage rules `R`, Entry and exit `N`, Pacing beats `B` |
 | [`scenarios/`](scenarios/) | `SC-<name>` | Walkthrough steps `W<walkthrough>.<step>`, e.g. `W2.3` |
 | [`sub-games/`](sub-games/) | `SG-<name>` | Entry and exit `N`, Rules `R`, End conditions and rewards `O` |
-| [`game-state.md`](game-state.md) | `GS` | Field invariants by field name, e.g. `GS.health`; Global invariants `V`; Randomness and determinism `Q` |
-| [`configuration.md`](configuration.md) | `CFG` | Modes and Game options by name, e.g. `CFG.permadeath`; Dependencies and restrictions `K` |
+| [`game-state.md`](game-state.md) | `GS` | Fields by name, e.g. `GS.health`; Global invariants `V`; Hidden and visible state `H`; Randomness and determinism `Q` |
+| [`configuration.md`](configuration.md) | `CFG` | Modes, Game options, and Designer tunables by name, e.g. `CFG.permadeath`; Dependencies and restrictions `K` |
 | [`difficulty.md`](difficulty.md) | `DIF` | Rule adjustments `R`, Dynamic adjustment `Y`, Changing difficulty `C` |
-| [`progression.md`](progression.md) | `PRG` | Progression axes `A`, Unlocks `U`, Persistence `P`, Committing progress `M`, Failure consequences `F` |
+| [`progression.md`](progression.md) | `PRG` | Progression axes `A`, Unlocks `U`, Persistence `P`, Committing progress `M`, Failure consequences `F`, Completion `Z` |
 | [`end-conditions.md`](end-conditions.md) | `END` | Conditions by their ID, e.g. `END.L1`; Precedence `P` |
 
 Sections not listed (purpose, motivation, layout, experience intent, and similar) carry no IDs: they explain or motivate behavior but do not define it, so player stories do not prove them.

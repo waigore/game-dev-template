@@ -18,7 +18,7 @@ Rule variants and assists the player or host may choose. Difficulty levels live 
 
 ## Designer tunables
 
-Balance values a designer adjusts; not player-selectable.
+Balance values a designer adjusts; not player-selectable. Referenced by name (e.g. `CFG.MAX_HEALTH`); the owner spec's stories prove the behavior at the default and at both ends of the range.
 
 | Parameter | Owner spec | Default | Range | Unit | Effect |
 |-----------|------------|---------|-------|------|--------|
@@ -26,7 +26,7 @@ Balance values a designer adjusts; not player-selectable.
 
 ## Dependencies and restrictions
 
-Modes and options are referenced by name (e.g. `CFG.permadeath`); IDs: see [`ids.md`](ids.md).
+Modes, options, and tunables are referenced by name (e.g. `CFG.permadeath`); IDs: see [`ids.md`](ids.md).
 
 - **K1**: <!-- fill in: a combination that is not allowed, an option that depends on another, or an option that affects rewards or progression -->
 

@@ -18,13 +18,13 @@ A place or scene where play happens, such as a level, map, arena, room, hub, or 
 
 ## Contents
 
-| Character / entity | Where | How many | Conditions |
-|--------------------|-------|----------|------------|
-| <!-- fill in: link --> | <!-- fill in: region --> | <!-- fill in --> | <!-- fill in: e.g. "after alarm" --> |
+IDs: see [`../ids.md`](../ids.md).
+
+| ID | Character / entity | Where | How many | Conditions |
+|----|--------------------|-------|----------|------------|
+| <!-- fill in: C1 --> | <!-- fill in: link --> | <!-- fill in: region --> | <!-- fill in --> | <!-- fill in: e.g. "after alarm", or "Always" --> |
 
 ## Objectives
-
-IDs: see [`../ids.md`](../ids.md).
 
 - **O1** (primary): <!-- fill in: objective and the game-state condition that completes it -->
 - **O2** (optional): <!-- fill in, or delete -->
@@ -39,9 +39,9 @@ IDs: see [`../ids.md`](../ids.md).
 
 ## Pacing
 
-| Beat | Where | What happens | Intended intensity |
-|------|-------|--------------|--------------------|
-| <!-- fill in: e.g. Intro --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in: low / rising / peak / rest --> |
+| ID | Beat | Where | Triggered when | What happens | Intended intensity |
+|----|------|-------|----------------|--------------|--------------------|
+| <!-- fill in: B1 --> | <!-- fill in: e.g. Intro --> | <!-- fill in --> | <!-- fill in: game-state condition or event --> | <!-- fill in --> | <!-- fill in: low / rising / peak / rest --> |
 
 - **Expected duration**: <!-- fill in -->
 

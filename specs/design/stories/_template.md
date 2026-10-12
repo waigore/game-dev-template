@@ -10,11 +10,11 @@ Player stories that prove one design spec behaves as designed. Rules: [`../stori
 
 ## Coverage
 
-Every element ID in the design spec, each with the scenarios that prove it. Must agree with the scenarios' **Proves** lines.
+Every element ID and name-referenced item the design spec defines (including designer tunables it owns), each with the scenarios that prove it per [`../story-coverage.md`](../story-coverage.md). Must agree with the scenarios' **Proves** lines.
 
 | Element | Summary | Scenarios |
 |---------|---------|-----------|
-| <!-- fill in: e.g. R1 --> | <!-- fill in: a few words --> | <!-- fill in: e.g. PS1.1, PS1.2 --> |
+| <!-- fill in: e.g. R1, or CFG.MAX_HEALTH --> | <!-- fill in: a few words --> | <!-- fill in: e.g. PS1.1, PS1.2 --> |
 
 ## PS1: <!-- fill in: title -->
 

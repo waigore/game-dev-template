@@ -34,9 +34,9 @@ Conceptual only, not save-file design.
 
 ## Completion
 
-- **Finishing the game**: <!-- fill in: what counts as completion -->
-- **After completion**: <!-- fill in: e.g. replay, harder cycle, endless mode, or "Ends" -->
-- **Full completion**: <!-- fill in: e.g. all collectibles; or "Same as finishing" -->
+- **Z1** (finishing the game): <!-- fill in: the game-state condition that counts as completion -->
+- **Z2** (after completion): <!-- fill in: e.g. replay, harder cycle, endless mode, or "Ends" -->
+- **Z3** (full completion): <!-- fill in: e.g. all collectibles; or "Same as finishing" -->
 
 ## Experience intent
 

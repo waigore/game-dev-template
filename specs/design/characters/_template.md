@@ -14,15 +14,13 @@ The single definition of this character; other specs link here. Rules: [`../desi
 
 ## Attributes
 
-Values are defined in [`../configuration.md`](../configuration.md); reference them by name.
+Values are defined in [`../configuration.md`](../configuration.md); reference them by name. IDs: see [`../ids.md`](../ids.md).
 
-| Attribute | Meaning | Parameter |
-|-----------|---------|-----------|
-| <!-- fill in: e.g. Health --> | <!-- fill in: what it governs --> | <!-- fill in: configuration parameter name --> |
+| ID | Attribute | Meaning | Parameter |
+|----|-----------|---------|-----------|
+| <!-- fill in: P1 --> | <!-- fill in: e.g. Health --> | <!-- fill in: what it governs --> | <!-- fill in: configuration parameter name --> |
 
 ## Actions and abilities
-
-IDs: see [`../ids.md`](../ids.md).
 
 | ID | Action | Available when | Effect | Cost / limit |
 |----|--------|----------------|--------|--------------|

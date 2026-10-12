@@ -25,7 +25,7 @@ The complete, self-contained description of how the game works and how it should
 
 ## Index
 
-Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md), [`ids.md`](ids.md), [`stories.md`](stories.md) (indexes the story files), [`game-state.md`](game-state.md), [`configuration.md`](configuration.md), [`difficulty.md`](difficulty.md), [`progression.md`](progression.md), [`end-conditions.md`](end-conditions.md), [`world.md`](world.md), [`experience.md`](experience.md).
+Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md), [`ids.md`](ids.md), [`stories.md`](stories.md) (indexes the story files), [`story-coverage.md`](story-coverage.md), [`game-state.md`](game-state.md), [`configuration.md`](configuration.md), [`difficulty.md`](difficulty.md), [`progression.md`](progression.md), [`end-conditions.md`](end-conditions.md), [`world.md`](world.md), [`experience.md`](experience.md).
 
 Unit specs: copy the folder's `_template.md` to `<kebab-name>.md`, fill it in, and list it below.
 
