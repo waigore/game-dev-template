@@ -11,3 +11,8 @@ Every file under `specs/` must stay under **500 words**. If content would exceed
 ## Index
 
 Add a row here for each spec file as it is created.
+
+| Spec | Covers | Review instructions |
+|------|--------|---------------------|
+| [`vision.md`](vision.md) | Elevator pitch, high-level description, audience, essential qualities (≤5), tradeoffs, non-goals | [`.agents/specs/vision-review.md`](../.agents/specs/vision-review.md) |
+| [`definition/definition.md`](definition/definition.md) | Scope, player and product objectives, supported platforms, design/technical/market constraints, quality expectations | [`.agents/specs/definition-review.md`](../.agents/specs/definition-review.md) |
