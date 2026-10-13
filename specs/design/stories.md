@@ -1,10 +1,10 @@
 # Player Stories
 
-Concrete, testable behaviors of the game, written as Given/When/Then scenarios and traced to the [design element IDs](ids.md) they prove. Player stories are to game design what user stories are to UX, but they cover game logic and mechanics only. Rules: [`design.md`](design.md#rules-for-every-design-spec).
+Concrete, testable behaviors of the game, written as Given/When/Then scenarios and traced to the [design element IDs](ids.md) they prove. Player stories cover game logic and mechanics. Interface behavior is a [user story](../ux/stories.md). Rules: [`design.md`](design.md#rules-for-every-design-spec).
 
 ## Rules for every story
 
-- **Game logic only**: no screens, menus, inputs, buttons, feedback, animation, or sound. These are not user stories.
+- **Game logic only**: no screens, menus, inputs, buttons, feedback, animation, or sound. Interface behavior belongs in [`../ux/stories.md`](../ux/stories.md).
 - **Traced**: every scenario names the element IDs it proves. A scenario may not assert behavior that is absent from the design; if one is needed, change the design first.
 - **Narrative**: each story opens with "As a <player>, I <verb or situation> so that <goal>", where the goal comes from the design spec's purpose.
 - **Given**: the complete starting situation (phase, game-state fields, characters and entities present, configuration, and difficulty), so that two testers would set up the same situation.

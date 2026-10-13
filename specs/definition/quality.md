@@ -24,7 +24,7 @@ Each category is **Applies** or **N/A — reason**. An N/A reason cites the visi
 | Accessibility | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 | Localization | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
-When a category Applies, record design consequences outside this file. Accessibility and localization: [`../design/experience.md`](../design/experience.md). Rule-changing assists: [`../design/configuration.md`](../design/configuration.md). Save durability: [`../design/progression.md`](../design/progression.md). Performance, load time, and reliability stay here.
+When a category Applies, record design consequences outside this file. Accessibility and localization: [`../design/experience.md`](../design/experience.md). Rule-changing assists: [`../design/configuration.md`](../design/configuration.md). Save durability: [`../design/progression.md`](../design/progression.md). How the interface presents accessibility, localization, and save failure: [`../ux/ux.md`](../ux/ux.md). Performance, load time, and reliability stay here.
 
 ## Splitting this document
 
