@@ -43,7 +43,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 
 ### Quality expectations
 
-- [ ] Performance, load time / latency, reliability, save durability, accessibility, and localization are each present in [`quality.md`](../../specs/definition/quality.md).
+- [ ] Performance, load time / latency, reliability, observability, save durability, accessibility, and localization are each present in [`quality.md`](../../specs/definition/quality.md).
 - [ ] Each category is Applies, or N/A with a reason that cites the vision or the supported platforms. At prototype depth, a category other than performance may instead cite spec depth.
 - [ ] Each Applies row has a measurable target, the platforms it covers, and a how-checked method. Platforms match the supported-platforms table.
 - [ ] An N/A row uses "—" for target, platforms, and how checked.

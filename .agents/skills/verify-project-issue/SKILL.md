@@ -2,7 +2,8 @@
 name: verify-project-issue
 description: |-
   Independently verify an epic/task/defect in status:pending-verification against
-  its deliverables; post pass or fail and advance or return status.
+  its deliverables; post pass or fail and advance or return status. When linked
+  PRs contain code changes, run review-solid-code and treat a Fail as verify Fail.
   Use when checking implemented work (smoke test) before acceptance.
 
   Examples:
@@ -18,6 +19,8 @@ Independent verification (smoke test) for a typed issue in `status:pending-verif
 
 **Status gate:** [`enforce-task-workflow-status`](../enforce-task-workflow-status/SKILL.md)
 
+**SOLID (code PRs):** [`review-solid-code`](../review-solid-code/SKILL.md) · [`docs/solid.md`](../../../docs/solid.md)
+
 ## Steps
 
 1. **Refuse** if this session also posted the implementation summary for this issue. Prefer a different comment author than that summary when detectable (`gh api` / comment list).
@@ -28,9 +31,10 @@ Independent verification (smoke test) for a typed issue in `status:pending-verif
    - Coding/architecture/spec/doc standards closely followed where applicable
    - No major gaps/ambiguities/underspecifications requiring revision
    - If coding: unit test coverage adequate; tests sensibly cover program logic
+   - **If any linked PR contains code changes:** run [`review-solid-code`](../review-solid-code/SKILL.md) on those PR diffs. Include its report in the verify comment. A SOLID **Fail** makes verification **Fail**.
 5. **Outcome:**
-   - **Pass** — comment summarizing what was checked against each deliverable. Gate: `pending-verification` → `pending-acceptance`.
-   - **Fail** — detail issues. Gate: `pending-verification` → `pending-implementation`.
+   - **Pass** — comment summarizing what was checked against each deliverable (include SOLID Pass when run). Gate: `pending-verification` → `pending-acceptance`.
+   - **Fail** — detail issues (include SOLID findings when that review failed). Gate: `pending-verification` → `pending-implementation`.
 6. **Report** URL, outcome, new status.
 
 ## Rules
@@ -38,3 +42,4 @@ Independent verification (smoke test) for a typed issue in `status:pending-verif
 - Must be independent of the implementor’s comment and session.
 - Freeform evidence; intent must be clear.
 - Call `enforce-task-workflow-status` for the label change.
+- Do not skip `review-solid-code` when linked PRs include implementation files.

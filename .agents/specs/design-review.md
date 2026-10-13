@@ -65,7 +65,7 @@ Rules: [`stories.md`](rules/design/stories.md) and [`story.md`](rules/design/sto
 - [ ] When accessibility Applies in [`quality.md`](../../specs/definition/quality.md), `experience.md` states channels, timing and assists, and scale. A rule-changing assist or timing option named there is an option in `configuration.md`.
 - [ ] When localization Applies, `experience.md` lists the player-facing content that varies by locale.
 - [ ] When save durability Applies, `progression.md` persistence and **M1** state what is committed, when it becomes permanent, and where play resumes.
-- [ ] Performance, load time, and reliability targets appear only in [`quality.md`](../../specs/definition/quality.md).
+- [ ] Performance, load time, reliability, and observability targets appear only in [`quality.md`](../../specs/definition/quality.md).
 
 ### Genre and platform fit
 

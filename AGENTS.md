@@ -58,7 +58,9 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **Spec depth**: `specs/definition/definition.md` sets `prototype`, `small`, or `full`, which scales story coverage, mockups, and diagrams per [`.agents/specs/rules/depth.md`](.agents/specs/rules/depth.md).
 - **Spec review**: review a spec with the `review-spec` skill, using the checklist linked from [`specs/README.md`](specs/README.md) and [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
 - **Architecture decisions**: engine, framework, library, storage, integration, and game-architecture choices are ADRs in [`specs/adr/`](specs/adr/adr.md). Only Accepted ADRs authorize code. Do not read `specs/adr/archive/` unless explicitly asked.
+- **Technical design**: code and data shape (layers, modules, components, contracts, schemata, sequences) live in [`specs/technical/`](specs/technical/technical.md), downstream of definition, design, view, UX, and Accepted ADRs.
 - **Concise docs/specs**: every file under `docs/` and `specs/` stays under **500 words**; split and link if longer. Details: [`docs/README.md`](docs/README.md), [`specs/README.md`](specs/README.md).
+- **SOLID code**: follow [`docs/solid.md`](docs/solid.md). Review with `review-solid-code` (also run from `verify-project-issue` when a PR has code changes).
 
 ---
 
