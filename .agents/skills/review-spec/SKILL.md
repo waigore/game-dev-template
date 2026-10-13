@@ -5,7 +5,7 @@ description: |-
   instructions in .agents/specs/, then report the verdict back to the requester
   (chat, GitHub issue, PR, or calling agent).
   Use when the user asks to review, check, or validate a spec such as the vision,
-  definition, design, view, UX, ADR, or technical design docs.
+  definition, design, view, UX, playtest, ADR, or technical design docs.
 
   Examples:
     - user: "Review specs/vision.md" → run vision review, reply in chat
