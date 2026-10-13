@@ -1,12 +1,15 @@
 # Reviewing `specs/design/`
 
-Instructions for agents reviewing the game design ([`specs/design/design.md`](../../specs/design/design.md) and every file under [`specs/design/`](../../specs/design/)). Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), and [`specs/definition/quality.md`](../../specs/definition/quality.md) first. A review may cover the whole design or named files; cross-spec checks always consider the whole design. Skip `_template.md` files. Run every check, then report a verdict.
+Instructions for agents reviewing the game design ([`specs/design/design.md`](../../specs/design/design.md) and every file under [`specs/design/`](../../specs/design/)). Authoring rules for each file are in [`rules/README.md`](rules/README.md). Follow [`alignment.md`](alignment.md). The spec links that file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), and [`specs/definition/quality.md`](../../specs/definition/quality.md) first. A review may cover the whole design or named files; cross-spec checks always consider the whole design. Skip `_template.md` files. Run every check, then report a verdict.
 
-## Checklist
+## Aligned
+
+Same sections and required content as the rules file for each spec in scope. File-level requirements in [`alignment.md`](alignment.md) hold.
 
 ### Completeness
 
 - [ ] No `<!-- fill in -->` placeholders remain; unused template rows and sections are deleted.
+- [ ] Each file links its authoring-rules file from [`rules/README.md`](rules/README.md). Those rules are not pasted into the spec. The authoring-rules link is not game content.
 - [ ] The genre and platform profile and index in `design.md`, and the alignment and topic coverage tables in `traceability.md`, are filled in.
 - [ ] Every topic in the coverage table is covered, or marked N/A with a reason grounded in the genre profile or definition.
 - [ ] Every unit spec is listed in the `design.md` index, and every indexed file exists.
@@ -14,9 +17,8 @@ Instructions for agents reviewing the game design ([`specs/design/design.md`](..
 ### Self-contained detail
 
 - [ ] Every rule, character, entity, and behavior is described in full, even for well-known games or genres.
-- [ ] No spec depends on an external reference (named game, wiki, link) to be understood.
-- [ ] Rules are precise: two readers would resolve the same situation identically.
-- [ ] Edge cases and simultaneous events have stated outcomes.
+- [ ] No spec depends on an external reference (named game, wiki, link) to be understood. The authoring-rules link does not count.
+- [ ] Feature rules, sub-game rules, and player stories are precise enough that two readers reach the same outcome. A feature states the outcome of each edge case and simultaneous event.
 - [ ] Every walkthrough in `scenarios/` can be resolved step by step from the other specs.
 
 ### Shared language
@@ -33,20 +35,19 @@ Instructions for agents reviewing the game design ([`specs/design/design.md`](..
 - [ ] End-condition IDs referenced elsewhere exist; precedence covers simultaneous conditions.
 - [ ] Difficulty adjustments reference existing parameters and specs.
 - [ ] Progression persistence agrees with flows, end conditions, and game-state scopes.
-- [ ] No two specs contradict each other.
 
 ### Element IDs
 
-- [ ] Every section listed in [`ids.md`](../../specs/design/ids.md) gives each element an ID in the prescribed form, unique within its spec.
+- [ ] Every section listed in [`ids.md`](rules/design/ids.md) gives each element an ID in the prescribed form, unique within its spec.
 - [ ] Qualified IDs cited anywhere (e.g. `F-movement.R3`) exist.
 
 ### Player stories
 
-Rules: [`stories.md`](../../specs/design/stories.md).
+Rules: [`stories.md`](rules/design/stories.md) and [`story.md`](rules/design/story.md).
 
 - [ ] Every design spec with element IDs has a story file at the mirrored path under `stories/`, listed in the `stories.md` index; no story file lacks a design spec.
 - [ ] Every element ID and name-referenced item (fields, modes, options, tunables) is proven by at least one scenario, and each coverage table agrees with its scenarios' **Proves** lines.
-- [ ] Every requirement in [`story-coverage.md`](../../specs/design/story-coverage.md) is met for each element kind.
+- [ ] Every requirement in [`story-coverage.md`](rules/design/story-coverage.md) is met for each element kind.
 - [ ] Knowledge scenarios state what the player can or cannot know, never how it is shown.
 - [ ] Each scenario has a complete Given, one When (a player verb or design-defined game event; chained only in walkthrough stories), and a Then with concrete values that match `configuration.md` or the Given.
 - [ ] Each scenario is falsifiable: an implementation that breaks the element it proves would fail it. No subjective wording.
@@ -80,6 +81,11 @@ Rules: [`stories.md`](../../specs/design/stories.md).
 
 - [ ] Each file is under 500 words ([`specs/README.md`](../../specs/README.md)); oversized files are split by logical unit and linked.
 
+## Imposed
+
+- [ ] No two specs contradict each other.
+- [ ] A rule outside feature rules, sub-game rules, and player stories is precise enough that two readers would resolve the same situation identically.
+
 ## Verdict
 
 - **Pass**: every check passes.
@@ -93,9 +99,9 @@ Report back in this shape:
 Scope: <whole design | listed files>
 
 Findings:
-- <file>: <failed check> — <suggested fix>
+- <file>: aligned | imposed — <failed check> — <suggested fix>
 
 Notes (optional): <non-blocking observations>
 ```
 
-List only failed checks under Findings. If a check cannot be judged without product-owner input, list it as a finding and mark it `needs clarification`. If the problem is in `vision.md` or the definition rather than the design, say so.
+List only failed checks under Findings. Tag a check that cannot be judged without product-owner input with `needs clarification` as well. If the problem is in `vision.md` or the definition rather than the design, say so. Refinement follows [`alignment.md`](alignment.md).

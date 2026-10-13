@@ -8,6 +8,10 @@ Agents load relevant specs before implementing. If it is not in `specs/`, it mus
 
 Every Markdown file under `specs/` must stay under **500 words**. If content would exceed that, split into multiple focused files and link between them. HTML files under [`ux/mockups/`](ux/mockups/) are visual artifacts and are exempt from the word limit.
 
+## Authoring
+
+Writing rules live in [`.agents/specs/rules/`](../.agents/specs/rules/README.md), one file per document type. Read the matching file before editing a spec. Do not copy those rules into the spec. Each spec links its rules file. Use the `author-spec` skill. Review checklists align with those rules as described in [`.agents/specs/alignment.md`](../.agents/specs/alignment.md).
+
 ## Index
 
 Add a row here for each spec file as it is created.

@@ -1,38 +1,36 @@
 # Loop: <!-- fill in: name -->
 
-<!-- Template: copy to loops/<kebab-name>.md, one file per loop, and delete this line. -->
+<!-- Template: copy to loops/<kebab-name>.md and delete this comment. Keep the authoring-rules line. -->
 
-A repeating cycle of player activity, such as the core loop (seconds to minutes), session loop, or meta loop (across sessions). Rules: [`../design.md`](../design.md#rules-for-every-design-spec).
+Authoring rules: [`.agents/specs/rules/design/loops.md`](../../../.agents/specs/rules/design/loops.md).
 
-- **Level**: <!-- fill in: core / session / meta -->
-- **Timescale**: <!-- fill in: typical duration of one iteration -->
-- **Serves**: <!-- fill in: vision qualities and definition scope items -->
-- **Parent / child loops**: <!-- fill in: links, or "None" -->
+- **Level**: <!-- fill in -->
+- **Timescale**: <!-- fill in -->
+- **Serves**: <!-- fill in -->
+- **Parent / child loops**: <!-- fill in -->
 
 ## Steps
 
-In order. IDs: see [`../ids.md`](../ids.md).
-
 | ID | Player does | Game responds | Player gains or learns |
 |----|-------------|---------------|------------------------|
-| <!-- fill in: K1 --> | <!-- fill in: verb --> | <!-- fill in --> | <!-- fill in --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Motivation
 
-<!-- fill in: why the player wants to repeat this loop; tie to the player fantasy -->
+<!-- fill in -->
 
 ## Inputs and outputs
 
-<!-- fill in: what each iteration consumes and produces (resources, state, progress); link features and game-state fields -->
+<!-- fill in -->
 
 ## Variation
 
-<!-- fill in: what keeps iterations from feeling identical (new content, randomness, escalation, player choice) -->
+<!-- fill in -->
 
 ## Exits
 
-- **E1**: <!-- fill in: one way the player leaves the loop (win, loss, choice, transition) and its condition; link flows and end conditions -->
+- **E1**: <!-- fill in -->
 
 ## Experience intent
 
-<!-- fill in: pacing and tension across one iteration and across many -->
+<!-- fill in -->

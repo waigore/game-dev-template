@@ -1,39 +1,37 @@
 # Scenario: <!-- fill in: name -->
 
-<!-- Template: copy to scenarios/<kebab-name>.md, one file per scenario, and delete this line. -->
+<!-- Template: copy to scenarios/<kebab-name>.md and delete this comment. Keep the authoring-rules line. -->
 
-A defined play setup plus worked walkthroughs that show the design in action. Scenarios prove that specs combine correctly; if a walkthrough cannot be resolved from the other specs, those specs are incomplete. Rules: [`../design.md`](../design.md#rules-for-every-design-spec).
+Authoring rules: [`.agents/specs/rules/design/scenarios.md`](../../../.agents/specs/rules/design/scenarios.md).
 
-- **Kind**: <!-- fill in: mission / puzzle / match setup / encounter / tutorial / other -->
-- **Stage**: <!-- fill in: link, or "N/A" -->
-- **Serves**: <!-- fill in: vision qualities and definition scope items -->
+- **Kind**: <!-- fill in -->
+- **Stage**: <!-- fill in -->
+- **Serves**: <!-- fill in -->
 
 ## Setup
 
-- **Starting state**: <!-- fill in: values of relevant game-state fields; link game-state.md -->
-- **Participants**: <!-- fill in: links to characters and entities -->
-- **Configuration and difficulty**: <!-- fill in: options and difficulty level in effect -->
+- **Starting state**: <!-- fill in -->
+- **Participants**: <!-- fill in -->
+- **Configuration and difficulty**: <!-- fill in -->
 - **Objectives**: <!-- fill in -->
-- **Constraints**: <!-- fill in: limits such as time, resources, or forbidden actions -->
-- **End conditions**: <!-- fill in: link end-conditions.md entries -->
+- **Constraints**: <!-- fill in -->
+- **End conditions**: <!-- fill in -->
 
 ## Walkthroughs
 
-At least one. Include a success path and a failure path where both are possible. Step IDs are `W<walkthrough>.<step>`; see [`../ids.md`](../ids.md).
-
-### Walkthrough 1: <!-- fill in: name, e.g. "Clean win" -->
+### Walkthrough 1: <!-- fill in -->
 
 | ID | Player does | Game responds (rule applied) | Resulting state |
 |----|-------------|------------------------------|-----------------|
-| <!-- fill in: W1.1 --> | <!-- fill in: verb or game event --> | <!-- fill in: link the rule and cite its qualified ID --> | <!-- fill in --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
-- **Outcome**: <!-- fill in: end condition reached and its consequences -->
-- **Player experience**: <!-- fill in: what the player should have felt at key moments -->
+- **Outcome**: <!-- fill in -->
+- **Player experience**: <!-- fill in -->
 
 ## Edge cases covered
 
-<!-- fill in: unusual situations this scenario deliberately exercises, or "None" -->
+<!-- fill in -->
 
 ## Specs exercised
 
-<!-- fill in: links to every feature, character, entity, flow, and condition this scenario depends on -->
+<!-- fill in -->

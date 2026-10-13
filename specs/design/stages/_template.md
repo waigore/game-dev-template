@@ -1,54 +1,52 @@
 # Stage: <!-- fill in: name -->
 
-<!-- Template: copy to stages/<kebab-name>.md, one file per stage or scene, and delete this line. -->
+<!-- Template: copy to stages/<kebab-name>.md and delete this comment. Keep the authoring-rules line. -->
 
-A place or scene where play happens, such as a level, map, arena, room, hub, or chapter. Rules: [`../design.md`](../design.md#rules-for-every-design-spec).
+Authoring rules: [`.agents/specs/rules/design/stages.md`](../../../.agents/specs/rules/design/stages.md).
 
-- **Kind**: <!-- fill in: stage / scene / hub / other -->
-- **Position in flow**: <!-- fill in: link to the flow and phase that contain it -->
-- **Serves**: <!-- fill in: vision qualities and definition scope items -->
+- **Kind**: <!-- fill in -->
+- **Position in flow**: <!-- fill in -->
+- **Serves**: <!-- fill in -->
 
 ## Purpose and theme
 
-<!-- fill in: what this stage introduces, tests, or tells; its mood and setting (link world.md) -->
+<!-- fill in -->
 
 ## Layout
 
-<!-- fill in: conceptual spatial structure (regions, paths, landmarks, chokepoints, scale in game terms). Not an editor or tile spec. N/A for non-spatial scenes. -->
+<!-- fill in -->
 
 ## Contents
 
-IDs: see [`../ids.md`](../ids.md).
-
 | ID | Character / entity | Where | How many | Conditions |
 |----|--------------------|-------|----------|------------|
-| <!-- fill in: C1 --> | <!-- fill in: link --> | <!-- fill in: region --> | <!-- fill in --> | <!-- fill in: e.g. "after alarm", or "Always" --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Objectives
 
-- **O1** (primary): <!-- fill in: objective and the game-state condition that completes it -->
-- **O2** (optional): <!-- fill in, or delete -->
+- **O1**: <!-- fill in -->
+- **O2**: <!-- fill in -->
 
 ## Stage rules
 
-- **R1**: <!-- fill in: a rule that applies only here or overrides a feature (e.g. "no healing"); link the overridden feature and cite its rule ID, or write "None" -->
+- **R1**: <!-- fill in -->
 
 ## Entry and exit
 
-- **N1**: <!-- fill in: entry conditions and starting state; add one entry per exit with its condition. Transitions themselves live in flows/ -->
+- **N1**: <!-- fill in -->
 
 ## Pacing
 
 | ID | Beat | Where | Triggered when | What happens | Intended intensity |
 |----|------|-------|----------------|--------------|--------------------|
-| <!-- fill in: B1 --> | <!-- fill in: e.g. Intro --> | <!-- fill in --> | <!-- fill in: game-state condition or event --> | <!-- fill in --> | <!-- fill in: low / rising / peak / rest --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 - **Expected duration**: <!-- fill in -->
 
 ## Difficulty variation
 
-<!-- fill in: how contents, rules, or objectives change by difficulty level; link difficulty.md -->
+<!-- fill in -->
 
 ## Experience intent
 
-<!-- fill in: what the player should feel entering, playing, and leaving this stage -->
+<!-- fill in -->

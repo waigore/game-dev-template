@@ -25,7 +25,7 @@ Review one spec document or the whole spec set and report the result to whoever 
    - **Specific doc**: find its row in the spec index. A file inside a spec's folder (e.g. `specs/design/flows/run.md`) uses that spec's review instructions, scoped to the file.
    - **Whole spec**: every spec in the index, reviewed upstream first (in index order).
    - If a target has no review instructions, do not invent criteria; report it as not reviewable.
-2. **Review**: follow the linked review instructions exactly, including their upstream reading and report shape.
+2. **Review**: read [`.agents/specs/alignment.md`](../../specs/alignment.md), then follow the linked review instructions exactly, including their upstream reading and report shape. Run the aligned checks and the imposed conditions. Tag each finding `aligned` or `imposed`. Do not invent an imposed condition, a section, or a required field.
 3. **Summarize**: for a whole-spec review, open with an overall verdict (Fail if any spec fails), then each spec's report. Note when a downstream finding may stem from an upstream failure.
 4. **Report back to the source of the request**:
    - **Chat**: reply with the report.
@@ -35,5 +35,6 @@ Review one spec document or the whole spec set and report the result to whoever 
 ## Rules
 
 - Read-only: do not edit specs while reviewing. Fixes happen in a separate step.
+- Writing rules live in [`.agents/specs/rules/`](../../specs/rules/README.md), not in the spec. Do not treat a missing rules section inside the spec as a defect. Fail a spec that pastes those rules back in, or that drops its authoring-rules link. [alignment.md](../../specs/alignment.md) is the contract between those rules and the checklist.
 - Do not change issue labels or status; callers that run the issue workflow gate status themselves via [`enforce-task-workflow-status`](../enforce-task-workflow-status/SKILL.md).
 - Use the report shape defined by the review instructions; do not restate their checklists here or in the report.

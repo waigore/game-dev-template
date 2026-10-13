@@ -1,41 +1,39 @@
 # Entity: <!-- fill in: name -->
 
-<!-- Template: copy to entities/<kebab-name>.md, one file per entity or tight entity group, and delete this line. -->
+<!-- Template: copy to entities/<kebab-name>.md and delete this comment. Keep the authoring-rules line. -->
 
-The single definition of a non-character thing in the game: item, pickup, object, hazard, terrain feature, or resource. Other specs link here. Rules: [`../design.md`](../design.md#rules-for-every-design-spec).
+Authoring rules: [`.agents/specs/rules/design/entities.md`](../../../.agents/specs/rules/design/entities.md).
 
-- **Kind**: <!-- fill in: item / pickup / object / hazard / terrain / resource -->
-- **Serves**: <!-- fill in: vision qualities and definition scope items -->
-- **Glossary terms**: <!-- fill in: links to ../glossary.md -->
+- **Kind**: <!-- fill in -->
+- **Serves**: <!-- fill in -->
+- **Glossary terms**: <!-- fill in -->
 
 ## Purpose
 
-<!-- fill in: why this entity exists and what decision or experience it creates for the player -->
+<!-- fill in -->
 
 ## Properties
 
-Values are defined in [`../configuration.md`](../configuration.md); reference them by name. IDs: see [`../ids.md`](../ids.md).
-
 | ID | Property | Meaning | Parameter |
 |----|----------|---------|-----------|
-| <!-- fill in: P1 --> | <!-- fill in --> | <!-- fill in: what it governs --> | <!-- fill in: configuration parameter name --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Lifecycle and states
 
 | ID | State | Entered when | Behavior in state | Exits to |
 |----|-------|--------------|-------------------|----------|
-| <!-- fill in: S1 --> | <!-- fill in: e.g. Spawned / Active / Consumed --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Interactions
 
 | ID | Interacts with | Trigger | Outcome |
 |----|----------------|---------|---------|
-| <!-- fill in: I1 --> | <!-- fill in: character, entity, or feature link --> | <!-- fill in --> | <!-- fill in: precise rule --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Placement and availability
 
-<!-- fill in: where and when it appears, how many, limits or rarity, and whether placement is fixed or random -->
+<!-- fill in -->
 
 ## Experience intent
 
-<!-- fill in: how it should come across to the player; intent only -->
+<!-- fill in -->
