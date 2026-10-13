@@ -4,7 +4,7 @@ Project and process documentation (labels, issues, skills, repo setup). Product/
 
 ## Concise docs
 
-Every file under `docs/` must stay under **500 words**. If content would exceed that, split into multiple focused files and link between them.
+Every file under `docs/` must stay under **500 words**. If content would exceed that, split into multiple focused files and link between them. CI enforces this for Markdown ([`word-limit.yml`](../.github/workflows/word-limit.yml)); run `bash .github/scripts/check-word-limit.sh` locally.
 
 ## Index
 

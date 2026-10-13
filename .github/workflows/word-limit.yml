@@ -1,0 +1,60 @@
+name: Word limit
+
+# Enforces the 500-word limit on every Markdown file under docs/ and specs/.
+# Runs on every PR so it can be a required check; skips the scan when the
+# change touches nothing relevant.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  word-limit:
+    name: Word limit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect docs/specs changes
+        id: changes
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          base=""
+          case "$EVENT" in
+            pull_request) base="HEAD^1" ;;
+            push)
+              if [[ -n "$BEFORE" && ! "$BEFORE" =~ ^0+$ ]] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+                base="$BEFORE"
+              fi
+              ;;
+          esac
+
+          if [[ -z "$base" ]]; then
+            echo "No comparable base; checking all files."
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          changed="$(git diff --name-only "$base" HEAD -- docs specs .github/scripts/check-word-limit.sh .github/workflows/word-limit.yml)"
+          if [[ -n "$changed" ]]; then
+            echo "Relevant changes:"
+            echo "$changed"
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No docs/specs changes; skipping word limit check."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check word limit
+        if: steps.changes.outputs.run == 'true'
+        run: bash .github/scripts/check-word-limit.sh docs specs

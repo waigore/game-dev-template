@@ -60,7 +60,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **Architecture decisions**: engine, framework, library, storage, integration, and game-architecture choices are ADRs in [`specs/adr/`](specs/adr/adr.md). Only Accepted ADRs authorize code. Do not read `specs/adr/archive/` unless explicitly asked.
 - **Playtesting**: AI-agent playtests against design and UX per [`specs/playtest/`](specs/playtest/playtest.md); evidence under [`docs/playtest/evidence/`](docs/playtest/evidence/). Required at acceptance only when deliverables change playable behavior.
 - **Technical design**: code and data shape (layers, modules, components, contracts, schemata, sequences) live in [`specs/technical/`](specs/technical/technical.md), downstream of definition, design, view, UX, and Accepted ADRs.
-- **Concise docs/specs**: every file under `docs/` and `specs/` stays under **500 words**; split and link if longer. Details: [`docs/README.md`](docs/README.md), [`specs/README.md`](specs/README.md).
+- **Concise docs/specs**: every file under `docs/` and `specs/` stays under **500 words**; split and link if longer. CI enforces it for Markdown (`Word limit` check). Details: [`docs/README.md`](docs/README.md), [`specs/README.md`](specs/README.md).
 - **SOLID code**: follow [`docs/solid.md`](docs/solid.md). Review with `review-solid-code` (also run from `verify-project-issue` when a PR has code changes).
 
 ---
