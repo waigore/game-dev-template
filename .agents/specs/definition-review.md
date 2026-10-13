@@ -35,6 +35,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 - [ ] Design, technical, and market subsections each have at least one constraint or state "None".
 - [ ] Each constraint has a one-line reason.
 - [ ] Constraints do not contradict each other or the scope.
+- [ ] A constraint imposed by an architecture decision cites an ADR ID that exists in [`specs/adr/decisions/`](../../specs/adr/decisions/).
 
 ### Quality expectations
 
@@ -44,6 +45,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 - [ ] An N/A row uses "—" for target, platforms, and how checked.
 - [ ] Rows for the same category do not contradict each other, the constraints, or the vision.
 - [ ] Targets are observable outcomes. No architecture, engines, data formats, or APIs.
+- [ ] A target set or limited by an architecture decision cites an ADR ID that exists in [`specs/adr/decisions/`](../../specs/adr/decisions/).
 
 ### Consistency with vision
 

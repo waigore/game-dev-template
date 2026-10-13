@@ -74,7 +74,7 @@ Rules: [`stories.md`](rules/design/stories.md) and [`story.md`](rules/design/sto
 ### Scope boundaries
 
 - [ ] No UX design: no screens, menus, layouts, widgets, or input bindings. Player actions are verbs. Interface structure belongs in [`specs/ux/`](../../specs/ux/ux.md).
-- [ ] No technical design: no engines, frameworks, code, data formats, or storage.
+- [ ] No technical design: no engines, frameworks, code, data formats, or storage. A limit imposed by an architecture decision is stated in design terms and cites an ADR ID that exists in [`specs/adr/decisions/`](../../specs/adr/decisions/).
 - [ ] Presentation appears only as experience intent.
 
 ### Format
