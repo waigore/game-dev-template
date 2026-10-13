@@ -15,7 +15,7 @@ Authoring rules: [`.agents/specs/rules/ux/controls.md`](../../.agents/specs/rule
 
 ## Bindings
 
-| ID | Platform | Input | UI action |
+| ID | Platform | Input | Action |
 |----|----------|-------|-----------|
 | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 

@@ -29,6 +29,7 @@ Performance, load time, and reliability stay in this file.
 - A rule-changing assist or timing option: a row in `specs/design/configuration.md`.
 - Save durability: what is committed, when it becomes permanent, and where play resumes, in `specs/design/progression.md`.
 - How the interface presents accessibility, localization, and save failure: `specs/ux/ux.md` and the UX rules that cover those topics.
+- Motion comfort and non-audio equivalents of positional sound: `specs/view/perception.md` and `specs/view/audio.md`.
 
 ## Splitting
 

@@ -18,9 +18,9 @@ Columns: ID, action name, and meaning.
 
 One row per input that activates an action, for each platform the definition lists. IDs `B1`, `B2`, ….
 
-Columns: platform (from the definition), the input (for example keyboard Enter, pointer click, or gamepad South), and the UI action.
+Columns: platform (from the definition), the input (for example keyboard Enter, pointer click, or gamepad South), and the action: a UI action from this file, or a camera action (`CC.<name>`) from `specs/view/camera-controls.md`.
 
-On that platform, the input activates the named UI action and no other action.
+On that platform, the input activates the named action and no other action. Each primary platform has at least one binding for every camera action the view defines. What a camera action does stays in the view.
 
 ## Focus
 
