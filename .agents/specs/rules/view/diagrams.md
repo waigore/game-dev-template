@@ -8,6 +8,8 @@ Diagrams let a reader see the frame, the projection, and the camera geometry the
 
 ## Files
 
+Which diagrams exist follows spec depth, per [depth.md](../depth.md).
+
 - **Projection**: fill `diagrams/projection.html` in place. It is a global diagram, like `projection.md`.
 - **Camera**: copy `diagrams/cameras/_template.html` to `diagrams/cameras/<kebab-name>.html`, one per camera spec. Do not fill the template in place. Delete the template comment from the copy.
 

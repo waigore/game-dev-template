@@ -20,6 +20,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] No spec depends on an external reference (named game, wiki, link) to be understood. The authoring-rules link does not count.
 - [ ] Feature rules, sub-game rules, and player stories are precise enough that two readers reach the same outcome. A feature states the outcome of each edge case and simultaneous event.
 - [ ] Every walkthrough in `scenarios/` can be resolved step by step from the other specs.
+- [ ] Scenarios meet the minimum for the definition's spec depth in [`depth.md`](rules/depth.md).
 
 ### Shared language
 
@@ -45,9 +46,10 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 Rules: [`stories.md`](rules/design/stories.md) and [`story.md`](rules/design/story.md).
 
-- [ ] Every design spec with element IDs has a story file at the mirrored path under `stories/`, listed in the `stories.md` index; no story file lacks a design spec.
-- [ ] Every element ID and name-referenced item (fields, modes, options, tunables) is proven by at least one scenario, and each coverage table agrees with its scenarios' **Proves** lines.
-- [ ] Every requirement in [`story-coverage.md`](rules/design/story-coverage.md) is met for each element kind.
+- [ ] Every design spec with element IDs is a row in the `stories.md` index with core and coverage. The specs marked core include at least those [`depth.md`](rules/depth.md) names, and each coverage level meets the minimum for the definition's spec depth.
+- [ ] Every spec whose coverage is not None has a story file at the mirrored path under `stories/`; no story file lacks a design spec.
+- [ ] In each story file, every element ID and name-referenced item (fields, modes, options, tunables) is proven by at least one scenario, and the coverage table agrees with its scenarios' **Proves** lines.
+- [ ] For each spec at Full coverage, every requirement in [`story-coverage.md`](rules/design/story-coverage.md) is met for each element kind.
 - [ ] Knowledge scenarios state what the player can or cannot know, never how it is shown.
 - [ ] Each scenario has a complete Given, one When (a player verb or design-defined game event; chained only in walkthrough stories), and a Then with concrete values that match `configuration.md` or the Given.
 - [ ] Each scenario is falsifiable: an implementation that breaks the element it proves would fail it. No subjective wording.

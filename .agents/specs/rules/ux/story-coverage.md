@@ -6,7 +6,9 @@ Also read [stories.md](stories.md) and [ids.md](ids.md).
 
 Every element is proven, not only mentioned.
 
-## Baseline
+This file is the Full coverage level. A spec at Baseline or None follows [depth.md](../depth.md) instead. The `stories.md` index records each spec's level.
+
+## Every element
 
 Every element ID and every named item (exceptions and UI actions) is proven by at least one scenario in the story file of the spec that defines it. Requirements below are cumulative.
 

@@ -2,7 +2,7 @@
 
 Read this before editing `specs/view/stories.md`. Do not copy these rules into the spec.
 
-Also read [view.md](view.md), [ids.md](ids.md), and [story-coverage.md](story-coverage.md). A single story file follows [story.md](story.md).
+Also read [view.md](view.md), [ids.md](ids.md), [story-coverage.md](story-coverage.md), and [depth.md](../depth.md). A single story file follows [story.md](story.md).
 
 View stories are concrete, testable behavior of space, camera, projection, physical feel, perception, sound placement, and haptics, written as Given/When/Then and traced to the view element IDs they prove. Player stories under `specs/design/stories.md` cover game logic. User stories under `specs/ux/stories.md` cover the interface.
 
@@ -19,14 +19,20 @@ View stories are concrete, testable behavior of space, camera, projection, physi
 
 ## Coverage
 
-Every element ID and named item in a view spec is proven by scenarios in that spec's story file, as [story-coverage.md](story-coverage.md) requires. The coverage table agrees with the scenarios' **Proves** lines. Sections without IDs are judged during review and acceptance.
+Each view spec with element IDs is core or not, and has a coverage level of Full, Baseline, or None — reason. Spec depth sets the minimum for each, per [depth.md](../depth.md). Choose per spec.
+
+- **Full**: every element ID and named item is proven as [story-coverage.md](story-coverage.md) requires.
+- **Baseline**: every element ID and named item is proven by at least one scenario that shows its stated outcome.
+- **None**: no story file.
+
+The coverage table agrees with the scenarios' **Proves** lines. Sections without IDs are judged during review and acceptance.
 
 ## Files
 
-One story file per view spec that has element IDs, at the same relative path under `specs/view/stories/`. `cameras/follow.md` → `stories/cameras/follow.md`. `physics.md` → `stories/physics.md`. Copy `stories/_template.md`.
+One story file per view spec that has element IDs and coverage other than None, at the same relative path under `specs/view/stories/`. `cameras/follow.md` → `stories/cameras/follow.md`. `physics.md` → `stories/physics.md`. Copy `stories/_template.md`.
 
 A story that spans several specs lives in the file of the spec whose element it mainly proves, and cites the others with qualified IDs.
 
-`stories.md` is the index of those files, grouped as in the view index. If the index pushes the file past 500 words, move it to `stories/index.md` and leave a link.
+`stories.md` is the index: one row per view spec that has element IDs, grouped as in the view index. Columns: the view spec link, core (yes or no), coverage (Full, Baseline, or None — reason), and the story file link (or "—" when None). If the index pushes the file past 500 words, move it to `stories/index.md` and leave a link.
 
 Every indexed story file exists, and every story file has a view spec.

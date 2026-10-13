@@ -14,7 +14,7 @@ Copy `specs/view/stories/_template.md` to the mirrored path of the view spec. On
 
 ## Coverage table
 
-One row per element ID and named item the view spec defines. Columns are element (such as `F1` or `CC.orbit`), a short summary, and the scenario IDs that prove it (such as `VS1.1`, `VS1.2`). The table matches each scenario's **Proves** line. Meet every requirement in [story-coverage.md](story-coverage.md) for that element's kind.
+One row per element ID and named item the view spec defines. Columns are element (such as `F1` or `CC.orbit`), a short summary, and the scenario IDs that prove it (such as `VS1.1`, `VS1.2`). The table matches each scenario's **Proves** line. At Full coverage, meet every requirement in [story-coverage.md](story-coverage.md) for that element's kind. At Baseline, each row needs at least one scenario. The spec's coverage level is in the `stories.md` index.
 
 ## Stories
 

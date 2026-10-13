@@ -8,7 +8,7 @@ How world space becomes the image on the player's display, and how much of the w
 
 ## Header
 
-- **Diagram**: `diagrams/projection.html`. Follow [diagrams.md](diagrams.md).
+- **Diagram**: `diagrams/projection.html`. Follow [diagrams.md](diagrams.md). When spec depth requires no diagram, write "None — spec depth \<level\>", per [depth.md](../depth.md).
 
 ## Sections
 

@@ -2,7 +2,7 @@
 
 Read this before editing `specs/design/stories.md`. Do not copy these rules into the spec.
 
-Also read [design.md](design.md), [ids.md](ids.md), and [story-coverage.md](story-coverage.md). A single story file follows [story.md](story.md).
+Also read [design.md](design.md), [ids.md](ids.md), [story-coverage.md](story-coverage.md), and [depth.md](../depth.md). A single story file follows [story.md](story.md).
 
 Player stories are concrete, testable game behavior, written as Given/When/Then and traced to the design element IDs they prove. They cover game logic and mechanics. Interface behavior is a user story under `specs/ux/`. Camera, projection, and physical feel are view stories under `specs/view/`.
 
@@ -19,14 +19,20 @@ Player stories are concrete, testable game behavior, written as Given/When/Then 
 
 ## Coverage
 
-Every element ID and name-referenced item in a design spec is proven by scenarios in that spec's story file, as [story-coverage.md](story-coverage.md) requires. The coverage table agrees with the scenarios' **Proves** lines. Sections without IDs are judged during review and acceptance, not by stories.
+Each design spec with element IDs is core or not, and has a coverage level of Full, Baseline, or None — reason. Spec depth sets the minimum for each, per [depth.md](../depth.md). Choose per spec.
+
+- **Full**: every element ID and name-referenced item is proven as [story-coverage.md](story-coverage.md) requires.
+- **Baseline**: every element ID and name-referenced item is proven by at least one scenario that shows its stated outcome.
+- **None**: no story file.
+
+The coverage table agrees with the scenarios' **Proves** lines. Sections without IDs are judged during review and acceptance, not by stories.
 
 ## Files
 
-One story file per design spec that has element IDs, at the same relative path under `specs/design/stories/`. `features/movement.md` → `stories/features/movement.md`. `end-conditions.md` → `stories/end-conditions.md`. Copy `stories/_template.md`.
+One story file per design spec that has element IDs and coverage other than None, at the same relative path under `specs/design/stories/`. `features/movement.md` → `stories/features/movement.md`. `end-conditions.md` → `stories/end-conditions.md`. Copy `stories/_template.md`.
 
 A story that spans several specs lives in the file of the spec whose element it mainly proves. It cites the other specs' elements with qualified IDs.
 
-`stories.md` is the index of those files, grouped as in the design index. If the index pushes the file past 500 words, move it to `stories/index.md` and leave a link.
+`stories.md` is the index: one row per design spec that has element IDs, grouped as in the design index. Columns: the design spec link, core (yes or no), coverage (Full, Baseline, or None — reason), and the story file link (or "—" when None). If the index pushes the file past 500 words, move it to `stories/index.md` and leave a link.
 
 Every indexed story file exists, and every story file has a design spec.

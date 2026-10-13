@@ -44,6 +44,10 @@ Authoring rules: [`.agents/specs/rules/definition.md`](../../.agents/specs/rules
 
 - <!-- fill in --> — <!-- fill in -->
 
+## Spec depth
+
+- **Depth**: <!-- fill in --> — <!-- fill in -->
+
 ## Quality expectations
 
 [`quality.md`](quality.md).

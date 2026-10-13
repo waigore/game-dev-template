@@ -10,7 +10,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 
 - [ ] No `<!-- fill in -->` placeholders remain; unused template rows are deleted.
 - [ ] `definition.md` links [`rules/definition.md`](rules/definition.md), and `quality.md` links [`rules/quality.md`](rules/quality.md). Those rules are not pasted into the spec. A split file uses the rules file of the spec it came from.
-- [ ] Every section is present: scope, objectives, supported platforms, constraints, quality expectations.
+- [ ] Every section is present: scope, objectives, supported platforms, constraints, spec depth, quality expectations.
 - [ ] [`quality.md`](../../specs/definition/quality.md) is linked from the quality expectations section and listed in [`specs/README.md`](../../specs/README.md).
 - [ ] Split sections are linked from `definition.md` with a one-line summary and listed in [`specs/README.md`](../../specs/README.md).
 
@@ -37,10 +37,14 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 - [ ] Constraints do not contradict each other or the scope.
 - [ ] A constraint imposed by an architecture decision cites an ADR ID that exists in [`specs/adr/decisions/`](../../specs/adr/decisions/).
 
+### Spec depth
+
+- [ ] Depth is one of `prototype`, `small`, or `full` ([`rules/depth.md`](rules/depth.md)), with a one-line reason grounded in the scope, product objectives, or constraints.
+
 ### Quality expectations
 
 - [ ] Performance, load time / latency, reliability, save durability, accessibility, and localization are each present in [`quality.md`](../../specs/definition/quality.md).
-- [ ] Each category is Applies, or N/A with a reason that cites the vision or the supported platforms.
+- [ ] Each category is Applies, or N/A with a reason that cites the vision or the supported platforms. At prototype depth, a category other than performance may instead cite spec depth.
 - [ ] Each Applies row has a measurable target, the platforms it covers, and a how-checked method. Platforms match the supported-platforms table.
 - [ ] An N/A row uses "—" for target, platforms, and how checked.
 - [ ] Rows for the same category do not contradict each other, the constraints, or the vision.

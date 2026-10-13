@@ -6,6 +6,8 @@ Specs and `_template` files keep a section skeleton and an authoring-rules link.
 
 Before creating or editing a file under `specs/`, read the rules file for its path in the table below, then every file named in that rules file's **Also read** line. Follow the [`author-spec`](../../skills/author-spec/SKILL.md) skill. How these rules relate to the review checklists is [alignment.md](../alignment.md).
 
+Spec depth (`prototype`, `small`, or `full`) is set in `specs/definition/definition.md`. [depth.md](depth.md) states how it scales story coverage, mockups, and diagrams. A rules file that says a requirement follows spec depth defers to it.
+
 Match the most specific path. A file split out from a spec uses the rules file of the spec it came from. For example, `specs/definition/quality/performance.md` uses [quality.md](quality.md), and `specs/design/glossary/combat.md` uses [design/glossary.md](design/glossary.md).
 
 Do not paste these rules into a spec. Do not edit a `_template` file to hold one game's content. Copy the template, then fill the copy.

@@ -8,6 +8,8 @@ How HTML mockups are produced and bound to a visual system.
 
 Mockups are views of the UX, for reading the flow. They are not the implementation. They add no behavior the specs omit. When a mockup and a spec disagree, the spec wins and the mockup changes. HTML under `specs/ux/mockups/` is exempt from the 500-word limit.
 
+Which screens and journeys get a mockup follows spec depth, per [depth.md](../depth.md). When spec depth requires no mockup, write "None — spec depth \<level\>" under Binding and Surfaces, and skip the rest of this file.
+
 ## Binding
 
 Record the [Open Design](https://github.com/nexu-io/open-design) choices for this game in `presentation.md`. Do not add `.open-design.json` at the repository root. That file would bind every design task in the repo to one artifact. `presentation.md` is the binding. A root `.open-design.json` does not replace it.
@@ -22,7 +24,7 @@ Record the [Open Design](https://github.com/nexu-io/open-design) choices for thi
 | Meta UI: menus, onboarding, settings, results | The UI keys. Template: `mobile-app` when the primary platform is a phone or tablet; `web-prototype` when it is a desktop or web window. Craft: `state-coverage`, accessibility. |
 | Play UI: HUD and in-play overlays | The UI keys. Template: `mockups/screens/_template.html`, using this design system's color, typography, and components. Craft: `state-coverage`, accessibility. |
 
-When the definition lists both a phone platform and a desktop platform, give each platform its own row and its own mockup, named `<screen>.<platform>.html`.
+When the definition lists both a phone platform and a desktop platform, give each platform its own row and its own mockup, named `<screen>.<platform>.html`. At small spec depth, only primary platforms get a row and a mockup.
 
 ## Producing a mockup
 

@@ -8,6 +8,8 @@ Copy the template to `scenarios/<kebab-name>.md`, one file per scenario. Do not 
 
 A scenario is a defined play setup plus worked walkthroughs that show the design in action. Scenarios prove that specs combine. If a walkthrough cannot be resolved step by step from the other specs, those specs are incomplete.
 
+How many scenarios are needed follows spec depth, per [depth.md](../depth.md).
+
 ## Header
 
 - **Kind**: mission, puzzle, match setup, encounter, tutorial, or other.
