@@ -72,7 +72,7 @@ Rules: [`stories.md`](../../specs/design/stories.md).
 
 ### Scope boundaries
 
-- [ ] No UX design: no screens, menus, layouts, widgets, or input bindings. Player actions are verbs.
+- [ ] No UX design: no screens, menus, layouts, widgets, or input bindings. Player actions are verbs. Interface structure belongs in [`specs/ux/`](../../specs/ux/ux.md).
 - [ ] No technical design: no engines, frameworks, code, data formats, or storage.
 - [ ] Presentation appears only as experience intent.
 

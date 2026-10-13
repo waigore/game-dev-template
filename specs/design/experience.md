@@ -1,6 +1,6 @@
 # Experience and Feel
 
-The intended player experience across the game: pacing, feedback, and presentation intent. Intent only: no screen layouts, interface widgets, asset specs, or technology. Rules: [`design.md`](design.md#rules-for-every-design-spec).
+The intended player experience across the game: pacing, feedback, and presentation intent. Intent only: no screen layouts, interface widgets, asset specs, or technology. Layouts and controls live in [`../ux/ux.md`](../ux/ux.md). Rules: [`design.md`](design.md#rules-for-every-design-spec).
 
 ## Experience goals
 
