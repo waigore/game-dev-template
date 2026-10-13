@@ -54,6 +54,8 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **Branch protection**: `main` is protected; changes land via PR only. First-time remote setup: [`docs/github-repo-setup.md`](docs/github-repo-setup.md) (`setup-github-repo` skill).
 - **Small PRs**: prefer focused, testable changes; keep PRs under ~30 files — split if larger.
 - **Spec first**: if it is not in `specs/`, it must not be in the code.
+- **Spec authoring**: before writing or editing a file under `specs/`, read its rules file from [`.agents/specs/rules/README.md`](.agents/specs/rules/README.md) (`author-spec` skill). Do not copy those rules into the spec. When applying a failed spec review, follow [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
+- **Spec review**: review a spec with the `review-spec` skill, using the checklist linked from [`specs/README.md`](specs/README.md) and [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
 - **Concise docs/specs**: every file under `docs/` and `specs/` stays under **500 words**; split and link if longer. Details: [`docs/README.md`](docs/README.md), [`specs/README.md`](specs/README.md).
 
 ---

@@ -1,33 +1,29 @@
 # Actor: <!-- fill in: name -->
 
-<!-- Template: copy to actors/<kebab-name>.md, one file per person who operates the interface, and delete this line. -->
+<!-- Template: copy to actors/<kebab-name>.md and delete this comment. Keep the authoring-rules line. -->
 
-A person who uses the interface, such as the player, a local co-player, a spectator, or someone on a first run. Game characters stay in [`../../design/characters/`](../../design/characters/). Rules: [`../ux.md`](../ux.md#rules-for-every-ux-spec).
+Authoring rules: [`.agents/specs/rules/ux/actors.md`](../../../.agents/specs/rules/ux/actors.md).
 
-- **Serves**: <!-- fill in: vision audience, qualities, and definition scope items -->
-- **Platforms**: <!-- fill in: platforms from the definition this actor uses -->
-- **Glossary terms**: <!-- fill in: links to ../glossary.md -->
+- **Serves**: <!-- fill in -->
+- **Platforms**: <!-- fill in -->
+- **Glossary terms**: <!-- fill in -->
 
 ## Who they are
 
-<!-- fill in: one paragraph. How this person differs from other actors. Link the vision audience this role comes from. -->
+<!-- fill in -->
 
 ## Goals
 
-What they are trying to finish through the interface. Goals carry no IDs. Review judges them.
-
-- <!-- fill in: goal, in the actor's terms -->
+- <!-- fill in -->
 
 ## Can operate
 
-IDs: see [`../ids.md`](../ids.md).
-
-- **C1**: <!-- fill in: which screens or kinds of control this actor may use; link the screens -->
+- **C1**: <!-- fill in -->
 
 ## Cannot operate
 
-- **K1**: <!-- fill in: which controls or screens this actor must not activate, and what the interface does instead -->
+- **K1**: <!-- fill in -->
 
 ## Relationship to play
 
-<!-- fill in: link the design character this actor controls or watches, or "None". Do not restate that character's actions. -->
+<!-- fill in -->

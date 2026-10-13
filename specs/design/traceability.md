@@ -1,18 +1,14 @@
 # Design Traceability
 
-How the design aligns with [`../vision.md`](../vision.md) and [`../definition/definition.md`](../definition/definition.md), and which specs cover each required topic. Rules: [`design.md`](design.md#rules-for-every-design-spec).
+Authoring rules: [`.agents/specs/rules/design/traceability.md`](../../.agents/specs/rules/design/traceability.md).
 
 ## Alignment
 
-Every essential quality, in-scope item, and player objective must be served by at least one spec. Nothing may serve only a non-goal or out-of-scope item.
-
 | Upstream item | Source | Served by |
 |---------------|--------|-----------|
-| <!-- fill in: quality / scope item / objective --> | <!-- vision / definition --> | <!-- fill in: links to design specs --> |
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Topic coverage
-
-Each topic is either covered or marked N/A with a reason grounded in the genre and platform profile in [`design.md`](design.md) or the definition. Fill each Applicability cell with "Applies" or "N/A — reason".
 
 | Topic | Covered in | Applicability |
 |-------|------------|---------------|
@@ -32,7 +28,3 @@ Each topic is either covered or marked N/A with a reason grounded in the genre a
 | Economy and resources | [`features/`](features/) | <!-- fill in --> |
 | Opponent and NPC behavior | [`characters/`](characters/), [`features/`](features/) | <!-- fill in --> |
 | Experience and feel | [`experience.md`](experience.md) | <!-- fill in --> |
-
-## Splitting this document
-
-If this file passes 500 words, move the alignment table to `traceability/alignment.md`, leave a one-line summary and link here, and update [`design.md`](design.md).

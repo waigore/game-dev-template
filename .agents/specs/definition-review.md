@@ -1,12 +1,15 @@
 # Reviewing `specs/definition/`
 
-Instructions for agents reviewing the game definition ([`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md)) and any files split out beside them. Read [`specs/vision.md`](../../specs/vision.md) first. Run every check, then report a verdict.
+Instructions for agents reviewing the game definition ([`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md)) and any files split out beside them. Authoring rules: [`rules/definition.md`](rules/definition.md) and [`rules/quality.md`](rules/quality.md). Follow [`alignment.md`](alignment.md). Each spec links its rules file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md) first. Run every check, then report a verdict.
 
-## Checklist
+## Aligned
+
+Same sections and required content as [`rules/definition.md`](rules/definition.md) and [`rules/quality.md`](rules/quality.md). File-level requirements in [`alignment.md`](alignment.md) hold.
 
 ### Completeness
 
 - [ ] No `<!-- fill in -->` placeholders remain; unused template rows are deleted.
+- [ ] `definition.md` links [`rules/definition.md`](rules/definition.md), and `quality.md` links [`rules/quality.md`](rules/quality.md). Those rules are not pasted into the spec. A split file uses the rules file of the spec it came from.
 - [ ] Every section is present: scope, objectives, supported platforms, constraints, quality expectations.
 - [ ] [`quality.md`](../../specs/definition/quality.md) is linked from the quality expectations section and listed in [`specs/README.md`](../../specs/README.md).
 - [ ] Split sections are linked from `definition.md` with a one-line summary and listed in [`specs/README.md`](../../specs/README.md).
@@ -47,12 +50,15 @@ Instructions for agents reviewing the game definition ([`specs/definition/defini
 - [ ] In-scope items do not serve only a vision non-goal.
 - [ ] Out-of-scope items do not remove something an essential quality depends on.
 - [ ] Objectives support the elevator pitch and player fantasy.
-- [ ] Nothing contradicts the vision's essential qualities or tradeoffs.
 
 ### Format
 
 - [ ] `definition.md` reads as roughly one page. Each file is under 500 words ([`specs/README.md`](../../specs/README.md)).
 - [ ] No technical details (architecture, engine systems, data formats, APIs). Technical *constraints* are fine.
+
+## Imposed
+
+- [ ] Nothing in the definition contradicts the vision's essential qualities or tradeoffs, beyond the explicit scope, objective, and constraint checks above.
 
 ## Verdict
 
@@ -65,9 +71,9 @@ Report back in this shape:
 **Definition review: Pass | Fail**
 
 Findings:
-- <section>: <failed check> — <suggested fix>
+- <section>: aligned | imposed — <failed check> — <suggested fix>
 
 Notes (optional): <non-blocking observations>
 ```
 
-List only failed checks under Findings. If a check cannot be judged without product-owner input, list it as a finding and mark it `needs clarification`. If the problem is in `vision.md` rather than the definition, say so.
+List only failed checks under Findings. Tag a check that cannot be judged without product-owner input with `needs clarification` as well. If the problem is in `vision.md` rather than the definition, say so. Refinement follows [`alignment.md`](alignment.md).

@@ -1,6 +1,6 @@
 # UX Glossary
 
-Shared language for UX specs. Each term is defined once here. Other specs use it exactly and link here. Rules: [`ux.md`](ux.md#rules-for-every-ux-spec). Game terms stay in [`../design/glossary.md`](../design/glossary.md).
+Authoring rules: [`.agents/specs/rules/ux/glossary.md`](../../.agents/specs/rules/ux/glossary.md).
 
 ## Terms
 
@@ -15,10 +15,4 @@ Shared language for UX specs. Each term is defined once here. Other specs use it
 | Region | A named part of a screen that shows specific content. | the screen spec |
 | Screen | One interface surface with one job. | [`screens/`](screens/) |
 | UI action | A named interface command, such as confirm or back. | [`controls.md`](controls.md) |
-| <!-- fill in: term --> | <!-- fill in: one sentence --> | <!-- fill in: link, or "here" --> |
-
-Keep added rows alphabetical. One term per concept.
-
-## Splitting this document
-
-If this file passes 500 words, split added terms into `glossary/<domain>.md`, keep this file as the index, and update links.
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |

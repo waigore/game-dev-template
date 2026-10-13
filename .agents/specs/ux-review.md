@@ -1,12 +1,15 @@
 # Reviewing `specs/ux/`
 
-Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/ux/ux.md) and every file under [`specs/ux/`](../../specs/ux/)). Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md), and [`specs/design/design.md`](../../specs/design/design.md) first. When a UX file cites a design element, read that design spec. A review may cover the whole UX or named files. Cross-spec checks always consider the whole UX. Skip `_template.md` and `_template.html`. Run every check, then report a verdict.
+Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/ux/ux.md) and every file under [`specs/ux/`](../../specs/ux/)). Authoring rules for each file are in [`rules/README.md`](rules/README.md). Follow [`alignment.md`](alignment.md). The spec links that file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md), and [`specs/design/design.md`](../../specs/design/design.md) first. When a UX file cites a design element, read that design spec. A review may cover the whole UX or named files. Cross-spec checks always consider the whole UX. Skip `_template.md` and `_template.html`. Run every check, then report a verdict.
 
-## Checklist
+## Aligned
+
+Same sections and required content as the rules file for each spec in scope. File-level requirements in [`alignment.md`](alignment.md) hold.
 
 ### Completeness
 
 - [ ] No `<!-- fill in -->` placeholders remain in Markdown or in filled mockups. Unused template rows and sections are deleted.
+- [ ] Each Markdown file links its authoring-rules file from [`rules/README.md`](rules/README.md). Those rules are not pasted into the spec. The authoring-rules link is not interface content. HTML mockups do not carry a rules link; their rules are [screen](rules/ux/screen-mockup.md) and [journey](rules/ux/journey-mockup.md) mockup rules.
 - [ ] The index in `ux.md`, and the alignment and topic coverage tables in `traceability.md`, are filled in.
 - [ ] Every topic in the coverage table is covered, or marked N/A with a reason grounded in the definition or the design.
 - [ ] Every actor, screen, and journey file is listed in the `ux.md` index, and every indexed file exists.
@@ -37,21 +40,20 @@ Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/u
 - [ ] Each UI action used by a screen has a binding on every platform the definition marks primary. Platforms match the definition.
 - [ ] Actor constraints agree with the controls those actors can and cannot activate.
 - [ ] `IN.F1` agrees with the order of each screen's controls table.
-- [ ] No two UX specs contradict each other, or contradict the design fact they cite.
 
 ### Element IDs
 
-- [ ] Every section listed in [`ids.md`](../../specs/ux/ids.md) gives each element an ID in the prescribed form, unique within its spec.
+- [ ] Every section listed in [`ids.md`](rules/ux/ids.md) gives each element an ID in the prescribed form, unique within its spec.
 - [ ] Qualified IDs cited anywhere exist.
 - [ ] A screen state's mockup anchor is `state-default` or `ex-<name>` for `EX.<name>`.
 
 ### User stories
 
-Rules: [`stories.md`](../../specs/ux/stories.md).
+Rules: [`stories.md`](rules/ux/stories.md) and [`story.md`](rules/ux/story.md).
 
 - [ ] Every UX spec with element IDs has a story file at the mirrored path under `stories/`, listed in the `stories.md` index. No story file lacks a UX spec.
 - [ ] Every element ID and named item is proven by at least one scenario, and each coverage table agrees with its scenarios' **Proves** lines.
-- [ ] Every requirement in [`story-coverage.md`](../../specs/ux/story-coverage.md) is met for each element kind.
+- [ ] Every requirement in [`story-coverage.md`](rules/ux/story-coverage.md) is met for each element kind.
 - [ ] Each scenario has a complete Given, one When (a control, a bound input, or a UX-defined system event; chained only in journey stories), and a Then with concrete values.
 - [ ] Each scenario is falsifiable. An implementation that breaks the element it proves would fail it.
 - [ ] No scenario asserts a game-rule outcome. Visibility scenarios state what a region shows, and cite the design for whether the player can know it.
@@ -82,6 +84,10 @@ Rules: [`stories.md`](../../specs/ux/stories.md).
 
 - [ ] Each Markdown file is under 500 words ([`specs/README.md`](../../specs/README.md)). HTML under `specs/ux/mockups/` is exempt. Oversized Markdown is split by logical unit and linked.
 
+## Imposed
+
+- [ ] No two UX specs contradict each other, or contradict the design fact they cite.
+
 ## Verdict
 
 - **Pass**: every check passes.
@@ -95,9 +101,9 @@ Report back in this shape:
 Scope: <whole UX | listed files>
 
 Findings:
-- <file>: <failed check> — <suggested fix>
+- <file>: aligned | imposed — <failed check> — <suggested fix>
 
 Notes (optional): <non-blocking observations>
 ```
 
-List only failed checks under Findings. If a check cannot be judged without product-owner input, list it as a finding and mark it `needs clarification`. If the problem is in the vision, the definition, or the design, say so.
+List only failed checks under Findings. Tag a check that cannot be judged without product-owner input with `needs clarification` as well. If the problem is in the vision, the definition, or the design, say so. Refinement follows [`alignment.md`](alignment.md).
