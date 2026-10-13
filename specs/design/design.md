@@ -1,6 +1,6 @@
 # Game Design
 
-The complete, self-contained description of how the game works and how it should feel to play. Downstream of [`../vision.md`](../vision.md) and [`../definition/definition.md`](../definition/definition.md): if this design conflicts with them, the design changes (or the upstream doc is revised first). Review instructions: [`.agents/specs/design-review.md`](../../.agents/specs/design-review.md).
+The complete, self-contained description of how the game works and how it should feel to play. Downstream of [`../vision.md`](../vision.md), [`../definition/definition.md`](../definition/definition.md), and [`../definition/quality.md`](../definition/quality.md): if this design conflicts with them, the design changes (or the upstream doc is revised first). Review instructions: [`.agents/specs/design-review.md`](../../.agents/specs/design-review.md).
 
 ## Rules for every design spec
 
