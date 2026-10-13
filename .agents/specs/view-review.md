@@ -12,7 +12,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] Each Markdown file links its authoring-rules file from [`rules/README.md`](rules/README.md). Those rules are not pasted into the spec. Diagrams do not carry a rules link; their rules are [diagrams.md](rules/view/diagrams.md).
 - [ ] Dimensionality, embodiment, platform implications, and the index in `view.md`, and the alignment and topic coverage tables in `traceability.md`, are filled in.
 - [ ] Every topic in the coverage table is covered, or marked N/A with a reason grounded in the design profile, the definition, or the quality spec. A section that does not apply says "N/A — reason" instead of being deleted.
-- [ ] Every camera file is listed in the `view.md` index, and every indexed file exists. Every camera and the projection have a diagram.
+- [ ] Every camera file is listed in the `view.md` index, and every indexed file exists. The projection and each camera have a diagram when the definition's spec depth requires one ([`depth.md`](rules/depth.md)). Otherwise the **Diagram** field reads "None — spec depth \<level\>".
 
 ### Concrete detail
 
@@ -54,9 +54,10 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 Rules: [`stories.md`](rules/view/stories.md) and [`story.md`](rules/view/story.md).
 
-- [ ] Every view spec with element IDs has a story file at the mirrored path under `stories/`, listed in the `stories.md` index. No story file lacks a view spec.
-- [ ] Every element ID and named item is proven by at least one scenario, and each coverage table agrees with its scenarios' **Proves** lines.
-- [ ] Every requirement in [`story-coverage.md`](rules/view/story-coverage.md) is met for each element kind.
+- [ ] Every view spec with element IDs is a row in the `stories.md` index with core and coverage. The specs marked core include at least those [`depth.md`](rules/depth.md) names, and each coverage level meets the minimum for the definition's spec depth.
+- [ ] Every spec whose coverage is not None has a story file at the mirrored path under `stories/`. No story file lacks a view spec.
+- [ ] In each story file, every element ID and named item is proven by at least one scenario, and the coverage table agrees with its scenarios' **Proves** lines.
+- [ ] For each spec at Full coverage, every requirement in [`story-coverage.md`](rules/view/story-coverage.md) is met for each element kind.
 - [ ] Each scenario has a complete Given (camera, platform and aspect, positions, settings), one When (chained only in transition stories), and a Then with concrete values and tolerances.
 - [ ] Each scenario is falsifiable. An implementation that breaks the element it proves would fail it. No subjective wording.
 - [ ] No scenario asserts a game-rule outcome or interface behavior.

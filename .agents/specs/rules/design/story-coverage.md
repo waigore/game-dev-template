@@ -6,7 +6,9 @@ Also read [stories.md](stories.md) and [ids.md](ids.md).
 
 Every element is proven, not only mentioned.
 
-## Baseline
+This file is the Full coverage level. A spec at Baseline or None follows [depth.md](../depth.md) instead. The `stories.md` index records each spec's level.
+
+## Every element
 
 Every element ID and every name-referenced item (fields, modes, options, tunables) is proven by at least one scenario in the story file of the spec that defines it. Designer tunables are proven in their owner spec's story file. Requirements below are cumulative: an element that is both conditional and numeric needs both sets of scenarios.
 

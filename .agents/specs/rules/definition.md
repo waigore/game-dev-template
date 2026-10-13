@@ -2,7 +2,7 @@
 
 Read this before editing `specs/definition/definition.md` or a section split out of it. Do not copy these rules into the spec.
 
-Also read [vision.md](vision.md) and keep this document consistent with the vision.
+Also read [vision.md](vision.md) and [depth.md](depth.md). Keep this document consistent with the vision.
 
 The definition states what the game must be and the limits it is built within. Aim for one page. Technical details (architecture, engine systems, data formats, APIs) do not belong here. A technical constraint is allowed.
 
@@ -34,6 +34,10 @@ One row per platform: the platform, its primary input, and a priority of primary
 ## Constraints
 
 Three subsections: design, technical, and market. Each has at least one constraint, or the word "None". One line per constraint, then why. Constraints do not contradict each other, the scope, or the vision's qualities and tradeoffs. A constraint imposed by an architecture decision cites its ID, such as `(ADR-0003)`, per [adr/adr.md](adr/adr.md).
+
+## Spec depth
+
+One of `prototype`, `small`, or `full`, then one line on why, grounded in the scope, product objectives, or constraints. [depth.md](depth.md) states what each level requires of the downstream specs.
 
 ## Quality expectations
 

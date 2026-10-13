@@ -55,6 +55,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **Small PRs**: prefer focused, testable changes; keep PRs under ~30 files — split if larger.
 - **Spec first**: if it is not in `specs/`, it must not be in the code.
 - **Spec authoring**: before writing or editing a file under `specs/`, read its rules file from [`.agents/specs/rules/README.md`](.agents/specs/rules/README.md) (`author-spec` skill). Do not copy those rules into the spec. When applying a failed spec review, follow [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
+- **Spec depth**: `specs/definition/definition.md` sets `prototype`, `small`, or `full`, which scales story coverage, mockups, and diagrams per [`.agents/specs/rules/depth.md`](.agents/specs/rules/depth.md).
 - **Spec review**: review a spec with the `review-spec` skill, using the checklist linked from [`specs/README.md`](specs/README.md) and [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
 - **Architecture decisions**: engine, framework, library, storage, integration, and game-architecture choices are ADRs in [`specs/adr/`](specs/adr/adr.md). Only Accepted ADRs authorize code. Do not read `specs/adr/archive/` unless explicitly asked.
 - **Technical design**: code and data shape (layers, modules, components, contracts, schemata, sequences) live in [`specs/technical/`](specs/technical/technical.md), downstream of definition, design, view, UX, and Accepted ADRs.

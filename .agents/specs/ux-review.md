@@ -13,8 +13,9 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] The index in `ux.md`, and the alignment and topic coverage tables in `traceability.md`, are filled in.
 - [ ] Every topic in the coverage table is covered, or marked N/A with a reason grounded in the definition or the design.
 - [ ] Every actor, screen, and journey file is listed in the `ux.md` index, and every indexed file exists.
-- [ ] Every screen spec is a row in `navigation.md` and has a mockup. Every navigation row has a screen spec and a mockup.
-- [ ] Every journey has a click-through mockup. `presentation.md` names the design system and the template for each surface.
+- [ ] Every screen spec is a row in `navigation.md`, and every navigation row has a screen spec.
+- [ ] Each screen and journey has a mockup when the definition's spec depth requires one ([`depth.md`](rules/depth.md)). Otherwise its **Mockup** field reads "None — spec depth \<level\>".
+- [ ] When any mockup exists, `presentation.md` names the design system and the template for each surface.
 
 ### Interface detail
 
@@ -52,9 +53,10 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 Rules: [`stories.md`](rules/ux/stories.md) and [`story.md`](rules/ux/story.md).
 
-- [ ] Every UX spec with element IDs has a story file at the mirrored path under `stories/`, listed in the `stories.md` index. No story file lacks a UX spec.
-- [ ] Every element ID and named item is proven by at least one scenario, and each coverage table agrees with its scenarios' **Proves** lines.
-- [ ] Every requirement in [`story-coverage.md`](rules/ux/story-coverage.md) is met for each element kind.
+- [ ] Every UX spec with element IDs is a row in the `stories.md` index with core and coverage. The specs marked core include at least those [`depth.md`](rules/depth.md) names, and each coverage level meets the minimum for the definition's spec depth.
+- [ ] Every spec whose coverage is not None has a story file at the mirrored path under `stories/`. No story file lacks a UX spec.
+- [ ] In each story file, every element ID and named item is proven by at least one scenario, and the coverage table agrees with its scenarios' **Proves** lines.
+- [ ] For each spec at Full coverage, every requirement in [`story-coverage.md`](rules/ux/story-coverage.md) is met for each element kind.
 - [ ] Each scenario has a complete Given, one When (a control, a bound input, or a UX-defined system event; chained only in journey stories), and a Then with concrete values.
 - [ ] Each scenario is falsifiable. An implementation that breaks the element it proves would fail it.
 - [ ] No scenario asserts a game-rule outcome. Visibility scenarios state what a region shows, and cite the design for whether the player can know it.

@@ -10,7 +10,7 @@ Replace every `<!-- fill in -->`.
 
 ## Categories
 
-Each category is **Applies** or **N/A — reason**. An N/A reason cites the vision or the supported platforms. An Applies row has a measurable target, the platforms it covers, and how it is checked. Those platforms match the definition's supported-platforms table. An N/A row uses "—" for target, platforms, and how checked. Add a row when one category has more than one target. Rows for the same category do not contradict each other, the constraints, or the vision. A target set or limited by an architecture decision cites its ID in the target, such as `(ADR-0003)`.
+Each category is **Applies** or **N/A — reason**. An N/A reason cites the vision or the supported platforms. At prototype spec depth, a category other than performance may cite spec depth instead, per [depth.md](depth.md). An Applies row has a measurable target, the platforms it covers, and how it is checked. Those platforms match the definition's supported-platforms table. An N/A row uses "—" for target, platforms, and how checked. Add a row when one category has more than one target. Rows for the same category do not contradict each other, the constraints, or the vision. A target set or limited by an architecture decision cites its ID in the target, such as `(ADR-0003)`.
 
 These seven categories are always present:
 

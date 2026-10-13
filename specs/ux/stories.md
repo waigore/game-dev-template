@@ -4,4 +4,6 @@ Authoring rules: [`.agents/specs/rules/ux/stories.md`](../../.agents/specs/rules
 
 ## Index
 
-- <!-- fill in -->
+| Spec | Core | Coverage | Story file |
+|------|------|----------|------------|
+| <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |

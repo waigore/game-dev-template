@@ -22,7 +22,7 @@ These follow upstream:
 
 - Motion comfort Applies when accessibility Applies in `specs/definition/quality.md` and any camera moves on its own. Otherwise it is N/A with that reason.
 - Haptics is N/A when no supported platform has haptic output.
-- Diagrams Applies whenever any camera or projection Applies.
+- Diagrams Applies whenever any camera or projection Applies, unless spec depth requires no diagram, per [depth.md](../depth.md).
 
 ## Splitting
 

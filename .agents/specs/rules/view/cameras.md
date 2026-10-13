@@ -13,7 +13,7 @@ A camera mode is one way the view is positioned and moved: follow, fixed, rail, 
 - **Kind**: one of the kinds above.
 - **Used in**: the flow phases and stages that use it, as design IDs.
 - **Projection**: a `PRJ.P` ID.
-- **Diagram**: `diagrams/cameras/<kebab-name>.html`. Follow [diagrams.md](diagrams.md).
+- **Diagram**: `diagrams/cameras/<kebab-name>.html`. Follow [diagrams.md](diagrams.md). When spec depth requires no diagram for this camera, write "None — spec depth \<level\>", per [depth.md](../depth.md).
 - **Serves**: vision qualities, definition scope items, and design specs.
 - **Glossary terms**: links into `glossary.md`.
 
