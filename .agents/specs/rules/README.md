@@ -72,6 +72,16 @@ Do not paste these rules into a spec. Do not edit a `_template` file to hold one
 | `specs/ux/mockups/README.md` | [ux/presentation.md](ux/presentation.md) |
 | `specs/ux/mockups/screens/` | [ux/screen-mockup.md](ux/screen-mockup.md) |
 | `specs/ux/mockups/journeys/` | [ux/journey-mockup.md](ux/journey-mockup.md) |
+| `specs/playtest/playtest.md` | [playtest/playtest.md](playtest/playtest.md) |
+| `specs/playtest/glossary.md` | [playtest/glossary.md](playtest/glossary.md) |
+| `specs/playtest/ids.md` | [playtest/ids.md](playtest/ids.md) |
+| `specs/playtest/traceability.md` | [playtest/traceability.md](playtest/traceability.md) |
+| `specs/playtest/coverage.md` | [playtest/coverage.md](playtest/coverage.md) |
+| `specs/playtest/tools.md` | [playtest/tools.md](playtest/tools.md) |
+| `specs/playtest/procedures.md` | [playtest/procedures.md](playtest/procedures.md) |
+| `specs/playtest/evidence.md` | [playtest/evidence.md](playtest/evidence.md) |
+| `specs/playtest/design/` | [playtest/protocol.md](playtest/protocol.md) |
+| `specs/playtest/ux/` | [playtest/protocol.md](playtest/protocol.md) |
 | `specs/adr/adr.md` | [adr/adr.md](adr/adr.md) |
 | `specs/adr/traceability.md` | [adr/traceability.md](adr/traceability.md) |
 | `specs/adr/decisions/` | [adr/decision.md](adr/decision.md) |

@@ -4,9 +4,9 @@ description: |-
   Capture requirements for one specs/ target at a time via guided questions
   derived from that type's authoring rules and template placeholders, confirm
   answers with the user, then hand off to author-spec. Use when interviewing
-  for a vision, definition, design, view, UX, ADR, or technical spec, or when
-  the user asks to capture requirements, gather requirements, or fill a spec
-  by asking questions.
+  for a vision, definition, design, view, UX, playtest, ADR, or technical
+  spec, or when the user asks to capture requirements, gather requirements, or
+  fill a spec by asking questions.
 
   Examples:
     - user: "Capture requirements for the vision" → confirm specs/vision.md, interview, author-spec

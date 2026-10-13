@@ -19,7 +19,7 @@ Copy the template to `decisions/<NNNN>-<kebab-name>.md`, one decision per file. 
 - **Date**: `YYYY-MM-DD` the status last changed.
 - **Category**: one of Engine, Framework, Library, Data storage, Integration, Game architecture. Integration covers how parts connect to each other and to external services: networking, platform services, backends, and the asset and build pipeline. Game architecture covers the structure of the running game: entity model, state ownership, game loop, scene and module organization.
 - **Supersedes**: ADR IDs, or "None".
-- **Informed by**: the upstream items behind the decision: vision qualities, definition scope items, technical constraints, platforms, quality categories, design, view, and UX specs or element IDs, and other Accepted ADRs.
+- **Informed by**: the upstream items behind the decision: vision qualities, definition scope items, technical constraints, platforms, quality categories, design, view, UX, and playtest specs or element IDs (including Must tools), and other Accepted ADRs.
 
 ## Sections
 

@@ -6,7 +6,7 @@ Also read [technical.md](technical.md) and [ids.md](ids.md).
 
 Optional. Create only when test seams, assertable invariants, or harness expectations need a shared technical map. Copy `_templates/verification.md` to `verification.md`; do not fill the template in place.
 
-This is not a test plan dump and not player stories. It names hooks and invariants implementers and verifiers can use.
+This is not a test plan dump and not player stories. It names hooks and invariants implementers and verifiers can use. When `specs/playtest/tools.md` Must or cited Situational capabilities need seams, name those seams here and cite the playtest tool IDs (`DBG.*`, `TEL.*`, `SIT.*`).
 
 ## Header
 
