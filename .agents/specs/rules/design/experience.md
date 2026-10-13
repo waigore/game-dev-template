@@ -6,7 +6,7 @@ Also read [design.md](design.md) and [quality.md](../quality.md).
 
 The intended player experience across the game: pacing, feedback, and presentation intent. Intent only. No screen layouts, interface widgets, asset specs, or technology. Layouts and controls live under `specs/ux/`. Cameras, readability guarantees, comfort options, spatial audio, and haptics that realize this intent live under `specs/view/`.
 
-Performance, load time, and reliability targets stay in `specs/definition/quality.md`. Do not restate them here.
+Performance, load time, reliability, and observability targets stay in `specs/definition/quality.md`. Do not restate them here.
 
 ## Experience goals
 

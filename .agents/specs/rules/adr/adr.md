@@ -4,7 +4,7 @@ Read this before editing `specs/adr/adr.md` or `specs/adr/archive/README.md`. Do
 
 Every other file under `specs/adr/` follows **Rules for every architecture spec** below. Those rules files name this one under **Also read**.
 
-The architecture records the technical decisions the game is built on: engine, frameworks, libraries, data storage, integration methods, and the overall game architecture. Each decision is an architecture decision record (ADR) under `decisions/`, written per [decision.md](decision.md). It is downstream of `specs/vision.md`, `specs/definition/definition.md`, `specs/definition/quality.md`, `specs/design/design.md`, `specs/view/view.md`, and `specs/ux/ux.md`. Read them, and every spec an ADR cites, before writing.
+The architecture records the technical decisions the game is built on: engine, frameworks, libraries, data storage, integration methods, and the overall game architecture. Each decision is an architecture decision record (ADR) under `decisions/`, written per [decision.md](decision.md). It is downstream of `specs/vision.md`, `specs/definition/definition.md`, `specs/definition/quality.md`, `specs/design/design.md`, `specs/view/view.md`, and `specs/ux/ux.md`. Read them, and every spec an ADR cites, before writing. Code and data shape that realize Accepted ADRs live in `specs/technical/`; this folder does not replace that design.
 
 ## Rules for every architecture spec
 

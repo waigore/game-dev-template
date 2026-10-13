@@ -22,5 +22,8 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 | [`accept-project-issue`](accept-project-issue/SKILL.md) | Accept / fail / clarify after verification |
 | [`author-spec`](author-spec/SKILL.md) | Write or edit a spec from `.agents/specs/rules/`; do not copy the rules into the spec |
 | [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the whole spec set; report verdict to the requester |
+| [`review-solid-code`](review-solid-code/SKILL.md) | Review code vs `docs/solid.md` (SOLID + continuity); Pass/Fail, read-only |
+| [`audit-spec-applicability`](audit-spec-applicability/SKILL.md) | Audit Applies/N/A upstream grounds and downstream carry-outs; report for author-spec |
+| [`audit-spec-terminology`](audit-spec-terminology/SKILL.md) | Audit glossary ownership and term usage (undefined, drift, synonyms, homonyms); report for author-spec |
 
 When adding or renaming a skill: update this table, add facades per `docs/skills.md`, and keep the thin Skills pointer in [`AGENTS.md`](../../AGENTS.md) unchanged unless the path to this catalog moves.
