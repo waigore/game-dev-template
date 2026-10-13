@@ -3,8 +3,8 @@ name: author-spec
 description: |-
   Write or edit a spec under specs/ by reading its authoring rules in
   .agents/specs/rules/ first. Do not copy those rules into the spec.
-  Use when creating, filling, or revising a vision, definition, design, view, or
-  UX spec, including a file copied from a _template.
+  Use when creating, filling, or revising a vision, definition, design, view, UX, or
+  architecture decision (ADR) spec, including a file copied from a _template.
 
   Examples:
     - user: "Write the vision" → read vision rules, fill specs/vision.md

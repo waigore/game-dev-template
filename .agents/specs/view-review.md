@@ -77,7 +77,7 @@ Rules: [`stories.md`](rules/view/stories.md) and [`story.md`](rules/view/story.m
 
 - [ ] No game rules. Design outcomes appear only as citations.
 - [ ] No interface: no screens, menus, HUD layout, or input bindings.
-- [ ] No technical design: no engines, frameworks, editors, APIs, or file formats.
+- [ ] No technical design: no engines, frameworks, editors, APIs, or file formats. A limit imposed by an architecture decision is stated in view terms and cites an ADR ID that exists in [`specs/adr/decisions/`](../../specs/adr/decisions/).
 
 ### Format
 

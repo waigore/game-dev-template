@@ -11,6 +11,7 @@ Game design states what happens in the game. The view states how the game world 
 ## Rules for every UX spec
 
 - **Interface behavior**: describe screens, regions, controls, navigation, copy, and exception UI. Cite design element IDs for the game fact on screen. When a screen needs a rule the design does not state, add that rule to the design first.
+- **No technology**: no engines, frameworks, code, data formats, or APIs. A limit imposed by an architecture decision is stated in interface terms and cites its ID, such as `(ADR-0003)`.
 - **Operators**: actors are people who use the interface, defined in `actors/`. Game characters stay in `specs/design/characters/`. Link a character when a screen represents one.
 - **Defined once**: terms live in `glossary.md`. Each screen, exception, UI action, and binding is defined in one file. Other specs link it.
 - **Traceable**: every spec states which vision qualities, definition scope items, and design specs it serves. `traceability.md` maps all of them.

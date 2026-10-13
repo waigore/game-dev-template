@@ -2,7 +2,7 @@
 
 Product and technical specifications. Specs define what to build; [`docs/`](../docs/) holds process and project documentation.
 
-Agents load relevant specs before implementing. If it is not in `specs/`, it must not be in the code.
+Agents load relevant specs before implementing. If it is not in `specs/`, it must not be in the code. Agents do not read [`adr/archive/`](adr/archive/README.md) unless explicitly asked.
 
 ## Concise specs
 
@@ -24,3 +24,4 @@ Add a row here for each spec file as it is created.
 | [`design/design.md`](design/design.md) | Game design hub: rules, genre/platform profile, and index of all design specs (glossary, traceability to vision and definition, characters, entities, loops, features, flows, stages, scenarios, sub-games, game state, configuration, difficulty, progression, win/loss, world, experience), stable element IDs, and Given/When/Then player stories proving each element. Unit specs and story files are indexed in the hub. | [`.agents/specs/design-review.md`](../.agents/specs/design-review.md) |
 | [`view/view.md`](view/view.md) | View hub: how the player is placed in the world and how it is seen, heard, and felt (dimensionality, embodiment, spatial model and positioning, projection, cameras and camera controls, physics feel, readability and comfort, spatial audio, haptics), stable element IDs, Given/When/Then view stories, traceability to vision, definition, quality, and game design, and to-scale HTML diagrams of the projection and each camera. Unit specs and story files are indexed in the hub. | [`.agents/specs/view-review.md`](../.agents/specs/view-review.md) |
 | [`ux/ux.md`](ux/ux.md) | UX hub: how people operate the interface (actors, screens, navigation, journeys, exception states, input bindings), stable element IDs, Given/When/Then user stories, traceability to vision, definition, and game design, and HTML mockups (one per screen, one click-through per journey) produced with the Open Design skill. Unit specs and story files are indexed in the hub. | [`.agents/specs/ux-review.md`](../.agents/specs/ux-review.md) |
+| [`adr/adr.md`](adr/adr.md) | Architecture decision records (ADRs) for engine, frameworks, libraries, storage, integrations, and game architecture: stack summary and index. Each ADR states context, purpose, decision, reasoning, rejected alternatives, non-functional requirements, constraints imposed on upstream specs, and validation. Superseded ADRs move to `adr/archive/`. | [`.agents/specs/adr-review.md`](../.agents/specs/adr-review.md) |

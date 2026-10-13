@@ -78,7 +78,7 @@ Rules: [`stories.md`](rules/ux/stories.md) and [`story.md`](rules/ux/story.md).
 ### Scope boundaries
 
 - [ ] No game rules. Design verbs appear only as citations of what a control asks the game to perform.
-- [ ] No technical design: no engines, frameworks, code, data formats, or APIs.
+- [ ] No technical design: no engines, frameworks, code, data formats, or APIs. A limit imposed by an architecture decision is stated in interface terms and cites an ADR ID that exists in [`specs/adr/decisions/`](../../specs/adr/decisions/).
 - [ ] Actors are people who operate the interface.
 
 ### Format

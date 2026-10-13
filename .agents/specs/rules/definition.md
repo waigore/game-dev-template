@@ -33,7 +33,7 @@ One row per platform: the platform, its primary input, and a priority of primary
 
 ## Constraints
 
-Three subsections: design, technical, and market. Each has at least one constraint, or the word "None". One line per constraint, then why. Constraints do not contradict each other, the scope, or the vision's qualities and tradeoffs.
+Three subsections: design, technical, and market. Each has at least one constraint, or the word "None". One line per constraint, then why. Constraints do not contradict each other, the scope, or the vision's qualities and tradeoffs. A constraint imposed by an architecture decision cites its ID, such as `(ADR-0003)`, per [adr/adr.md](adr/adr.md).
 
 ## Quality expectations
 

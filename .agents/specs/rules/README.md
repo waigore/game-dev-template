@@ -70,5 +70,10 @@ Do not paste these rules into a spec. Do not edit a `_template` file to hold one
 | `specs/ux/mockups/README.md` | [ux/presentation.md](ux/presentation.md) |
 | `specs/ux/mockups/screens/` | [ux/screen-mockup.md](ux/screen-mockup.md) |
 | `specs/ux/mockups/journeys/` | [ux/journey-mockup.md](ux/journey-mockup.md) |
+| `specs/adr/adr.md` | [adr/adr.md](adr/adr.md) |
+| `specs/adr/traceability.md` | [adr/traceability.md](adr/traceability.md) |
+| `specs/adr/decisions/` | [adr/decision.md](adr/decision.md) |
+| `specs/adr/archive/README.md` | [adr/adr.md](adr/adr.md) |
+| `specs/adr/archive/` | [adr/decision.md](adr/decision.md) |
 
 Review checklists stay beside this tree, in [`.agents/specs/`](../). They judge specs. They are not pasted into `specs/` either.
