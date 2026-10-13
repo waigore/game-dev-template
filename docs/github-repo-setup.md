@@ -21,12 +21,12 @@ Agents: use the `setup-github-repo` skill. Default is guide + verify only; do no
 | Branch name pattern | `main` |
 | Require a pull request before merging | On |
 | Required approving reviews | 0 (baseline; tighten later if needed) |
-| Require status checks to pass | Off (baseline; add when CI exists) |
+| Require status checks to pass | On; required check: `Word limit` ([`word-limit.yml`](../.github/workflows/word-limit.yml)) |
 | Allow force pushes | Off |
 | Allow deletions | Off |
 | Do not allow bypassing the above settings | On (includes administrators) |
 
-Outcome: no direct pushes or force pushes to `main`; changes land via PR only; admins cannot bypass.
+Outcome: no direct pushes or force pushes to `main`; changes land via PR only; admins cannot bypass; PRs cannot merge until `Word limit` passes. The check only appears in the picker after it has run once (open any PR).
 
 ## 3. Default labels
 
@@ -44,13 +44,13 @@ Replace `OWNER/REPO` as needed (`gh repo view --json nameWithOwner -q .nameWithO
 gh api repos/OWNER/REPO --jq '{squash: .allow_squash_merge, merge: .allow_merge_commit, rebase: .allow_rebase_merge, auto_merge: .allow_auto_merge}'
 
 # Branch protection (classic rules)
-gh api repos/OWNER/REPO/branches/main/protection --jq '{enforce_admins: .enforce_admins.enabled, allow_force_pushes: .allow_force_pushes.enabled, pr_reviews: .required_pull_request_reviews}'
+gh api repos/OWNER/REPO/branches/main/protection --jq '{enforce_admins: .enforce_admins.enabled, allow_force_pushes: .allow_force_pushes.enabled, pr_reviews: .required_pull_request_reviews, checks: .required_status_checks.contexts}'
 
 # Labels
 gh label list --repo OWNER/REPO
 ```
 
-Expect: squash `true`; merge and rebase `false`; auto-merge `true`; protection present with `enforce_admins` true and force pushes false; the three `type:*` labels listed.
+Expect: squash `true`; merge and rebase `false`; auto-merge `true`; protection present with `enforce_admins` true, force pushes false, and `checks` containing `Word limit`; the three `type:*` labels listed.
 
 If protection uses **Rulesets** instead of classic branch protection, confirm the same constraints in **Settings → Rules → Rulesets** (UI) when the classic endpoint 404s.
 
