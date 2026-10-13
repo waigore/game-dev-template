@@ -6,10 +6,10 @@ How authoring rules in [`.agents/specs/rules/`](rules/README.md) relate to the r
 
 These apply to every spec. They are aligned requirements even though each rules file does not repeat them.
 
-- The spec links its authoring-rules file from [rules/README.md](rules/README.md). A split file uses the rules file of the spec it came from. HTML mockups do not carry this link.
+- The spec links its authoring-rules file from [rules/README.md](rules/README.md). A split file uses the rules file of the spec it came from. HTML mockups and HTML under `specs/view/diagrams/` or `specs/technical/diagrams/` do not carry this link.
 - The rules text is not pasted into the spec. The authoring-rules link is not game or interface content.
 - A finished spec has no `<!-- fill in -->` placeholder. Unused rows and sections the rules file says to delete are deleted.
-- Each Markdown file under `specs/` stays under 500 words. HTML mockups are exempt. Split the way the rules file says.
+- Each Markdown file under `specs/` stays under 500 words. HTML mockups and HTML diagrams under `view/diagrams/` and `technical/diagrams/` are exempt. Split the way the rules file says.
 
 ## Aligned checks
 

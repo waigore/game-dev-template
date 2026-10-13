@@ -75,5 +75,23 @@ Do not paste these rules into a spec. Do not edit a `_template` file to hold one
 | `specs/adr/decisions/` | [adr/decision.md](adr/decision.md) |
 | `specs/adr/archive/README.md` | [adr/adr.md](adr/adr.md) |
 | `specs/adr/archive/` | [adr/decision.md](adr/decision.md) |
+| `specs/technical/technical.md` | [technical/technical.md](technical/technical.md) |
+| `specs/technical/glossary.md` | [technical/glossary.md](technical/glossary.md) |
+| `specs/technical/traceability.md` | [technical/traceability.md](technical/traceability.md) |
+| `specs/technical/ids.md` | [technical/ids.md](technical/ids.md) |
+| `specs/technical/layers.md` | [technical/layers.md](technical/layers.md) |
+| `specs/technical/modules.md` | [technical/modules.md](technical/modules.md) |
+| `specs/technical/modules/` | [technical/modules.md](technical/modules.md) |
+| `specs/technical/components/` | [technical/components.md](technical/components.md) |
+| `specs/technical/contracts/` | [technical/contracts.md](technical/contracts.md) |
+| `specs/technical/schemata/` | [technical/schemata.md](technical/schemata.md) |
+| `specs/technical/sequences/` | [technical/sequences.md](technical/sequences.md) |
+| `specs/technical/failures.md` | [technical/failures.md](technical/failures.md) |
+| `specs/technical/concurrency.md` | [technical/concurrency.md](technical/concurrency.md) |
+| `specs/technical/persistence.md` | [technical/persistence.md](technical/persistence.md) |
+| `specs/technical/configuration.md` | [technical/configuration.md](technical/configuration.md) |
+| `specs/technical/verification.md` | [technical/verification.md](technical/verification.md) |
+| `specs/technical/_templates/` | matching optional rules file (e.g. [technical/failures.md](technical/failures.md)) |
+| `specs/technical/diagrams/` | [technical/diagrams.md](technical/diagrams.md) |
 
 Review checklists stay beside this tree, in [`.agents/specs/`](../). They judge specs. They are not pasted into `specs/` either.

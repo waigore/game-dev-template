@@ -14,3 +14,4 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 | [issues/](issues/) | Epic / Task / Defect contract and status workflow |
 | [labels.md](labels.md) | Label catalog and sync |
 | [skills.md](skills.md) | Skill authoring and native wiring |
+| [solid.md](solid.md) | SOLID principles + structure continuity for agents |
