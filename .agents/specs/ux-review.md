@@ -1,6 +1,6 @@
 # Reviewing `specs/ux/`
 
-Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/ux/ux.md) and every file under [`specs/ux/`](../../specs/ux/)). Authoring rules for each file are in [`rules/README.md`](rules/README.md). Follow [`alignment.md`](alignment.md). The spec links that file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md), and [`specs/design/design.md`](../../specs/design/design.md) first. When a UX file cites a design element, read that design spec. A review may cover the whole UX or named files. Cross-spec checks always consider the whole UX. Skip `_template.md` and `_template.html`. Run every check, then report a verdict.
+Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/ux/ux.md) and every file under [`specs/ux/`](../../specs/ux/)). Authoring rules for each file are in [`rules/README.md`](rules/README.md). Follow [`alignment.md`](alignment.md). The spec links that file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md), [`specs/design/design.md`](../../specs/design/design.md), and [`specs/view/view.md`](../../specs/view/view.md) first. When a UX file cites a design or view element, read that spec. A review may cover the whole UX or named files. Cross-spec checks always consider the whole UX. Skip `_template.md` and `_template.html`. Run every check, then report a verdict.
 
 ## Aligned
 
@@ -30,7 +30,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] Each UI term is defined once in `glossary.md` and used as defined. Game terms stay in the design glossary.
 - [ ] Each actor is defined once. Game characters are linked, not redefined.
 - [ ] UI actions are defined once in `controls.md`. Screens refer to them by ID.
-- [ ] Cited design element IDs exist.
+- [ ] Cited design and view element IDs exist.
 
 ### Internal consistency
 
@@ -38,6 +38,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] Each navigation transition matches the result of the control or system event it names.
 - [ ] Journey steps and branches name screens, controls, and exception states that exist. A journey defines none of them.
 - [ ] Each UI action used by a screen has a binding on every platform the definition marks primary. Platforms match the definition.
+- [ ] Each camera action in [`specs/view/camera-controls.md`](../../specs/view/camera-controls.md) has a binding on every platform the definition marks primary. The UX does not restate what the camera action does.
 - [ ] Actor constraints agree with the controls those actors can and cannot activate.
 - [ ] `IN.F1` agrees with the order of each screen's controls table.
 

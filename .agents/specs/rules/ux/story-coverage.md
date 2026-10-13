@@ -21,8 +21,9 @@ Every element ID and every named item (exceptions and UI actions) is proven by a
 | Entry and resume (`N`) | A new session opens on the named screen. The end or resume condition arrives at the named screen. |
 | Journey step (`S` on a journey) | Using that step's control arrives at the named screen. |
 | Journey branch (`B`) | When its condition holds at that step, the destination opens. |
-| Binding (`B` on controls) | On that platform, the input activates the named UI action and no other action. |
+| Binding (`B` on controls) | On that platform, the input activates the named action and no other action. |
 | UI action (`IN.<name>`) | At least one binding on each platform the definition marks primary activates it. |
+| Camera action bound here (`CC.<name>`) | At least one binding on each platform the definition marks primary activates it. Its effect on the camera is proven in the view stories. |
 | Actor capability or constraint (`C`, `K`) | The actor can activate each allowed control. A forbidden control does not activate. |
 | Region (`R`) | Each design fact it shows is visible when the design says the player can know it, and absent when the player cannot. The scenario asserts visibility only. |
 

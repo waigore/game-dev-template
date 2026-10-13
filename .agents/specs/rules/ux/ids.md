@@ -6,7 +6,7 @@ Also read [ux.md](ux.md).
 
 Stable IDs let user stories and other specs name interface behavior exactly.
 
-Design IDs stay in [../design/ids.md](../design/ids.md). Cite them. Do not reuse their letters for a different meaning.
+Design IDs stay in [../design/ids.md](../design/ids.md) and view IDs in [../view/ids.md](../view/ids.md). Cite them. Do not reuse their letters for a different meaning.
 
 ## Format
 

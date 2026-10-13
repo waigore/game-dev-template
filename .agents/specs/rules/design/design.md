@@ -9,7 +9,7 @@ The design describes how the game works and how it should feel to play. It is do
 ## Rules for every design spec
 
 - **Self-contained**: describe every rule, character, and behavior in full, even when the game or genre is well known. Do not rely on an external reference ("like chess", a wiki, a link). A comparison may help, but the spec must stand without it.
-- **Game design, not UX**: describe what happens and why. Player actions are verbs (jump, trade), not inputs, buttons, screens, menus, or layouts. Interface structure lives under `specs/ux/`.
+- **Game design, not UX**: describe what happens and why. Player actions are verbs (jump, trade), not inputs, buttons, screens, menus, or layouts. Interface structure lives under `specs/ux/`. Cameras, projection, positions in world units, and the feel of motion live under `specs/view/`, which must reproduce the outcomes stated here.
 - **Conceptual, logical, experiential**: no engines, frameworks, code, data formats, or platform APIs. Platforms appear only as design implications in the profile below.
 - **Shared language**: define each term once in `glossary.md`, each character in `characters/`, and each entity in `entities/`. Other specs link. They never redefine.
 - **Traceable**: every spec states which vision qualities and definition scope items it serves. `traceability.md` maps all of them.

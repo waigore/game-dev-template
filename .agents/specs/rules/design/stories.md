@@ -4,7 +4,7 @@ Read this before editing `specs/design/stories.md`. Do not copy these rules into
 
 Also read [design.md](design.md), [ids.md](ids.md), and [story-coverage.md](story-coverage.md). A single story file follows [story.md](story.md).
 
-Player stories are concrete, testable game behavior, written as Given/When/Then and traced to the design element IDs they prove. They cover game logic and mechanics. Interface behavior is a user story under `specs/ux/`.
+Player stories are concrete, testable game behavior, written as Given/When/Then and traced to the design element IDs they prove. They cover game logic and mechanics. Interface behavior is a user story under `specs/ux/`. Camera, projection, and physical feel are view stories under `specs/view/`.
 
 ## Rules for every story
 
