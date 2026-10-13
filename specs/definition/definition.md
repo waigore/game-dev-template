@@ -50,11 +50,7 @@ One line each: the constraint, then why.
 
 ## Quality expectations
 
-Measurable targets. Each must say how it is checked.
-
-| Expectation | Target | How checked |
-|-------------|--------|-------------|
-| <!-- fill in: e.g. Frame rate --> | <!-- fill in: e.g. Stable 60 fps on primary platforms --> | <!-- fill in: e.g. Profiler over a 10-minute session --> |
+Measurable targets for performance, load time, reliability, save durability, accessibility, and localization live in [`quality.md`](quality.md). Each category there applies to this game or is N/A with a reason.
 
 ## Splitting this document
 

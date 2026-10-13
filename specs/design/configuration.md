@@ -10,7 +10,7 @@ Everything that varies the game's rules without changing the design: modes and o
 
 ## Game options
 
-Rule variants and assists the player or host may choose. Difficulty levels live in [`difficulty.md`](difficulty.md).
+Rule variants and assists the player or host may choose. Difficulty levels live in [`difficulty.md`](difficulty.md). When accessibility Applies in [`../definition/quality.md`](../definition/quality.md) and names a rule-changing assist or timing option, that option is a row in the table below.
 
 | Option | Choices | Default | Effect on rules | Chosen by / when | Locked when |
 |--------|---------|---------|-----------------|------------------|-------------|

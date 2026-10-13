@@ -1,6 +1,6 @@
 # Reviewing `specs/design/`
 
-Instructions for agents reviewing the game design ([`specs/design/design.md`](../../specs/design/design.md) and every file under [`specs/design/`](../../specs/design/)). Read [`specs/vision.md`](../../specs/vision.md) and [`specs/definition/definition.md`](../../specs/definition/definition.md) first. A review may cover the whole design or named files; cross-spec checks always consider the whole design. Skip `_template.md` files. Run every check, then report a verdict.
+Instructions for agents reviewing the game design ([`specs/design/design.md`](../../specs/design/design.md) and every file under [`specs/design/`](../../specs/design/)). Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), and [`specs/definition/quality.md`](../../specs/definition/quality.md) first. A review may cover the whole design or named files; cross-spec checks always consider the whole design. Skip `_template.md` files. Run every check, then report a verdict.
 
 ## Checklist
 
@@ -59,6 +59,10 @@ Rules: [`stories.md`](../../specs/design/stories.md).
 - [ ] Win/lose conditions and progression match the definition's player objectives.
 - [ ] Where qualities conflict in the design, the vision's tradeoff order is followed.
 - [ ] Every spec states what it serves.
+- [ ] When accessibility Applies in [`quality.md`](../../specs/definition/quality.md), `experience.md` states channels, timing and assists, and scale. A rule-changing assist or timing option named there is an option in `configuration.md`.
+- [ ] When localization Applies, `experience.md` lists the player-facing content that varies by locale.
+- [ ] When save durability Applies, `progression.md` persistence and **M1** state what is committed, when it becomes permanent, and where play resumes.
+- [ ] Performance, load time, and reliability targets appear only in [`quality.md`](../../specs/definition/quality.md).
 
 ### Genre and platform fit
 

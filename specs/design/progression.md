@@ -18,6 +18,8 @@ IDs: see [`ids.md`](ids.md).
 
 ## Persistence
 
+When save durability Applies in [`../definition/quality.md`](../definition/quality.md), this table and **M1** are its design side: what is committed, when it becomes permanent, and where play resumes. The target stays in that file.
+
 | ID | What | Persists across | Lost or reset when |
 |----|------|-----------------|--------------------|
 | <!-- fill in: P1 --> | <!-- fill in: game-state field --> | <!-- fill in: stage / session / run / playthrough --> | <!-- fill in --> |

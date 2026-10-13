@@ -1,6 +1,6 @@
 # Reviewing `specs/definition/`
 
-Instructions for agents reviewing the game definition document ([`specs/definition/definition.md`](../../specs/definition/definition.md)) and any files split out beside it. Read [`specs/vision.md`](../../specs/vision.md) first. Run every check, then report a verdict.
+Instructions for agents reviewing the game definition ([`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md)) and any files split out beside them. Read [`specs/vision.md`](../../specs/vision.md) first. Run every check, then report a verdict.
 
 ## Checklist
 
@@ -8,6 +8,7 @@ Instructions for agents reviewing the game definition document ([`specs/definiti
 
 - [ ] No `<!-- fill in -->` placeholders remain; unused template rows are deleted.
 - [ ] Every section is present: scope, objectives, supported platforms, constraints, quality expectations.
+- [ ] [`quality.md`](../../specs/definition/quality.md) is linked from the quality expectations section and listed in [`specs/README.md`](../../specs/README.md).
 - [ ] Split sections are linked from `definition.md` with a one-line summary and listed in [`specs/README.md`](../../specs/README.md).
 
 ### Scope
@@ -34,8 +35,12 @@ Instructions for agents reviewing the game definition document ([`specs/definiti
 
 ### Quality expectations
 
-- [ ] Each expectation has a measurable target and a "how checked" method.
-- [ ] Targets name the platform(s) they apply to where relevant.
+- [ ] Performance, load time / latency, reliability, save durability, accessibility, and localization are each present in [`quality.md`](../../specs/definition/quality.md).
+- [ ] Each category is Applies, or N/A with a reason that cites the vision or the supported platforms.
+- [ ] Each Applies row has a measurable target, the platforms it covers, and a how-checked method. Platforms match the supported-platforms table.
+- [ ] An N/A row uses "—" for target, platforms, and how checked.
+- [ ] Rows for the same category do not contradict each other, the constraints, or the vision.
+- [ ] Targets are observable outcomes. No architecture, engines, data formats, or APIs.
 
 ### Consistency with vision
 
@@ -46,7 +51,7 @@ Instructions for agents reviewing the game definition document ([`specs/definiti
 
 ### Format
 
-- [ ] Reads as roughly one page; each file is under 500 words ([`specs/README.md`](../../specs/README.md)).
+- [ ] `definition.md` reads as roughly one page. Each file is under 500 words ([`specs/README.md`](../../specs/README.md)).
 - [ ] No technical details (architecture, engine systems, data formats, APIs). Technical *constraints* are fine.
 
 ## Verdict

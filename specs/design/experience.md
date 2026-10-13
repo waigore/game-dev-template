@@ -28,6 +28,20 @@ What the player must perceive when the game changes, and how strongly. State the
 - **Sound intent**: <!-- fill in: role of sound and music in play -->
 - **Clarity rules**: <!-- fill in: what must always remain distinguishable, e.g. "threats vs scenery" -->
 
+## Accessibility
+
+When accessibility Applies in [`../definition/quality.md`](../definition/quality.md), state what the player must perceive or be able to do. When it is N/A, write "N/A" and the same reason. No widgets or input bindings.
+
+- **Channels**: <!-- fill in: what stays understandable with one channel removed, e.g. "threats readable without color" -->
+- **Timing and assists**: <!-- fill in: pressure the player can ease, or "None". A rule change is an option in configuration.md -->
+- **Scale**: <!-- fill in: text and audio scale the player can choose, or "None" -->
+
+## Localization
+
+When localization Applies in [`../definition/quality.md`](../definition/quality.md), list the player-facing content that varies by locale. When it is N/A, write "N/A" and the same reason.
+
+- <!-- fill in: e.g. "Rules text, story, and speech" -->
+
 ## Learning and mastery
 
 <!-- fill in: how players learn rules through play, the order new ideas are introduced, and what separates a beginner from an expert -->
