@@ -8,6 +8,21 @@ Before creating or editing a file under `specs/`, read the rules file for its pa
 
 Spec depth (`prototype`, `small`, or `full`) is set in `specs/definition/definition.md`. [depth.md](depth.md) states how it scales story coverage, mockups, and diagrams. A rules file that says a requirement follows spec depth defers to it.
 
+## Undecided aspects (TBD)
+
+This rule applies to every spec. When an aspect is not decided yet, write `TBD — <open question>` where the decision belongs: a field value, a table cell, a list item, or a sentence. Do not invent the decision, and do not leave `<!-- fill in -->` in its place.
+
+- One open question per TBD, phrased so the product owner can answer it. Name the options when known: `TBD — 2D or 3D?`.
+- `TBD` is uppercase and reserved for this marker. A bare `TBD` with no question fails Spec lint.
+- Keep the section skeleton. A whole section may be a single TBD line.
+- A downstream spec does not build on a TBD. An aspect that depends on one is TBD too, and its question links the upstream spec.
+- Code does not implement a TBD aspect.
+- `<!-- fill in -->` means not yet captured. TBD means captured but undecided. `N/A — reason` means it does not apply.
+
+Resolve TBDs with the `audit-spec-tbd` skill, then `author-spec`.
+
+## Path table
+
 Match the most specific path. A file split out from a spec uses the rules file of the spec it came from. For example, `specs/definition/quality/performance.md` uses [quality.md](quality.md), and `specs/design/glossary/combat.md` uses [design/glossary.md](design/glossary.md).
 
 Do not paste these rules into a spec. Do not edit a `_template` file to hold one game's content. Copy the template, then fill the copy.

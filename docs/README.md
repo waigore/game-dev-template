@@ -14,6 +14,7 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 | [issues/](issues/) | Epic / Task / Defect contract and status workflow |
 | [labels.md](labels.md) | Label catalog and sync |
 | [pull-requests.md](pull-requests.md) | PR flow, branch names, body contract, auto-merge holds |
+| [requirements/](requirements/README.md) | Unconfirmed requirement notes awaiting capture into specs (not specs) |
 | [playtest/evidence/](playtest/evidence/) | AI-agent playtest evidence (story IDs, pass/fail, screenshots, notes, logs); requirements in `specs/playtest/` |
 | [skills.md](skills.md) | Skill authoring and native wiring |
 | [solid.md](solid.md) | SOLID principles + structure continuity for agents |

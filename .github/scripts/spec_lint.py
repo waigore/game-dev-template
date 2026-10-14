@@ -7,6 +7,7 @@ Checks (see docs/spec-lint.md):
                  templates hold only placeholders
   skeleton       copies keep every non-optional heading of their template, in order
   bare-na        N/A table cells and bullet values give a reason
+  bare-tbd       TBD markers state the open question
   links          relative Markdown links resolve
   orphans        every spec file is linked from another spec file
   glossary       glossary terms are unique and alphabetical
@@ -44,6 +45,7 @@ BULLET_VALUE_RE = re.compile(r"^\s*[-*]\s+\*\*[^*]+\*\*:\s*(.*)$")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*#*\s*$")
 KEBAB_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 BARE_NA_RE = re.compile(r"^N/?A\.?$", re.I)
+BARE_TBD_RE = re.compile(r"(?<!\w)TBD(?!\w)(?!\s*[—-]+\s*\S)")
 EXTERNAL_RE = re.compile(r"^(?:[a-z][a-z0-9+.-]*:|#)", re.I)
 
 
@@ -349,6 +351,18 @@ def check_bare_na(repo: Repo) -> list[Finding]:
     return findings
 
 
+def check_bare_tbd(repo: Repo) -> list[Finding]:
+    """`TBD` must be followed by a dash and the open question, wherever it appears."""
+    findings = []
+    for rel in repo.spec_markdown():
+        if is_template(rel):
+            continue
+        for i, line in prose_lines(repo.doc(rel)):
+            if BARE_TBD_RE.search(strip_comments(line)):
+                findings.append(Finding(rel, i, "bare-tbd", "TBD without an open question; write 'TBD — question'"))
+    return findings
+
+
 def check_links(repo: Repo) -> list[Finding]:
     findings = []
     for top in LINK_ROOTS:
@@ -433,6 +447,7 @@ CHECKS: dict[str, Callable[[Repo], list[Finding]]] = {
     "template-copy": check_template_copy,
     "skeleton": check_skeleton,
     "bare-na": check_bare_na,
+    "bare-tbd": check_bare_tbd,
     "links": check_links,
     "orphans": check_orphans,
     "glossary": check_glossary,

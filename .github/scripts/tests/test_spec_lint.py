@@ -109,6 +109,14 @@ class SpecLintTest(unittest.TestCase):
         self.add_feature(lambda t: t.replace("## Parameters\n\n- <!-- fill in -->", "## Parameters\n\n- **Speed**: N/A — turn-based"))
         self.assertEqual(self.errors("bare-na"), [])
 
+    def test_bare_tbd(self) -> None:
+        self.add_feature(lambda t: t.replace("## Parameters\n\n- <!-- fill in -->", "## Parameters\n\n- **Speed**: TBD\n\n| Rule | TBD. |"))
+        self.assertEqual(len(self.errors("bare-tbd")), 2)
+
+    def test_tbd_with_question_passes(self) -> None:
+        self.add_feature(lambda t: t.replace("## Parameters\n\n- <!-- fill in -->", "## Parameters\n\n- **Speed**: TBD — fixed or ramping?\n\nTBD - does it stack? Uses `TBD` and TBDs."))
+        self.assertEqual(self.errors("bare-tbd"), [])
+
     def test_broken_link(self) -> None:
         self.add_feature(lambda t: t + "\nSee [jump](jump.md).\n")
         self.assertIn("jump.md", self.errors("links")[0].message)

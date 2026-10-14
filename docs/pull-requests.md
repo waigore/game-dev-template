@@ -59,3 +59,7 @@ Every same-repo, non-draft PR squash-merges as soon as required checks pass ([`a
 
 - Open as **draft** (`gh pr create --draft`) while work is incomplete.
 - Add the **`no-automerge`** label when a human must review first, the PR depends on another unmerged PR, or you are unsure the change is safe to land.
+
+## Spec PRs
+
+Spec content captured or decided with the user (`capture-requirements`, `audit-spec-tbd`), including [requirement notes](requirements/README.md), always opens with `no-automerge`, so the product owner reviews it before it lands: `gh pr create --label no-automerge …`. Branch `chore/spec-<slug>` unless an issue covers it. **Authority** cites the authoring-rules file and the upstream specs the content traces to.
