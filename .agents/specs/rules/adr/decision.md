@@ -18,6 +18,7 @@ Copy the template to `decisions/<NNNN>-<kebab-name>.md`, one decision per file. 
 - **Status**: Proposed or Accepted. Superseded and Deprecated apply only in `archive/`, per [adr.md](adr.md).
 - **Date**: `YYYY-MM-DD` the status last changed.
 - **Category**: one of Engine, Framework, Library, Data storage, Integration, Game architecture. Integration covers how parts connect to each other and to external services: networking, platform services, backends, and the asset and build pipeline. Game architecture covers the structure of the running game: entity model, state ownership, game loop, scene and module organization.
+  - An **Engine** ADR realizes the engine named in the **Engine** section of `specs/definition/definition.md`: it cites that section under **Informed by** and fixes the version and boundaries. It does not choose a different engine; Rejected alternatives may read "None — engine set in the definition". While the definition's engine is TBD, no Engine ADR is Accepted.
 - **Supersedes**: ADR IDs, or "None".
 - **Informed by**: the upstream items behind the decision: vision qualities, definition scope items, technical constraints, platforms, quality categories, design, view, UX, and playtest specs or element IDs (including Must tools), and other Accepted ADRs.
 
