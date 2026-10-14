@@ -41,9 +41,9 @@ bash .github/scripts/sync-labels.sh
 | `status:pending-verification` | `0E8A16` | Implemented; awaiting verification |
 | `status:pending-acceptance` | `006B75` | Verified; awaiting acceptance testing |
 | `status:accepted` | `5319E7` | Accepted; leave open |
-| `automerge` | `2EA44F` | PR: squash-merge automatically once mergeable |
+| `no-automerge` | `B60205` | PR: opt out of automatic squash-merge |
 
-Status transitions: [`docs/issues/workflow.md`](issues/workflow.md). `automerge` behavior: [`.github/workflows/automerge.yml`](../.github/workflows/automerge.yml).
+Status transitions: [`docs/issues/workflow.md`](issues/workflow.md). Auto-merge and `no-automerge` behavior: [`.github/workflows/automerge.yml`](../.github/workflows/automerge.yml).
 
 ## Adding a label
 
