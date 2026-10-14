@@ -48,7 +48,7 @@ Fields and integrity: [`catalog.md`](catalog.md).
 | deprecated | Retired; main code must not use it |
 
 - **Approval**: <!-- fill in -->
-- **Use**: Main code uses only approved assets. A gameplay demo may use draft assets, listed as demo assumptions.
+- **Use**: Main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass, draft or approved.
 
 ## Traceability
 

@@ -47,7 +47,7 @@ Until that ADR is Accepted, both are `TBD — <question>` and no asset is catalo
 Keep the three states: draft, approved, and deprecated.
 
 - **Approval**: what moves a draft to approved: a `review-asset` Pass alone, or a Pass plus product-owner sign-off on the PR. A kind spec may require more, never less.
-- **Use**: main code uses only approved assets. A gameplay demo may use draft assets, listed as demo assumptions.
+- **Use**: main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass, draft or approved, per `docs/demo-style-assets.md`.
 
 ## Index
 
