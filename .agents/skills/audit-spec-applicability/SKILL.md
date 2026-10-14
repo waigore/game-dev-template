@@ -23,7 +23,7 @@ Read-only audit of **Applies** / **N/A** claims across the spec stack. Fixes go 
 1. **Resolve the seed**:
    - **Quality category** (e.g. save durability, observability).
    - **Hub topic** (a row in a `traceability.md` coverage table).
-   - **Whole set**: every quality category, then every hub coverage table (design → view → UX → ADR → technical).
+   - **Whole set**: every quality category, then every hub coverage table (design → view → aesthetics → UX → assets → ADR → technical).
 2. **Load the graph**: read [`references/applicability-graph.md`](references/applicability-graph.md) for the seed's upstream grounds and downstream carry-outs. Open only the specs those edges name.
 3. **Upstream**: for each Applies claim, confirm a grounding fact still holds (vision, definition scope/platforms, design presence, Accepted ADR, or an upstream Applies). For each N/A, confirm the reason still matches those facts and is not contradicted by in-scope content.
 4. **Downstream**: for each Applies, confirm required carry-outs exist and are not themselves N/A without the same reason. For each N/A, confirm downstream did not author content that assumes Applies (filled targets, Affects rows that need a target, or topic files that should be N/A).

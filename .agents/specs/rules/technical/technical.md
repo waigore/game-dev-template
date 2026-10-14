@@ -4,7 +4,7 @@ Read this before editing `specs/technical/technical.md`. Do not copy these rules
 
 Every other file under `specs/technical/` follows **Rules for every technical spec** below. Those rules files name this one under **Also read**.
 
-The technical design defines the shape of the data and code developers implement: layers, modules, components, contracts, schemata and lifecycles, sequences, and optional complexity docs. It is downstream of `specs/vision.md`, `specs/definition/definition.md`, `specs/definition/quality.md`, `specs/design/design.md`, `specs/view/view.md`, `specs/ux/ux.md`, `specs/playtest/playtest.md` (tools and cited situational capabilities), and Accepted ADRs under `specs/adr/`. Read them, and every spec a technical unit cites, before writing. If this layer conflicts with an upstream document, change the technical design, or revise the upstream document first. Do not re-litigate an Accepted ADR here; cite it.
+The technical design defines the shape of the data and code developers implement: layers, modules, components, contracts, schemata and lifecycles, sequences, and optional complexity docs. It is downstream of `specs/vision.md`, `specs/definition/definition.md`, `specs/definition/quality.md`, `specs/design/design.md`, `specs/view/view.md`, `specs/ux/ux.md`, `specs/playtest/playtest.md` (tools and cited situational capabilities), `specs/assets/assets.md` (asset kinds, asset IDs, and the catalog), and Accepted ADRs under `specs/adr/`. Read them, and every spec a technical unit cites, before writing. If this layer conflicts with an upstream document, change the technical design, or revise the upstream document first. Do not re-litigate an Accepted ADR here; cite it.
 
 ## Rules for every technical spec
 

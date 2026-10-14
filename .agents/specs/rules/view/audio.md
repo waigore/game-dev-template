@@ -4,7 +4,7 @@ Read this before editing `specs/view/audio.md`. Do not copy these rules into the
 
 Also read [view.md](view.md) and [ids.md](ids.md). Stories follow [story.md](story.md).
 
-Where sound sources are placed in the world and how the player hears them by position. Music, interface sounds, and the role of sound in play stay in `specs/design/experience.md` and `specs/ux/`. Asset lists do not belong here.
+Where sound sources are placed in the world and how the player hears them by position. Music, interface sounds, and the role of sound in play stay in `specs/design/experience.md` and `specs/ux/`. Sound style lives in `specs/aesthetics/sound.md`, and sound assets in `specs/assets/`. Asset lists do not belong here.
 
 Write "N/A — reason" in each section when the game has no positional sound.
 

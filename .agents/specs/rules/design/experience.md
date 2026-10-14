@@ -26,7 +26,7 @@ What the player must perceive when the game changes, and how strongly. State the
 
 ## Sensory intent
 
-Mood and style (keywords and contrasts), the role of sound and music in play, and clarity rules: what must always remain distinguishable.
+Mood and style (keywords and contrasts), the role of sound and music in play, and clarity rules: what must always remain distinguishable. The concrete style that realizes this intent (palette, form, motion, interface and sound style) lives in `specs/aesthetics/`.
 
 ## Accessibility
 

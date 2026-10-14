@@ -1,0 +1,23 @@
+---
+name: manage-asset
+description: |-
+  Generate, import, update, or deprecate game assets by running the asset
+  pipeline procedures in specs/assets/ against the style in specs/aesthetics/,
+  record every change in the catalog manifest, get each draft reviewed with
+  review-asset, and open a PR. Spec first: only assets a coverage rule
+  requires, only through tool roles realized by Accepted ADRs.
+  Use when the user asks to create, generate, source, regenerate, replace, or
+  retire art, animation, interface art, fonts, or audio.
+
+  Examples:
+    - user: "Generate the player run sprites" → APR.generate from the kind recipe, checks, review, PR
+    - user: "Use this licensed tileset for the forest" → APR.import, license check, catalog, review
+    - user: "Regenerate the slime with the new palette" → APR.update, version bump, re-review
+    - user: "Retire the old HUD icons" → APR.deprecate with successor IDs
+---
+
+# Manage asset (facade)
+
+Canonical instructions: [`.agents/skills/manage-asset/SKILL.md`](../../../.agents/skills/manage-asset/SKILL.md).
+
+Read that file and its `references/` as needed, then run the workflow there. Do not invent a parallel process.

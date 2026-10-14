@@ -1,6 +1,6 @@
 # Reviewing `specs/ux/`
 
-Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/ux/ux.md) and every file under [`specs/ux/`](../../specs/ux/)). Authoring rules for each file are in [`rules/README.md`](rules/README.md). Follow [`alignment.md`](alignment.md). The spec links that file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md), [`specs/design/design.md`](../../specs/design/design.md), and [`specs/view/view.md`](../../specs/view/view.md) first. When a UX file cites a design or view element, read that spec. A review may cover the whole UX or named files. Cross-spec checks always consider the whole UX. Skip `_template.md` and `_template.html`. Run every check, then report a verdict.
+Instructions for agents reviewing the UX specs ([`specs/ux/ux.md`](../../specs/ux/ux.md) and every file under [`specs/ux/`](../../specs/ux/)). Authoring rules for each file are in [`rules/README.md`](rules/README.md). Follow [`alignment.md`](alignment.md). The spec links that file and does not contain the rules. Read [`specs/vision.md`](../../specs/vision.md), [`specs/definition/definition.md`](../../specs/definition/definition.md), [`specs/definition/quality.md`](../../specs/definition/quality.md), [`specs/design/design.md`](../../specs/design/design.md), [`specs/view/view.md`](../../specs/view/view.md), and [`specs/aesthetics/ui-style.md`](../../specs/aesthetics/ui-style.md) first. When a UX file cites a design or view element, read that spec. A review may cover the whole UX or named files. Cross-spec checks always consider the whole UX. Skip `_template.md` and `_template.html`. Run every check, then report a verdict.
 
 ## Aligned
 
@@ -15,7 +15,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] Every actor, screen, and journey file is listed in the `ux.md` index, and every indexed file exists.
 - [ ] Every screen spec is a row in `navigation.md`, and every navigation row has a screen spec.
 - [ ] Each screen and journey has a mockup when the definition's spec depth requires one ([`depth.md`](rules/depth.md)). Otherwise its **Mockup** field reads "None — spec depth \<level\>".
-- [ ] When any mockup exists, `presentation.md` names the design system and the template for each surface.
+- [ ] When any mockup exists, `presentation.md` names the design system and the template for each surface, and **Aesthetics fit** states which `UIS` elements the system meets and which tokens it overrides.
 
 ### Interface detail
 
@@ -75,6 +75,7 @@ Rules: [`stories.md`](rules/ux/stories.md) and [`story.md`](rules/ux/story.md).
 - [ ] Each filled screen mockup keeps `data-screen`, `data-region`, `data-control`, and `data-state` for the elements in its spec.
 - [ ] Each journey mockup links every step and branch in that journey, including exception anchors.
 - [ ] Visual treatment follows `presentation.md`: Open Design tokens and craft for the bound system, `mobile-app` or `web-prototype` for meta screens, and the game-screen skeleton for play screens.
+- [ ] Mockup colors, type, panels, and interface motion match `specs/aesthetics/ui-style.md` after the overrides in **Aesthetics fit**.
 - [ ] `presentation.md` is the binding. A root `.open-design.json` does not replace it.
 
 ### Scope boundaries

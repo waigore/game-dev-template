@@ -23,7 +23,9 @@ Add a row for each new spec file. Each hub indexes its own unit specs; its rules
 | [`definition/quality.md`](definition/quality.md) | Non-functional requirements | [`definition-review.md`](../.agents/specs/definition-review.md) |
 | [`design/design.md`](design/design.md) | Game design hub | [`design-review.md`](../.agents/specs/design-review.md) |
 | [`view/view.md`](view/view.md) | View hub: camera, projection, feel | [`view-review.md`](../.agents/specs/view-review.md) |
+| [`aesthetics/aesthetics.md`](aesthetics/aesthetics.md) | Aesthetics hub: medium, style pillars, palette, form, motion, interface and sound style | [`aesthetics-review.md`](../.agents/specs/aesthetics-review.md) |
 | [`ux/ux.md`](ux/ux.md) | UX hub: screens, navigation, input, mockups | [`ux-review.md`](../.agents/specs/ux-review.md) |
 | [`playtest/playtest.md`](playtest/playtest.md) | AI-agent playtesting and acceptance evidence | [`playtest-review.md`](../.agents/specs/playtest-review.md) |
+| [`assets/assets.md`](assets/assets.md) | Asset pipeline: kinds, tool roles, procedures, catalog | [`assets-review.md`](../.agents/specs/assets-review.md) |
 | [`adr/adr.md`](adr/adr.md) | Architecture decision records | [`adr-review.md`](../.agents/specs/adr-review.md) |
 | [`technical/technical.md`](technical/technical.md) | Technical design hub | [`technical-review.md`](../.agents/specs/technical-review.md) |

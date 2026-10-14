@@ -16,6 +16,7 @@ Record the [Open Design](https://github.com/nexu-io/open-design) choices for thi
 
 - **Design system**: slug and path, for example `linear` / `design-systems/linear`.
 - **Content root**: the Open Design clone the open-design skill reads (`OPEN_DESIGN_ROOT`, or `~/.open-design-skill/repo` when unset).
+- **Aesthetics fit**: how the bound design system realizes `specs/aesthetics/ui-style.md`: which `UIS` elements it meets as is, and which tokens are overridden to meet the rest (colors to `UIS.C` roles, type to `UIS.T`, corners and borders to `UIS.F`). Choose a design system whose overrides stay small. When the two disagree, the aesthetics win.
 
 ## Surfaces
 

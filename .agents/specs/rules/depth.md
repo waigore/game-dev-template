@@ -49,13 +49,16 @@ The table sets the minimum. Any spec may take a higher level. Choose per spec.
 | Open Design binding | Required | Required | None |
 | Projection diagram | Required | Required | None |
 | Camera diagrams | Every camera | Core cameras that move | None |
+| Palette sheet | Required | Required | None |
+| Lineup sheet | Every character and entity with a body | Characters and entities in core specs | None |
 
-The table sets the minimum. An artifact beyond it is allowed, and then follows its rules in full. When an artifact is not required and not made, its header field (**Mockup** or **Diagram**) reads "None — spec depth \<level\>". When no mockup exists at all, the Mockups topic in `specs/ux/traceability.md` is "N/A — spec depth \<level\>". The same applies to the Diagrams topic in `specs/view/traceability.md`.
+The table sets the minimum. An artifact beyond it is allowed, and then follows its rules in full. When an artifact is not required and not made, its header field (**Mockup**, **Diagram**, or **Sheet**) reads "None — spec depth \<level\>". When no mockup exists at all, the Mockups topic in `specs/ux/traceability.md` is "N/A — spec depth \<level\>". The same applies to the Diagrams topic in `specs/view/traceability.md` and the Sheets topic in `specs/aesthetics/traceability.md`.
 
 ## Other effects
 
 - **Scenarios** (`specs/design/scenarios/`): at full, the scenario rules apply unchanged. At small, at least one scenario walks the core loop to an end condition, and more are optional. At prototype, the Scenarios topic may be N/A citing spec depth.
 - **Quality** (`specs/definition/quality.md`): at prototype, an N/A reason may cite spec depth for every category except performance.
+- **Asset kinds** (`specs/assets/kinds/`): at prototype, Budgets may read "None — spec depth prototype". Coverage, recipes, and checks apply at every depth.
 
 ## Changing depth
 

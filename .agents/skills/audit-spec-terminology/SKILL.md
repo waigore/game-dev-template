@@ -14,7 +14,7 @@ description: |-
 
 # Audit spec terminology
 
-Read-only audit of **shared language** across design, view, UX, and technical specs. Fixes go through [`author-spec`](../author-spec/SKILL.md). Full checklist review is [`review-spec`](../review-spec/SKILL.md). Applicability (Applies/N/A) is [`audit-spec-applicability`](../audit-spec-applicability/SKILL.md).
+Read-only audit of **shared language** across design, view, aesthetics, UX, asset pipeline, and technical specs. Fixes go through [`author-spec`](../author-spec/SKILL.md). Full checklist review is [`review-spec`](../review-spec/SKILL.md). Applicability (Applies/N/A) is [`audit-spec-applicability`](../audit-spec-applicability/SKILL.md).
 
 **Ownership:** [`references/glossary-ownership.md`](references/glossary-ownership.md). **Risk words:** [`references/risk-lexicon.md`](references/risk-lexicon.md). **Maintaining those files:** [`references/README.md`](references/README.md).
 
@@ -22,13 +22,13 @@ Read-only audit of **shared language** across design, view, UX, and technical sp
 
 1. **Resolve the seed**:
    - **One term** (e.g. level, session, state).
-   - **One domain** (design, view, UX, or technical): that glossary plus specs under that hub.
+   - **One domain** (design, view, aesthetics, UX, assets, or technical): that glossary plus specs under that hub.
    - **Whole set**: every glossary entry, then every word in the risk lexicon.
 2. **Load ownership**: read [`glossary-ownership.md`](references/glossary-ownership.md). Open only the glossaries and hubs that apply to the seed.
 3. **Collect candidates**:
    - Seed term → that word only.
    - Domain → every row in that domain's glossary (and splits), plus risk-lexicon words that collide with that domain.
-   - Whole set → all glossary rows across the four hubs, then risk-lexicon words not already covered.
+   - Whole set → all glossary rows across the six hubs, then risk-lexicon words not already covered.
 4. **Compare usages**: for each candidate, sample definitions and in-spec usages across domains. Match against the owning glossary sense. Cap sampling: prefer glossary files, hub indexes, and files that already use the term; do not thesaurus-expand.
 5. **Report** using the shape below. Do not edit specs. If the requester wants fixes, point them at `author-spec`.
 

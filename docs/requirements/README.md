@@ -6,7 +6,7 @@ Notes are **not specs**. They are unconfirmed and do not authorize code or desig
 
 ## Files
 
-One file per downstream layer, created when first needed: `design.md`, `view.md`, `ux.md`, `playtest.md`, `adr.md`, `technical.md`. When a file nears 500 words, split it by topic into `<layer>-<topic>.md` (for example `design-combat.md`) and list the parts in the layer file.
+One file per downstream layer, created when first needed: `design.md`, `view.md`, `aesthetics.md`, `ux.md`, `playtest.md`, `assets.md`, `adr.md`, `technical.md`. When a file nears 500 words, split it by topic into `<layer>-<topic>.md` (for example `design-combat.md`) and list the parts in the layer file.
 
 ## Entry format
 
