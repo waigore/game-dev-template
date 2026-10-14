@@ -16,3 +16,4 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 | [playtest/evidence/](playtest/evidence/) | AI-agent playtest evidence (story IDs, pass/fail, screenshots, notes, logs); requirements in `specs/playtest/` |
 | [skills.md](skills.md) | Skill authoring and native wiring |
 | [solid.md](solid.md) | SOLID principles + structure continuity for agents |
+| [spec-lint.md](spec-lint.md) | CI checks for spec structure (rules line, templates, links, glossaries) |

@@ -10,7 +10,7 @@ Every Markdown file under `specs/` stays under **500 words**; split and link if 
 
 ## Authoring
 
-Read the matching rules file in [`.agents/specs/rules/`](../.agents/specs/rules/README.md) before editing a spec (`author-spec` skill). Reviews follow [`.agents/specs/alignment.md`](../.agents/specs/alignment.md).
+Read the matching rules file in [`.agents/specs/rules/`](../.agents/specs/rules/README.md) before editing a spec (`author-spec` skill). Reviews follow [`.agents/specs/alignment.md`](../.agents/specs/alignment.md). CI checks the mechanical rules ([`docs/spec-lint.md`](../docs/spec-lint.md)).
 
 ## Index
 
