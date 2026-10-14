@@ -10,6 +10,7 @@ Checks (see docs/spec-lint.md):
   links          relative Markdown links resolve
   orphans        every spec file is linked from another spec file
   glossary       glossary terms are unique and alphabetical
+  word-limit     Markdown in docs/ and specs/ stays within WORD_LIMIT words
 
 Usage: spec_lint.py [--root DIR] [--strict]
 Exit 1 on any error; warnings exit 1 only with --strict.
@@ -28,6 +29,8 @@ SPECS = "specs"
 RULES_README = ".agents/specs/rules/README.md"
 LINK_ROOTS = ("specs", "docs", ".agents")
 OPTIONAL_TEMPLATES = "specs/technical/_templates/"
+WORD_LIMIT_ROOTS = ("docs", "specs")
+WORD_LIMIT = 500
 
 COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
@@ -414,6 +417,17 @@ def check_glossary(repo: Repo) -> list[Finding]:
     return findings
 
 
+def check_word_limit(repo: Repo) -> list[Finding]:
+    """Words are counted like `wc -w` on the raw file; a file at exactly the limit passes."""
+    findings = []
+    for top in WORD_LIMIT_ROOTS:
+        for rel in repo.files(top, (".md",)):
+            words = len(repo.doc(rel).text.split())
+            if words > WORD_LIMIT:
+                findings.append(Finding(rel, 1, "word-limit", f"{words} words (limit {WORD_LIMIT}); split into focused files and link between them"))
+    return findings
+
+
 CHECKS: dict[str, Callable[[Repo], list[Finding]]] = {
     "rules-line": check_rules_line,
     "template-copy": check_template_copy,
@@ -422,6 +436,7 @@ CHECKS: dict[str, Callable[[Repo], list[Finding]]] = {
     "links": check_links,
     "orphans": check_orphans,
     "glossary": check_glossary,
+    "word-limit": check_word_limit,
 }
 
 

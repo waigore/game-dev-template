@@ -125,5 +125,13 @@ class SpecLintTest(unittest.TestCase):
         self.assertTrue(any("defined twice" in m for m in messages))
 
 
+    def test_word_limit(self) -> None:
+        self.write("docs/long.md", "word " * (spec_lint.WORD_LIMIT + 1))
+        self.assertEqual([f.path for f in self.errors("word-limit")], ["docs/long.md"])
+
+    def test_word_limit_boundary_passes(self) -> None:
+        self.write("specs/long.md", "word " * spec_lint.WORD_LIMIT)
+        self.assertEqual(self.errors("word-limit"), [])
+
 if __name__ == "__main__":
     unittest.main()

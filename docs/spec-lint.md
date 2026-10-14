@@ -1,11 +1,11 @@
 # Spec lint
 
-CI check ([`spec-lint.yml`](../.github/workflows/spec-lint.yml)) that enforces the mechanical parts of the spec authoring rules. Judgment calls stay with the `review-spec` skill.
+CI check ([`spec-lint.yml`](../.github/workflows/spec-lint.yml)) that enforces the mechanical parts of the spec authoring rules and the docs/specs word limit. Judgment calls stay with the `review-spec` skill.
 
 Run locally:
 
 ```bash
-python3 .github/scripts/spec_lint.py            # lint specs/
+python3 .github/scripts/spec_lint.py            # lint specs/ and docs/
 python3 -m unittest discover -s .github/scripts/tests   # test the linter
 ```
 
@@ -22,6 +22,7 @@ Errors fail the check. Warnings are printed but pass; add `--strict` to fail on 
 | `links` | A relative link in `specs/`, `docs/`, or `.agents/` points at a missing file. |
 | `orphans` | A spec or mockup is linked from no other spec. A link to a folder counts for its `README.md`. |
 | `glossary` | A glossary term repeats in the same file or breaks alphabetical order. A term defined in two glossaries is a warning. |
+| `word-limit` | A Markdown file in `docs/` or `specs/` exceeds 500 words, counted like `wc -w` on the raw file. Split it and link. |
 
 ## Adding a check
 
