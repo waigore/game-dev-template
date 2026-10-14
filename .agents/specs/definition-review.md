@@ -10,7 +10,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 
 - [ ] No `<!-- fill in -->` placeholders remain; unused template rows are deleted.
 - [ ] `definition.md` links [`rules/definition.md`](rules/definition.md), and `quality.md` links [`rules/quality.md`](rules/quality.md). Those rules are not pasted into the spec. A split file uses the rules file of the spec it came from.
-- [ ] Every section is present: scope, objectives, supported platforms, constraints, spec depth, quality expectations.
+- [ ] Every section is present: scope, objectives, supported platforms, engine, constraints, spec depth, quality expectations.
 - [ ] [`quality.md`](../../specs/definition/quality.md) is linked from the quality expectations section and listed in [`specs/README.md`](../../specs/README.md).
 - [ ] Split sections are linked from `definition.md` with a one-line summary and listed in [`specs/README.md`](../../specs/README.md).
 
@@ -29,6 +29,12 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 
 - [ ] Each platform has a primary input and a priority (primary / secondary / stretch).
 - [ ] At least one platform is primary.
+- [ ] Every primary platform is one the engine can reach.
+
+### Engine
+
+- [ ] Engine names an engine, a framework when there is none, or "Custom", with a one-line reason grounded in the platforms, constraints, team, or vision qualities. No versions, plugins, or setup.
+- [ ] Implications state in product terms what the choice fixes or limits, and do not contradict the scope, platforms, or constraints.
 
 ### Constraints
 
@@ -60,7 +66,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 ### Format
 
 - [ ] `definition.md` reads as roughly one page. Each file is under 500 words ([`specs/README.md`](../../specs/README.md)).
-- [ ] No technical details (architecture, engine systems, data formats, APIs). Technical *constraints* are fine.
+- [ ] No technical details (architecture, engine systems, data formats, APIs). Technical *constraints* and the engine choice are fine.
 
 ## Imposed
 

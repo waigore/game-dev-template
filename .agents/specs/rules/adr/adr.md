@@ -13,7 +13,8 @@ The architecture records the technical decisions the game is built on: engine, f
 - **Accepted is binding**: only an Accepted ADR authorizes code. A Proposed ADR does not.
 - **Immutable once accepted**: do not rewrite an Accepted ADR. To change a decision, write a new ADR that supersedes it, then archive the old one per **Archive** below. Fixing a typo or a broken link is allowed.
 - **Archived is out of context**: do not read `archive/` unless explicitly asked. No file outside `archive/` cites an archived ADR, except the **Supersedes** line of its successor.
-- **Named technology**: this is the only spec layer that names engines, frameworks, libraries, products, services, protocols, and data formats. State versions when the decision depends on them.
+- **Named technology**: this is the only spec layer that names engines, frameworks, libraries, products, services, protocols, and data formats, except the engine choice in `specs/definition/definition.md`. State versions when the decision depends on them.
+- **Engine set by the definition**: the Engine ADR realizes the engine the definition names, per [decision.md](decision.md). An ADR does not choose a different engine. Changing engine means revising the definition first.
 - **Decisions, not implementation**: state what is chosen, the boundaries it sets, and why. No code, step-by-step setup, or tuning values.
 - **Traceable**: every ADR states which upstream items inform it. `traceability.md` maps them.
 - **Concise**: each Markdown file stays under 500 words. Split by logical unit and link. The type's own rules file says where to move the extra part.
