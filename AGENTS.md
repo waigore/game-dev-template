@@ -51,10 +51,11 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 
 ## Rules to live by
 
-- **Branch protection**: `main` is protected; changes land via PR only. First-time remote setup: [`docs/github-repo-setup.md`](docs/github-repo-setup.md) (`setup-github-repo` skill).
+- **First-time setup**: in a new repo from this template, run `ensure-project-setup` before any other work or PR ([`docs/github-repo-setup.md`](docs/github-repo-setup.md)).
+- **Branch protection**: `main` is protected; changes land via PR only.
 - **Always open a PR**: when a change is done, branch (`<type>/<issue#>-<slug>`), push, and open a PR using the template; link issues with `Refs #n`, never `Closes`. PRs auto-merge on green; use draft or `no-automerge` to hold. Contract: [`docs/pull-requests.md`](docs/pull-requests.md).
 - **Small PRs**: prefer focused, testable changes; keep PRs under ~30 files — split if larger.
-- **Spec first**: if it is not in `specs/`, it must not be in the code.
+- **Spec first**: if it is not in `specs/`, it must not be in the code. Undecided aspects are marked `TBD — <question>` in any spec ([rule](.agents/specs/rules/README.md#undecided-aspects-tbd)) and are not coded; resolve them with `audit-spec-tbd`.
 - **Spec authoring**: before writing or editing a file under `specs/`, read its rules file from [`.agents/specs/rules/README.md`](.agents/specs/rules/README.md) (`author-spec` skill). Do not copy those rules into the spec. CI `Spec lint` checks the structural rules ([`docs/spec-lint.md`](docs/spec-lint.md)). When applying a failed spec review, follow [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
 - **Spec depth**: `specs/definition/definition.md` sets `prototype`, `small`, or `full`, which scales story coverage, mockups, and diagrams per [`.agents/specs/rules/depth.md`](.agents/specs/rules/depth.md).
 - **Spec review**: review a spec with the `review-spec` skill, using the checklist linked from [`specs/README.md`](specs/README.md) and [`.agents/specs/alignment.md`](.agents/specs/alignment.md).

@@ -9,6 +9,7 @@ These apply to every spec. They are aligned requirements even though each rules 
 - The spec links its authoring-rules file from [rules/README.md](rules/README.md). A split file uses the rules file of the spec it came from. HTML mockups and HTML under `specs/view/diagrams/` or `specs/technical/diagrams/` do not carry this link.
 - The rules text is not pasted into the spec. The authoring-rules link is not game or interface content.
 - A finished spec has no `<!-- fill in -->` placeholder. Unused rows and sections the rules file says to delete are deleted.
+- An undecided aspect reads `TBD — <open question>` per [rules/README.md](rules/README.md). A finished spec has no TBD. A reviewer reports each TBD as a failed aligned check tagged `needs clarification` and does not choose an outcome.
 - Each Markdown file under `specs/` stays under 500 words. HTML mockups and HTML diagrams under `view/diagrams/` and `technical/diagrams/` are exempt. Split the way the rules file says.
 
 ## Aligned checks
@@ -31,9 +32,9 @@ Tag every failed check `aligned` or `imposed`. If the check cannot be judged wit
 
 Refinement edits the spec after a failed spec review. It is not the GitHub issue refine workflow.
 
-- **Aligned:** change the spec so it meets the rules. If the rules require an outcome and the spec does not already imply one, do not invent it. Leave that point and report it as `needs clarification`.
+- **Aligned:** change the spec so it meets the rules. If the rules require an outcome and the spec does not already imply one, do not invent it. Mark that point TBD and report it as `needs clarification`.
 - **Imposed:** apply the suggested fix, unless it materially challenges the project scope, the definition, or the design. Then do not change the spec on that point. Report the finding and leave it.
-- **Needs clarification:** do not choose an outcome. Report the finding.
+- **Needs clarification:** do not choose an outcome. Mark the point TBD if it is not already, and report the finding.
 - Do not paste authoring rules into the spec.
 
 Material means the edit would change what the game includes or excludes, a definition objective, platform, constraint, or quality target, or what happens in play. Stating an outcome the spec already implies is not material.

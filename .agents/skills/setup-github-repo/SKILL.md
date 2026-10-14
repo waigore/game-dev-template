@@ -35,11 +35,11 @@ First-time GitHub workflow configuration for repositories using this template.
    - Merge methods: squash only; merge commit and rebase off
    - Auto-merge enabled
    - `main` protected: PR required, force pushes off, **enforce admins / no bypass**, required status checks `Spec lint` and `PR hygiene`
-   - Labels: `type:epic`, `type:task`, `type:defect` present
+   - Labels: every label in `.github/project-labels.yml` present (the doc's label command prints nothing)
 4. **Report** a short pass/fail checklist of gaps.
 5. **Guide** the user through Settings UI for each failing item (paths in the doc). Re-verify after each change when possible.
 6. **Labels**: if missing, offer sync (`bash .github/scripts/sync-labels.sh` or Actions → Sync labels). Run sync **only** with user confirmation.
-7. **Mutate** via `gh`/API **only** if the user explicitly asked to apply/fix settings. Prefer API for merge methods, auto-merge, classic branch protection, and label sync. If a step is UI-only or the API rejects (e.g. rulesets-only org), say so and keep guiding the UI.
+7. **Mutate** via `gh`/API **only** if the user explicitly asked to apply/fix settings (running `ensure-project-setup` counts). Prefer API for merge methods, auto-merge, classic branch protection, and label sync. Protect `main` with its required checks before enabling auto-merge. If a step is UI-only or the API rejects (e.g. rulesets-only org), say so and keep guiding the UI.
 8. **Final report**: pass/fail per item; link the doc for future runs.
 
 ## Rules
@@ -54,5 +54,6 @@ First-time GitHub workflow configuration for repositories using this template.
 ## Related
 
 - Doc: `docs/github-repo-setup.md`
+- Orchestrator: [`ensure-project-setup`](../ensure-project-setup/SKILL.md) (check, then apply gaps)
 - Labels: `docs/labels.md`, `.github/scripts/sync-labels.sh`
 - AGENTS.md: branch protection under Rules to live by

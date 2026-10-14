@@ -19,6 +19,7 @@ Errors fail the check. Warnings are printed but pass; add `--strict` to fail on 
 | `template-copy` | A copy keeps the `<!-- Template: … -->` comment, a file or directory name is not kebab-case, or a `_template` file holds content: a section, table row, or paragraph with no placeholder left. |
 | `skeleton` | A copy is missing a `##` heading from its template, or has it out of order. Headings marked `(optional)` or holding a placeholder are skipped. Mark an unused section N/A instead of deleting it. |
 | `bare-na` | A table cell or `- **Field**:` value is just `N/A`. Write `N/A — reason`. |
+| `bare-tbd` | `TBD` appears without an open question. Write `TBD — question` ([rule](../.agents/specs/rules/README.md#undecided-aspects-tbd)). |
 | `links` | A relative link in `specs/`, `docs/`, or `.agents/` points at a missing file. |
 | `orphans` | A spec or mockup is linked from no other spec. A link to a folder counts for its `README.md`. |
 | `glossary` | A glossary term repeats in the same file or breaks alphabetical order. A term defined in two glossaries is a warning. |
