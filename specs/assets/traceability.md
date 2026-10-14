@@ -16,6 +16,7 @@ Authoring rules: [`.agents/specs/rules/assets/traceability.md`](../../.agents/sp
 | AI generation | [`tools.md`](tools.md), [`kinds/`](kinds/) | <!-- fill in --> |
 | Procedural generation | [`tools.md`](tools.md), [`kinds/`](kinds/) | <!-- fill in --> |
 | Third-party sourcing | [`procedures.md`](procedures.md), [`kinds/`](kinds/) | <!-- fill in --> |
+| Human-made assets | [`procedures.md`](procedures.md), [`catalog.md`](catalog.md) | <!-- fill in --> |
 | Tool roles | [`tools.md`](tools.md) | <!-- fill in --> |
 | Procedures | [`procedures.md`](procedures.md) | <!-- fill in --> |
 | Catalog | [`catalog.md`](catalog.md) | <!-- fill in --> |

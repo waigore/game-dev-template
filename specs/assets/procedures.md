@@ -4,7 +4,7 @@ Authoring rules: [`.agents/specs/rules/assets/procedures.md`](../../.agents/spec
 
 ## When to run
 
-Asset work is tracked by a task issue whose deliverables name asset IDs or coverage rules (`AK-<name>.V<n>`). Assets land through PRs. The `manage-asset` skill runs these procedures; `review-asset` runs `APR.review`.
+Asset work is tracked by a task issue whose deliverables name asset IDs or coverage rules (`AK-<name>.V<n>`). Assets land through PRs. The `manage-asset` skill runs these procedures, `register-asset` runs `APR.register`, and `review-asset` runs `APR.review`.
 
 ## Procedures
 
@@ -27,9 +27,17 @@ Asset work is tracked by a task issue whose deliverables name asset IDs or cover
 2. Add a draft entry with source, license, attribution, and where proof of purchase is kept.
 3. Post-process to the kind's specification. Run its checks and `APR.review`.
 
+### `APR.register`
+
+- **Trigger**: a person supplies a human-made or third-party asset.
+
+1. Add a draft entry with the author or source, and the rights or license.
+2. Ask that person whether to exempt it from review; record a granted exemption in `CAT.F17`.
+3. Save files per the kind's naming. If exempt, approve on merge; otherwise run `APR.review`.
+
 ### `APR.review`
 
-1. Run `review-asset` on the entries. Record the verdict, date, reviewer, and report link.
+1. Skip exempt entries unless review is requested; then the verdict is advisory. Otherwise run `review-asset` and record the verdict, date, reviewer, and report link.
 2. On Pass, approve per the hub's **Approval** rule. On Fail, fix through `APR.generate` or `APR.update`.
 
 ### `APR.update`

@@ -33,7 +33,7 @@ Keep every skeleton row. Add a row for each other kind this game needs. Columns:
 
 ## Sources
 
-One row per source type: AI generation, procedural generation, and third-party (licensed or purchased). Add a row for any other source. Each is "Applies" or "N/A — reason", grounded in the definition's constraints (budget, team, market) and the vision.
+One row per source type: AI generation, procedural generation, third-party (licensed or purchased), and human-made (made by a person on the team). Add a row for any other source. Each is "Applies" or "N/A — reason", grounded in the definition's constraints (budget, team, market) and the vision. Generation by agents is optional: AI generation may be N/A.
 
 ## Catalog
 
@@ -46,8 +46,9 @@ Until that ADR is Accepted, both are `TBD — <question>` and no asset is catalo
 
 Keep the three states: draft, approved, and deprecated.
 
-- **Approval**: what moves a draft to approved: a `review-asset` Pass alone, or a Pass plus product-owner sign-off on the PR. A kind spec may require more, never less.
-- **Use**: main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass, draft or approved, per `docs/demo-style-assets.md`.
+- **Approval**: what moves a draft to approved: a `review-asset` Pass alone, or a Pass plus product-owner sign-off on the PR. A kind spec may require more, never less. A review-exempt asset is approved when its catalog entry merges.
+- **Review exemption**: keep this rule as written. A person (the author or the product owner) may exempt one human-made, third-party, or procedural asset from `review-asset`. The catalog records who, when, and why. AI-generated assets are never exempt, and an agent never grants an exemption. `review-asset` runs on an exempt asset only on request, and its verdict is advisory.
+- **Use**: main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass or a review exemption, draft or approved, per `docs/demo-style-assets.md`.
 
 ## Index
 

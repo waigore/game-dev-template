@@ -6,7 +6,7 @@ description: |-
   aggressively to the fewest spec elements that answer one demo question,
   clarifies blocking gaps with the user and writes the answers back to specs,
   then builds the demo as a reference artifact that cites its specs. Every
-  demo expresses the aesthetics and uses only reviewed pipeline assets, as a
+  demo expresses the aesthetics and uses only cataloged pipeline assets, as a
   proof of concept for both. Demo code is exempt from SOLID review but not
   from spec first.
   Use when the user asks for a demo, prototype, vertical slice, or proof of a

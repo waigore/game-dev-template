@@ -1,15 +1,20 @@
 # Demo style and assets
 
-Every [gameplay demo](demos.md), engine or gameplay type, is a proof of concept for the game's style and its asset pipeline. It expresses the style in [`specs/aesthetics/`](../specs/aesthetics/aesthetics.md), and every asset it shows or plays comes through the pipeline in [`specs/assets/`](../specs/assets/assets.md).
+Every [gameplay demo](demos.md), engine or gameplay type, is a proof of concept for the game's style and its asset pipeline. It expresses the style in [`specs/aesthetics/`](../specs/aesthetics/aesthetics.md), and every asset it shows or plays is cataloged per [`specs/assets/`](../specs/assets/assets.md). Assets may be agent-made or human-made; agent generation is optional.
 
 ## Before building
 
+Always:
+
 - The aesthetics hub and every style element in scope hold no TBD.
 - The asset hub names its catalog manifest, asset root, and approval rule.
-- Every asset kind the demo needs has a kind spec whose coverage rule, specification, recipe, and checks hold no TBD.
-- Each recipe's tool role is realized by an Accepted ADR.
 
-A missing piece is a blocking gap. It is resolved in `specs/` before the build, never as a demo assumption.
+For each asset an agent makes or imports with `manage-asset`:
+
+- Its kind has a kind spec whose coverage rule, specification, recipe, and checks hold no TBD.
+- The recipe's tool role is realized by an Accepted ADR.
+
+A human-made asset registered with `register-asset` for the demo needs only the catalog. A missing piece is a blocking gap, resolved in `specs/` before the build, never as a demo assumption.
 
 ## Style
 
@@ -18,15 +23,15 @@ A missing piece is a blocking gap. It is resolved in `specs/` before the build, 
 
 ## Assets
 
-- Every asset is made or imported with [`manage-asset`](../.agents/skills/manage-asset/SKILL.md), cataloged, and cited in the demo by asset ID.
-- No ad hoc placeholder art or sound. Debug overlays are tooling, not assets.
-- Every asset has a [`review-asset`](../.agents/skills/review-asset/SKILL.md) Pass for its current version. It may stay draft; approval waits for promotion.
-- Assets live under the catalog's asset root, not in `demos/<slug>/`, so main code can use them once approved.
+- Every asset is cataloged and cited in the demo by asset ID: agent-made or imported with [`manage-asset`](../.agents/skills/manage-asset/SKILL.md), or supplied by a person with [`register-asset`](../.agents/skills/register-asset/SKILL.md).
+- No uncataloged placeholder art or sound. Debug overlays are tooling, not assets.
+- Every asset has a [`review-asset`](../.agents/skills/review-asset/SKILL.md) Pass for its current version, or a review exemption granted by a person per the asset hub. AI-generated assets are never exempt. Assets may stay draft.
+- Assets live under the catalog's asset root, not in `demos/<slug>/`.
 
 ## Pipeline findings
 
-The demo exercises the pipeline as much as the style. The README lists every problem met while producing its assets: a recipe that needed retries, a check that could not be run, a tool limit, a style element too vague to judge. Each finding is filed as a spec change (with `author-spec`) or a defect (with `create-project-defect`), and the README links it. "None" is a valid list when nothing went wrong.
+The README lists every problem met while producing or registering its assets: a recipe that needed retries, a check that could not be run, a tool limit, a style element too vague to judge. Each finding is filed as a spec change (with `author-spec`) or a defect (with `create-project-defect`), and the README links it. "None" is a valid list.
 
 ## Verification
 
-`verify-project-issue` runs `review-asset` on every asset the demo uses and checks the README's style and asset tables against the demo. A review Fail, an included style element not shown, or an asset not in the catalog fails verification.
+`verify-project-issue` runs `review-asset` on every non-exempt asset the demo uses, checks each exemption is valid, and checks the README's style and asset tables against the demo. A review Fail, an invalid exemption, an included style element not shown, or an asset not in the catalog fails verification.

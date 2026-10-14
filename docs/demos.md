@@ -22,7 +22,7 @@ One folder per demo: `demos/<slug>/`, holding the code and a `README.md` copied 
 
 ## Style and assets
 
-Both types express the style in `specs/aesthetics/` and show only reviewed assets from the pipeline in `specs/assets/`. No ad hoc placeholders. The README records pipeline findings. Contract: [demo-style-assets.md](demo-style-assets.md).
+Both types express the style in `specs/aesthetics/` and show only cataloged assets per `specs/assets/`, each reviewed or exempted by a person. No uncataloged placeholders. The README records pipeline findings. Contract: [demo-style-assets.md](demo-style-assets.md).
 
 ## What is relaxed
 

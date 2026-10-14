@@ -32,15 +32,16 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 ### Procedures and catalog
 
-- [ ] `APR.generate`, `APR.import`, `APR.review`, `APR.update`, and `APR.deprecate` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency and failure handling are filled.
+- [ ] `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, and `APR.deprecate` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency and failure handling are filled.
 - [ ] Manifest and asset root cite an Accepted Integration ADR, or are TBD.
 - [ ] Asset ID format, the skeleton fields, and the integrity rules match [catalog.md](rules/assets/catalog.md); each integrity rule says how it is checked.
 - [ ] The hub's approval rule names a `review-asset` Pass. No kind spec weakens it.
+- [ ] The hub's review exemption rule is kept as written: person-granted, per asset, never for AI generation.
 
 ### Kind specs
 
 - [ ] Each has the header and sections [kinds.md](rules/assets/kinds.md) requires.
-- [ ] Each recipe states source type, tool role, inputs, prompt template, settings, seed policy, post-processing, and outputs. A third-party recipe states required license terms.
+- [ ] Each recipe states source type, tool role, inputs, prompt template, settings, seed policy, post-processing, and outputs. A third-party recipe states required license terms. A human-made recipe marks tool role, prompt template, settings, and seed policy N/A.
 - [ ] Every specification row and budget has a check. A style check cites the pillars, and a readability check exists when the kind is seen in play.
 
 ### Shared language and IDs
