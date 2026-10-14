@@ -47,6 +47,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - [`.github/`](.github/) — ([README](.github/README.md))
 - [`docs/`](docs/) — ([README](docs/README.md))
 - [`specs/`](specs/) — ([README](specs/README.md))
+- [`demos/`](demos/) — gameplay demos, kept apart from main code ([README](demos/README.md))
 - <!-- fill in: top-level dirs (e.g. src/, assets/, tests/) + their README.md -->
 
 ## Rules to live by
@@ -65,6 +66,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **Technical design**: code and data shape (layers, modules, components, contracts, schemata, sequences) live in [`specs/technical/`](specs/technical/technical.md), downstream of definition, design, view, UX, and Accepted ADRs.
 - **Concise docs/specs**: every file under `docs/` and `specs/` stays under **500 words**; split and link if longer. CI enforces it for Markdown (`Spec lint` `word-limit` check). Details: [`docs/README.md`](docs/README.md), [`specs/README.md`](specs/README.md).
 - **SOLID code**: follow [`docs/solid.md`](docs/solid.md). Review with `review-solid-code` (also run from `verify-project-issue` when a PR has code changes).
+- **Gameplay demos**: build with `create-gameplay-demo` under `demos/<slug>/`. They are exempt from SOLID but still spec first and spec-traced, and main code never imports them ([`docs/demos.md`](docs/demos.md)).
 
 ---
 

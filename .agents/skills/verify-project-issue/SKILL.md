@@ -32,6 +32,7 @@ Independent verification (smoke test) for a typed issue in `status:pending-verif
    - No major gaps/ambiguities/underspecifications requiring revision
    - If coding: unit test coverage adequate; tests sensibly cover program logic
    - **If any linked PR contains code changes:** run [`review-solid-code`](../review-solid-code/SKILL.md) on those PR diffs. Include its report in the verify comment. A SOLID **Fail** makes verification **Fail**.
+   - **If the deliverable is a gameplay demo** (`demos/<slug>/`): check it per [Verification in `docs/demos.md`](../../../docs/demos.md#verification) instead of SOLID and unit-test coverage.
 5. **Outcome:**
    - **Pass** — comment summarizing what was checked against each deliverable (include SOLID Pass when run). Gate: `pending-verification` → `pending-acceptance`.
    - **Fail** — detail issues (include SOLID findings when that review failed). Gate: `pending-verification` → `pending-implementation`.
