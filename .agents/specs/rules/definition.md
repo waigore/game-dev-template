@@ -4,7 +4,7 @@ Read this before editing `specs/definition/definition.md` or a section split out
 
 Also read [vision.md](vision.md) and [depth.md](depth.md). Keep this document consistent with the vision.
 
-The definition states what the game must be and the limits it is built within. Aim for one page. Technical details (architecture, engine systems, data formats, APIs) do not belong here. A technical constraint is allowed.
+The definition states what the game must be and the limits it is built within. Aim for one page. Technical details (architecture, engine systems, data formats, APIs) do not belong here. A technical constraint is allowed, and the engine choice is required (see **Engine**).
 
 Replace every `<!-- fill in -->`. Delete unused rows.
 
@@ -29,7 +29,16 @@ What this project must achieve. Each objective is concrete, and completion is ve
 
 ## Supported platforms
 
-One row per platform: the platform, its primary input, and a priority of primary, secondary, or stretch. At least one platform is primary.
+One row per platform: the platform, its primary input, and a priority of primary, secondary, or stretch. At least one platform is primary. Every primary platform is one the engine can reach.
+
+## Engine
+
+The engine shapes the whole game, so it is a product decision made here, not downstream.
+
+- **Engine**: the engine the game is built on, or the framework when there is no engine, or "Custom" for a bespoke engine. Then one line on why, grounded in the platforms, constraints, team, or vision qualities. No versions, plugins, or setup; the Engine ADR states those.
+- **Implications**: one or two lines, in product terms, on what the choice fixes or limits for the game, such as 2D or 3D, the platforms it can reach, or scale and fidelity. Downstream specs rely on these without naming the engine.
+
+If the engine is not decided, both fields are TBD per [README.md](README.md). Until it is decided, no Engine ADR is Accepted.
 
 ## Constraints
 

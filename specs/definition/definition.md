@@ -30,6 +30,11 @@ Authoring rules: [`.agents/specs/rules/definition.md`](../../.agents/specs/rules
 |----------|---------------|----------|
 | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
+## Engine
+
+- **Engine**: <!-- fill in --> — <!-- fill in -->
+- **Implications**: <!-- fill in -->
+
 ## Constraints
 
 ### Design

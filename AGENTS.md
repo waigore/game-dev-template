@@ -5,7 +5,7 @@ Agent entrypoint for this repo. Keep this file short; put detail in `docs/`, `sp
 ## Project
 
 - **Purpose**: <!-- fill in: what this game/project is -->
-- **Language / engine**: <!-- fill in: e.g. GDScript/Godot, C#/Unity, Dart/Flame -->
+- **Language / engine**: <!-- fill in from specs/definition/definition.md (Engine) and its Engine ADR: e.g. GDScript/Godot, C#/Unity, Dart/Flame -->
 - **Frameworks / tools**: <!-- fill in: key libs, build tooling, CI -->
 
 ## Quick start commands
@@ -58,7 +58,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **Spec authoring**: before writing or editing a file under `specs/`, read its rules file from [`.agents/specs/rules/README.md`](.agents/specs/rules/README.md) (`author-spec` skill). Do not copy those rules into the spec. CI `Spec lint` checks the structural rules ([`docs/spec-lint.md`](docs/spec-lint.md)). When applying a failed spec review, follow [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
 - **Spec depth**: `specs/definition/definition.md` sets `prototype`, `small`, or `full`, which scales story coverage, mockups, and diagrams per [`.agents/specs/rules/depth.md`](.agents/specs/rules/depth.md).
 - **Spec review**: review a spec with the `review-spec` skill, using the checklist linked from [`specs/README.md`](specs/README.md) and [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
-- **Architecture decisions**: engine, framework, library, storage, integration, and game-architecture choices are ADRs in [`specs/adr/`](specs/adr/adr.md). Only Accepted ADRs authorize code. Do not read `specs/adr/archive/` unless explicitly asked.
+- **Architecture decisions**: engine, framework, library, storage, integration, and game-architecture choices are ADRs in [`specs/adr/`](specs/adr/adr.md). The engine itself is chosen in [`specs/definition/definition.md`](specs/definition/definition.md); its Engine ADR realizes that choice. Only Accepted ADRs authorize code. Do not read `specs/adr/archive/` unless explicitly asked.
 - **Playtesting**: AI-agent playtests against design and UX per [`specs/playtest/`](specs/playtest/playtest.md); evidence under [`docs/playtest/evidence/`](docs/playtest/evidence/). Required at acceptance only when deliverables change playable behavior.
 - **Technical design**: code and data shape (layers, modules, components, contracts, schemata, sequences) live in [`specs/technical/`](specs/technical/technical.md), downstream of definition, design, view, UX, and Accepted ADRs.
 - **Concise docs/specs**: every file under `docs/` and `specs/` stays under **500 words**; split and link if longer. CI enforces it for Markdown (`Spec lint` `word-limit` check). Details: [`docs/README.md`](docs/README.md), [`specs/README.md`](specs/README.md).
@@ -66,4 +66,4 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 
 ---
 
-**Maintaining this file:** When forking or starting a project from this template, fill in every `<!-- fill in -->` with real project details. Keep each section to a few lines; link out to `docs/`, `specs/`, or `.agents/` for anything longer.
+**Maintaining this file:** When forking or starting a project from this template, fill in every `<!-- fill in -->` with real project details once the specs they come from exist (purpose from the vision, engine from the definition). Keep each section to a few lines; link out to `docs/`, `specs/`, or `.agents/` for anything longer.

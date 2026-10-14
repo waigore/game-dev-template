@@ -22,6 +22,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] The Decision is precise enough to tell whether code complies, with versions and boundaries where they matter.
 - [ ] Reasoning lists drivers in priority order, each traced to Informed by, and states the costs accepted.
 - [ ] Each rejected alternative is tied to a driver, or the section says "None — reason".
+- [ ] An Engine ADR realizes the engine named in the definition's Engine section and cites it under Informed by. No Engine ADR is Accepted while that engine is TBD.
 
 ### Non-functional requirements
 
