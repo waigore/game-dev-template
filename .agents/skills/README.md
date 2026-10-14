@@ -22,7 +22,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 | [`verify-project-issue`](verify-project-issue/SKILL.md) | Independent verify pass / fail |
 | [`accept-project-issue`](accept-project-issue/SKILL.md) | Accept / fail / clarify after verification |
 | [`author-spec`](author-spec/SKILL.md) | Write or edit a spec from `.agents/specs/rules/`; do not copy the rules into the spec |
-| [`capture-requirements`](capture-requirements/SKILL.md) | Interview for one `specs/` target, vision and definition first; confirm, `author-spec`, open a `no-automerge` PR |
+| [`capture-requirements`](capture-requirements/SKILL.md) | Interview for specs, high-level stage first; detail saved as notes; confirm, `author-spec`, open a `no-automerge` PR |
 | [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the whole spec set; report verdict to the requester |
 | [`review-solid-code`](review-solid-code/SKILL.md) | Review code vs `docs/solid.md` (SOLID + continuity); Pass/Fail, read-only |
 | [`audit-spec-applicability`](audit-spec-applicability/SKILL.md) | Audit Applies/N/A upstream grounds and downstream carry-outs; report for author-spec |

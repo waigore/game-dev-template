@@ -62,4 +62,4 @@ Every same-repo, non-draft PR squash-merges as soon as required checks pass ([`a
 
 ## Spec PRs
 
-Spec content captured or decided with the user (`capture-requirements`, `audit-spec-tbd`) always opens with `no-automerge`, so the product owner reviews it before it lands: `gh pr create --label no-automerge …`. Branch `chore/spec-<slug>` unless an issue covers it. **Authority** cites the authoring-rules file and the upstream specs the content traces to.
+Spec content captured or decided with the user (`capture-requirements`, `audit-spec-tbd`), including [requirement notes](requirements/README.md), always opens with `no-automerge`, so the product owner reviews it before it lands: `gh pr create --label no-automerge …`. Branch `chore/spec-<slug>` unless an issue covers it. **Authority** cites the authoring-rules file and the upstream specs the content traces to.
