@@ -39,7 +39,7 @@ When the user's input covers more than one uncaptured high-level file, capture t
 When the user's input goes beyond the target (often a long first prompt), sort every statement before interviewing:
 
 - **High-level**: a statement that answers, or implies an answer to, a vision, definition, or quality field. Design detail counts when it implies one, such as "runs end when you die" for win/lose conditions. Use it as a **proposed answer** in the interview, citing the statement; never write it unconfirmed.
-- **Downstream**: design, view, UX, playtest, ADR, or technical detail. Save it as a [requirement note](../../../docs/requirements/README.md) for its target; do not author downstream specs early.
+- **Downstream**: design, view, aesthetics, UX, playtest, asset pipeline, ADR, or technical detail. Save it as a [requirement note](../../../docs/requirements/README.md) for its target; do not author downstream specs early.
 - **Conflict**: a detail that contradicts or goes beyond the high-level answers (scope, non-goals, platforms, constraints, qualities). Raise it in the interview and ask how to resolve it: change the high-level answer, change or drop the detail, or mark it TBD. Save only the resolved version as a note.
 
 ## Steps
@@ -47,7 +47,7 @@ When the user's input goes beyond the target (often a long first prompt), sort e
 0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session. Continue only on Pass.
 1. **Resolve and confirm the target**:
    - **None named**: the uncaptured high-level files, in order (together when the input covers several). If all three are captured but blocking TBDs remain, run [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) on them instead. If the stage is locked in, ask which downstream spec to capture.
-   - **Downstream named** (design, view, UX, playtest, ADR, technical) while the stage is not locked in: do not capture it. Say what is missing, keep its detail per **Detailed input**, and offer the high-level stage or the TBD audit.
+   - **Downstream named** (design, view, aesthetics, UX, playtest, asset pipeline, ADR, technical) while the stage is not locked in: do not capture it. Say what is missing, keep its detail per **Detailed input**, and offer the high-level stage or the TBD audit.
    - **Ambiguous or several downstream named**: ask which **one** file this run.
 2. **Load capture context only** (same rules resolution as `author-spec`; do not invent parallel rules):
    - Open [`.agents/specs/rules/README.md`](../../specs/rules/README.md), take the most specific matching row for each target, read that file, then every file in its **Also read** chain until none remain.

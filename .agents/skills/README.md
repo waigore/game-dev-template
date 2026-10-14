@@ -29,6 +29,8 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 | [`audit-spec-terminology`](audit-spec-terminology/SKILL.md) | Audit glossary ownership and term usage (undefined, drift, synonyms, homonyms); report for author-spec |
 | [`audit-spec-tbd`](audit-spec-tbd/SKILL.md) | Find TBDs (undecided aspects), propose grounded answers, confirm with the user, then author-spec |
 | [`create-gameplay-demo`](create-gameplay-demo/SKILL.md) | Scope a demo aggressively, clarify blockers into specs, build it under `demos/` as a spec-traced reference artifact |
+| [`manage-asset`](manage-asset/SKILL.md) | Generate, import, update, or deprecate assets per `specs/assets/` procedures; catalog, review, PR |
+| [`review-asset`](review-asset/SKILL.md) | Review produced assets vs kind spec and `specs/aesthetics/`; Pass/Fail by element ID, read-only |
 | [`promote-gameplay-demo`](promote-gameplay-demo/SKILL.md) | Reimplement demo behavior in main code: drift check, assumptions into specs, technical design, SOLID |
 | [`sync-upstream-template`](sync-upstream-template/SKILL.md) | Merge upstream template changes downstream: baseline, per-file classify, confirm conflicts, one `no-automerge` sync PR |
 

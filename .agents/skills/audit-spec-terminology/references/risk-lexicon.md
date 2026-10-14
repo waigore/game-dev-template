@@ -39,3 +39,8 @@ Do not invent tags beyond the skill's finding table. A lexicon hit with one clea
 | contract | Technical API; design narrative/deal (rare) |
 | schema | Technical data shape; design content schema (rare) |
 | sequence | Technical interaction flow; design story sequence; UX journey step |
+| sheet | Aesthetics reference sheet; asset sprite sheet; technical style sheet |
+| material | Aesthetics material family; engine render material; design crafting resource |
+| version | Asset catalog version; build or release version; ADR dependency version |
+| source | Asset source type; source code; design resource source or spawner |
+| palette | Aesthetics palette set; UX design-system color tokens; editor tool palette |

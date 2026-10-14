@@ -16,7 +16,7 @@ Do **not** update references while running an audit (audits are read-only). Upda
 
 ## How to update glossary ownership
 
-1. Open the four glossary rules files: design, view, UX, technical under `.agents/specs/rules/`.
+1. Open the six glossary rules files: design, view, aesthetics, UX, assets, technical under `.agents/specs/rules/`.
 2. Sync the **Owns** / **Must not redefine** columns with those rules (and hub "Shared language" bullets).
 3. Sync **Skeleton rows** with any "The skeleton already defines…" lists. If design gains a fixed list, add it.
 4. Confirm glossary paths still match `specs/<hub>/glossary.md` and the split convention in the rules.

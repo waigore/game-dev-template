@@ -4,7 +4,7 @@ Read this before editing `specs/ux/ux.md`. Do not copy these rules into the spec
 
 Every other file under `specs/ux/` follows **Rules for every UX spec** below. Those rules files name this one under **Also read**.
 
-How people operate the interface: screens, navigation, controls, copy, feedback, and exception UI. Downstream of `specs/vision.md`, `specs/definition/definition.md`, `specs/definition/quality.md`, `specs/design/design.md`, and `specs/view/view.md`. If this UX conflicts with them, change the UX, or revise the upstream document first.
+How people operate the interface: screens, navigation, controls, copy, feedback, and exception UI. Downstream of `specs/vision.md`, `specs/definition/definition.md`, `specs/definition/quality.md`, `specs/design/design.md`, `specs/view/view.md`, and `specs/aesthetics/aesthetics.md`. If this UX conflicts with them, change the UX, or revise the upstream document first. How the interface looks (type, icons, panels, color roles, interface motion) is set by `specs/aesthetics/ui-style.md`.
 
 Game design states what happens in the game. The view states how the game world is seen, heard, and felt, including cameras. This folder states how an actor operates the interface around that world.
 
