@@ -34,7 +34,7 @@ First-time GitHub workflow configuration for repositories using this template.
 3. **Verify** current state (read-only) using the doc’s `gh` commands:
    - Merge methods: squash only; merge commit and rebase off
    - Auto-merge enabled
-   - `main` protected: PR required, force pushes off, **enforce admins / no bypass**, required status check `Word limit`
+   - `main` protected: PR required, force pushes off, **enforce admins / no bypass**, required status checks `Word limit` and `Spec lint`
    - Labels: `type:epic`, `type:task`, `type:defect` present
 4. **Report** a short pass/fail checklist of gaps.
 5. **Guide** the user through Settings UI for each failing item (paths in the doc). Re-verify after each change when possible.
@@ -47,7 +47,7 @@ First-time GitHub workflow configuration for repositories using this template.
 - Default: **do not** change repository settings.
 - Never enable admin bypass or allow force pushes to `main`.
 - Do not require approving reviews unless the user asks (baseline is none).
-- The only baseline required status check is `Word limit`; add others only if the user asks.
+- The baseline required status checks are `Word limit` and `Spec lint`; add others only if the user asks.
 - Do not delete unrelated labels or weaken existing stricter protection without confirmation.
 - Keep guidance aligned with `docs/github-repo-setup.md` and [`docs/labels.md`](../../../docs/labels.md).
 
