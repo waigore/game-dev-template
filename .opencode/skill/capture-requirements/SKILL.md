@@ -3,15 +3,17 @@ name: capture-requirements
 description: |-
   Capture requirements for one specs/ target at a time via guided questions
   derived from that type's authoring rules and template placeholders, confirm
-  answers with the user, then hand off to author-spec. Use when interviewing
-  for a vision, definition, design, view, UX, playtest, ADR, or technical
-  spec, or when the user asks to capture requirements, gather requirements, or
-  fill a spec by asking questions.
+  answers with the user, then hand off to author-spec. Starts with the
+  high-level stage (vision, definition, quality) and gates downstream specs
+  until it is locked in. Use when interviewing for any spec, or when the user
+  asks to capture requirements, gather requirements, or fill a spec by asking
+  questions.
 
   Examples:
+    - user: "Help me capture requirements" → next high-level file (vision first), interview, author-spec
     - user: "Capture requirements for the vision" → confirm specs/vision.md, interview, author-spec
-    - user: "Interview me for the movement feature" → one feature path, Q&A, then author
     - user: "Help me fill definition by asking questions" → specs/definition/definition.md only
+    - user: "Interview me for the movement feature" → only once the high-level stage is locked in
     - user: "Capture requirements for design and view" → ask which one path this session
 ---
 
