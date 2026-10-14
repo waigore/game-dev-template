@@ -6,7 +6,7 @@ If it is not in `specs/`, it must not be in the code. Do not read [`adr/archive/
 
 ## Concise specs
 
-Every Markdown file under `specs/` stays under **500 words**; split and link if longer. CI enforces this ([`word-limit.yml`](../.github/workflows/word-limit.yml)). HTML mockups and diagrams are exempt.
+Every Markdown file under `specs/` stays under **500 words**; split and link if longer. CI enforces this (`word-limit` in [Spec lint](../docs/spec-lint.md)). HTML mockups and diagrams are exempt.
 
 ## Authoring
 

@@ -1,6 +1,7 @@
 name: Spec lint
 
-# Structural checks on specs/ against .agents/specs/rules/ (see docs/spec-lint.md).
+# Structural checks on specs/ against .agents/specs/rules/, plus the 500-word limit
+# on docs/ and specs/ Markdown (see docs/spec-lint.md).
 # Runs on every PR so it can be a required check; the scan takes about a second.
 
 on:

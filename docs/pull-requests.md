@@ -6,7 +6,7 @@ Every change reaches `main` through a PR; `main` is protected ([`github-repo-set
 
 1. Branch from up-to-date `main`.
 2. Commit focused changes; keep the PR under ~30 files (split if larger).
-3. Run local checks that apply (e.g. `bash .github/scripts/check-word-limit.sh`, spec lint, tests).
+3. Run local checks that apply (e.g. `python3 .github/scripts/spec_lint.py`, tests).
 4. Push and open the PR with a body following [`pull_request_template.md`](../.github/pull_request_template.md).
 5. If the PR delivers a typed issue, run `implement-project-issue` with the PR link.
 
