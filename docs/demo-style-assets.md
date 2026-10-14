@@ -14,7 +14,7 @@ For each asset an agent makes or imports with `manage-asset`:
 - Its kind has a kind spec whose coverage rule, specification, recipe, and checks hold no TBD.
 - The recipe's tool role is realized by an Accepted ADR.
 
-A human-made asset registered with `register-asset` for the demo needs only the catalog. A missing piece is a blocking gap, resolved in `specs/` before the build, never as a demo assumption.
+An asset a person supplies with `register-asset` for the demo needs only the catalog and a kind spec name in the hub's Asset kinds table (the spec may be planned). Every asset gets its final ID per the catalog's ID rules, so promotion never renames it. A missing piece is a blocking gap, resolved in `specs/` before the build, never as a demo assumption.
 
 ## Style
 
@@ -25,7 +25,7 @@ A human-made asset registered with `register-asset` for the demo needs only the 
 
 - Every asset is cataloged and cited in the demo by asset ID: agent-made or imported with [`manage-asset`](../.agents/skills/manage-asset/SKILL.md), or supplied by a person with [`register-asset`](../.agents/skills/register-asset/SKILL.md).
 - No uncataloged placeholder art or sound. Debug overlays are tooling, not assets.
-- Every asset has a [`review-asset`](../.agents/skills/review-asset/SKILL.md) Pass for its current version, or a review exemption granted by a person per the asset hub. AI-generated assets are never exempt. Assets may stay draft.
+- Every asset has a [`review-asset`](../.agents/skills/review-asset/SKILL.md) Pass for its current version, or a review exemption that a person granted per the asset hub, whatever its source type. Assets may stay draft.
 - Assets live under the catalog's asset root, not in `demos/<slug>/`.
 
 ## Pipeline findings

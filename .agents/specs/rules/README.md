@@ -116,6 +116,7 @@ Do not paste these rules into a spec. Do not edit a `_template` file to hold one
 | `specs/assets/tools.md` | [assets/tools.md](assets/tools.md) |
 | `specs/assets/procedures.md` | [assets/procedures.md](assets/procedures.md) |
 | `specs/assets/catalog.md` | [assets/catalog.md](assets/catalog.md) |
+| `specs/assets/catalog/` | [assets/catalog.md](assets/catalog.md) |
 | `specs/assets/kinds/` | [assets/kinds.md](assets/kinds.md) |
 | `specs/adr/adr.md` | [adr/adr.md](adr/adr.md) |
 | `specs/adr/traceability.md` | [adr/traceability.md](adr/traceability.md) |

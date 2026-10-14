@@ -38,7 +38,7 @@ Authoring rules: [`.agents/specs/rules/assets/assets.md`](../../.agents/specs/ru
 - **Manifest**: <!-- fill in -->
 - **Asset root**: <!-- fill in -->
 
-Fields and integrity: [`catalog.md`](catalog.md).
+Asset IDs and integrity: [`catalog.md`](catalog.md). Fields: [`catalog/fields.md`](catalog/fields.md).
 
 ## Lifecycle
 
@@ -49,7 +49,7 @@ Fields and integrity: [`catalog.md`](catalog.md).
 | deprecated | Retired; main code must not use it |
 
 - **Approval**: <!-- fill in -->
-- **Review exemption**: A person may exempt a human-made, third-party, or procedural asset from review, recorded in `CAT.F17`. AI-generated assets are never exempt. An exempt asset is approved when its entry merges.
+- **Review exemption**: Only a person may exempt an asset, of any source type, from review, recorded in `CAT.F17`. An exempt asset is approved when its entry merges.
 - **Use**: Main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass or a review exemption.
 
 ## Traceability

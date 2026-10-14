@@ -43,7 +43,7 @@ Default to **engine**. Pick **gameplay** only when the demo question is about UI
    - Write the **demo question**: the one thing the demo must prove (e.g. "is the core loop fun for 2 minutes?").
    - Include only the spec elements, as qualified IDs (`F-movement.R3`), that the question needs. Prefer one loop, the features its steps need, and one stage or test arena.
    - Include the aesthetics elements those elements are seen or heard through (pillars, palette sets, form, motion, sound; interface style for gameplay demos).
-   - List the **assets** the demo needs: for each, its source (agent-made with `manage-asset`, or supplied by a person with `register-asset`; ask the user which), the kind spec and coverage rule (`AK-<name>.V<n>`) when agent-made, and whether it is already cataloged with a `review-asset` Pass or a review exemption.
+   - List the **assets** the demo needs: for each, its source (agent-made with `manage-asset`, or supplied by a person with `register-asset`; ask the user which), its kind spec as the hub names it (the asset ID prefix), its coverage rule (`AK-<name>.V<n>`) when agent-made, and whether it is already cataloged with a `review-asset` Pass or a review exemption.
    - List everything else as excluded with a one-line reason. When in doubt, exclude.
 4. **Find gaps** in the included elements: `TBD`, `<!-- fill in -->`, missing specs, contradictions.
    - **Blocking**: the demo cannot encode it without a product decision (a rule, an objective, a win or lose condition, what the player can do, or a conflict between specs). Every failure of the [style and asset gate](../../../docs/demo-style-assets.md#before-building) is blocking too: a style element the demo needs, or, for an agent-made asset, its kind spec, coverage rule, recipe, or Accepted tool ADR.
@@ -63,7 +63,7 @@ Default to **engine**. Pick **gameplay** only when the demo question is about UI
 ## Rules
 
 - Spec first still applies: every behavior traces to an included ID or a listed assumption. Assumptions never decide a blocking gap.
-- Every asset the demo shows or plays is cataloged with a `review-asset` Pass or a person-granted review exemption. AI-generated assets are never exempt. No uncataloged placeholder art or sound; debug overlays are tooling, not assets.
+- Every asset the demo shows or plays is cataloged with a `review-asset` Pass or a review exemption that a person granted; an agent never grants one. No uncataloged placeholder art or sound; debug overlays are tooling, not assets.
 - `docs/solid.md` and structure continuity do not apply inside `demos/`; readable, working code is enough.
 - Main code never imports from `demos/`. Reusing demo behavior in the main code is a separate task run with [`promote-gameplay-demo`](../promote-gameplay-demo/SKILL.md).
 - Requirement notes are not authority; do not build from them.

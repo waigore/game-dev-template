@@ -24,14 +24,14 @@ Asset work is tracked by a task issue whose deliverables name asset IDs or cover
 - **Trigger**: a coverage rule is met by a third-party asset.
 
 1. Confirm the license allows the definition's market constraints before downloading.
-2. Add a draft entry with source, license, attribution, and where proof of purchase is kept.
+2. Add a draft entry with a new asset ID, source, license, attribution, and where proof of purchase is kept.
 3. Post-process to the kind's specification. Run its checks and `APR.review`.
 
 ### `APR.register`
 
-- **Trigger**: a person supplies a human-made or third-party asset.
+- **Trigger**: a person supplies an asset of any source type.
 
-1. Add a draft entry with the author or source, and the rights or license.
+1. Add a draft entry with a new asset ID per [`catalog.md`](catalog.md), the supplier, source type, and rights or license; for a generated asset, the tool and its terms.
 2. Ask that person whether to exempt it from review; record a granted exemption in `CAT.F17`.
 3. Save files per the kind's naming. If exempt, approve on merge; otherwise run `APR.review`.
 

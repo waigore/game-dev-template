@@ -30,6 +30,7 @@ Keep every skeleton row. Add a row for each other kind this game needs. Columns:
 
 - Ground each row in the view's dimensionality and rendered space, the aesthetics medium, and the design and UX specs. Typical: 2D rendered space needs sprites, tilesets, and backgrounds; 3D needs models, textures and materials, and animation clips; mixed needs the sets for the parts each covers. An interface needs interface art, icons, and fonts. Sound effects, music, and voice follow the aesthetics' sound style.
 - One kind spec may cover several kinds when they share recipes. One kind may split into several kind specs when recipes differ, such as character sprites and tile sprites.
+- **Kind specs** names every kind spec of an Applies kind by its kebab-case file name, written or planned, such as `character-sprites (planned)`. That name is the asset ID prefix per [catalog.md](catalog.md), so an asset can get its final ID before its kind spec is written. Once an asset ID uses a name, the name never changes, and the kind spec is written under it.
 
 ## Sources
 
@@ -47,7 +48,7 @@ Until that ADR is Accepted, both are `TBD — <question>` and no asset is catalo
 Keep the three states: draft, approved, and deprecated.
 
 - **Approval**: what moves a draft to approved: a `review-asset` Pass alone, or a Pass plus product-owner sign-off on the PR. A kind spec may require more, never less. A review-exempt asset is approved when its catalog entry merges.
-- **Review exemption**: keep this rule as written. A person (the author or the product owner) may exempt one human-made, third-party, or procedural asset from `review-asset`. The catalog records who, when, and why. AI-generated assets are never exempt, and an agent never grants an exemption. `review-asset` runs on an exempt asset only on request, and its verdict is advisory.
+- **Review exemption**: keep this rule as written. A person (the author or the product owner) may exempt one asset of any source type from `review-asset`. Only a person marks an exemption; an agent never grants, infers, or defaults to one. The catalog records who, when, and why. `review-asset` runs on an exempt asset only on request, and its verdict is advisory.
 - **Use**: main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass or a review exemption, draft or approved, per `docs/demo-style-assets.md`.
 
 ## Index

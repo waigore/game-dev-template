@@ -1,20 +1,20 @@
 ---
 name: register-asset
 description: |-
-  Catalog an asset a person supplies (human-made, or third-party they
-  sourced) by running APR.register in specs/assets/: asset ID, author or
-  source, rights or license, files under the asset root, and an optional
-  review exemption granted and recorded by that person. Exempt assets are
-  approved on merge; others go through review-asset. Never exempts
-  AI-generated assets. Opens a PR.
+  Catalog an asset a person supplies (made by hand, generated with their own
+  AI or procedural tool, or bought) by running APR.register in specs/assets/:
+  a collision-free asset ID, source type, supplier, rights or license, files
+  under the asset root, and an optional review exemption that only that
+  person can grant. Exempt assets are approved on merge; others go through
+  review-asset. Opens a PR.
   Use when the user hands over art, animation, interface art, fonts, or audio
-  they or a teammate made or bought, and wants it in the catalog.
+  they or a teammate made, generated, or bought, and wants it in the catalog.
 
   Examples:
     - user: "I drew the player idle sprite, add it" → register, ask about exemption, PR
     - user: "Add my title music, skip review" → register with exemption by the user
     - user: "Register these purchased SFX, review them" → register, license check, review-asset
-    - user: "Here's an image from the AI tool" → not human-made; use manage-asset instead
+    - user: "I made this tileset with an AI tool, add it" → source type AI generation, tool terms, ask about exemption
 ---
 
 # Register asset (facade)

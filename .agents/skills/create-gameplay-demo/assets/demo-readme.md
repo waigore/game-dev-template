@@ -35,7 +35,7 @@ Every asset the demo shows or plays. All are cataloged with a `review-asset` Pas
 
 | Asset ID | Source type | Kind spec | Coverage rule | Tool role (ADR) | Version | State | Review |
 |----------|-------------|-----------|---------------|-----------------|---------|-------|--------|
-| <!-- fill in: e.g. character-sprites/player-run --> | <!-- fill in: AI generation, procedural, third-party, or human-made --> | <!-- fill in: or none (demo-only human-made) --> | <!-- fill in --> | <!-- fill in: or N/A — not generated --> | <!-- fill in --> | <!-- fill in: draft or approved --> | <!-- fill in: Pass + report link, or Exempt — granted by --> |
+| <!-- fill in: e.g. character-sprites/player-run --> | <!-- fill in: AI generation, procedural, third-party, or human-made; agent or person-supplied --> | <!-- fill in: AK-<name>, or AK-<name> (planned) --> | <!-- fill in --> | <!-- fill in: or N/A — not generated --> | <!-- fill in --> | <!-- fill in: draft or approved --> | <!-- fill in: Pass + report link, or Exempt — granted by --> |
 
 ## Pipeline findings
 

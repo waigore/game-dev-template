@@ -4,7 +4,7 @@ Read this before editing `specs/assets/kinds/_template.md` or `specs/assets/kind
 
 Also read [assets.md](assets.md), [ids.md](ids.md), and [catalog.md](catalog.md).
 
-Copy the template to `kinds/<kebab-name>.md`, one file per kind of asset that shares recipes. Do not fill the template in place.
+Copy the template to `kinds/<kebab-name>.md`, one file per kind of asset that shares recipes. Use the name the hub's Asset kinds table gives it; asset IDs may already use that name as their prefix. Do not fill the template in place.
 
 A kind spec states which assets of this kind the game needs, what each must be, how it is made, and how it is checked. It does not list produced assets; the catalog does.
 

@@ -32,8 +32,8 @@ Procedures: [`specs/assets/procedures.md`](../../../specs/assets/procedures.md).
 4. **Track and branch** per [`docs/pull-requests.md`](../../../docs/pull-requests.md): use the given task, or branch `chore/assets-<slug>` when the user asks for no issue.
 5. **Run the procedure** exactly as `procedures.md` states. For generation, fill the recipe's prompt template from the coverage variants; use the style anchors and `REF` images it names; follow the settings and seed policy; post-process; save files per the kind's **Naming**.
 6. **Check**: run every check in the kind spec. Retry within the retry limit in `procedures.md`, then stop and ask the user.
-7. **Catalog**: write or update the entry with every field `catalog.md` requires for its source type and state, including the generation record as run.
-8. **Review**: run `review-asset` on the changed entries (`APR.review`). On Fail, fix through step 5 within the limit. On Pass, approve per the hub's **Approval** rule; when it needs product-owner sign-off, leave the state draft and label the PR `no-automerge`. A procedural or third-party entry skips review only when a person grants a review exemption for it (`CAT.F17`); ask, never assume. AI-generated entries are never exempt.
+7. **Catalog**: write or update the entry with every field [`catalog/fields.md`](../../../specs/assets/catalog/fields.md) requires for its source type and state, including the generation record as run. For a new asset, assign the ID per **Asset IDs** in `catalog.md`: the prefix is the kind spec's name in the hub, and the ID must be unused in the manifest on `main` (deprecated entries included) and in the catalog changes of every open PR. On a clash, choose another name.
+8. **Review**: run `review-asset` on the changed entries (`APR.review`). On Fail, fix through step 5 within the limit. On Pass, approve per the hub's **Approval** rule; when it needs product-owner sign-off, leave the state draft and label the PR `no-automerge`. An entry of any source type skips review only when a person grants a review exemption for it (`CAT.F17`). Never assume, infer, or default to an exemption, and never grant one yourself.
 9. **PR**: open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** cites the kind spec, coverage IDs, aesthetics IDs, and the ADRs of the tool roles used. **Test plan** lists checks run and the `review-asset` verdict. If the work delivers a typed issue, run `implement-project-issue`.
 
 ## Rules
@@ -42,5 +42,5 @@ Procedures: [`specs/assets/procedures.md`](../../../specs/assets/procedures.md).
 - Use only tools that an Accepted ADR names for a realized role. Credentials never enter the repository.
 - Do not import a third-party asset whose license is unclear; stop and ask.
 - Main code uses only approved assets. Do not wire a draft into main code.
-- Assets a person made or sourced themselves go through [`register-asset`](../register-asset/SKILL.md), not this skill.
+- Assets a person made, generated, or sourced themselves go through [`register-asset`](../register-asset/SKILL.md), not this skill.
 - Keep asset IDs stable per `catalog.md`.

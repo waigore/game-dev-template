@@ -34,9 +34,10 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 - [ ] `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, and `APR.deprecate` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency and failure handling are filled.
 - [ ] Manifest and asset root cite an Accepted Integration ADR, or are TBD.
-- [ ] Asset ID format, the skeleton fields, and the integrity rules match [catalog.md](rules/assets/catalog.md); each integrity rule says how it is checked.
+- [ ] Asset ID format and assignment, the skeleton fields, and the integrity rules match [catalog.md](rules/assets/catalog.md); each integrity rule says how it is checked.
 - [ ] The hub's approval rule names a `review-asset` Pass. No kind spec weakens it.
-- [ ] The hub's review exemption rule is kept as written: person-granted, per asset, never for AI generation.
+- [ ] The hub's review exemption rule is kept as written: per asset, any source type, granted only by a person.
+- [ ] The hub's Kind specs column names every kind spec of each Applies kind, written or planned, and no name an asset ID uses has changed.
 
 ### Kind specs
 
