@@ -53,6 +53,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 ## Rules to live by
 
 - **First-time setup**: in a new repo from this template, run `ensure-project-setup` before any other work or PR ([`docs/github-repo-setup.md`](docs/github-repo-setup.md)).
+- **Template updates**: pull changes from the upstream template with `sync-upstream-template`; never merge upstream by hand.
 - **High-level requirements first**: `capture-requirements` locks in vision, definition, and quality before any downstream spec is captured; earlier design-level detail waits in [`docs/requirements/`](docs/requirements/README.md) (notes, not specs).
 - **Branch protection**: `main` is protected; changes land via PR only.
 - **Always open a PR**: when a change is done, branch (`<type>/<issue#>-<slug>`), push, and open a PR using the template; link issues with `Refs #n`, never `Closes`. PRs auto-merge on green; use draft or `no-automerge` to hold. Contract: [`docs/pull-requests.md`](docs/pull-requests.md).
