@@ -31,6 +31,6 @@
 - name: status:accepted
   color: "5319E7"
   description: "Accepted; leave open"
-- name: automerge
-  color: "2EA44F"
-  description: "PR: squash-merge automatically once mergeable"
+- name: no-automerge
+  color: "B60205"
+  description: "PR: opt out of automatic squash-merge"

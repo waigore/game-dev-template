@@ -25,7 +25,7 @@ Issue labels for categorization and agent orchestration. Source of truth: `.gith
 | `type:task` | Concrete unit of agent work |
 | `type:defect` | Bug/problem with any deliverable (code, game, spec, etc.) |
 | `status:*` | Workflow state (see [`docs/issues/workflow.md`](docs/issues/workflow.md)) |
-| `automerge` | PR label: squash-merge automatically once mergeable |
+| `no-automerge` | PR label: opt out of automatic squash-merge (on by default for all PRs) |
 
 Synced by `.github/workflows/sync-labels.yml` (push to `main` when label config changes, or `workflow_dispatch`). Add labels with the `create-project-label` skill.
 
@@ -52,6 +52,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 ## Rules to live by
 
 - **Branch protection**: `main` is protected; changes land via PR only. First-time remote setup: [`docs/github-repo-setup.md`](docs/github-repo-setup.md) (`setup-github-repo` skill).
+- **Always open a PR**: when a change is done, branch (`<type>/<issue#>-<slug>`), push, and open a PR using the template; link issues with `Refs #n`, never `Closes`. PRs auto-merge on green; use draft or `no-automerge` to hold. Contract: [`docs/pull-requests.md`](docs/pull-requests.md).
 - **Small PRs**: prefer focused, testable changes; keep PRs under ~30 files — split if larger.
 - **Spec first**: if it is not in `specs/`, it must not be in the code.
 - **Spec authoring**: before writing or editing a file under `specs/`, read its rules file from [`.agents/specs/rules/README.md`](.agents/specs/rules/README.md) (`author-spec` skill). Do not copy those rules into the spec. CI `Spec lint` checks the structural rules ([`docs/spec-lint.md`](docs/spec-lint.md)). When applying a failed spec review, follow [`.agents/specs/alignment.md`](.agents/specs/alignment.md).
