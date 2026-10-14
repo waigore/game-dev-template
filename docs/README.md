@@ -11,6 +11,7 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 | Path | Covers |
 |------|--------|
 | [demos.md](demos.md) | Gameplay demos under `demos/`: scope, what is relaxed, traceability, promotion |
+| [demo-style-assets.md](demo-style-assets.md) | Demos as style and asset-pipeline proofs of concept: gate, assets, findings, verification |
 | [github-repo-setup.md](github-repo-setup.md) | First-time GitHub workflow (protection, squash, auto-merge, labels) |
 | [issues/](issues/) | Epic / Task / Defect contract and status workflow |
 | [labels.md](labels.md) | Label catalog and sync |
