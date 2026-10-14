@@ -1,0 +1,48 @@
+---
+name: promote-gameplay-demo
+description: |-
+  Promote behavior from a gameplay demo under demos/<slug>/ into the main
+  code. Re-checks the demo's decisions against current specs, writes the
+  assumptions it relies on into specs with user confirmation, covers the code
+  in the technical design, then reimplements it in the main tree under SOLID
+  and the normal test bar. The demo stays unchanged as the reference.
+  Use when the user asks to promote, port, or reuse demo code in the game.
+
+  Examples:
+    - user: "Promote the movement demo into the game" → whole demo scope, task, specs, rewrite
+    - user: "Promote only jumping from demos/movement" → only the elements for jumping
+    - user: "Promotion task #30 passed review, build it" → implement phase only
+---
+
+# Promote gameplay demo
+
+Contract: [Promotion in `docs/demos.md`](../../../docs/demos.md#promotion). The demo README (`demos/<slug>/README.md`) is the input: its Included, Decisions, and Assumptions tables.
+
+Promotion is a reimplementation in the main tree with the demo as reference, not a file move.
+
+## Steps
+
+### Prepare
+
+1. **Load** the demo README and its code, the specs each included element cites, Accepted ADRs, and the technical design hub. Skip `specs/adr/archive/` and requirement notes.
+2. **Pick the scope**: the included elements to promote (all by default, or the subset the user names), plus the decisions and assumptions those elements rely on. Read the code comments that cite each ID to find dependencies.
+3. **Check for drift**: for each decision in scope, confirm the cited spec element still exists and still says what the decision encodes. A decision that no longer matches is **stale**: the current spec wins, and the demo is no longer a reference for it.
+4. **Find spec work**:
+   - **Assumptions** in scope: each needs spec content before it can reach the main code.
+   - **Technical coverage**: each module, component, contract, or schema the code needs per the `specs/technical/` rules that is not yet specified.
+5. **Propose and confirm** in one summary: elements to promote, stale decisions, each assumption with proposed spec wording (grounded the way `audit-spec-tbd` does, plus "drop from promotion"), and the technical specs to author. Ask using a structured multiple-choice question when available. Wait for confirmation.
+6. **Write the specs**: apply the confirmed answers with [`author-spec`](../author-spec/SKILL.md), assumptions first, then technical design. Open a spec PR per [Spec PRs](../../../docs/pull-requests.md#spec-prs). Remove any element whose assumptions were not confirmed from the promotion scope.
+7. **Track**: use the given task, or create one with `create-project-task` naming the demo, the elements in scope, the spec PR, and where the code goes. Implementation waits for `status:pending-implementation`; if the task is not there, stop and report the next workflow step.
+
+### Implement
+
+8. **Branch** `task/<n>-<slug>` from `main` after the spec PR has merged.
+9. **Reimplement** in the main tree per the technical design, [`docs/solid.md`](../../../docs/solid.md), and the existing structure, using the demo's decisions as reference. Add tests per the project's test bar. Do not import from `demos/` or copy its structure when SOLID or continuity disagree.
+10. **Leave the demo unchanged**: no edits under `demos/`.
+11. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** lists the promoted spec elements, the spec PR, and Accepted ADRs; **Summary** names the demo used as reference and any stale decisions. Then run `implement-project-issue`. Verification runs `review-solid-code` as usual; acceptance needs playtest evidence if playable behavior changed.
+
+## Rules
+
+- Spec first: nothing reaches the main code on an assumption, a stale decision, or a requirement note.
+- Never resolve an assumption without the user's confirmation.
+- One demo per promotion task; split large promotions so each PR stays small.

@@ -37,10 +37,11 @@ One folder per demo: `demos/<slug>/`, holding the code and a `README.md` copied 
 
 ## Promotion
 
-Main code never imports from `demos/`. To reuse demo code, open a separate task that moves it into the main tree. That task:
+Main code never imports from `demos/`. Promotion reimplements demo behavior in the main tree, with the demo as reference; it is not a file move. Run it with the [`promote-gameplay-demo`](../.agents/skills/promote-gameplay-demo/SKILL.md) skill, as its own task. Promotion:
 
-1. resolves every assumption it carries into `specs/` first;
-2. covers the code in the technical design where required;
-3. passes `review-solid-code` and the normal test bar.
+1. re-checks each decision against current specs; where they differ, the spec wins;
+2. writes every assumption it relies on into `specs/`, confirmed by the user;
+3. adds the technical design the code needs per `specs/technical/` rules;
+4. passes `review-solid-code` and the normal test bar.
 
-The demo folder stays as it was, as the reference.
+A subset of a demo's included elements may be promoted. The demo folder stays as it was.

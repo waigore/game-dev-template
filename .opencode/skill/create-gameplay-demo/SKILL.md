@@ -14,7 +14,7 @@ description: |-
     - user: "Build a demo of the core loop" → scope, confirm, task, build engine demo
     - user: "Gameplay demo with menus and HUD for stage 1" → gameplay type, UX in scope
     - user: "Demo task #21 passed review, build it" → build phase only
-    - user: "Promote the movement demo into the game" → promotion task, not this build
+    - user: "Promote the movement demo into the game" → use promote-gameplay-demo instead
 ---
 
 # Create gameplay demo (facade)

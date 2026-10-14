@@ -14,7 +14,7 @@ description: |-
     - user: "Build a demo of the core loop" → scope, confirm, task, build engine demo
     - user: "Gameplay demo with menus and HUD for stage 1" → gameplay type, UX in scope
     - user: "Demo task #21 passed review, build it" → build phase only
-    - user: "Promote the movement demo into the game" → promotion task, not this build
+    - user: "Promote the movement demo into the game" → use promote-gameplay-demo instead
 ---
 
 # Create gameplay demo
@@ -57,6 +57,6 @@ Default to **engine**. Pick **gameplay** only when the demo question is about UI
 
 - Spec first still applies: every behavior traces to an included ID or a listed assumption. Assumptions never decide a blocking gap.
 - `docs/solid.md` and structure continuity do not apply inside `demos/`; readable, working code is enough.
-- Main code never imports from `demos/`. Moving demo code into the main tree is a separate promotion task per [`docs/demos.md`](../../../docs/demos.md#promotion).
+- Main code never imports from `demos/`. Reusing demo behavior in the main code is a separate task run with [`promote-gameplay-demo`](../promote-gameplay-demo/SKILL.md).
 - Requirement notes are not authority; do not build from them.
 - Do not grow scope during the build. A new need goes back through steps 4–6.
