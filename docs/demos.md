@@ -1,0 +1,47 @@
+# Gameplay demos
+
+A demo is a small, playable build that proves one thing about the game. It lives apart from the main code and is a **reference artifact**: it shows how the specs play, and records the design decisions it encodes. Build one with the [`create-gameplay-demo`](../.agents/skills/create-gameplay-demo/SKILL.md) skill.
+
+## Where
+
+One folder per demo: `demos/<slug>/`, holding the code and a `README.md` copied from the [demo README template](../.agents/skills/create-gameplay-demo/assets/demo-readme.md). Demos land through PRs like any other task.
+
+## Types
+
+| Type | Proves | Reads |
+|------|--------|-------|
+| Engine | Rules, game state, feel, camera; no UI | Design, view, ADRs |
+| Gameplay | A playable slice with its screens and input | Design, view, UX, ADRs |
+
+## Before building
+
+- The high-level stage (vision, definition, quality) is locked in.
+- The Engine ADR is Accepted.
+- Every blocking gap in scope is decided by the user and written to `specs/`.
+
+## What is relaxed
+
+- [SOLID](solid.md) and structure continuity do not apply. `review-solid-code` skips `demos/`.
+- Unit tests are optional.
+- Playtesting per `specs/playtest/` is optional, on request.
+
+## What is not relaxed
+
+- **Spec first**: every behavior traces to an included spec element or a listed assumption.
+- **Traceability**: the demo README lists included and excluded spec elements, the decisions encoded (each citing a spec element), and the assumptions made. Code comments cite the spec element or assumption where a rule is encoded.
+- **Assumptions** cover only non-blocking gaps (tuning, placeholder art, audio, copy). They are not decisions and do not authorize main code.
+
+## Verification
+
+`verify-project-issue` checks a demo against its task's scope and its README: every included element is shown, every decision cites a spec element that exists, and the run instructions work. No SOLID review.
+
+## Promotion
+
+Main code never imports from `demos/`. Promotion reimplements demo behavior in the main tree, with the demo as reference; it is not a file move. Run it with the [`promote-gameplay-demo`](../.agents/skills/promote-gameplay-demo/SKILL.md) skill, as its own task. Promotion:
+
+1. re-checks each decision against current specs; where they differ, the spec wins;
+2. writes every assumption it relies on into `specs/`, confirmed by the user;
+3. adds the technical design the code needs per `specs/technical/` rules;
+4. passes `review-solid-code` and the normal test bar.
+
+A subset of a demo's included elements may be promoted. The demo folder stays as it was.
