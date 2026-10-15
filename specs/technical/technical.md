@@ -12,7 +12,7 @@ Authoring rules: [`.agents/specs/rules/technical/technical.md`](../../.agents/sp
 
 ## Index
 
-Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md), [`ids.md`](ids.md), [`layers.md`](layers.md), [`modules.md`](modules.md). Diagrams: [`diagrams/`](diagrams/). Optional copy sources: [`_templates/`](_templates/).
+Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md), [`ids.md`](ids.md), [`layers.md`](layers.md), [`modules.md`](modules.md), [`asset-access.md`](asset-access.md). Diagrams: [`diagrams/`](diagrams/). Optional copy sources: [`_templates/`](_templates/).
 
 - **Failures**: None yet
 - **Concurrency**: None yet

@@ -35,6 +35,7 @@ Design, view, and UX IDs stay in their folders. Cite them. Do not reuse their ke
 | `persistence.md` | `SAV` | Durable vs ephemeral `D`, Save mapping `M`, Migration `G` |
 | `configuration.md` | `CFG` | Sources `S`, Tables and tunables `T`, Binding `B` |
 | `verification.md` | `VER` | Seams `S`, Invariants `I`, Harness expectations `H` |
+| `asset-access.md` | `AST` | Resolution `R`, Engine resources `E`, Build outputs `O`, Load groups `G` |
 
 Sections not listed (overview, purpose, Serves, Informed by, and similar) carry no IDs.
 

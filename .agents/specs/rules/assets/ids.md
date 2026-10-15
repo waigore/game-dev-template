@@ -27,6 +27,7 @@ Aesthetics, design, view, and UX IDs stay in their folders. Cite them. Do not re
 | `tools.md` | `TL` | Tool roles by number, such as `TL.2` |
 | `procedures.md` | `APR` | Procedures by name, such as `APR.import` |
 | `catalog.md` | `CAT` | Fields `F`, Integrity `I` |
+| `access.md` | `ACC` | Addressing `A`, Placement `P`, Load groups `G` |
 | `kinds/` | `AK-<name>` | Coverage `V`, Specification `S`, Budgets `B`, Recipes `R`, Checks `K` |
 
 Sections not listed (purpose, sources, lifecycle, access, consistency, naming, and similar) carry no IDs.

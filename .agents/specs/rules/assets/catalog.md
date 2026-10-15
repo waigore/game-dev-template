@@ -29,7 +29,7 @@ The skeleton covers: asset ID, handle, kind spec (always; may be planned), cover
 
 ## Integrity
 
-Rules the catalog always meets, `I1`, `I2`, …: every file under the asset root belongs to one entry, and every entry's files exist; asset IDs are valid version 7 UUIDs, unique, and never reused; handles are unique, and every handle's `<kind>` is a kind spec named in the hub; every approved entry has a Pass review for its current version or a review exemption; every cited ID exists (a planned kind spec named in the hub counts); main code uses no draft or deprecated asset; every exemption names the person who granted it; no entry was generated or touched up with a tool that `docs/asset-tools.md` bans. State how each rule is checked (the CI check, another automated check, or `review-asset`).
+Rules the catalog always meets, `I1`, `I2`, …: every file under the asset root, except engine import sidecars (`.meta`, `.import`, `.uid`), belongs to one entry, and every entry's files exist; asset IDs are valid version 7 UUIDs, unique, and never reused; handles are unique, and every handle's `<kind>` is a kind spec named in the hub; every approved entry has a Pass review for its current version or a review exemption; every cited ID exists (a planned kind spec named in the hub counts); main code uses no draft or deprecated asset; every exemption names the person who granted it; no entry was generated or touched up with a tool that `docs/asset-tools.md` bans. State how each rule is checked (the CI check, another automated check, or `review-asset`).
 
 ## Splitting
 

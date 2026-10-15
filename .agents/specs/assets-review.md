@@ -33,7 +33,8 @@ Same sections and required content as the rules file for each spec in scope. Fil
 ### Procedures and catalog
 
 - [ ] `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, and `APR.deprecate` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency and failure handling are filled.
-- [ ] Catalog root and asset root are repository-relative paths in backticks citing an Accepted Integration ADR, or are TBD. A format other than the default is set by that ADR, which also states how each integrity rule is checked.
+- [ ] Catalog root and asset root are repository-relative paths in backticks citing an Accepted Integration ADR, or are TBD.
+- [ ] `access.md` is filled whenever the hub is, and `specs/technical/asset-access.md` is filled with it (Fail if one is filled and the other is not). `ACC.A1`, `ACC.A2`, `ACC.P1`, and `ACC.P2` are kept as written; `ACC.A3` is in product terms; every asset main code uses is in a load group or the stated default; load and unload points cite design, view, or UX elements that exist. A format other than the default is set by that ADR, which also states how each integrity rule is checked.
 - [ ] Asset ID and handle format and assignment, the skeleton fields, and the integrity rules match [catalog.md](rules/assets/catalog.md); each integrity rule says how it is checked.
 - [ ] The hub's approval rule names a `review-asset` Pass. No kind spec weakens it.
 - [ ] The hub's review exemption rule is kept as written: per asset, any source type, granted only by a person.
