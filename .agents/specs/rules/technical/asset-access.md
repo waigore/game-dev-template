@@ -1,23 +1,25 @@
-# Authoring rules: asset access
+# Authoring rules: asset access (technical)
 
-Read this before editing `specs/technical/_templates/asset-access.md` or `specs/technical/asset-access.md`. Do not copy these rules into the spec.
+Read this before editing `specs/technical/asset-access.md`. Do not copy these rules into the spec.
 
-Also read [technical.md](technical.md), [ids.md](ids.md), and [`../assets/catalog.md`](../assets/catalog.md).
+Also read [technical.md](technical.md), [ids.md](ids.md), and [`../assets/access.md`](../assets/access.md).
 
-How the running game turns an asset ID into a loaded engine resource, what the engine builds from cataloged assets, and when groups of assets load and unload. The asset pipeline (`specs/assets/`) owns what each asset is and where its files live; this file owns how code reaches them.
+Realizes `specs/assets/access.md` in code and data: the asset manifest's format and location, the resolver, the engine resources and build outputs, and the mechanism behind each load group. The asset access spec owns the rules in product terms; this file owns how the engine meets them. Do not restate its rules.
 
-Required whenever the asset hub's Asset kinds table has an Applies row and main code loads assets; otherwise optional. Copy `_templates/asset-access.md` to `asset-access.md`; do not fill the template in place. Cite the Accepted Integration ADR that sets the asset root and manifest format, and the Engine ADR.
+## Paired with the asset access spec
+
+A standard file in the template, not an optional global. Fill it in the same change as `specs/assets/access.md`, which is filled with the asset hub. This is the one technical file written before the ADRs it depends on: each value that depends on an ADR not yet Accepted is `TBD — <question>`, naming that ADR (usually the Engine ADR or the Integration ADR that sets the asset root). Replace those TBDs once the ADR is Accepted. A cited `CMP-`, `MOD-`, or `SEQ-` element that does not exist yet is also TBD.
+
+When every asset kind in the hub is N/A, write "None — no asset kind applies" under each section.
 
 ## Header
 
-- **Serves**, **Informed by**, **ADRs**: as in [components.md](components.md).
+- **Serves**, **Informed by**, **ADRs**: as in [components.md](components.md). **Informed by** always cites `specs/assets/access.md`.
 
 ## Sections
 
-- **Resolution**: `R1`, `R2`, …. How an asset ID becomes an engine resource. Cover at least: the manifest (an asset ID to engine path map generated from the catalog, never hand-edited; its location, its format per the Integration ADR, and when it is regenerated); the resolver (the one component that reads the manifest, cited by `CMP-` ID); and what happens on an unknown, draft, or deprecated asset ID. The main-code manifest lists only approved entries. Code passes asset IDs to the resolver and never hard-codes an asset path.
-- **Engine resources**: `E1`, `E2`, …. Files authored in the engine's own formats that use cataloged assets, such as animation sets, prefabs, materials, scenes, and animation controllers. Columns: resource class, where it lives (a module from `modules.md`, outside the asset root), the asset IDs or kinds it uses, and how it stays in step with the manifest when the engine format stores a path (generated from the manifest, or checked against it). These are technical data, not catalog entries. Write "None — reason" when the engine needs none.
-- **Build outputs**: `O1`, `O2`, …. Files the engine or build tooling generates from cataloged assets, such as atlases, import caches, and bundles. Columns: output, generator (cite the ADR), inputs (asset IDs, kinds, or load groups), location outside the asset root, and whether it is committed or rebuilt. Never cataloged, never hand-edited. Write "None — reason" when nothing is generated.
-- **Load groups**: `G1`, `G2`, …. Columns: group, members (asset IDs, kind specs, or coverage rules such as `AK-character-sprites.V2`), load point, unload point, and owning component. Load and unload points cite a design, view, or UX element or a technical sequence. Every asset main code uses belongs to at least one group, or the section states the default (such as "load on first use, never unload") and why it fits the load-time and memory targets in `specs/definition/quality.md`.
+- **Resolution**: `R1`, `R2`, …. Keep three rows: `R1` the asset manifest (format per the Integration ADR, location outside the asset root, the tool that generates it, and when it is regenerated) realizing `ACC.A2`; `R2` the resolver, the one component that reads the asset manifest, cited by `CMP-` ID, realizing `ACC.A1`; `R3` how an unresolved asset ID is handled, realizing `ACC.A3`. Add rows as needed.
+- **Engine resources**: `E1`, `E2`, …. Files authored in the engine's own formats that use cataloged assets, such as animation sets, prefabs, materials, scenes, and animation controllers. Columns: resource class, where it lives (a module, outside the asset root), the asset IDs or kinds it uses, and how it stays in step with the asset manifest when the engine format stores a path (generated from it, or checked against it). Write "None — reason" when the engine needs none.
+- **Build outputs**: `O1`, `O2`, …. Files the engine or build tooling generates from cataloged assets, such as atlases, import caches, and bundles. Columns: output, generator (cite the ADR), inputs (asset IDs, kinds, or `ACC.G` groups), location outside the asset root, and whether it is committed or rebuilt. Never hand-edited. Write "None — reason" when nothing is generated.
+- **Load groups**: `G1`, `G2`, …. One row per `ACC.G` group: the group it realizes, the mechanism (such as a preload list or a bundle), the owning component, and the sequence that loads and unloads it.
 - **Diagram**: required when load groups overlap or follow a dense flow. Mermaid or link under `diagrams/`.
-
-Define manifest, resolver, engine resource, build output, and load group in `glossary.md` when first used.

@@ -24,6 +24,7 @@ Each topic in the table is covered, or marked N/A. Fill Applicability with "Appl
 These follow upstream:
 
 - Each source type follows its row in the hub's Sources table.
+- Asset access and load groups Applies when any asset kind Applies. Its technical counterpart topic in `specs/technical/traceability.md` follows it.
 - Sound assets are N/A when sound style is N/A in the aesthetics, with that reason.
 - Localized assets Applies when localization Applies in `specs/definition/quality.md`: text in art, font script coverage, and voice per locale.
 - Accessible variants Applies when accessibility Applies and a color rule or comfort option needs an alternative asset, such as a high-contrast set.

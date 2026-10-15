@@ -18,7 +18,7 @@ Each topic in the table is covered, or marked N/A. Fill Applicability with "Appl
 
 Optional topics (failures, concurrency, persistence, configuration, verification) are Applies only when the matching file exists and is indexed in the hub. Otherwise N/A with a reason such as "single-threaded; no save yet".
 
-Asset access and loading Applies, with `asset-access.md` indexed, whenever main code loads cataloged assets. N/A only with a reason grounded in the asset hub, such as "every asset kind N/A" or "no main code loads assets yet".
+Asset access and loading follows the same topic in `specs/assets/traceability.md`: Applies when any asset kind Applies, otherwise N/A with the same reason.
 
 Diagrams Applies whenever any technical topic Applies.
 

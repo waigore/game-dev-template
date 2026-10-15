@@ -16,7 +16,7 @@ The technical design defines the shape of the data and code developers implement
 - **Identified**: every behavior- or structure-defining element has a stable ID per [ids.md](ids.md). No Given/When/Then player stories in this folder; those stay upstream.
 - **Shown**: supplement with diagrams per [diagrams.md](diagrams.md). Prefer Mermaid in the owning Markdown; use `diagrams/` for larger artifacts.
 - **Optional complexity**: `failures.md`, `concurrency.md`, `persistence.md`, `configuration.md`, and `verification.md` exist only when warranted. Copy from `_templates/`, fill, and index in the hub. If not used, leave the hub line as "None yet" and do not create an empty stub. Mark those topic rows N/A in `traceability.md` with a reason.
-- **Asset access**: `asset-access.md` follows the same copy-and-index steps, but is required once main code loads cataloged assets, per [asset-access.md](asset-access.md). Code reaches assets only through what it specifies.
+- **Asset access**: `asset-access.md` is a standard file, filled with `specs/assets/access.md` when the asset hub is filled, before the ADRs it depends on, per [asset-access.md](asset-access.md). Code reaches assets only through what it specifies.
 - **Concise**: each Markdown file stays under 500 words. HTML under `diagrams/` is exempt. Split by logical unit and link. The type's own rules file says where to move the extra part.
 
 ## Overview

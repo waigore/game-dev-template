@@ -9,6 +9,3 @@ Copy a file here to `specs/technical/<same-name>.md` only when complexity warran
 | [`persistence.md`](persistence.md) | [`.agents/specs/rules/technical/persistence.md`](../../../.agents/specs/rules/technical/persistence.md) |
 | [`configuration.md`](configuration.md) | [`.agents/specs/rules/technical/configuration.md`](../../../.agents/specs/rules/technical/configuration.md) |
 | [`verification.md`](verification.md) | [`.agents/specs/rules/technical/verification.md`](../../../.agents/specs/rules/technical/verification.md) |
-| [`asset-access.md`](asset-access.md) | [`.agents/specs/rules/technical/asset-access.md`](../../../.agents/specs/rules/technical/asset-access.md) |
-
-`asset-access.md` is required, not optional, once main code loads cataloged assets.

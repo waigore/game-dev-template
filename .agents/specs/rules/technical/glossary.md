@@ -8,7 +8,7 @@ Shared language for technical specs. Each term is defined once here. Other specs
 
 Game terms stay in `specs/design/glossary.md`. View terms stay in `specs/view/glossary.md`. UI terms stay in `specs/ux/glossary.md`. Do not redefine them here.
 
-The skeleton already defines Component, Contract, Diagram, Layer, Module, Schema, and Sequence. Keep those rows. Add a row for a term this game needs. Keep added rows alphabetical. One term per concept: no synonyms.
+The skeleton already defines Component, Contract, Diagram, Layer, Module, Resolver, Schema, and Sequence. Keep those rows. Add a row for a term this game needs. Keep added rows alphabetical. One term per concept: no synonyms.
 
 Columns: term, a one-sentence definition, and where it is detailed (a link, or "here").
 

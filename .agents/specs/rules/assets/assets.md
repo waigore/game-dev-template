@@ -39,9 +39,11 @@ One row per source type: AI generation, procedural generation, third-party (lice
 ## Catalog
 
 - **Catalog root**: the repository-relative folder, in backticks, that holds the entry files, citing the Accepted Integration ADR that sets it. Keep it out of the engine's import (it depends on the engine).
-- **Asset root**: the repository-relative folder, in backticks, that produced asset files live under, citing the same ADR. It holds only cataloged asset files and the engine's import sidecars. Engine resources (files authored in the engine's own formats that use assets) and build outputs (atlases, import caches, bundles) live outside it. How code loads assets is in `specs/technical/asset-access.md`, not here.
+- **Asset root**: the repository-relative folder, in backticks, that produced asset files live under, citing the same ADR. What it may hold, and how code reaches assets, is in `access.md` per [access.md](access.md).
 
 Until that ADR is Accepted, both are `TBD — <question>`, no asset is cataloged, and the CI catalog check is skipped. The entry file format is the default in [catalog.md](catalog.md) unless that ADR sets another. Link `catalog.md` for the format and fields.
+
+Fill `access.md` and `specs/technical/asset-access.md` in the same change as this hub; the two access files are one pair.
 
 ## Lifecycle
 
