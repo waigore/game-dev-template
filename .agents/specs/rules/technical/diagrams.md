@@ -21,6 +21,7 @@ Diagrams clarify structure and flow stated in technical specs. When a diagram an
 | `sequences/` | Branching, or three or more participants |
 | `schemata/` | Non-trivial relationships or state-machine lifecycle |
 | `failures.md`, `concurrency.md`, `persistence.md` | Dense paths, ownership, or save graphs |
+| `asset-access.md` | Overlapping load groups or a dense load flow |
 | `contracts.md`, `configuration.md`, `verification.md` | Only when prose alone is hard to follow |
 
 ## What a diagram contains

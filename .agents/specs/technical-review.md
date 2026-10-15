@@ -14,6 +14,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] Every topic in the coverage table is Applies with a covering file, or N/A with a reason grounded in the definition, design profile, quality, or Accepted ADRs.
 - [ ] Every unit file under `components/`, `contracts/`, `schemata/`, and `sequences/` is listed in the hub index, and every indexed file exists.
 - [ ] An optional global (`failures`, `concurrency`, `persistence`, `configuration`, `verification`) exists if and only if the hub indexes it with a link (not "None yet") and its topic is Applies. No empty stub for an unused optional.
+- [ ] `asset-access.md` exists and is indexed whenever main code loads cataloged assets. Its manifest is generated from the catalog and lists only approved entries; one resolver reads it; engine resources and build outputs live outside the asset root; every load and unload point cites an element that exists.
 
 ### Structure and contracts
 

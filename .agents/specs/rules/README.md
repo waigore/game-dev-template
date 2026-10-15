@@ -139,6 +139,7 @@ Do not paste these rules into a spec. Do not edit a `_template` file to hold one
 | `specs/technical/persistence.md` | [technical/persistence.md](technical/persistence.md) |
 | `specs/technical/configuration.md` | [technical/configuration.md](technical/configuration.md) |
 | `specs/technical/verification.md` | [technical/verification.md](technical/verification.md) |
+| `specs/technical/asset-access.md` | [technical/asset-access.md](technical/asset-access.md) |
 | `specs/technical/_templates/` | matching optional rules file (e.g. [technical/failures.md](technical/failures.md)) |
 | `specs/technical/diagrams/` | [technical/diagrams.md](technical/diagrams.md) |
 

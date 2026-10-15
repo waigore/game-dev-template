@@ -26,7 +26,7 @@ Performance, load time, reliability, and observability need no design/UX file be
 | Aesthetics | Sound style N/A only if experience gives sound no role and no platform plays sound. Motion style N/A only if nothing animates. Accessible color and type, script coverage follow quality. Sheets Applies unless spec depth requires none |
 | UX | Accessibility presentation, localization copy, save-failure follow quality |
 | Assets | Each kind row ← view dimensionality and rendered space, aesthetics medium, design and UX. Source types ← definition constraints. Sound assets ← aesthetics sound style. Localized assets and accessible variants follow quality |
-| Technical | Optional globals Applies iff hub indexes the file. Diagrams Applies if any technical topic Applies. Persistence should agree with save durability when that Applies |
+| Technical | Optional globals Applies iff hub indexes the file. Diagrams Applies if any technical topic Applies. Persistence should agree with save durability when that Applies. Asset access Applies once main code loads cataloged assets (needs an Applies asset kind) |
 | Design | Topic N/A cites genre/platform profile or definition. Sub-games "None" ⇒ topic N/A, no files |
 | ADR Stack | Area N/A grounded in definition or design profile |
 

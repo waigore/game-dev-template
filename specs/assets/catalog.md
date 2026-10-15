@@ -25,7 +25,7 @@ Moved to [`catalog/fields.md`](catalog/fields.md).
 
 | ID | Rule | How checked |
 |----|------|-------------|
-| `I1` | Every file under the asset root belongs to one entry, and every entry's files exist | CI: `asset_catalog.py` |
+| `I1` | Every file under the asset root, except engine import sidecars, belongs to one entry, and every entry's files exist | CI: `asset_catalog.py` |
 | `I2` | Asset IDs are valid UUIDs version 7, unique, and never reused | CI: `asset_catalog.py` |
 | `I3` | Every approved entry has a Pass review for its current version, or a review exemption | CI: `asset_catalog.py` |
 | `I4` | Every cited ID exists; a planned kind spec named in the hub counts | CI for kind specs and successors; `review-asset` for the rest |

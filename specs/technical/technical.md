@@ -19,6 +19,7 @@ Global specs: [`glossary.md`](glossary.md), [`traceability.md`](traceability.md)
 - **Persistence**: None yet
 - **Configuration**: None yet
 - **Verification**: None yet
+- **Asset access**: None yet
 - **Components**: <!-- fill in -->
 - **Contracts**: <!-- fill in -->
 - **Schemata**: <!-- fill in -->
