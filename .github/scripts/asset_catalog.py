@@ -9,8 +9,9 @@ are skipped. A project whose Integration ADR sets another format replaces this
 script.
 
 Checks (catalog integrity IDs): I1 files, I2 asset IDs, I3 approval,
-I4 kind specs and successors, I6 exemptions, I7 handles; plus required fields
-and value shapes.
+I4 kind specs and successors, I6 exemptions, I7 handles, I8 banned tools (the
+Banned tools table in docs/asset-tools.md); plus required fields and value
+shapes.
 
 Usage: asset_catalog.py [--root DIR]
 """
@@ -29,6 +30,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from new_asset_id import is_asset_id  # noqa: E402
 
 HUB = "specs/assets/assets.md"
+TOOLS_DOC = "docs/asset-tools.md"
+TOUCHUP_PARTS = ("operation", "tool", "terms", "date", "reason", "run_by")
 STATES = {"draft", "approved", "deprecated"}
 SOURCE_TYPES = {"ai-generation", "procedural-generation", "third-party", "human-made"}
 GENERATED = {"ai-generation", "procedural-generation"}
@@ -57,6 +60,7 @@ class Hub:
     catalog_root: str | None
     asset_root: str | None
     kind_specs: frozenset[str]
+    banned_tools: frozenset[str] = frozenset()
 
 
 def _bullet_path(text: str, label: str) -> str | None:
@@ -77,10 +81,21 @@ def _kind_specs(text: str) -> frozenset[str]:
     return frozenset(names)
 
 
+def _banned_tools(text: str) -> frozenset[str]:
+    section = re.search(r"^## Banned tools\s*$(.*?)(?=^## |\Z)", text, re.M | re.S)
+    rows = [line for line in (section.group(1) if section else "").splitlines() if line.lstrip().startswith("|")]
+    names = (row.strip().strip("|").split("|")[0].strip().strip("`*").lower() for row in rows[2:])
+    return frozenset(name for name in names if name)
+
+
+def _read(path: Path) -> str:
+    return COMMENT_RE.sub("", path.read_text(encoding="utf-8")) if path.exists() else ""
+
+
 def read_hub(root: Path) -> Hub:
-    path = root / HUB
-    text = COMMENT_RE.sub("", path.read_text(encoding="utf-8")) if path.exists() else ""
-    return Hub(_bullet_path(text, "Catalog root"), _bullet_path(text, "Asset root"), _kind_specs(text))
+    text = _read(root / HUB)
+    banned = _banned_tools(_read(root / TOOLS_DOC))
+    return Hub(_bullet_path(text, "Catalog root"), _bullet_path(text, "Asset root"), _kind_specs(text), banned)
 
 
 def _non_empty(entry: dict[str, Any], key: str) -> bool:
@@ -145,7 +160,30 @@ def check_entry(rel: str, stem: str, entry: dict[str, Any], hub: Hub) -> list[Fi
             findings.append(Finding(rel, "I3", "approved entry needs a review with verdict 'Pass', or an exemption"))
     if entry.get("state") == "deprecated" and not _non_empty(entry, "deprecation_reason"):
         findings.append(Finding(rel, "fields", "deprecated entry is missing 'deprecation_reason'"))
+    findings += _check_touchups(rel, entry, person_supplied)
+    findings += _check_banned(rel, entry, hub.banned_tools)
     return findings
+
+
+def _check_touchups(rel: str, entry: dict[str, Any], person_supplied: bool) -> list[Finding]:
+    if "touchups" not in entry:
+        return []
+    touchups = entry["touchups"]
+    if not (isinstance(touchups, list) and touchups):
+        return [Finding(rel, "fields", "'touchups' must be a non-empty list")]
+    parts = TOUCHUP_PARTS + (("agreed_by",) if person_supplied else ())
+    findings: list[Finding] = []
+    for i, touchup in enumerate(touchups):
+        findings += _parts(rel, {f"touchups[{i}]": touchup}, f"touchups[{i}]", parts, "fields")
+    return findings
+
+
+def _check_banned(rel: str, entry: dict[str, Any], banned: frozenset[str]) -> list[Finding]:
+    generation, touchups = entry.get("generation"), entry.get("touchups")
+    tools = [generation.get("tool")] if isinstance(generation, dict) else []
+    tools += [t.get("tool") for t in touchups if isinstance(t, dict)] if isinstance(touchups, list) else []
+    return [Finding(rel, "I8", f"tool '{tool}' is banned by {TOOLS_DOC}")
+            for tool in tools if isinstance(tool, str) and any(name in tool.lower() for name in banned)]
 
 
 def check_catalog(entries: dict[str, dict[str, Any]]) -> list[Finding]:

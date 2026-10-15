@@ -24,7 +24,7 @@ Read-only review of produced assets. Spec review of `specs/assets/` itself is [`
 2. **Load** each entry file from the catalog root the asset hub names, its kind spec, the aesthetics elements the kind cites (and their pillars), `specs/aesthetics/aesthetics.md` content limits, the reference sheets and `REF` images they point to, and the view values the kind cites.
 3. **Inspect** each asset's files. Open images directly. Measure what can be measured (canvas size, colors used against the palette set, frame count, duration, loudness, file size) with commands in the repository's environment. Compare against reference sheets and style anchors.
 4. **Check**, recording each failure with the ID it breaks:
-   - **Catalog**: every field `catalog/fields.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist; per **Asset IDs** in `catalog.md`, the asset ID is a valid UUID version 7 (`is_asset_id` in `.github/scripts/new_asset_id.py`), and neither it nor the handle is used by any other entry, deprecated ones included; the handle's prefix is a kind spec the hub names.
+   - **Catalog**: every field `catalog/fields.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist; per **Asset IDs** in `catalog.md`, the asset ID is a valid UUID version 7 (`is_asset_id` in `.github/scripts/new_asset_id.py`), and neither it nor the handle is used by any other entry, deprecated ones included; the handle's prefix is a kind spec the hub names; each touch-up (`CAT.F19`) is recorded in full, with `agreed_by` for a person-supplied asset; no generation or touch-up tool is one that [`docs/asset-tools.md`](../../../docs/asset-tools.md) bans.
    - **Specification and budgets**: every `S` and `B` row of the kind spec.
    - **Kind checks**: every `K` row, by its stated method.
    - **Style**: each cited aesthetics element, and each cited pillar's "conforms if…" test.
@@ -64,6 +64,6 @@ Needs human: <items, or none>
 
 ## Rules
 
-- Read-only: do not edit assets, the catalog, or specs. Fixes go through `manage-asset`.
+- Read-only: do not edit assets, the catalog, or specs. Fixes go through `manage-asset`. A suggested fix may be a touch-up (`APR.touch-up`) when an edit would fix the finding; name the touch-up option from `docs/asset-tools.md` and the operation its docs offer.
 - Judge against the specs only. Do not invent style criteria; a gap in the specs is a note for `author-spec`, not a finding.
 - Do not change issue labels or status.

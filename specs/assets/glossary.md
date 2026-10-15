@@ -17,4 +17,5 @@ Authoring rules: [`.agents/specs/rules/assets/glossary.md`](../../.agents/specs/
 | Review exemption | A person's recorded decision that one asset skips `review-asset`. | [`assets.md`](assets.md) |
 | Style anchor | An approved asset used as an input so new assets match it. | [`procedures.md`](procedures.md) |
 | Tool role | A capability the pipeline needs, realized by an Accepted ADR. | [`tools.md`](tools.md) |
+| Touch-up | An optional edit to an asset's files, such as background removal, inpainting, or upscaling, recorded in its entry. | [`procedures/touch-up.md`](procedures/touch-up.md) |
 | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |

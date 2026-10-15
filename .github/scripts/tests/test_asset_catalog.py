@@ -141,6 +141,28 @@ class CatalogTest(unittest.TestCase):
         self.add(entry(state="deprecated", deprecation_reason="replaced", successor=str(uuid7())))
         self.assertTrue(any(f.startswith("I4: successor") for f in self.checks()))
 
+    def test_touchups_need_full_record_and_agreement_when_person_supplied(self) -> None:
+        full = {"operation": "remove background", "tool": "Recraft", "terms": "Pro plan", "date": "2026-10-15",
+                "reason": "transparent background per S4", "run_by": "agent"}
+        self.add(entry(touchups=[full]))
+        self.add(entry(handle="character-sprites/b", files=["character-sprites/b.png"], touchups=[{"tool": "Recraft"}]))
+        self.add(entry(handle="character-sprites/c", files=["character-sprites/c.png"], touchups=[]))
+        found = self.checks()
+        self.assertIn("fields: 'touchups[0]' is missing agreed_by", found)
+        self.assertTrue(any("'touchups[0]' is missing operation, terms, date, reason, run_by, agreed_by" in f for f in found))
+        self.assertIn("fields: 'touchups' must be a non-empty list", found)
+
+    def test_banned_tools_rejected(self) -> None:
+        (self.root / "docs").mkdir()
+        (self.root / "docs/asset-tools.md").write_text(
+            "# Asset tools\n\n## Banned tools\n\n| Tool | Scope |\n|------|-------|\n| Pixellab | Never |\n\n## Touch-up\n",
+            encoding="utf-8")
+        touchup = {"operation": "inpaint", "tool": "PixelLab MCP", "terms": "t", "date": "2026-10-15",
+                   "reason": "r", "run_by": "agent", "agreed_by": "A. Artist"}
+        self.add(entry(source_type="ai-generation", generation={"tool": "pixellab"}, touchups=[touchup]))
+        found = self.checks()
+        self.assertEqual(len([f for f in found if f.startswith("I8")]), 2)
+
     def test_rejects_null_and_non_entry_files(self) -> None:
         self.add(entry(successor=None))
         (self.root / "game/catalog/notes.txt").write_text("hi", encoding="utf-8")

@@ -12,7 +12,7 @@ State that asset work is tracked by a task issue whose deliverables name asset I
 
 ## Procedures
 
-One subsection per procedure, by name: `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, `APR.deprecate`. Each states its trigger, inputs, ordered steps, and outputs (files and catalog changes).
+One subsection per procedure, by name: `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, `APR.deprecate`, `APR.touch-up`. Each states its trigger, inputs, ordered steps, and outputs (files and catalog changes).
 
 - **Generate**: pick the kind spec and coverage rule; add a draft entry with a new asset ID; run the recipe through its tool role; post-process; run the kind's checks; record the generation record; run `APR.review`.
 - **Import**: a third-party asset. Confirm the license against the definition's market constraints before download; record source, license, attribution, and proof of purchase; post-process to the kind's specification; run its checks and `APR.review`.
@@ -20,6 +20,7 @@ One subsection per procedure, by name: `APR.generate`, `APR.import`, `APR.regist
 - **Review**: skip review-exempt entries unless review is requested, and then the verdict is advisory. Otherwise run `review-asset`; record the verdict; approve per the hub's **Approval** rule.
 - **Update**: keep the asset ID, raise its version, record the reason; regenerate or edit per the recipe; run checks and `APR.review`; re-check assets built from it.
 - **Deprecate**: set the state, the reason, and the successor ID if any. Main code stops using it first. State when its files may be deleted.
+- **Touch-up**: lives in `procedures/touch-up.md`, linked from an `APR.touch-up` subsection. Optional edits (such as background removal, inpainting, outpainting, upscaling, vectorizing) through the touch-up options in `docs/asset-tools.md`, which need no Integration ADR; never a banned tool. A person-supplied asset needs that person's agreement first. Keep the asset ID and source type; on an approved asset, run inside Update. Record each operation in the touch-up record; rerun checks and `APR.review`.
 
 ## Consistency
 

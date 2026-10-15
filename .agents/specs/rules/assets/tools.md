@@ -12,7 +12,9 @@ One row per role: `TL.1`, `TL.2`, …. Columns: ID, role, source type, kinds ser
 
 - **Role**: what the tool does, such as sprite generation, 3D model generation, texture generation, animation, sound effect generation, music generation, voice, procedural generation, post-processing (palette quantization, trimming, packing, loudness normalization), validation, or a third-party catalog.
 - **Required capabilities**: what the recipes depend on, such as palette lock, transparent background, fixed canvas size, the same character across directions, reference-image input, a seed for repeatable output, batch runs, seamless loops, or license terms that allow commercial use. Each traces to an aesthetics element, a kind spec requirement, or a definition constraint.
-- **Realized by**: an Accepted ADR ID, or "Pending — needs Integration ADR".
+- **Realized by**: an Accepted ADR ID, or "Pending — needs Integration ADR". Never a tool that `docs/asset-tools.md` bans.
+
+Touch-up operations (`APR.touch-up`) are not roles; do not add rows for them.
 
 ## Access
 
@@ -20,8 +22,7 @@ One row per role: how an agent reaches it (an agent tool, a command run in the r
 
 ## Constraints on ADR
 
-State that every role a recipe uses needs an Accepted Integration ADR that realizes all of its required capabilities, and that an ADR change to a role reopens the recipes that use it for review.
-
+State that every role a recipe uses needs an Accepted Integration ADR that realizes all of its required capabilities, and that an ADR change to a role reopens the recipes that use it for review. State that touch-ups (`APR.touch-up`) are not roles and need no ADR, and that no role is realized by a tool that `docs/asset-tools.md` bans.
 ## Splitting
 
 If the file passes 500 words, move Access to `tools-access.md`. Leave a summary and a link, and update `assets.md`.
