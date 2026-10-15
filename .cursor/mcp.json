@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "recraft": {
+      "url": "https://mcp.recraft.ai/mcp",
+      "disabled": true
+    }
+  }
+}

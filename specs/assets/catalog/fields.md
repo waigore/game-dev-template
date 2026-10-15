@@ -26,6 +26,7 @@ Part of [`catalog.md`](../catalog.md). Keys are the JSON keys of an entry file p
 | `F16` | Supplier | `supplier` | Person-supplied | The person who made or supplied it |
 | `F17` | Review exemption | `exemption` | Exempt | `granted_by`, `date`, `reason` |
 | `F18` | Handle | `handle` | Always | `<kind>/<name>`, per **Asset IDs** in [`catalog.md`](../catalog.md) |
+| `F19` | Touch-ups | `touchups` | Touched up | List, oldest first, per [`APR.touch-up`](../procedures/touch-up.md): `operation` (as the tool's docs name it), `tool`, `terms`, `date`, `reason`, `run_by`; `agreed_by` when person-supplied; `prompt` and `inputs` when used |
 | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
 
 ## Example

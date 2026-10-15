@@ -54,6 +54,10 @@ Asset work is tracked by a task issue whose deliverables name asset IDs or cover
 2. Set the state to deprecated, with the reason and the successor ID if any.
 3. Delete its files once no branch under review uses them; the entry stays.
 
+### `APR.touch-up`
+
+Optional: [`procedures/touch-up.md`](procedures/touch-up.md).
+
 ## Consistency
 
 - **Style anchors**: <!-- fill in: approved asset IDs per kind, or None yet -->

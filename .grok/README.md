@@ -7,5 +7,6 @@ Grok-native paths for this repository. Skill **bodies** are not authored here.
 | Path | Covers |
 |------|--------|
 | `skills/<name>/SKILL.md` | Thin facade → [`.agents/skills/<name>/`](../.agents/skills/) |
+| `config.toml` | Project MCP servers, shipped disabled ([`docs/asset-tools.md`](../docs/asset-tools.md)) |
 
 When adding a skill, add a facade here per [`docs/skills.md`](../docs/skills.md). Catalog: [`.agents/skills/README.md`](../.agents/skills/README.md).

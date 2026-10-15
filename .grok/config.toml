@@ -1,0 +1,3 @@
+[mcp_servers.recraft]
+url = "https://mcp.recraft.ai/mcp"
+enabled = false
