@@ -1,6 +1,8 @@
 # Coding conventions
 
-Project-owned conventions for code in this repo: language idioms, naming, formatting, file layout, errors, logging, and tests. Fill in every `<!-- fill in -->` once the Engine ADR is Accepted. Template sync keeps this file's project content.
+Project-owned conventions for code in this repo: language idioms, naming, formatting, file layout, errors, logging, and tests. Once the Engine ADR is Accepted, replace every `<!-- fill in -->`. Template sync keeps this file's project content.
+
+Project conventions are optional. To use only [`solid.md`](solid.md), write `None — SOLID only (<reason>)` as the single Rules row and `None — <reason>` as the single Tooling row. Leftover placeholders mean the choice is still open, not SOLID only.
 
 Review code with [`review-code`](../.agents/skills/review-code/SKILL.md), which checks this file together with [`solid.md`](solid.md).
 

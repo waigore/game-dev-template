@@ -2,7 +2,7 @@ name: Code lint
 
 # Project-owned. Runs every lint and format command in the Tooling table of
 # docs/coding-conventions.md, one step each; keep the two in sync.
-# Until the project fills in its steps, the job passes with a notice.
+# With no steps (placeholders, or Tooling `None`), the job passes with a notice.
 
 on:
   pull_request:
@@ -25,6 +25,6 @@ jobs:
       # - name: Format check
       #   run: fmt --check .
 
-      # Remove this step once real steps exist.
+      # Remove this step once real steps exist; keep it if Tooling is `None`.
       - name: Not configured
         run: echo "::notice::No lint or format commands configured; see docs/coding-conventions.md"

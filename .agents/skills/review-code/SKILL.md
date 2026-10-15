@@ -40,10 +40,10 @@ If there is nothing to review, report **N/A** (not a Pass) and stop.
 
 For the resolved diff (and nearby existing structure needed for continuity):
 
-1. **Conventions file**: read `docs/coding-conventions.md`. If no rules are filled in, skip convention checks and say so in Notes. For each rule that contradicts `docs/solid.md`, file a `CONV` `must-fix` against `docs/coding-conventions.md` naming the rule and the principle, and do not apply that rule.
+1. **Conventions file**: read `docs/coding-conventions.md`. If the Rules table says `None — SOLID only`, skip convention checks and note "SOLID only (by choice)". If it still holds placeholders, skip them and note "conventions not filled in". For each rule that contradicts `docs/solid.md`, file a `CONV` `must-fix` against `docs/coding-conventions.md` naming the rule and the principle, and do not apply that rule.
 2. **SOLID**: check **SRP**, **OCP**, **LSP**, **ISP**, **DIP** per `docs/solid.md`.
 3. **Conventions**: check each applicable rule. A broken `must` rule is a `must-fix`; a broken `should` rule is a `suggestion`.
-4. **Code lint**: for a PR target, read the `Code lint` check (`gh pr checks <n>`). Failing is a `LINT` `must-fix` citing the failing step; still running, wait and re-read before the verdict. A Tooling row with no matching step in [`code-lint.yml`](../../../.github/workflows/code-lint.yml) is a `LINT` `must-fix` against the workflow. For a working-tree target, note that the check runs on the PR.
+4. **Code lint**: for a PR target, read the `Code lint` check (`gh pr checks <n>`). Failing is a `LINT` `must-fix` citing the failing step; still running, wait and re-read before the verdict. A Tooling row with no matching step in [`code-lint.yml`](../../../.github/workflows/code-lint.yml) is a `LINT` `must-fix` against the workflow; a `None` row needs no step. For a working-tree target, note that the check runs on the PR.
 5. **Continuity** (`CONT`): new code matches existing layout, naming, layering, and patterns unless SOLID or a convention requires otherwise.
 6. Tag each finding: `SRP` | `OCP` | `LSP` | `ISP` | `DIP` | `CONV <CC-n>` | `LINT` | `CONT`, and severity `must-fix` | `suggestion`.
 7. Cite path (and line range when clear). Keep findings concrete; no speculative rewrites.
@@ -64,7 +64,7 @@ For the resolved diff (and nearby existing structure needed for continuity):
 - `[TAG]` `must-fix` | `suggestion` — path: summary
 
 ### Notes
-(optional: continuity context, conventions not filled in, skipped non-code paths)
+(optional: continuity context, SOLID only or conventions not filled in, skipped non-code paths)
 ```
 
 When called from chat, reply with the report. When called from `verify-project-issue`, return the report to the caller for inclusion in the verify comment.
