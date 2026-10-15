@@ -9,8 +9,9 @@ Authoring rules: [`.agents/specs/rules/assets/glossary.md`](../../.agents/specs/
 | Asset | One cataloged piece of art, animation, interface art, font, or sound the game uses. | [`catalog.md`](catalog.md) |
 | Asset ID | The permanent UUID that identifies an asset. | [`catalog.md`](catalog.md) |
 | Asset kind | A class of assets that share coverage rules, recipes, and checks. | [`kinds/`](kinds/) |
-| Catalog | The manifest that records every asset, its state, source, and history. | [`catalog.md`](catalog.md) |
+| Catalog | The entry files that record every asset, its state, source, and history. | [`catalog.md`](catalog.md) |
 | Coverage rule | A rule in a kind spec that says which assets must exist. | [`kinds/`](kinds/) |
+| Entry file | One file in the catalog root holding one asset's record. | [`catalog.md`](catalog.md) |
 | Handle | The readable, renamable `<kind>/<name>` label of an asset. | [`catalog.md`](catalog.md) |
 | Recipe | The repeatable way to make an asset: inputs, prompt, settings, and post-processing. | [`kinds/`](kinds/) |
 | Review exemption | A person's recorded decision that one asset skips `review-asset`. | [`assets.md`](assets.md) |

@@ -13,12 +13,12 @@ The asset pipeline states which kinds of assets the game needs, and how agents g
 - **Tools by role, chosen by ADR**: name a tool only by its tool role (`TL.<n>`) in `tools.md`. Each role is realized by an Accepted ADR of Category Integration, cited by ID. Product, service, model, and file-format names live in that ADR. A role with no Accepted ADR is Pending, and no recipe that uses it is run.
 - **Reproducible**: a recipe states everything needed to make the asset again: inputs, prompt template, settings, seed policy, and post-processing. The catalog records the values each asset was made with.
 - **Licensed**: every asset records its source and license terms in the catalog. The terms fit the definition's market constraints.
-- **The catalog is the record**: produced assets are listed in the catalog manifest per [catalog.md](catalog.md), not in these Markdown specs. Specs state rules and coverage; the manifest lists assets and files.
+- **The catalog is the record**: produced assets are listed in the catalog's entry files per [catalog.md](catalog.md), not in these Markdown specs. Specs state rules and coverage; entry files list assets and files.
 - **Measured budgets**: sizes, counts, durations, and memory are in product units (pixels, world units, triangles, frames, seconds, kilobytes, LUFS) and trace to `specs/definition/quality.md` targets or view values.
 - **Shared language**: define each pipeline term once in `glossary.md`. Style terms stay in the aesthetics glossary. Game, view, and UI terms stay in theirs.
 - **Traceable**: every spec states what it serves. `traceability.md` maps all of them.
 - **Identified**: every element has a stable ID per [ids.md](ids.md). Every asset has a stable asset ID (a UUID) and a readable handle per [catalog.md](catalog.md).
-- **Concise**: each Markdown file stays under 500 words. The manifest and asset files are not specs and are exempt. Split by logical unit and link. The type's own rules file says where to move the extra part.
+- **Concise**: each Markdown file stays under 500 words. Entry files and asset files are not specs and are exempt. Split by logical unit and link. The type's own rules file says where to move the extra part.
 
 ## Purpose
 
@@ -30,7 +30,7 @@ Keep every skeleton row. Add a row for each other kind this game needs. Columns:
 
 - Ground each row in the view's dimensionality and rendered space, the aesthetics medium, and the design and UX specs. Typical: 2D rendered space needs sprites, tilesets, and backgrounds; 3D needs models, textures and materials, and animation clips; mixed needs the sets for the parts each covers. An interface needs interface art, icons, and fonts. Sound effects, music, and voice follow the aesthetics' sound style.
 - One kind spec may cover several kinds when they share recipes. One kind may split into several kind specs when recipes differ, such as character sprites and tile sprites.
-- **Kind specs** names every kind spec of an Applies kind by its kebab-case file name, written or planned, such as `character-sprites (planned)`. That name is the handle prefix per [catalog.md](catalog.md), so an asset gets its final handle before its kind spec is written. Once a handle uses a name, the name never changes, and the kind spec is written under it.
+- **Kind specs** names every kind spec of an Applies kind by its kebab-case file name, written or planned: a link to `kinds/<name>.md` once written, or the name in backticks with "(planned)", such as `` `character-sprites` (planned) ``. The CI check reads names from this column. That name is the handle prefix per [catalog.md](catalog.md), so an asset gets its final handle before its kind spec is written. Once a handle uses a name, the name never changes, and the kind spec is written under it.
 
 ## Sources
 
@@ -38,10 +38,10 @@ One row per source type: AI generation, procedural generation, third-party (lice
 
 ## Catalog
 
-- **Manifest**: the path and format of the catalog manifest, citing the Accepted Integration ADR that sets them.
-- **Asset root**: the folder produced asset files live under, citing the same ADR.
+- **Catalog root**: the repository-relative folder, in backticks, that holds the entry files, citing the Accepted Integration ADR that sets it. Keep it out of the engine's import (it depends on the engine).
+- **Asset root**: the repository-relative folder, in backticks, that produced asset files live under, citing the same ADR.
 
-Until that ADR is Accepted, both are `TBD — <question>` and no asset is cataloged. Link `catalog.md` for the fields.
+Until that ADR is Accepted, both are `TBD — <question>`, no asset is cataloged, and the CI catalog check is skipped. The entry file format is the default in [catalog.md](catalog.md) unless that ADR sets another. Link `catalog.md` for the format and fields.
 
 ## Lifecycle
 

@@ -27,13 +27,13 @@ Same sections and required content as the rules file for each spec in scope. Fil
 ### Tools
 
 - [ ] Each tool role states its source type, kinds served, required capabilities, and realized by. Each capability traces to an aesthetics element, a kind requirement, or a definition constraint.
-- [ ] Realized by is an Accepted Integration ADR that exists, or "Pending — needs Integration ADR". No product, service, model, or format names appear outside ADRs.
+- [ ] Realized by is an Accepted Integration ADR that exists, or "Pending — needs Integration ADR". No product, service, model, or format names appear outside ADRs, except the default entry file format in `catalog.md`.
 - [ ] Access covers each role, and no credential is in the repository.
 
 ### Procedures and catalog
 
 - [ ] `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, and `APR.deprecate` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency and failure handling are filled.
-- [ ] Manifest and asset root cite an Accepted Integration ADR, or are TBD.
+- [ ] Catalog root and asset root are repository-relative paths in backticks citing an Accepted Integration ADR, or are TBD. A format other than the default is set by that ADR, which also states how each integrity rule is checked.
 - [ ] Asset ID and handle format and assignment, the skeleton fields, and the integrity rules match [catalog.md](rules/assets/catalog.md); each integrity rule says how it is checked.
 - [ ] The hub's approval rule names a `review-asset` Pass. No kind spec weakens it.
 - [ ] The hub's review exemption rule is kept as written: per asset, any source type, granted only by a person.

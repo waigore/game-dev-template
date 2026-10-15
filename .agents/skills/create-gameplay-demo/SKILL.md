@@ -37,7 +37,7 @@ Default to **engine**. Pick **gameplay** only when the demo question is about UI
 ### Scope
 
 0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session.
-1. **Gate**: the [high-level stage](../capture-requirements/SKILL.md#high-level-stage) is locked in, and the engine in `specs/definition/definition.md` is realized by an **Accepted** Engine ADR in `specs/adr/`. The aesthetics hub holds no TBD, and the asset hub names its catalog manifest, asset root, and approval rule. Otherwise stop, say what is missing, and offer `capture-requirements` or `audit-spec-tbd`.
+1. **Gate**: the [high-level stage](../capture-requirements/SKILL.md#high-level-stage) is locked in, and the engine in `specs/definition/definition.md` is realized by an **Accepted** Engine ADR in `specs/adr/`. The aesthetics hub holds no TBD, and the asset hub names its catalog root, asset root, and approval rule. Otherwise stop, say what is missing, and offer `capture-requirements` or `audit-spec-tbd`.
 2. **Load**: vision qualities; definition scope, objectives, platforms, depth; the design hub and the loops, features, and stages it indexes; the view hub; the aesthetics hub and the elements it indexes; the asset hub, `tools.md`, and the kind specs; for gameplay demos, the UX hub; Accepted ADRs. Skip `specs/adr/archive/` and requirement notes.
 3. **Scope aggressively**:
    - Write the **demo question**: the one thing the demo must prove (e.g. "is the core loop fun for 2 minutes?").

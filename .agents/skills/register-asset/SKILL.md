@@ -26,7 +26,7 @@ Assets an agent generates or sources go through [`manage-asset`](../manage-asset
 ## Steps
 
 1. **Gate**. Stop, say what is missing, and offer `capture-requirements`, `author-spec`, or `audit-spec-tbd` when any of these fails:
-   - The asset hub's **Catalog** names a manifest and asset root (no TBD), and the hub's Sources table marks the asset's source type as Applies.
+   - The asset hub's **Catalog** names a catalog root and asset root (no TBD), and the hub's Sources table marks the asset's source type as Applies.
    - The hub's Asset kinds table names the kind spec the asset belongs to, written or planned. Its name is the handle prefix.
    - For main code: that kind spec is written and one of its coverage rules requires the asset. An asset used only by a demo needs only the hub-named kind spec ([`docs/demo-style-assets.md`](../../../docs/demo-style-assets.md)).
 2. **Confirm provenance** with the user: who made or supplied the asset, and how it was made. Set the source type from the answer: AI generation if any AI tool produced or edited any part of it, procedural generation if a procedural tool did, otherwise human-made or third-party.
@@ -39,13 +39,13 @@ Assets an agent generates or sources go through [`manage-asset`](../manage-asset
 5. **Track and branch** per [`docs/pull-requests.md`](../../../docs/pull-requests.md): use the given task, or branch `chore/assets-<slug>` when there is no issue.
 6. **Assign the asset ID and handle** per **Asset IDs** in `catalog.md`:
    - **Asset ID**: run `python3 .github/scripts/new_asset_id.py` and use its output. Never type, copy, or adapt a UUID.
-   - **Handle**: `<kind-spec>/<name>`. Confirm it is unused in the manifest on `main`, deprecated entries included, and in the catalog changes of every open PR (`gh pr list`, then each PR's manifest diff). On a clash, choose another name.
+   - **Handle**: `<kind-spec>/<name>`. Confirm it is unused in the catalog on `main`, deprecated entries included, and in the catalog changes of every open PR (`gh pr list`, then each PR's entry files under the catalog root). On a clash, choose another name.
 7. **Save files** under the asset root per the kind's **Naming**, or per the handle when the kind spec is still planned. Do not alter the content beyond what the user asks (format conversion, renaming).
-8. **Catalog**: write the draft entry with every field `catalog/fields.md` requires for its source type, including the supplier (`CAT.F16`), and the exemption (`CAT.F17`) if granted.
+8. **Catalog**: write the entry file `<catalog-root>/<asset-id>.json` per **Format** in `catalog.md`, with every field `catalog/fields.md` requires for its source type, including the supplier (`CAT.F16`), and the exemption (`CAT.F17`) if granted.
 9. **Review or approve**:
    - **Exempt**: set the state to approved; it takes effect when the PR merges. Run `review-asset` only if the user asks; its verdict is advisory and does not change the state.
    - **Not exempt**: run [`review-asset`](../review-asset/SKILL.md) (`APR.review`). On Pass, approve per the hub's **Approval** rule. On Fail, report the findings to the user; fixes come from the person who supplied the asset.
-10. **PR**: open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** cites the kind spec and coverage IDs (or the demo task), and the hub's **Review exemption** rule when used. **Test plan** lists the handle collision check, and the `review-asset` verdict or "Exempt — granted by <person>". If the work delivers a typed issue, run `implement-project-issue`.
+10. **PR**: open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** cites the kind spec and coverage IDs (or the demo task), and the hub's **Review exemption** rule when used. **Test plan** lists `python3 .github/scripts/asset_catalog.py` passing, the handle collision check, and the `review-asset` verdict or "Exempt — granted by <person>". If the work delivers a typed issue, run `implement-project-issue`.
 
 ## Rules
 

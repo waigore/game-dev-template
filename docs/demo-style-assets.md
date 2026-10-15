@@ -7,7 +7,7 @@ Every [gameplay demo](demos.md), engine or gameplay type, is a proof of concept 
 Always:
 
 - The aesthetics hub and every style element in scope hold no TBD.
-- The asset hub names its catalog manifest, asset root, and approval rule.
+- The asset hub names its catalog root, asset root, and approval rule.
 
 For each asset an agent makes or imports with `manage-asset`:
 

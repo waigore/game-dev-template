@@ -25,6 +25,10 @@ Errors fail the check. Warnings are printed but pass; add `--strict` to fail on 
 | `glossary` | A glossary term repeats in the same file or breaks alphabetical order. A term defined in two glossaries is a warning. |
 | `word-limit` | A Markdown file in `docs/` or `specs/` exceeds 500 words, counted like `wc -w` on the raw file. Split it and link. |
 
+## Asset catalog
+
+The same workflow runs [`asset_catalog.py`](../.github/scripts/asset_catalog.py) (`python3 .github/scripts/asset_catalog.py` locally). It checks the catalog's entry files against the default format and integrity rules in [`specs/assets/catalog.md`](../specs/assets/catalog.md): asset IDs, handles, required fields, approval and exemptions, successors, and that every file under the asset root belongs to one entry. It is skipped until the asset hub sets a catalog root.
+
 ## Adding a check
 
 Add a function to [`spec_lint.py`](../.github/scripts/spec_lint.py) that returns findings, register it in `CHECKS`, add a row here, and add a test that injects the violation in [`tests/`](../.github/scripts/tests/).

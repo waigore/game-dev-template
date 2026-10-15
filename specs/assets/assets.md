@@ -35,10 +35,10 @@ Authoring rules: [`.agents/specs/rules/assets/assets.md`](../../.agents/specs/ru
 
 ## Catalog
 
-- **Manifest**: <!-- fill in -->
+- **Catalog root**: <!-- fill in -->
 - **Asset root**: <!-- fill in -->
 
-Asset IDs and integrity: [`catalog.md`](catalog.md). Fields: [`catalog/fields.md`](catalog/fields.md).
+Asset IDs, format, and integrity: [`catalog.md`](catalog.md). Fields: [`catalog/fields.md`](catalog/fields.md).
 
 ## Lifecycle
 
