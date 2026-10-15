@@ -31,24 +31,26 @@ Authoring rules: [`.agents/specs/rules/assets/assets.md`](../../.agents/specs/ru
 | AI generation | <!-- fill in --> | <!-- fill in --> |
 | Procedural generation | <!-- fill in --> | <!-- fill in --> |
 | Third-party | <!-- fill in --> | <!-- fill in --> |
+| Human-made | <!-- fill in --> | <!-- fill in --> |
 
 ## Catalog
 
-- **Manifest**: <!-- fill in -->
+- **Catalog root**: <!-- fill in -->
 - **Asset root**: <!-- fill in -->
 
-Fields and integrity: [`catalog.md`](catalog.md).
+Asset IDs, format, and integrity: [`catalog.md`](catalog.md). Fields: [`catalog/fields.md`](catalog/fields.md).
 
 ## Lifecycle
 
 | State | Meaning |
 |-------|---------|
 | draft | Made and cataloged; not yet approved |
-| approved | Passed review per **Approval**; main code may use it |
+| approved | Passed review per **Approval**, or review-exempt; main code may use it |
 | deprecated | Retired; main code must not use it |
 
 - **Approval**: <!-- fill in -->
-- **Use**: Main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass, draft or approved.
+- **Review exemption**: Only a person may exempt an asset, of any source type, from review, recorded in `CAT.F17`. An exempt asset is approved when its entry merges.
+- **Use**: Main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass or a review exemption.
 
 ## Traceability
 

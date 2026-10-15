@@ -26,3 +26,6 @@ jobs:
 
       - name: Lint specs
         run: python3 .github/scripts/spec_lint.py
+
+      - name: Check asset catalog
+        run: python3 .github/scripts/asset_catalog.py

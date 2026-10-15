@@ -14,6 +14,8 @@ GitHub configuration for this repository: labels, issue forms, and workflows.
 | [`workflows/pr-hygiene.yml`](workflows/pr-hygiene.yml) | Required check: PR title/body lint ([`docs/pull-requests.md`](../docs/pull-requests.md)) |
 | [`workflows/spec-lint.yml`](workflows/spec-lint.yml) | Required check: structural spec rules ([`docs/spec-lint.md`](../docs/spec-lint.md)) |
 | [`scripts/sync-labels.sh`](scripts/sync-labels.sh) | Local / CI label sync script |
+| [`scripts/asset_catalog.py`](scripts/asset_catalog.py) | CI integrity check of asset catalog entry files per `specs/assets/catalog.md`; skipped until the catalog root is set |
+| [`scripts/new_asset_id.py`](scripts/new_asset_id.py) | Generate asset IDs (UUID version 7) per `specs/assets/catalog.md`; `is_asset_id` validates one |
 | [`scripts/pr_hygiene.py`](scripts/pr_hygiene.py) | Local / CI PR hygiene lint (one function per rule); tests in [`scripts/tests/`](scripts/tests/) |
 | [`scripts/spec_lint.py`](scripts/spec_lint.py) | Local / CI spec lint; tests in [`scripts/tests/`](scripts/tests/) |
 

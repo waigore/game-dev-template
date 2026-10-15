@@ -20,11 +20,11 @@ Read-only review of produced assets. Spec review of `specs/assets/` itself is [`
 
 ## Steps
 
-1. **Resolve the scope**: named asset IDs, every catalog entry a PR adds or changes, or every entry of one kind.
-2. **Load** each entry from the manifest the asset hub names, its kind spec, the aesthetics elements the kind cites (and their pillars), `specs/aesthetics/aesthetics.md` content limits, the reference sheets and `REF` images they point to, and the view values the kind cites.
+1. **Resolve the scope**: named asset IDs, every catalog entry a PR adds or changes, or every entry of one kind. Drop review-exempt entries (`CAT.F17`) unless they were named explicitly; for each one dropped, check only that the exemption is valid (names the person who granted it, with date and reason) and the catalog checks below. A review of a named exempt entry is advisory: report it, but it does not change the asset's state.
+2. **Load** each entry file from the catalog root the asset hub names, its kind spec, the aesthetics elements the kind cites (and their pillars), `specs/aesthetics/aesthetics.md` content limits, the reference sheets and `REF` images they point to, and the view values the kind cites.
 3. **Inspect** each asset's files. Open images directly. Measure what can be measured (canvas size, colors used against the palette set, frame count, duration, loudness, file size) with commands in the repository's environment. Compare against reference sheets and style anchors.
 4. **Check**, recording each failure with the ID it breaks:
-   - **Catalog**: every field `catalog.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist.
+   - **Catalog**: every field `catalog/fields.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist; per **Asset IDs** in `catalog.md`, the asset ID is a valid UUID version 7 (`is_asset_id` in `.github/scripts/new_asset_id.py`), and neither it nor the handle is used by any other entry, deprecated ones included; the handle's prefix is a kind spec the hub names.
    - **Specification and budgets**: every `S` and `B` row of the kind spec.
    - **Kind checks**: every `K` row, by its stated method.
    - **Style**: each cited aesthetics element, and each cited pillar's "conforms if…" test.

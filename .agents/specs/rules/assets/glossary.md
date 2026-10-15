@@ -8,7 +8,7 @@ Shared language for asset pipeline specs. Each term is defined once here. Other 
 
 Style terms stay in `specs/aesthetics/glossary.md`. Game, view, and UI terms stay in the design, view, and UX glossaries. Do not redefine them here.
 
-The skeleton already defines Asset, Asset ID, Asset kind, Catalog, Coverage rule, Recipe, Style anchor, and Tool role. Keep those rows. Add a row for a term this project needs. Keep added rows alphabetical. One term per concept: no synonyms.
+The skeleton already defines Asset, Asset ID, Asset kind, Catalog, Coverage rule, Entry file, Handle, Recipe, Review exemption, Style anchor, and Tool role. Keep those rows. Add a row for a term this project needs. Keep added rows alphabetical. One term per concept: no synonyms.
 
 Columns: term, a one-sentence definition, and where it is detailed (a link, or "here").
 

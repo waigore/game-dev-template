@@ -3,7 +3,7 @@ name: manage-asset
 description: |-
   Generate, import, update, or deprecate game assets by running the asset
   pipeline procedures in specs/assets/ against the style in specs/aesthetics/,
-  record every change in the catalog manifest, get each draft reviewed with
+  record every change in the catalog's entry files, get each draft reviewed with
   review-asset, and open a PR. Spec first: only assets a coverage rule
   requires, only through tool roles realized by Accepted ADRs.
   Use when the user asks to create, generate, source, regenerate, replace, or
