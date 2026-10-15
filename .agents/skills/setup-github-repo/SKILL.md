@@ -1,16 +1,17 @@
 ---
 name: setup-github-repo
 description: |-
-  Guide first-time GitHub workflow setup for a repo from this template: squash-only
-  merges, auto-merge, main branch protection (no admin bypass), and default labels.
+  Apply and verify first-time GitHub settings for a repo from this template:
+  Actions enabled, a main ruleset (PR only, required up-to-date checks, no
+  bypass), squash-only merges, auto-merge, and default labels.
   Use when initializing a new remote, after forking the template, or when the user
   asks to set up branch protection / PR-only main / auto-merge.
   Use proactively when AGENTS.md rules assume protection but the remote is not configured yet.
 
   Examples:
   - user: "Set up GitHub workflow for this new repo" → verify gaps, walk UI checklist
-  - user: "Is main protected correctly?" → read-only gh checks, report pass/fail
-  - user: "Apply the setup for me" → mutate only after explicit ask; prefer gh/API where possible
+  - user: "Is main protected correctly?" → read-only checks, report pass/fail
+  - user: "Apply the setup for me" → apply gaps, re-verify, report
   - user: "Sync default labels if missing" → confirm, then sync-labels.sh or workflow_dispatch
 ---
 
@@ -18,42 +19,38 @@ description: |-
 
 First-time GitHub workflow configuration for repositories using this template.
 
-**Contract:** [`docs/github-repo-setup.md`](../../../docs/github-repo-setup.md). Do not invent parallel settings; follow that checklist.
+**Contract:** [`docs/github-repo-setup.md`](../../../docs/github-repo-setup.md) lists the outcomes. Do not invent parallel settings. Choosing tools is your judgement (`gh`, REST or GraphQL API, Settings UI); [`docs/github-repo-setup-examples.md`](../../../docs/github-repo-setup-examples.md) has non-binding examples.
 
 ## Inputs
 
 | Field | Required | Notes |
 |-------|----------|-------|
-| Target repo | no | Default: current `gh` remote (`gh repo view`) |
-| `--apply` / "fix it" | no | Only then mutate settings via `gh`/API; default is guide + verify |
+| Target repo | no | Default: current `gh` remote |
+| `--apply` / "fix it" | no | Only then change settings; default is guide + verify. `ensure-project-setup` counts as an apply request, label sync included |
 
 ## Steps
 
-1. **Read** [`docs/github-repo-setup.md`](../../../docs/github-repo-setup.md).
-2. **Detect** repo: `gh repo view --json nameWithOwner,url -q .nameWithOwner` (fail clearly if not authenticated or no remote).
-3. **Verify** current state (read-only) using the doc’s `gh` commands:
-   - Merge methods: squash only; merge commit and rebase off
-   - Auto-merge enabled
-   - `main` protected: PR required, force pushes off, **enforce admins / no bypass**, required status checks `Spec lint`, `PR hygiene`, and `Code lint`
-   - Labels: every label in `.github/project-labels.yml` present (the doc's label command prints nothing)
+1. **Read** the contract doc.
+2. **Detect** the repo and access: `gh` authenticated, a GitHub remote, and admin rights on the repo. Fail clearly if any is missing.
+3. **Verify** every outcome in the contract (read-only): Actions, the `main` ruleset, merge settings, labels.
 4. **Report** a short pass/fail checklist of gaps.
-5. **Guide** the user through Settings UI for each failing item (paths in the doc). Re-verify after each change when possible.
-6. **Labels**: if missing, offer sync (`bash .github/scripts/sync-labels.sh` or Actions → Sync labels). Run sync **only** with user confirmation.
-7. **Mutate** via `gh`/API **only** if the user explicitly asked to apply/fix settings (running `ensure-project-setup` counts). Prefer API for merge methods, auto-merge, classic branch protection, and label sync. Protect `main` with its required checks before enabling auto-merge. If a step is UI-only or the API rejects (e.g. rulesets-only org), say so and keep guiding the UI.
-8. **Final report**: pass/fail per item; link the doc for future runs.
+5. **Guide** (not applying): walk the user through the Settings UI for each failing item; re-verify after each change.
+6. **Apply** (apply requested): fix failing items in the contract's order (Actions, protect `main`, merge settings, labels). Prefer the API; if one tool or example fails, try another before treating it as a blocker.
+7. **Re-verify** by reading every setting back from GitHub; a successful write is not proof.
+8. **Blockers**: when an outcome cannot be reached with the access available (plan limit, org policy, missing admin), follow the contract's Blockers section: report the missing outcome, why, and the options; fail and stop.
+9. **Final report**: pass/fail per item; link the contract for future runs.
 
 ## Rules
 
-- Default: **do not** change repository settings.
-- Never enable admin bypass or allow force pushes to `main`.
-- Do not require approving reviews unless the user asks (baseline is none).
-- The baseline required status checks are `Spec lint`, `PR hygiene`, and `Code lint`; add others only if the user asks.
-- Do not delete unrelated labels or weaken existing stricter protection without confirmation.
-- Keep guidance aligned with `docs/github-repo-setup.md` and [`docs/labels.md`](../../../docs/labels.md).
+- Without an apply request, **do not** change repository settings.
+- Never add bypass actors, allow force pushes or deletions on `main`, or substitute a weaker setting when blocked.
+- Baseline: 0 required approvals; required checks `Spec lint`, `PR hygiene`, and `Code lint`, with branches up to date. Add more only if the user asks.
+- Do not delete unrelated labels, or remove or weaken existing stricter protection (rulesets or classic), without confirmation.
+- Keep guidance aligned with the contract and [`docs/labels.md`](../../../docs/labels.md).
 
 ## Related
 
-- Doc: `docs/github-repo-setup.md`
+- Contract: `docs/github-repo-setup.md`; examples: `docs/github-repo-setup-examples.md`
 - Orchestrator: [`ensure-project-setup`](../ensure-project-setup/SKILL.md) (check, then apply gaps)
 - Labels: `docs/labels.md`, `.github/scripts/sync-labels.sh`
-- AGENTS.md: branch protection under Rules to live by
+- AGENTS.md: protected `main` under Rules to live by
