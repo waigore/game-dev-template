@@ -7,7 +7,7 @@ description: |-
   clarifies blocking gaps with the user and writes the answers back to specs,
   then builds the demo as a reference artifact that cites its specs. Every
   demo expresses the aesthetics and uses only cataloged pipeline assets, as a
-  proof of concept for both. Demo code is exempt from SOLID review but not
+  proof of concept for both. Demo code is exempt from code review but not
   from spec first.
   Use when the user asks for a demo, prototype, vertical slice, or proof of a
   mechanic built from the specs.
@@ -64,7 +64,7 @@ Default to **engine**. Pick **gameplay** only when the demo question is about UI
 
 - Spec first still applies: every behavior traces to an included ID or a listed assumption. Assumptions never decide a blocking gap.
 - Every asset the demo shows or plays is cataloged with a `review-asset` Pass or a review exemption that a person granted; an agent never grants one. No uncataloged placeholder art or sound; debug overlays are tooling, not assets.
-- `docs/solid.md` and structure continuity do not apply inside `demos/`; readable, working code is enough.
+- `docs/solid.md`, `docs/coding-conventions.md`, and structure continuity do not apply inside `demos/`; readable, working code is enough.
 - Main code never imports from `demos/`. Reusing demo behavior in the main code is a separate task run with [`promote-gameplay-demo`](../promote-gameplay-demo/SKILL.md).
 - Requirement notes are not authority; do not build from them.
 - Do not grow scope during the build. A new need, including a new asset, goes back through steps 4–6.

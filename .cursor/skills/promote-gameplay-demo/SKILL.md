@@ -4,8 +4,8 @@ description: |-
   Promote behavior from a gameplay demo under demos/<slug>/ into the main
   code. Re-checks the demo's decisions against current specs, writes the
   assumptions it relies on into specs with user confirmation, covers the code
-  in the technical design, then reimplements it in the main tree under SOLID
-  and the normal test bar. The demo stays unchanged as the reference.
+  in the technical design, then reimplements it in the main tree under SOLID,
+  the coding conventions, and the normal test bar. The demo stays unchanged as the reference.
   Use when the user asks to promote, port, or reuse demo code in the game.
 
   Examples:

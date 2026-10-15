@@ -4,8 +4,8 @@ description: |-
   Promote behavior from a gameplay demo under demos/<slug>/ into the main
   code. Re-checks the demo's decisions against current specs, writes the
   assumptions it relies on into specs with user confirmation, covers the code
-  in the technical design, then reimplements it in the main tree under SOLID
-  and the normal test bar. The demo stays unchanged as the reference.
+  in the technical design, then reimplements it in the main tree under SOLID,
+  the coding conventions, and the normal test bar. The demo stays unchanged as the reference.
   Use when the user asks to promote, port, or reuse demo code in the game.
 
   Examples:
@@ -39,9 +39,9 @@ Promotion is a reimplementation in the main tree with the demo as reference, not
 
 8. **Branch** `task/<n>-<slug>` from `main` after the spec PR has merged.
 9. **Approve assets**: add the coverage IDs to the catalog entry of each asset in scope that lacks them; keep every asset ID and handle as it is. Main code cites assets by asset ID. For each draft asset in scope, re-run `review-asset` on its current version through `manage-asset` (or `register-asset` for person-supplied ones) and approve it per the hub's **Approval** rule. When approval needs product-owner sign-off, label the PR `no-automerge`.
-10. **Reimplement** in the main tree per the technical design, [`docs/solid.md`](../../../docs/solid.md), and the existing structure, using the demo's decisions as reference. Add tests per the project's test bar. Do not import from `demos/` or copy its structure when SOLID or continuity disagree.
+10. **Reimplement** in the main tree per the technical design, [`docs/solid.md`](../../../docs/solid.md), [`docs/coding-conventions.md`](../../../docs/coding-conventions.md), and the existing structure, using the demo's decisions as reference. Add tests per the project's test bar. Do not import from `demos/` or copy its structure when SOLID, the conventions, or continuity disagree.
 11. **Leave the demo unchanged**: no edits under `demos/`.
-12. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** lists the promoted spec elements, the spec PR, and Accepted ADRs; **Summary** names the demo used as reference and any stale decisions. Then run `implement-project-issue`. Verification runs `review-solid-code` as usual; acceptance needs playtest evidence if playable behavior changed.
+12. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** lists the promoted spec elements, the spec PR, and Accepted ADRs; **Summary** names the demo used as reference and any stale decisions. Then run `implement-project-issue`. Verification runs `review-code` as usual; acceptance needs playtest evidence if playable behavior changed.
 
 ## Rules
 

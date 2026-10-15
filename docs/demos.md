@@ -26,7 +26,7 @@ Both types express the style in `specs/aesthetics/` and show only cataloged asse
 
 ## What is relaxed
 
-- [SOLID](solid.md) and structure continuity do not apply. `review-solid-code` skips `demos/`.
+- [SOLID](solid.md), [coding conventions](coding-conventions.md), and structure continuity do not apply. `review-code` skips `demos/`.
 - Unit tests are optional.
 - Playtesting per `specs/playtest/` is optional, on request.
 
@@ -38,7 +38,7 @@ Both types express the style in `specs/aesthetics/` and show only cataloged asse
 
 ## Verification
 
-`verify-project-issue` checks a demo against its task's scope and its README: every included element is shown, every decision cites a spec element that exists, and the run instructions work. Style and assets are checked per [Verification](demo-style-assets.md#verification). No SOLID review.
+`verify-project-issue` checks a demo against its task's scope and its README: every included element is shown, every decision cites a spec element that exists, and the run instructions work. Style and assets are checked per [Verification](demo-style-assets.md#verification). No code review.
 
 ## Promotion
 
@@ -48,6 +48,6 @@ Main code never imports from `demos/`. Promotion reimplements demo behavior in t
 2. writes every assumption it relies on into `specs/`, confirmed by the user;
 3. adds the technical design the code needs per `specs/technical/` rules;
 4. approves every draft asset it uses per the asset hub's approval rule;
-5. passes `review-solid-code` and the normal test bar.
+5. passes `review-code` and the normal test bar.
 
 A subset of a demo's included elements may be promoted. The demo folder stays as it was.
