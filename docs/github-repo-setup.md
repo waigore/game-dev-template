@@ -1,61 +1,58 @@
 # GitHub first-time repo setup
 
-Apply once after creating a repository from this template (or cloning to a new remote). Requires **repo admin** access. Enable **Actions** if label sync should run via workflow.
+Apply once after creating a repository from this template (or moving it to a new remote), then verify. Requires **repo admin** access.
 
-Agents: use the `ensure-project-setup` skill to check and complete setup, or `setup-github-repo` directly. `setup-github-repo` alone defaults to guide + verify; it changes settings only when asked.
+Agents: run `ensure-project-setup` (check, apply gaps, re-verify), or `setup-github-repo` directly (guide + verify unless asked to apply).
 
-## 1. Merge settings
+This doc is the contract: the **outcomes** below. Tools are the agent's judgement (`gh`, REST or GraphQL API, Settings UI); [examples](github-repo-setup-examples.md) are not binding.
 
-**Settings → General → Pull Requests**
+Apply in this order. Protect `main` before turning on auto-merge, or a PR can merge unchecked.
 
-- Enable **Allow squash merging** only.
-- Disable **Allow merge commits** and **Allow rebase merging**.
-- Enable **Allow auto-merge**. Same-repo, non-draft PRs then squash-merge once mergeable unless labeled `no-automerge` ([`automerge.yml`](../.github/workflows/automerge.yml)).
+## 1. Actions
+
+GitHub Actions is enabled, and the allowed-actions policy permits the actions the workflows use (e.g. `actions/checkout`). Required checks and auto-merge run on Actions; without it, every PR waits forever.
 
 ## 2. Protect `main`
 
-**Settings → Branches → Add branch protection rule** (or a Ruleset targeting `main` with the same intent):
+A **ruleset** (**Settings → Rules → Rulesets**) targeting `main`, enforcement **Active**, with:
 
-| Setting | Value |
-|---------|--------|
-| Branch name pattern | `main` |
-| Require a pull request before merging | On |
-| Required approving reviews | 0 (baseline; tighten later if needed) |
-| Require status checks to pass | On; required checks: `Spec lint` ([`spec-lint.yml`](../.github/workflows/spec-lint.yml); includes the word limit), `PR hygiene` ([`pr-hygiene.yml`](../.github/workflows/pr-hygiene.yml)), and `Code lint` ([`code-lint.yml`](../.github/workflows/code-lint.yml); the project's lint/format commands per [`coding-conventions.md`](coding-conventions.md)) |
-| Allow force pushes | Off |
-| Allow deletions | Off |
-| Do not allow bypassing the above settings | On (includes administrators) |
+| Rule | Value |
+|------|-------|
+| Bypass list | Empty: no one bypasses, including admins |
+| Restrict deletions | On |
+| Block force pushes | On |
+| Require a pull request before merging | On; 0 required approvals (baseline; tighten later if needed) |
+| Require status checks to pass | On; **require branches to be up to date**; checks `Spec lint` ([`spec-lint.yml`](../.github/workflows/spec-lint.yml)), `PR hygiene` ([`pr-hygiene.yml`](../.github/workflows/pr-hygiene.yml)), `Code lint` ([`code-lint.yml`](../.github/workflows/code-lint.yml)) |
 
-Outcome: no direct pushes or force pushes to `main`; changes land via PR only; admins cannot bypass; PRs cannot merge (or auto-merge) until `Spec lint`, `PR hygiene`, and `Code lint` pass. A check only appears in the UI picker after it has run once; the branch protection API accepts the check names before then. Protect `main` before opening the first PR, or auto-merge can land it unchecked.
+Existing classic branch protection on `main` may stay; GitHub enforces the stricter of both. Do not remove or weaken it without the user's confirmation. A check appears in the UI picker only after it has run once; the API accepts check names before then.
 
-## 3. Labels
+Outcome: changes reach `main` only via PR; no one bypasses; PRs merge (or auto-merge) only when the three checks pass on a branch up to date with `main`.
 
-Every label in [`.github/project-labels.yml`](../.github/project-labels.yml) must exist. If any is missing, sync. Details: [`labels.md`](labels.md).
+## 3. Merge settings
 
-- Actions → **Sync labels** → **Run workflow**, or
-- Local: `bash .github/scripts/sync-labels.sh` (needs `gh` and `yq`)
+**Settings → General → Pull Requests**:
 
-## 4. Verify (read-only)
+- **Allow squash merging** only; **merge commits** and **rebase merging** off.
+- Squash commit message default: **Pull request title and description**.
+- **Always suggest updating pull request branches** on, since up-to-date checks hold back stale PRs.
+- **Allow auto-merge** on. Same-repo, non-draft PRs then squash-merge once mergeable unless labeled `no-automerge` ([`automerge.yml`](../.github/workflows/automerge.yml)).
 
-Replace `OWNER/REPO` as needed (`gh repo view --json nameWithOwner -q .nameWithOwner`).
+## 4. Labels
 
-```bash
-# Merge methods + auto-merge
-gh api repos/OWNER/REPO --jq '{squash: .allow_squash_merge, merge: .allow_merge_commit, rebase: .allow_rebase_merge, auto_merge: .allow_auto_merge}'
+Every label in [`.github/project-labels.yml`](../.github/project-labels.yml) exists on GitHub. If any is missing, sync: Actions → **Sync labels** → **Run workflow**, or `bash .github/scripts/sync-labels.sh` (needs `gh` and `yq`). Details: [`labels.md`](labels.md).
 
-# Branch protection (classic rules)
-gh api repos/OWNER/REPO/branches/main/protection --jq '{enforce_admins: .enforce_admins.enabled, allow_force_pushes: .allow_force_pushes.enabled, pr_reviews: .required_pull_request_reviews, checks: .required_status_checks.contexts}'
+## 5. Verify
 
-# Labels: prints configured labels missing on GitHub
-comm -23 <(sed -n 's/^- name: //p' .github/project-labels.yml | sort) \
-  <(gh label list --repo OWNER/REPO --limit 1000 --json name -q '.[].name' | sort)
-```
+Read every setting above back from GitHub and compare it with this doc; a successful write is not proof. Confirm Actions can run (e.g. a `Spec lint` run on `main` succeeds). Setup passes only when every outcome holds.
 
-Expect: squash `true`; merge and rebase `false`; auto-merge `true`; protection present with `enforce_admins` true, force pushes false, and `checks` containing `Spec lint`, `PR hygiene`, and `Code lint`; the label command prints nothing.
+## Blockers
 
-If protection uses **Rulesets** instead of classic branch protection, confirm the same constraints in **Settings → Rules → Rulesets** (UI) when the classic endpoint 404s.
+On a tooling error, try another tool first. When an outcome cannot be reached with the access available (e.g. rulesets unavailable for a private repo on GitHub Free, an organization policy overrides it, or the token lacks admin), setup **fails**:
+
+- Report the missing outcome, why, and the options (make the repo public, upgrade the plan, ask an org owner).
+- Stop: no PRs until it is resolved.
+- Never substitute a weaker setting.
 
 ## Related
 
-- Labels: [`labels.md`](labels.md)
-- Agent rules: [`../AGENTS.md`](../AGENTS.md) (branch protection, small PRs)
+- Agent rules: [`../AGENTS.md`](../AGENTS.md) (protected `main`, small PRs)

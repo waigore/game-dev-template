@@ -20,9 +20,9 @@ Thin orchestrator. The setup contract is [`docs/github-repo-setup.md`](../../../
 
 1. **Prerequisites**: `gh auth status` succeeds and `gh repo view` resolves a GitHub remote. If either fails, stop and tell the user what is missing; setup cannot proceed.
 2. **Check**: run [`setup-github-repo`](../setup-github-repo/SKILL.md) in verify mode (read-only).
-3. **Apply gaps**: if any item fails, run `setup-github-repo` in apply mode. Invoking this skill is the user's explicit ask to apply. Items the API cannot change, or changes that need admin rights the user lacks, are guided through the UI as that skill says.
-4. **Re-verify** with `setup-github-repo` in verify mode.
-5. **Report** pass/fail per item to the requester. If called by another skill, return the result; the caller continues only on Pass.
+3. **Apply gaps**: if any item fails, run `setup-github-repo` in apply mode. Invoking this skill is the user's explicit ask to apply every setup change, label sync included. Pick tools by judgement; try another before giving up on a tooling error.
+4. **Re-verify** with `setup-github-repo` in verify mode, reading every setting back from GitHub.
+5. **Report** pass/fail per item to the requester. If an outcome cannot be reached (plan limit, org policy, missing admin), setup fails: report the blocker and options per the contract's Blockers section, and stop. If called by another skill, return the result; the caller continues only on Pass.
 
 ## Rules
 

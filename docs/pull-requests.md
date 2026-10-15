@@ -55,7 +55,7 @@ Required check ([`pr-hygiene.yml`](../.github/workflows/pr-hygiene.yml)); re-run
 
 ## Auto-merge
 
-Every same-repo, non-draft PR squash-merges as soon as required checks pass ([`automerge.yml`](../.github/workflows/automerge.yml)). Open ready for review by default. Instead:
+Every same-repo, non-draft PR squash-merges as soon as required checks pass on a branch up to date with `main` ([`automerge.yml`](../.github/workflows/automerge.yml)). If `main` moves, update the branch (`gh pr update-branch`). Open ready for review by default. Instead:
 
 - Open as **draft** (`gh pr create --draft`) while work is incomplete.
 - Add the **`no-automerge`** label when a human must review first, the PR depends on another unmerged PR, or you are unsure the change is safe to land.
