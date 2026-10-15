@@ -17,7 +17,7 @@ The asset pipeline states which kinds of assets the game needs, and how agents g
 - **Measured budgets**: sizes, counts, durations, and memory are in product units (pixels, world units, triangles, frames, seconds, kilobytes, LUFS) and trace to `specs/definition/quality.md` targets or view values.
 - **Shared language**: define each pipeline term once in `glossary.md`. Style terms stay in the aesthetics glossary. Game, view, and UI terms stay in theirs.
 - **Traceable**: every spec states what it serves. `traceability.md` maps all of them.
-- **Identified**: every element has a stable ID per [ids.md](ids.md). Every asset has a stable asset ID per [catalog.md](catalog.md).
+- **Identified**: every element has a stable ID per [ids.md](ids.md). Every asset has a stable asset ID (a UUID) and a readable handle per [catalog.md](catalog.md).
 - **Concise**: each Markdown file stays under 500 words. The manifest and asset files are not specs and are exempt. Split by logical unit and link. The type's own rules file says where to move the extra part.
 
 ## Purpose
@@ -30,7 +30,7 @@ Keep every skeleton row. Add a row for each other kind this game needs. Columns:
 
 - Ground each row in the view's dimensionality and rendered space, the aesthetics medium, and the design and UX specs. Typical: 2D rendered space needs sprites, tilesets, and backgrounds; 3D needs models, textures and materials, and animation clips; mixed needs the sets for the parts each covers. An interface needs interface art, icons, and fonts. Sound effects, music, and voice follow the aesthetics' sound style.
 - One kind spec may cover several kinds when they share recipes. One kind may split into several kind specs when recipes differ, such as character sprites and tile sprites.
-- **Kind specs** names every kind spec of an Applies kind by its kebab-case file name, written or planned, such as `character-sprites (planned)`. That name is the asset ID prefix per [catalog.md](catalog.md), so an asset can get its final ID before its kind spec is written. Once an asset ID uses a name, the name never changes, and the kind spec is written under it.
+- **Kind specs** names every kind spec of an Applies kind by its kebab-case file name, written or planned, such as `character-sprites (planned)`. That name is the handle prefix per [catalog.md](catalog.md), so an asset gets its final handle before its kind spec is written. Once a handle uses a name, the name never changes, and the kind spec is written under it.
 
 ## Sources
 

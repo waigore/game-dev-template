@@ -24,7 +24,7 @@ Read-only review of produced assets. Spec review of `specs/assets/` itself is [`
 2. **Load** each entry from the manifest the asset hub names, its kind spec, the aesthetics elements the kind cites (and their pillars), `specs/aesthetics/aesthetics.md` content limits, the reference sheets and `REF` images they point to, and the view values the kind cites.
 3. **Inspect** each asset's files. Open images directly. Measure what can be measured (canvas size, colors used against the palette set, frame count, duration, loudness, file size) with commands in the repository's environment. Compare against reference sheets and style anchors.
 4. **Check**, recording each failure with the ID it breaks:
-   - **Catalog**: every field `catalog/fields.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist; the asset ID follows **Asset IDs** in `catalog.md` (prefix is a kind spec the hub names) and is not used by any other entry, including deprecated ones.
+   - **Catalog**: every field `catalog/fields.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist; per **Asset IDs** in `catalog.md`, the asset ID is a valid UUID version 7 (`is_asset_id` in `.github/scripts/new_asset_id.py`), and neither it nor the handle is used by any other entry, deprecated ones included; the handle's prefix is a kind spec the hub names.
    - **Specification and budgets**: every `S` and `B` row of the kind spec.
    - **Kind checks**: every `K` row, by its stated method.
    - **Style**: each cited aesthetics element, and each cited pillar's "conforms if…" test.

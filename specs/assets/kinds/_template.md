@@ -50,5 +50,5 @@ Authoring rules: [`.agents/specs/rules/assets/kinds.md`](../../../.agents/specs/
 
 ## Naming
 
-- **Asset name**: <!-- fill in -->
+- **Handle name**: <!-- fill in -->
 - **Path**: <!-- fill in -->

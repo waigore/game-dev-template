@@ -14,7 +14,7 @@ For each asset an agent makes or imports with `manage-asset`:
 - Its kind has a kind spec whose coverage rule, specification, recipe, and checks hold no TBD.
 - The recipe's tool role is realized by an Accepted ADR.
 
-An asset a person supplies with `register-asset` for the demo needs only the catalog and a kind spec name in the hub's Asset kinds table (the spec may be planned). Every asset gets its final ID per the catalog's ID rules, so promotion never renames it. A missing piece is a blocking gap, resolved in `specs/` before the build, never as a demo assumption.
+An asset a person supplies with `register-asset` for the demo needs only the catalog and a kind spec name in the hub's Asset kinds table (the spec may be planned). Every asset gets its permanent asset ID (a UUID) and its handle per the catalog's rules, so promotion never changes either. A missing piece is a blocking gap, resolved in `specs/` before the build, never as a demo assumption.
 
 ## Style
 
