@@ -3,7 +3,7 @@ name: verify-project-issue
 description: |-
   Independently verify an epic/task/defect in status:pending-verification against
   its deliverables; post pass or fail and advance or return status. When linked
-  PRs contain code changes, run review-solid-code and treat a Fail as verify Fail.
+  PRs contain code changes, run review-code and treat a Fail as verify Fail.
   Use when checking implemented work (smoke test) before acceptance.
 
   Examples:

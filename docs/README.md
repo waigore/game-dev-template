@@ -11,6 +11,7 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 | Path | Covers |
 |------|--------|
 | [asset-tools.md](asset-tools.md) | Known asset tools: banned tools, touch-up options (Recraft), enabling their MCP servers |
+| [coding-conventions.md](coding-conventions.md) | Project-owned coding conventions and lint/format tooling; extends `solid.md` |
 | [demos.md](demos.md) | Gameplay demos under `demos/`: scope, what is relaxed, traceability, promotion |
 | [demo-style-assets.md](demo-style-assets.md) | Demos as style and asset-pipeline proofs of concept: gate, assets, findings, verification |
 | [github-repo-setup.md](github-repo-setup.md) | First-time GitHub workflow (protection, squash, auto-merge, labels) |
@@ -20,5 +21,5 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 | [requirements/](requirements/README.md) | Unconfirmed requirement notes awaiting capture into specs (not specs) |
 | [playtest/evidence/](playtest/evidence/) | AI-agent playtest evidence (story IDs, pass/fail, screenshots, notes, logs); requirements in `specs/playtest/` |
 | [skills.md](skills.md) | Skill authoring and native wiring |
-| [solid.md](solid.md) | SOLID principles + structure continuity for agents |
+| [solid.md](solid.md) | SOLID principles + structure continuity for agents; owned by the template |
 | [spec-lint.md](spec-lint.md) | CI checks for spec structure (rules line, templates, links, glossaries) |

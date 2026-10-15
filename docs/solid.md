@@ -2,11 +2,13 @@
 
 Agents that write or change code follow these principles. They **complement** reuse-before-new-code and clean-coding workflow rules; they do not replace them.
 
-Review with the [`review-solid-code`](../.agents/skills/review-solid-code/SKILL.md) skill.
+This file is owned by the template and applies to every project made from it. Each project adds its own language and engine conventions in [`coding-conventions.md`](coding-conventions.md), which extends this file and never contradicts it.
+
+Review with the [`review-code`](../.agents/skills/review-code/SKILL.md) skill.
 
 ## Structure continuity
 
-Match the existing module layout, naming, layering, and patterns unless SOLID requires a change. Prefer extending current seams over inventing parallel structure. If continuity and SOLID conflict, SOLID wins.
+Match the existing module layout, naming, layering, and patterns unless SOLID or a project convention requires a change. Prefer extending current seams over inventing parallel structure. Precedence: SOLID, then project conventions, then continuity.
 
 ## Principles
 

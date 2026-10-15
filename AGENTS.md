@@ -58,7 +58,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 - **High-level requirements first**: `capture-requirements` locks in vision, definition, and quality before any downstream spec is captured; earlier design-level detail waits in [`docs/requirements/`](docs/requirements/README.md) (notes, not specs).
 - **Small PRs only**: `main` is protected; changes land via PR only. When a change is done, branch (`<type>/<issue#>-<slug>`), push, and open a PR using the template; link issues with `Refs #n`, never `Closes`. Keep PRs focused and testable, under ~30 files; split if larger. PRs auto-merge on green; use draft or `no-automerge` to hold. Contract: [`docs/pull-requests.md`](docs/pull-requests.md).
 - **Spec first**: if it is not in `specs/`, it must not be in the code. Undecided aspects are marked `TBD — <question>` in any spec ([rule](.agents/specs/rules/README.md#undecided-aspects-tbd)) and are not coded; resolve them with `audit-spec-tbd`.
-- **SOLID code**: follow [`docs/solid.md`](docs/solid.md). Review with `review-solid-code` (also run from `verify-project-issue` when a PR has code changes).
+- **SOLID code**: follow [`docs/solid.md`](docs/solid.md) (template-owned, all projects) and [`docs/coding-conventions.md`](docs/coding-conventions.md) (project-owned; extends SOLID, never contradicts it). Review with `review-code` (also run from `verify-project-issue` when a PR has code changes).
 
 ---
 
