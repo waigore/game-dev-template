@@ -36,7 +36,7 @@ Procedure: [`specs/assets/procedures/establish-style.md`](../../../specs/assets/
    - **sfx (soft)**: no product style id; keep anchors + `prompt_policy` only until a durable binding exists.
 5. **Write the registry** in the kind Style series (`SS1`): modality, enforce, `style_anchors`, style binding, `built_from` (anchor IDs + `YYYY-MM-DD`), aesthetics cites, `prompt_policy` (compose, master, negative citing `PAL`/`FRM` or `SND.*` as applicable). Set state `active`.
 6. **Refresh** when `stale`: recreate binding from current anchors; replace the hard id (never keep the old id silently) or reaffirm soft anchors. Note assets that need `APR.update` via `manage-asset`.
-7. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority cites the kind Style series and aesthetics IDs. Test plan: anchors Pass, binding created (or soft affirmed), kind registry updated.
+7. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority cites the kind Style series and aesthetics IDs. Test plan: anchors Pass, binding created (or soft affirmed), kind registry updated. If the work delivers a typed issue, run [`implement-project-issue`](../implement-project-issue/SKILL.md).
 
 ## Rules
 

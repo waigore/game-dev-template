@@ -2,7 +2,7 @@
 
 Canonical skill bodies live here (one folder per skill). This catalog is the list agents should maintain — not a full inventory in `AGENTS.md`.
 
-Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`](../../docs/skills.md).
+Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invoke, don't restate**): [`docs/skills.md`](../../docs/skills.md).
 
 ## Catalog
 

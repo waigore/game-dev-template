@@ -20,12 +20,6 @@ Thin automation entrypoint for `status:pending-refinement`.
 
 ## Steps
 
-1. **Resolve** the target issue per [workflow-dispatch.md](../../../docs/issues/workflow-dispatch.md) (provided `#n`, or discover open typed issues with `status:pending-refinement` and pick one by judgement).
-2. **Read and run** `refine-project-issue` for that issue (and its `references/` as needed).
+1. **Resolve** one target issue per the dispatch contract (`#n`, or discover `status:pending-refinement`).
+2. **Read and run** `refine-project-issue` for that issue.
 3. **Report** the underlying skill's outcome (URL, summary, new status).
-
-## Rules
-
-- Do not restate or contradict `refine-project-issue` or the workflow contract.
-- One issue per run; do not batch-process the queue.
-- Call no status transitions except through the delegated skill / `enforce-task-workflow-status`.

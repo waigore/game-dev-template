@@ -45,7 +45,7 @@ Procedures: [`specs/assets/procedures.md`](../../../specs/assets/procedures.md).
 7. **Touch up (optional)**: `APR.touch-up` with a Recraft option from `docs/asset-tools.md` for visuals. Respect series negatives; do not clear `series`. Record each operation in `touchups` (`CAT.F19`) including prompt/inputs/settings when used. Rerun step 6.
 8. **Catalog**: write or update `<catalog-root>/<asset-id>.json` with every field [`catalog/fields.md`](../../../specs/assets/catalog/fields.md) requires, including structured `generation` (`prompt`, `tool`, `operation`, `settings`, `seed`, `inputs`, `series` copy, `steps`, `negative_prompt` when composed) and optional `guidance`. New asset IDs only from `python3 .github/scripts/new_asset_id.py`. Confirm handle uniqueness on `main` and open PRs.
 9. **Review**: run `review-asset` (`APR.review`). On Fail, fix through step 5 or 7 within the limit. On Pass, approve per hub **Approval**. Exemptions only when a person grants `CAT.F17`.
-10. **PR**: per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority cites kind, coverage, aesthetics, style series, and tool ADRs (`adr-free` when applicable). Test plan: checks, touch-ups, `asset_catalog.py`, `review-asset` verdict.
+10. **PR**: per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority cites kind, coverage, aesthetics, style series, and tool ADRs (`adr-free` when applicable). Test plan: checks, touch-ups, `asset_catalog.py`, `review-asset` verdict. If the work delivers a typed issue, run [`implement-project-issue`](../implement-project-issue/SKILL.md).
 
 ## Rules
 
