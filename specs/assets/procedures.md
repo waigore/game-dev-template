@@ -54,7 +54,7 @@ Optional: [`procedures/touch-up.md`](procedures/touch-up.md). Respect series neg
 ## Consistency
 
 - **Style anchors / series**: each kind's Style series registry (`SS1`) is source of truth; see the kind spec.
-- **Visual identity**: enforced styling + master/negative prompting + visual review.
+- **Identity**: enforced styling (hard binding or soft exemplars) + master/negative prompting + review (look or listen).
 - **Sets**: all variants of one subject in one batch with the same inputs and seed policy (`n/a` when the tool has no seed).
 - **Re-review**: changed aesthetics, recipe, tool role, or style series reopens citing approved assets.
 

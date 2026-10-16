@@ -28,6 +28,7 @@ Committed configs may list **env var names** and `${env:NAME}` (or client-equiva
 | Id | Purpose | Auth | Notes |
 |----|---------|------|-------|
 | `recraft` | Graphic design + 2D raster/vector generation, editing, touch-up ([`asset-tools.md`](asset-tools.md)) | OAuth | Remote URL; no API key |
+| `elevenlabs` | Music, SFX, voice generation and audio style series ([`asset-tools.md`](asset-tools.md)) | OAuth | Remote `https://api.elevenlabs.io/v1/mcp`; no API key in-repo |
 | `fal` | High-throughput model host: search, pricing, raw generation ([`asset-tools.md`](asset-tools.md)) | `FAL_AI_KEY` | Remote `https://mcp.fal.ai/mcp-relay`. Header is `Authorization: Key` plus that variable. OpenCode sets `oauth` to false so the header is sent |
 
 When adding a server, update this table and all three client configs in the same PR.
@@ -48,4 +49,4 @@ After enable (and restart if needed): confirm the server’s tools appear, then 
 
 - Skill: `.agents/skills/setup-project-mcp/`
 - Secret guard: that skill’s `references/secret-guard.md`
-- Asset tool policy (Recraft, fal, bans): [`asset-tools.md`](asset-tools.md)
+- Asset tool policy (Recraft, ElevenLabs, fal, bans): [`asset-tools.md`](asset-tools.md)
