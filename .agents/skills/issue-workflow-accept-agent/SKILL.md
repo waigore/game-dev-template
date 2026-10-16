@@ -14,13 +14,13 @@ description: |-
 
 Thin automation entrypoint for `status:pending-acceptance`.
 
-**Contract / discovery:** [`docs/issues/workflow.md`](../../../docs/issues/workflow.md) (Background dispatch agents)
+**Contract / discovery:** [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md)
 
 **Delegates to:** [`accept-project-issue`](../accept-project-issue/SKILL.md)
 
 ## Steps
 
-1. **Resolve** the target issue per the Background dispatch agents section (provided `#n`, or discover open typed issues with `status:pending-acceptance` and pick one by judgement).
+1. **Resolve** the target issue per [workflow-dispatch.md](../../../docs/issues/workflow-dispatch.md) (provided `#n`, or discover open typed issues with `status:pending-acceptance` and pick one by judgement).
 2. **Read and run** `accept-project-issue` for that issue (and its `references/` as needed). Respect independence: do not accept in the same session that posted the implementation summary.
 3. **Report** the underlying skill's outcome (URL, accept/fail/clarify, new status).
 

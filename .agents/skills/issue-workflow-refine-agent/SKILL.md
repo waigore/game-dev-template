@@ -14,13 +14,13 @@ description: |-
 
 Thin automation entrypoint for `status:pending-refinement`.
 
-**Contract / discovery:** [`docs/issues/workflow.md`](../../../docs/issues/workflow.md) (Background dispatch agents)
+**Contract / discovery:** [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md)
 
 **Delegates to:** [`refine-project-issue`](../refine-project-issue/SKILL.md)
 
 ## Steps
 
-1. **Resolve** the target issue per the Background dispatch agents section (provided `#n`, or discover open typed issues with `status:pending-refinement` and pick one by judgement).
+1. **Resolve** the target issue per [workflow-dispatch.md](../../../docs/issues/workflow-dispatch.md) (provided `#n`, or discover open typed issues with `status:pending-refinement` and pick one by judgement).
 2. **Read and run** `refine-project-issue` for that issue (and its `references/` as needed).
 3. **Report** the underlying skill's outcome (URL, summary, new status).
 

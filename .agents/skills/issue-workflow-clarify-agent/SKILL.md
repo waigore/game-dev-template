@@ -14,13 +14,13 @@ description: |-
 
 Thin automation entrypoint for `status:pending-clarification`.
 
-**Contract / discovery:** [`docs/issues/workflow.md`](../../../docs/issues/workflow.md) (Background dispatch agents)
+**Contract / discovery:** [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md)
 
 **Delegates to:** [`clarify-project-issue`](../clarify-project-issue/SKILL.md)
 
 ## Steps
 
-1. **Resolve** the target issue per the Background dispatch agents section (provided `#n`, or discover open typed issues with `status:pending-clarification` and pick one by judgement). Skip candidates that need PO input you do not have.
+1. **Resolve** the target issue per [workflow-dispatch.md](../../../docs/issues/workflow-dispatch.md) (provided `#n`, or discover open typed issues with `status:pending-clarification` and pick one by judgement). Skip candidates that need PO input you do not have.
 2. If no PO clarification is available in the dispatch context, **stop and report** — do not invent answers.
 3. Otherwise **read and run** `clarify-project-issue` for that issue (and its `references/` as needed).
 4. **Report** the underlying skill's outcome (URL, new status), or that clarification was unavailable.
