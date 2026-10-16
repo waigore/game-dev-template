@@ -12,6 +12,7 @@ description: |-
     - user: "Add the GitHub MCP with GITHUB_TOKEN" → interview, wire all three
       clients disabled, update docs/mcp.md, open PR (env name only)
     - user: "Enable Recraft for me" → guide local enable + OAuth; no commit
+    - user: "Enable ElevenLabs for me" → guide local enable + OAuth; no commit
     - user: "Test that the new MCP works" → list tools, smoke call, report
 ---
 

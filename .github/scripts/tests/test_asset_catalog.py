@@ -162,6 +162,50 @@ class CatalogTest(unittest.TestCase):
                        generation=gen))
         self.assertEqual(self.checks(), [])
 
+    def test_agent_generation_music_series_passes(self) -> None:
+        gen = {
+            "prompt": "battle theme", "tool": "ElevenLabs", "operation": "compose",
+            "settings": {"model": "music_v2_5", "finetune_id": "ft-1"},
+            "inputs": {"style_anchors": ["0192f3a4-7c1e-7b2a-9d4e-5f6a7b8c9d0e"], "refs": [], "base_assets": []},
+            "seed": "n/a — tool has no seed",
+            "series": {"id": "AK-music.SS1", "elevenlabs_finetune_id": "ft-1"},
+        }
+        self.add(entry(source_type="ai-generation", supplier=..., coverage=["AK-character-sprites.V1"],
+                       tool_role={"role": "TL.1", "adr": "adr-free"}, recipe="AK-character-sprites.R1",
+                       generation=gen))
+        self.assertEqual(self.checks(), [])
+
+    def test_agent_generation_sfx_soft_series_passes(self) -> None:
+        gen = {
+            "prompt": "ui click", "tool": "ElevenLabs", "operation": "text_to_sound_effects",
+            "settings": {"model": "eleven_text_to_sound_v2"},
+            "inputs": {"style_anchors": ["0192f3a4-7c1e-7b2a-9d4e-5f6a7b8c9d0e"], "refs": [], "base_assets": []},
+            "seed": "n/a — tool has no seed",
+            "series": {"id": "AK-sound-effects.SS1", "soft_enforce": True},
+        }
+        self.add(entry(source_type="ai-generation", supplier=..., coverage=["AK-character-sprites.V1"],
+                       tool_role={"role": "TL.1", "adr": "adr-free"}, recipe="AK-character-sprites.R1",
+                       generation=gen))
+        self.assertEqual(self.checks(), [])
+
+    def test_agent_generation_series_rejects_multiple_bindings(self) -> None:
+        gen = {
+            "prompt": "x", "tool": "ElevenLabs", "operation": "compose",
+            "settings": {"model": "music_v2_5", "finetune_id": "ft-1"},
+            "inputs": {"style_anchors": [], "refs": [], "base_assets": []},
+            "seed": "n/a — tool has no seed",
+            "series": {
+                "id": "AK-music.SS1",
+                "elevenlabs_finetune_id": "ft-1",
+                "recraft_style_id": "style-1",
+            },
+        }
+        self.add(entry(source_type="ai-generation", supplier=..., coverage=["AK-character-sprites.V1"],
+                       tool_role={"role": "TL.1", "adr": "adr-free"}, recipe="AK-character-sprites.R1",
+                       generation=gen))
+        found = self.checks()
+        self.assertTrue(any("exactly one" in f for f in found))
+
     def test_files_exist_and_every_file_is_owned(self) -> None:
         self.add(entry(), files=False)
         (self.root / "game/assets/character-sprites/stray.png").write_bytes(b"png")

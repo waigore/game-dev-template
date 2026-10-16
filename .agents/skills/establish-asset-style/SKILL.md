@@ -2,17 +2,20 @@
 name: establish-asset-style
 description: |-
   Establish or refresh a kind's Style series: bootstrap approved style
-  anchors, create a Recraft style from them, write the kind registry
-  (recraft_style_id, prompt_policy, state active), and open a PR.
-  Visual identity needs enforced styling, master/negative prompting, and
-  visual review. Recraft is required (docs/asset-tools.md).
+  anchors, create the modality binding (Recraft style for visual;
+  ElevenLabs finetune for music, voice id for voice; soft anchors for
+  SFX), write the kind registry (binding, prompt_policy, state active),
+  and open a PR. Identity needs enforced styling, master/negative
+  prompting, and review (look or listen). Recraft is required for
+  visual series; ElevenLabs for music/SFX/voice (docs/asset-tools.md).
   Use when starting a kind's consistent generation, after anchors change,
-  when the series is stale, or the user asks to create/refresh the Recraft
-  style for character sprites, tiles, or similar.
+  when the series is stale, or the user asks to create/refresh the style
+  for sprites, tiles, music, SFX, or voice.
 
   Examples:
-    - user: "Set up the character-sprite style series" → APR.establish-style
-    - user: "Refresh the tile style after new anchors" → recreate style, update SS1
+    - user: "Set up the character-sprite style series" → APR.establish-style (Recraft)
+    - user: "Establish the battle-music finetune from these anchors" → music series
+    - user: "Refresh the tile style after new anchors" → recreate binding, update SS1
 ---
 
 # Establish asset style
@@ -21,19 +24,23 @@ Procedure: [`specs/assets/procedures/establish-style.md`](../../../specs/assets/
 
 ## Steps
 
-1. **Gate**. Stop and offer `author-spec` / `capture-requirements` when the kind Style series section or cited aesthetics hold TBD, or Recraft MCP is unavailable and no person can run `create_style` in the web app.
-2. **Resolve** the kind spec and its `SS1` series. Confirm state (`none` | `bootstrapping` | `active` | `stale`).
+1. **Gate**. Stop and offer `author-spec` / `capture-requirements` when the kind Style series section or cited aesthetics hold TBD, or the modality MCP is unavailable and no person can run the binding step in the web app (Recraft `create_style`; ElevenLabs finetune / voice clone).
+2. **Resolve** the kind spec and its `SS1` series. Confirm state, **modality** (`visual` | `music` | `sfx` | `voice`), and **enforce** (`hard` | `soft`).
 3. **Bootstrap anchors** if `style_anchors` is empty or the user is replacing them:
    - Generate seeds with `manage-asset` using the **bootstrap** prompt template + `prompt_policy`, or register person-supplied assets with `register-asset`.
    - Require `review-asset` Pass (or person exemption). Confirm with the user which approved asset IDs are anchors. Set state `bootstrapping` until then.
-4. **Create style** (Recraft only): upload anchor files; call `create_style` with the series model/base type from the kind spec (or confirm with the user if still fill-in). Record the returned style id.
-5. **Write the registry** in the kind Style series (`SS1`): `style_anchors`, `recraft_style_id`, model/base, `built_from` (anchor IDs + `YYYY-MM-DD`), aesthetics cites, `prompt_policy` (compose, master, negative citing `PAL` / `SPC.E` / `FRM` / `PAL.K` as applicable). Set state `active`.
-6. **Refresh** when `stale`: recreate style from current anchors; replace `recraft_style_id`; never keep the old id silently. Note assets that need `APR.update` via `manage-asset`.
-7. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority cites the kind Style series and aesthetics IDs. Test plan: anchors Pass, Recraft style created, kind registry updated.
+4. **Create style binding** per modality (see `docs/asset-tools.md`):
+   - **visual (hard)**: upload anchors; Recraft `create_style`; record `recraft_style_id` + model/base.
+   - **music (hard)**: upload anchors; create Music Finetune; record `elevenlabs_finetune_id` + model; set Audio Reference policy (`required` | `optional` | `none`).
+   - **voice (hard)**: clone or select voice from anchors; record `elevenlabs_voice_id`.
+   - **sfx (soft)**: no product style id; keep anchors + `prompt_policy` only until a durable binding exists.
+5. **Write the registry** in the kind Style series (`SS1`): modality, enforce, `style_anchors`, style binding, `built_from` (anchor IDs + `YYYY-MM-DD`), aesthetics cites, `prompt_policy` (compose, master, negative citing `PAL`/`FRM` or `SND.*` as applicable). Set state `active`.
+6. **Refresh** when `stale`: recreate binding from current anchors; replace the hard id (never keep the old id silently) or reaffirm soft anchors. Note assets that need `APR.update` via `manage-asset`.
+7. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority cites the kind Style series and aesthetics IDs. Test plan: anchors Pass, binding created (or soft affirmed), kind registry updated.
 
 ## Rules
 
-- Recraft is required for establish and for later style-constrained generate. Do not use fal for `create_style` or as a substitute `input_style_id` source.
+- Recraft is required for visual establish and style-constrained generate. ElevenLabs is required for music / SFX / voice. Do not use fal as a substitute style-binding source.
 - Do not invent anchors, prompt_policy clauses, or aesthetics IDs. Missing ones go to specs first.
-- Three pillars: enforced styling, master/negative prompting, visual review. Establishing style alone does not approve series members.
+- Three pillars: enforced styling, master/negative prompting, review (look or listen). Establishing style alone does not approve series members.
 - Credentials never enter the repository.
