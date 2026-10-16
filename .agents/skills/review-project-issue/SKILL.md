@@ -28,6 +28,11 @@ Review a typed issue currently in `status:pending-review`.
    - Body internally consistent; no major gaps/ambiguities/underspecifications
    - Deliverables and acceptance criteria align with parent goal/scope, or project vision if root-level
    - Acknowledge when the issue is a **new requirement**
+   - **If `type:epic`** (addendum — epic granularity; wave-set coherence is [`audit-project-wave`](../audit-project-wave/SKILL.md)):
+     - Goal is an observable outcome, not a task list; Scope has explicit in/out; out-of-scope names sibling epics or other waves when known
+     - In-scope qualified IDs (from Notes/Scope) are owned by child tasks when children exist (coverage/ownership — not path-level AC polish)
+     - Not a horizontal catch-all; foundation stays substrate-only
+     - Vertical: demo-ready ID set in Notes looks sufficient for `create-gameplay-demo` without new product decisions; a demo follow-on task exists or its absence is called out. Foundation: no player demo task
 4. **Decide** one outcome:
    - **Pass** — post a clear pass review comment (must be the latest comment when transitioning). Gate: `pending-review` → `pending-implementation`.
    - **Fail** — post problems + refinement direction; **explicitly name** impacted related issues. Gate this issue: `pending-review` → `pending-refinement`. For each named related issue, comment briefly (point at this fail) and apply fail-review cascade to `pending-refinement` per the transitions reference.
