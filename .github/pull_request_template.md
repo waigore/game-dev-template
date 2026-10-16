@@ -1,4 +1,4 @@
-<!-- Contract: docs/pull-requests.md. Auto-merges on green unless draft or labeled `no-automerge`. -->
+<!-- Contract: docs/pull-requests.md. Auto-merges on green unless draft or labeled `no-automerge` (user-requested only). -->
 
 ## Summary
 

@@ -5,7 +5,7 @@ description: |-
   the last-synced upstream commit, classifies each upstream-changed file by
   comparing it with the downstream copy, takes upstream for untouched
   template files, 3-way merges files edited on both sides (confirming
-  conflicts with the user), and opens one no-automerge sync PR.
+  conflicts with the user), and opens one sync PR.
   Use when the user asks to pull, merge, sync, or update from the template
   or upstream.
 
@@ -50,7 +50,7 @@ Helper: [`scripts/template-sync.sh`](scripts/template-sync.sh) (`baseline`, `pla
 
 ### Land
 
-9. **Commit and PR**. The commit subject and PR title are both exactly `Sync upstream template to <12-char target SHA>`: later runs find the baseline by this marker, which survives squash merge. Open with `--label no-automerge` per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Body:
+9. **Commit and PR**. The commit subject and PR title are both exactly `Sync upstream template to <12-char target SHA>`: later runs find the baseline by this marker, which survives squash merge. Open per [`docs/pull-requests.md`](../../../docs/pull-requests.md) (auto-merge on green; do not add `no-automerge` unless the user asks). Body:
    - **Summary**: upstream repo, `<baseline>..<target>`, upstream commit subjects.
    - **Issue**: `Refs #n` if the user gave one, else `N/A (template sync, no issue)`.
    - **Authority**: `N/A (upstream template <repo>@<target>; no game spec change)`, or the spec paths touched.

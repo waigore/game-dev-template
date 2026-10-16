@@ -33,4 +33,4 @@
   description: "Accepted; leave open"
 - name: no-automerge
   color: "B60205"
-  description: "PR: opt out of automatic squash-merge"
+  description: "PR: opt out of automatic squash-merge (user-requested only)"

@@ -25,7 +25,7 @@ Issue labels for categorization and agent orchestration. Source of truth: `.gith
 | `type:task` | Concrete unit of agent work |
 | `type:defect` | Bug/problem with any deliverable (code, game, spec, etc.) |
 | `status:*` | Workflow state (see [`docs/issues/workflow.md`](docs/issues/workflow.md)) |
-| `no-automerge` | PR label: opt out of automatic squash-merge (on by default for all PRs) |
+| `no-automerge` | PR label: opt out of automatic squash-merge (user-requested only) |
 
 Synced by `.github/workflows/sync-labels.yml` (push to `main` when label config changes, or `workflow_dispatch`). Add labels with the `create-project-label` skill.
 
@@ -56,7 +56,7 @@ Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md
 
 - **Template setup and updates**: in a new repo from this template, run `ensure-project-setup` before any other work or PR ([`docs/github-repo-setup.md`](docs/github-repo-setup.md)). Pull upstream template changes with `sync-upstream-template`; never merge upstream by hand.
 - **High-level requirements first**: `capture-requirements` locks in vision, definition, and quality before any downstream spec is captured; earlier design-level detail waits in [`docs/requirements/`](docs/requirements/README.md) (notes, not specs).
-- **Small PRs only**: `main` is protected; changes land via PR only. When a change is done, branch (`<type>/<issue#>-<slug>`), push, and open a PR using the template; link issues with `Refs #n`, never `Closes`. Keep PRs focused and testable, under ~30 files; split if larger. PRs auto-merge on green; use draft or `no-automerge` to hold. Contract: [`docs/pull-requests.md`](docs/pull-requests.md).
+- **Small PRs only**: `main` is protected; changes land via PR only. When a change is done, branch (`<type>/<issue#>-<slug>`), push, and open a PR using the template; link issues with `Refs #n`, never `Closes`. Keep PRs focused and testable, under ~30 files; split if larger. PRs auto-merge on green; use draft while incomplete; apply `no-automerge` only if the user asks. Contract: [`docs/pull-requests.md`](docs/pull-requests.md).
 - **Spec first**: if it is not in `specs/`, it must not be in the code. Undecided aspects are marked `TBD — <question>` in any spec ([rule](.agents/specs/rules/README.md#undecided-aspects-tbd)) and are not coded; resolve them with `audit-spec-tbd`.
 - **SOLID code**: follow [`docs/solid.md`](docs/solid.md) (template-owned, all projects) and [`docs/coding-conventions.md`](docs/coding-conventions.md) (project-owned; extends SOLID, never contradicts it). Review with `review-code` (also run from `verify-project-issue` when a PR has code changes).
 

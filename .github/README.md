@@ -10,7 +10,7 @@ GitHub configuration for this repository: labels, issue forms, and workflows.
 | [`ISSUE_TEMPLATE/`](ISSUE_TEMPLATE/) | Epic / Task / Defect issue forms |
 | [`pull_request_template.md`](pull_request_template.md) | PR body sections ([`docs/pull-requests.md`](../docs/pull-requests.md)) |
 | [`workflows/sync-labels.yml`](workflows/sync-labels.yml) | Sync labels on push to `main` or `workflow_dispatch` |
-| [`workflows/automerge.yml`](workflows/automerge.yml) | Squash auto-merge for all same-repo PRs; opt out with `no-automerge` |
+| [`workflows/automerge.yml`](workflows/automerge.yml) | Squash auto-merge for all same-repo PRs; opt out with `no-automerge` (user-requested only) |
 | [`workflows/pr-hygiene.yml`](workflows/pr-hygiene.yml) | Required check: PR title/body lint ([`docs/pull-requests.md`](../docs/pull-requests.md)) |
 | [`workflows/spec-lint.yml`](workflows/spec-lint.yml) | Required check: structural spec rules ([`docs/spec-lint.md`](../docs/spec-lint.md)) |
 | [`workflows/code-lint.yml`](workflows/code-lint.yml) | Required check: project-owned lint/format steps per [`docs/coding-conventions.md`](../docs/coding-conventions.md); passes with a notice when there are none |
