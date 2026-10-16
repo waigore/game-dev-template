@@ -33,19 +33,20 @@ Authoring rules: [`.agents/specs/rules/assets/kinds.md`](../../../.agents/specs/
 
 ### SS1 — primary
 
+- **Medium**: <!-- fill in: visual | audio -->
 - **State**: <!-- fill in: none | bootstrapping | active | stale -->
 - **Style anchors**: <!-- fill in: approved asset IDs, or None yet -->
-- **Recraft style id**: <!-- fill in: UUID when active, or None -->
-- **Recraft style model / base**: <!-- fill in -->
-- **Aesthetics**: <!-- fill in: pillar, PAL, REF IDs -->
-- **Built from**: <!-- fill in: anchor IDs + YYYY-MM-DD of last create_style, or None -->
-- **Refresh when**: aesthetics change, anchor set change, or review Fail pattern
+- **Binding (visual)**: <!-- fill in: recraft_style_id + model/base when active; else n/a -->
+- **Binding (audio)**: <!-- fill in: elevenlabs_binding (voice_id or model/settings); else n/a -->
+- **Aesthetics**: <!-- fill in: pillar, PAL/REF or SND IDs -->
+- **Built from**: <!-- fill in: anchor IDs + YYYY-MM-DD, or None -->
+- **Refresh when**: aesthetics change, anchors change, or review Fail pattern
 
 #### Prompt policy
 
-- **Compose**: subject-first when `active`; do not restate medium/full palette (style applies); always append master + negative. Cite unambiguous IDs only for hierarchy.
-- **Master**: <!-- fill in: palette PAL.S…; hierarchy SPC.E… / FRM.P… / lineup; silhouette FRM.L…; contrast PAL.K…; canvas/BG; kind musts -->
-- **Negative**: <!-- fill in: off-palette; scale vs cited extents; silhouette-killing detail; low-contrast mud; content limits; tool bad habits -->
+- **Compose**: subject-first when `active`; append master + negative; cite IDs only.
+- **Master**: <!-- fill in: visual PAL/FRM/SPC; audio SND.M/X/V/L; kind musts -->
+- **Negative**: <!-- fill in: off-style bans and content limits for the medium -->
 
 ## Recipes
 
@@ -54,11 +55,11 @@ Authoring rules: [`.agents/specs/rules/assets/kinds.md`](../../../.agents/specs/
 - **Source type**: <!-- fill in -->
 - **Tool role**: <!-- fill in -->
 - **Inputs**: <!-- fill in -->
-- **Prompt template (bootstrap)**: <!-- fill in: may describe look + REFs; compose with prompt_policy -->
-- **Prompt template (series)**: <!-- fill in: subject/variant + {slots}; compose with prompt_policy; no full style restatement -->
+- **Prompt template (bootstrap)**: <!-- fill in: compose with prompt_policy -->
+- **Prompt template (series)**: <!-- fill in: subject/variant + {slots}; compose with prompt_policy -->
 - **Settings**: <!-- fill in -->
 - **Seed policy**: <!-- fill in: or n/a — tool has no seed -->
-- **Post-processing**: <!-- fill in -->
+- **Post-processing**: <!-- fill in: audio — SND.L, trim, loop, format -->
 - **Outputs**: <!-- fill in -->
 
 ## Checks

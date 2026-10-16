@@ -2,17 +2,20 @@
 name: establish-asset-style
 description: |-
   Establish or refresh a kind's Style series: bootstrap approved style
-  anchors, create a Recraft style from them, write the kind registry
-  (recraft_style_id, prompt_policy, state active), and open a PR.
-  Visual identity needs enforced styling, master/negative prompting, and
-  visual review. Recraft is required (docs/asset-tools.md).
+  anchors, create the medium's provider binding (Recraft style id or
+  ElevenLabs voice/model binding), write the kind registry (binding,
+  prompt_policy, state active), and open a PR. Identity needs enforced
+  binding, master/negative prompting, and visual or aural review.
+  Recraft is required for visual kinds; ElevenLabs for audio
+  (docs/asset-tools.md).
   Use when starting a kind's consistent generation, after anchors change,
-  when the series is stale, or the user asks to create/refresh the Recraft
-  style for character sprites, tiles, or similar.
+  when the series is stale, or the user asks to create/refresh style for
+  sprites, tiles, SFX, music, voice, or similar.
 
   Examples:
-    - user: "Set up the character-sprite style series" → APR.establish-style
-    - user: "Refresh the tile style after new anchors" → recreate style, update SS1
+    - user: "Set up the character-sprite style series" → APR.establish-style (Recraft)
+    - user: "Lock the hero voice series" → APR.establish-style (ElevenLabs voice_id)
+    - user: "Refresh the tile style after new anchors" → recreate binding, update SS1
 ---
 
 # Establish asset style (facade)

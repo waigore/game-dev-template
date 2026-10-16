@@ -27,7 +27,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 ### Tools
 
 - [ ] Each tool role states its source type, kinds served, required capabilities, and realized by. Each capability traces to an aesthetics element, a kind requirement, or a definition constraint.
-- [ ] Realized by is an Accepted Integration ADR that exists, or "Pending — needs Integration ADR". No product, service, model, or format names appear outside ADRs, except the default entry file format in `catalog.md`.
+- [ ] Realized by is an Accepted Integration ADR that exists, "Pending — needs Integration ADR", or ADR-free per `docs/asset-tools.md` (Recraft, ElevenLabs). No product, service, model, or format names appear outside ADRs and that doc, except the default entry file format in `catalog.md`.
 - [ ] Access covers each role, and no credential is in the repository.
 
 ### Procedures and catalog
@@ -43,9 +43,9 @@ Same sections and required content as the rules file for each spec in scope. Fil
 ### Kind specs
 
 - [ ] Each has the header and sections [kinds.md](rules/assets/kinds.md) requires.
-- [ ] Each kind has Style series `SS1` with state, anchors, Recraft fields when active, aesthetics cites, and `prompt_policy` (compose, master, negative citing palette/hierarchy/silhouette/contrast IDs).
-- [ ] Each AI recipe states bootstrap and series prompt templates (compose with `prompt_policy`), plus source type, tool role, inputs, settings, seed policy, post-processing, and outputs. Third-party: license terms. Human-made: tool role, prompts, settings, seed N/A.
-- [ ] Every specification row and budget has a check. Style, readability (when seen in play), and series-cited palette/hierarchy/contrast concerns are covered.
+- [ ] Each kind has Style series `SS1` with medium, state, anchors, binding when active (`recraft_style_id` or `elevenlabs_binding`), aesthetics cites, and `prompt_policy` (compose, master, negative citing visual or `SND` IDs as the medium needs).
+- [ ] Each AI recipe states bootstrap and series prompt templates (compose with `prompt_policy`), plus source type, tool role, inputs, settings, seed policy, post-processing (audio: mix to `SND.L`), and outputs. Third-party: license terms. Human-made: tool role, prompts, settings, seed N/A.
+- [ ] Every specification row and budget has a check. Visual: style, readability (when seen in play), series-cited palette/hierarchy/contrast. Audio: style/`SND`, duration/loop, format, loudness vs `SND.L`.
 
 ### Shared language and IDs
 
