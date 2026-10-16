@@ -10,6 +10,7 @@ Agents use the matching `create-project-*` skill so labels, sub-issues, and bloc
 | [body-shapes.md](body-shapes.md) | Canonical body templates (Epic / Task / Defect) |
 | [hierarchy.md](hierarchy.md) | Sub-issues, depth limit, blocked-by |
 | [workflow.md](workflow.md) | Status labels, transitions, evidence |
+| [waves.md](waves.md) | Milestones as waves; foundation; vertical epics; demo follow-on |
 
 ## Types and labels
 
@@ -26,7 +27,7 @@ Labels: [`.github/project-labels.yml`](../../.github/project-labels.yml). Choose
 | Audience | How |
 |----------|-----|
 | Humans (GitHub UI) | New issue → Epic / Task / Defect form |
-| Agents | `create-project-epic`, `create-project-task`, or `create-project-defect` |
+| Agents | `create-project-epic`, `create-project-task`, or `create-project-defect`; wave maps via `plan-project-waves` |
 
 Agent defaults: create on GitHub with `status:pending-review`. Pass `--no-create` (or “draft only”) for title + body without filing. Optional inputs shared by skills: `title`, parent issue number (where applicable), `blocked_by` / `blocking` issue numbers. Collect content for every required section of the type; ask when missing — do not invent goal, scope, deliverables, or defect expected/actual.
 
