@@ -5,7 +5,7 @@ description: |-
   the last-synced upstream commit, classifies each upstream-changed file by
   comparing it with the downstream copy, takes upstream for untouched
   template files, 3-way merges files edited on both sides (confirming
-  conflicts with the user), and opens one no-automerge sync PR.
+  conflicts with the user), and opens one sync PR.
   Use when the user asks to pull, merge, sync, or update from the template
   or upstream.
 
