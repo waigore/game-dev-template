@@ -49,23 +49,17 @@ When the user's input goes beyond the target (often a long first prompt), sort e
    - **None named**: the uncaptured high-level files, in order (together when the input covers several). If all three are captured but blocking TBDs remain, run [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) on them instead. If the stage is locked in, ask which downstream spec to capture.
    - **Downstream named** (design, view, aesthetics, UX, playtest, asset pipeline, ADR, technical) while the stage is not locked in: do not capture it. Say what is missing, keep its detail per **Detailed input**, and offer the high-level stage or the TBD audit.
    - **Ambiguous or several downstream named**: ask which **one** file this run.
-2. **Load capture context only** (same rules resolution as `author-spec`; do not invent parallel rules):
-   - Open [`.agents/specs/rules/README.md`](../../specs/rules/README.md), take the most specific matching row for each target, read that file, then every file in its **Also read** chain until none remain.
-   - Read each existing target and/or the folder `_template` placeholders.
-   - Read the [requirement notes](../../../docs/requirements/README.md) for each target.
-   - Read minimal upstream only when those rules require grounding for that type (links/IDs). Keep reads narrow.
+2. **Load capture context**: resolve rules the same way [`author-spec`](../author-spec/SKILL.md) does (do not invent a parallel chain). Read each existing target and/or the folder `_template` placeholders, the [requirement notes](../../../docs/requirements/README.md) for each target, and minimal upstream only when those rules require grounding.
 3. **Sort and interview**. Sort the input per **Detailed input**. Derive questions from required sections, placeholders, and gaps vs the rules; lead each with its proposed answer from the input or notes when one exists. Prefer few focused rounds over a dump. For already-filled sections, ask only to confirm or revise. Raise conflicts. When the user has not decided something, record it as TBD per [Undecided aspects](../../specs/rules/README.md#undecided-aspects-tbd); do not invent product decisions. In the high-level stage, point out when a TBD would be blocking.
 4. **Confirm**. Short bullet summary per target of what will be written, each TBD with its open question, the notes to save, and the notes consumed or rejected; wait for user OK or corrections.
 5. **Author**. Run [`author-spec`](../author-spec/SKILL.md) for each target with the confirmed answers. Save new notes and prune consumed or rejected ones.
 6. **Open a spec PR** per [Spec PRs](../../../docs/pull-requests.md#spec-prs), covering the specs and notes of this run.
-7. **Offer the next target**: per step 1 with none named, and ask whether to continue now. A new target is a new run of these steps. Optionally note `review-spec` (whole-spec review runs the audit skills too), and `audit-spec-tbd` when TBDs remain; do not run them.
+7. **Offer the next target**: per step 1 with none named, and ask whether to continue now. A new target is a new run of these steps. Optionally note `review-spec` and `audit-spec-tbd` when TBDs remain; do not run them unless the user asks.
 
 ## Rules
 
 - One `specs/` path per run, except the high-level stage, whose files may share a run. Several runs may follow each other in one session.
 - No downstream capture until the high-level stage is locked in.
 - Requirement notes are not specs: never cite them as authority or build code or specs on them unconfirmed.
-- Do not paste authoring rules into this skill, into `specs/`, or into a template.
-- Do not edit `.agents/specs/rules/` unless the user asked to change the rules.
-- Do not fill a `_template` file in place.
+- Follow `author-spec` rules for writing; do not paste authoring rules into this skill or into `specs/`.
 - Do not run `review-spec`, `audit-spec-applicability`, `audit-spec-terminology`, or `audit-spec-tbd` unless the user separately asks, or step 1 offers the TBD audit and the user accepts.

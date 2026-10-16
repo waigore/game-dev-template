@@ -20,13 +20,7 @@ Thin automation entrypoint for `status:pending-clarification`.
 
 ## Steps
 
-1. **Resolve** the target issue per [workflow-dispatch.md](../../../docs/issues/workflow-dispatch.md) (provided `#n`, or discover open typed issues with `status:pending-clarification` and pick one by judgement). Skip candidates that need PO input you do not have.
+1. **Resolve** one target issue per the dispatch contract (`#n`, or discover `status:pending-clarification`). Skip candidates that need PO input you do not have.
 2. If no PO clarification is available in the dispatch context, **stop and report** — do not invent answers.
-3. Otherwise **read and run** `clarify-project-issue` for that issue (and its `references/` as needed).
+3. Otherwise **read and run** `clarify-project-issue` for that issue.
 4. **Report** the underlying skill's outcome (URL, new status), or that clarification was unavailable.
-
-## Rules
-
-- Do not restate or contradict `clarify-project-issue` or the workflow contract.
-- One issue per run; do not batch-process the queue.
-- Call no status transitions except through the delegated skill / `enforce-task-workflow-status`.

@@ -32,8 +32,8 @@ Review one spec document or the whole spec set and report the result to whoever 
 3. **Whole-spec audits** (only when the target is the whole spec; skip for a specific doc or folder): run in this order, each at **whole set** scope, following that skill's steps and report shape:
    1. [`audit-spec-applicability`](../audit-spec-applicability/SKILL.md)
    2. [`audit-spec-terminology`](../audit-spec-terminology/SKILL.md)
-   3. [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) — full interactive flow (propose, confirm, `author-spec` for confirmed answers). TBDs are TBDs wherever they appear; use judgment when presenting them so the report stays clear (do not dump the same TBD twice without need). Open TBDs after that flow are Fail for the TBD audit.
-4. **Summarize**: for a whole-spec review, open with an overall verdict (**Fail** if any checklist Fail, or if applicability Fail, terminology Fail, or the TBD audit still has open TBDs), then each checklist report, then each audit report. Note when a downstream finding may stem from an upstream failure. For a single-doc review, the checklist verdict alone is the overall verdict.
+   3. [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md)
+4. **Summarize**: for a whole-spec review, open with an overall verdict (**Fail** if any checklist Fail or any audit Fail), then each checklist report, then each audit report. Note when a downstream finding may stem from an upstream failure. For a single-doc review, the checklist verdict alone is the overall verdict.
 5. **Report back to the source of the request**:
    - **Chat**: reply with the report.
    - **GitHub issue or PR**: post the report as a comment on it (`gh issue comment` / `gh pr comment`); if the request also came through chat, reply there with the outcome and comment link.
@@ -41,7 +41,7 @@ Review one spec document or the whole spec set and report the result to whoever 
 
 ## Rules
 
-- Read-only for checklist review: do not edit specs while reviewing checklists. Fixes happen in a separate step. The TBD audit may edit via `author-spec` only for answers the user confirmed.
+- Read-only for checklist review: do not edit specs while reviewing checklists. Fixes happen in a separate step. The TBD audit may edit only as that skill defines (confirmed answers via `author-spec`).
 - Writing rules live in [`.agents/specs/rules/`](../../specs/rules/README.md), not in the spec. Do not treat a missing rules section inside the spec as a defect. Fail a spec that pastes those rules back in, or that drops its authoring-rules link. [alignment.md](../../specs/alignment.md) is the contract between those rules and the checklist.
 - Do not change issue labels or status; callers that run the issue workflow gate status themselves via [`enforce-task-workflow-status`](../enforce-task-workflow-status/SKILL.md).
 - Use the report shape defined by the review instructions; do not restate their checklists here or in the report.

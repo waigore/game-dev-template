@@ -19,7 +19,7 @@ Independent verification (smoke test) for a typed issue in `status:pending-verif
 
 **Status gate:** [`enforce-task-workflow-status`](../enforce-task-workflow-status/SKILL.md)
 
-**Code review (code PRs):** [`review-code`](../review-code/SKILL.md) · [`docs/solid.md`](../../../docs/solid.md) · [`docs/coding-conventions.md`](../../../docs/coding-conventions.md)
+**Delegates when applicable:** [`review-code`](../review-code/SKILL.md) · [`review-asset`](../review-asset/SKILL.md) · [Verification in `docs/demos.md`](../../../docs/demos.md#verification) · [`docs/demo-style-assets.md`](../../../docs/demo-style-assets.md#verification)
 
 ## Steps
 
@@ -31,12 +31,12 @@ Independent verification (smoke test) for a typed issue in `status:pending-verif
    - Coding/architecture/spec/doc standards closely followed where applicable
    - No major gaps/ambiguities/underspecifications requiring revision
    - If coding: unit test coverage adequate; tests sensibly cover program logic
-   - **If any linked PR contains code changes:** run [`review-code`](../review-code/SKILL.md) on those PR diffs (SOLID, project conventions, `Code lint`). Include its report in the verify comment. A code review **Fail** makes verification **Fail**.
-   - **If any linked PR adds or changes cataloged assets:** run [`review-asset`](../review-asset/SKILL.md) on those catalog entries; it skips review-exempt entries and checks only that each exemption is valid and each asset ID and handle follows the catalog's rules. Include its report. An asset review **Fail**, an invalid exemption, or a duplicate asset ID or handle makes verification **Fail**.
-   - **If the deliverable is a gameplay demo** (`demos/<slug>/`): check it per [Verification in `docs/demos.md`](../../../docs/demos.md#verification) instead of code review and unit-test coverage. Run `review-asset` on every asset in the demo README's **Assets** table (exempt ones get only the exemption check), and check its **Style** and **Pipeline findings** tables per [`docs/demo-style-assets.md`](../../../docs/demo-style-assets.md#verification). A Fail there makes verification **Fail**.
+   - **If any linked PR contains code changes:** run [`review-code`](../review-code/SKILL.md) on those PR diffs. Include its report. A Fail from that skill fails verification.
+   - **If any linked PR adds or changes cataloged assets:** run [`review-asset`](../review-asset/SKILL.md) on those catalog entries. Include its report. A Fail from that skill fails verification.
+   - **If the deliverable is a gameplay demo** (`demos/<slug>/`): check per [Verification in `docs/demos.md`](../../../docs/demos.md#verification) and [`docs/demo-style-assets.md`](../../../docs/demo-style-assets.md#verification) instead of code review and unit-test coverage. A Fail there fails verification.
 5. **Outcome:**
-   - **Pass** — comment summarizing what was checked against each deliverable (include code review Pass when run). Gate: `pending-verification` → `pending-acceptance`.
-   - **Fail** — detail issues (include code review findings when that review failed). Gate: `pending-verification` → `pending-implementation`.
+   - **Pass** — comment summarizing what was checked against each deliverable (include delegated review Pass when run). Gate: `pending-verification` → `pending-acceptance`.
+   - **Fail** — detail issues (include delegated review findings when that review failed). Gate: `pending-verification` → `pending-implementation`.
 6. **Report** URL, outcome, new status.
 
 ## Rules

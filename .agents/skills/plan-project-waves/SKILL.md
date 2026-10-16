@@ -32,7 +32,7 @@ Cut shippable **waves** (milestones) and **vertical epics** from `specs/`, then 
 
 ## Steps
 
-0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed this session.
+0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed this session. Continue only on Pass.
 1. **Gate**: [high-level stage](../capture-requirements/SKILL.md#high-level-stage) locked; Engine ADR **Accepted**. Enough design / UX / technical / assets to inventory the target wave. Blocking TBDs on IDs you would include → stop; offer [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) / [`author-spec`](../author-spec/SKILL.md). Requirement notes are not authority. Skip `specs/adr/archive/`.
 2. **Inventory**: Index stable IDs (loops, `F-*`, `FL-*`, stages, sub-games; UX journeys/screens; aesthetics/assets as needed; Accepted ADRs; technical **Serves** links). Sketch dependencies only — not tasks yet.
 3. **Propose slice axis** from the inventory; confirm with the user (structured choice when available).
