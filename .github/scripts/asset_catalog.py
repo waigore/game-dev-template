@@ -32,6 +32,8 @@ from new_asset_id import is_asset_id  # noqa: E402
 HUB = "specs/assets/assets.md"
 TOOLS_DOC = "docs/asset-tools.md"
 TOUCHUP_PARTS = ("operation", "tool", "terms", "date", "reason", "run_by")
+GENERATION_PARTS = ("prompt", "tool", "operation", "settings", "inputs", "seed")
+SERIES_PARTS = ("id", "recraft_style_id")
 STATES = {"draft", "approved", "deprecated"}
 SOURCE_TYPES = {"ai-generation", "procedural-generation", "third-party", "human-made"}
 GENERATED = {"ai-generation", "procedural-generation"}
@@ -146,6 +148,8 @@ def check_entry(rel: str, stem: str, entry: dict[str, Any], hub: Hub) -> list[Fi
     if source in GENERATED:
         if not _non_empty(entry, "generation"):
             findings.append(Finding(rel, "fields", "generated asset is missing 'generation'"))
+        elif not person_supplied:
+            findings += _check_generation(rel, entry["generation"])
         if not person_supplied:
             findings += [Finding(rel, "fields", f"agent-generated asset is missing '{k}'") for k in ("tool_role", "recipe") if not _non_empty(entry, k)]
             if _non_empty(entry, "tool_role"):
@@ -165,6 +169,18 @@ def check_entry(rel: str, stem: str, entry: dict[str, Any], hub: Hub) -> list[Fi
     return findings
 
 
+def _check_generation(rel: str, generation: Any) -> list[Finding]:
+    if not isinstance(generation, dict):
+        return [Finding(rel, "fields", f"'generation' must be an object with {', '.join(GENERATION_PARTS)}")]
+    findings = _parts(rel, {"generation": generation}, "generation", GENERATION_PARTS, "fields")
+    settings = generation.get("settings")
+    if isinstance(settings, dict) and (
+        _non_empty(settings, "input_style_id") or _non_empty(generation, "series")
+    ):
+        findings += _parts(rel, generation, "series", SERIES_PARTS, "fields")
+    return findings
+
+
 def _check_touchups(rel: str, entry: dict[str, Any], person_supplied: bool) -> list[Finding]:
     if "touchups" not in entry:
         return []
@@ -175,6 +191,10 @@ def _check_touchups(rel: str, entry: dict[str, Any], person_supplied: bool) -> l
     findings: list[Finding] = []
     for i, touchup in enumerate(touchups):
         findings += _parts(rel, {f"touchups[{i}]": touchup}, f"touchups[{i}]", parts, "fields")
+        if isinstance(touchup, dict) and str(touchup.get("run_by", "")).casefold() == "agent":
+            findings += _parts(
+                rel, {f"touchups[{i}]": touchup}, f"touchups[{i}]", ("prompt", "inputs"), "fields"
+            )
     return findings
 
 

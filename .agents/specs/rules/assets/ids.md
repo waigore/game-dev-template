@@ -28,8 +28,8 @@ Aesthetics, design, view, and UX IDs stay in their folders. Cite them. Do not re
 | `procedures.md` | `APR` | Procedures by name, such as `APR.import` |
 | `catalog.md` | `CAT` | Fields `F`, Integrity `I` |
 | `access.md` | `ACC` | Addressing `A`, Placement `P`, Load groups `G` |
-| `kinds/` | `AK-<name>` | Coverage `V`, Specification `S`, Budgets `B`, Recipes `R`, Checks `K` |
+| `kinds/` | `AK-<name>` | Coverage `V`, Specification `S`, Budgets `B`, Recipes `R`, Checks `K`, Style series `SS` |
 
-Sections not listed (purpose, sources, lifecycle, access, consistency, naming, and similar) carry no IDs.
+Sections not listed (purpose, sources, lifecycle, access, consistency, naming, and similar) carry no IDs. A kind’s primary style series is `SS1` (qualified `AK-<name>.SS1`).
 
 Every section in this table gives each element an ID in this form. A qualified ID cited anywhere must exist.

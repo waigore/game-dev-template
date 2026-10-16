@@ -32,7 +32,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 ### Procedures and catalog
 
-- [ ] `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, and `APR.deprecate` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency and failure handling are filled.
+- [ ] `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, `APR.deprecate`, `APR.touch-up`, and `APR.establish-style` each state trigger, inputs, ordered steps, and outputs per [procedures.md](rules/assets/procedures.md). Consistency (style series, three pillars) and failure handling are filled.
 - [ ] Catalog root and asset root are repository-relative paths in backticks citing an Accepted Integration ADR, or are TBD.
 - [ ] `access.md` is filled whenever the hub is, and `specs/technical/asset-access.md` is filled with it (Fail if one is filled and the other is not). `ACC.A1`, `ACC.A2`, `ACC.P1`, and `ACC.P2` are kept as written; `ACC.A3` is in product terms; every asset main code uses is in a load group or the stated default; load and unload points cite design, view, or UX elements that exist. A format other than the default is set by that ADR, which also states how each integrity rule is checked.
 - [ ] Asset ID and handle format and assignment, the skeleton fields, and the integrity rules match [catalog.md](rules/assets/catalog.md); each integrity rule says how it is checked.
@@ -43,8 +43,9 @@ Same sections and required content as the rules file for each spec in scope. Fil
 ### Kind specs
 
 - [ ] Each has the header and sections [kinds.md](rules/assets/kinds.md) requires.
-- [ ] Each recipe states source type, tool role, inputs, prompt template, settings, seed policy, post-processing, and outputs. A third-party recipe states required license terms. A human-made recipe marks tool role, prompt template, settings, and seed policy N/A.
-- [ ] Every specification row and budget has a check. A style check cites the pillars, and a readability check exists when the kind is seen in play.
+- [ ] Each kind has Style series `SS1` with state, anchors, Recraft fields when active, aesthetics cites, and `prompt_policy` (compose, master, negative citing palette/hierarchy/silhouette/contrast IDs).
+- [ ] Each AI recipe states bootstrap and series prompt templates (compose with `prompt_policy`), plus source type, tool role, inputs, settings, seed policy, post-processing, and outputs. Third-party: license terms. Human-made: tool role, prompts, settings, seed N/A.
+- [ ] Every specification row and budget has a check. Style, readability (when seen in play), and series-cited palette/hierarchy/contrast concerns are covered.
 
 ### Shared language and IDs
 

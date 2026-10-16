@@ -128,6 +128,40 @@ class CatalogTest(unittest.TestCase):
             with self.subTest(key=key):
                 self.assertTrue(any(f"'{key}'" in f for f in found))
 
+    def test_agent_generation_needs_structured_parts(self) -> None:
+        gen = {"tool": "Recraft"}
+        self.add(entry(source_type="ai-generation", supplier=..., coverage=["AK-character-sprites.V1"],
+                       tool_role={"role": "TL.1", "adr": "adr-free"}, recipe="AK-character-sprites.R1",
+                       generation=gen))
+        found = self.checks()
+        self.assertTrue(any("'generation' is missing" in f for f in found))
+
+    def test_agent_generation_with_style_needs_series(self) -> None:
+        gen = {
+            "prompt": "player idle", "tool": "Recraft", "operation": "generate_image",
+            "settings": {"model": "recraftv4_1_raster", "input_style_id": "style-1"},
+            "inputs": {"style_anchors": [], "refs": [], "base_assets": []},
+            "seed": "n/a — tool has no seed",
+        }
+        self.add(entry(source_type="ai-generation", supplier=..., coverage=["AK-character-sprites.V1"],
+                       tool_role={"role": "TL.1", "adr": "adr-free"}, recipe="AK-character-sprites.R1",
+                       generation=gen))
+        found = self.checks()
+        self.assertTrue(any("'series'" in f for f in found))
+
+    def test_agent_generation_structured_passes(self) -> None:
+        gen = {
+            "prompt": "player idle", "tool": "Recraft", "operation": "generate_image",
+            "settings": {"model": "recraftv4_1_raster", "image_size": "1:1", "input_style_id": "style-1"},
+            "inputs": {"style_anchors": ["0192f3a4-7c1e-7b2a-9d4e-5f6a7b8c9d0e"], "refs": [], "base_assets": []},
+            "seed": "n/a — tool has no seed",
+            "series": {"id": "AK-character-sprites.SS1", "recraft_style_id": "style-1"},
+        }
+        self.add(entry(source_type="ai-generation", supplier=..., coverage=["AK-character-sprites.V1"],
+                       tool_role={"role": "TL.1", "adr": "adr-free"}, recipe="AK-character-sprites.R1",
+                       generation=gen))
+        self.assertEqual(self.checks(), [])
+
     def test_files_exist_and_every_file_is_owned(self) -> None:
         self.add(entry(), files=False)
         (self.root / "game/assets/character-sprites/stray.png").write_bytes(b"png")
@@ -143,7 +177,8 @@ class CatalogTest(unittest.TestCase):
 
     def test_touchups_need_full_record_and_agreement_when_person_supplied(self) -> None:
         full = {"operation": "remove background", "tool": "Recraft", "terms": "Pro plan", "date": "2026-10-15",
-                "reason": "transparent background per S4", "run_by": "agent"}
+                "reason": "transparent background per S4", "run_by": "agent",
+                "prompt": "remove background", "inputs": {}}
         self.add(entry(touchups=[full]))
         self.add(entry(handle="character-sprites/b", files=["character-sprites/b.png"], touchups=[{"tool": "Recraft"}]))
         self.add(entry(handle="character-sprites/c", files=["character-sprites/c.png"], touchups=[]))
@@ -151,6 +186,13 @@ class CatalogTest(unittest.TestCase):
         self.assertIn("fields: 'touchups[0]' is missing agreed_by", found)
         self.assertTrue(any("'touchups[0]' is missing operation, terms, date, reason, run_by, agreed_by" in f for f in found))
         self.assertIn("fields: 'touchups' must be a non-empty list", found)
+
+    def test_agent_touchups_need_prompt_and_inputs(self) -> None:
+        touchup = {"operation": "remove background", "tool": "Recraft", "terms": "Pro plan",
+                   "date": "2026-10-15", "reason": "transparent background", "run_by": "agent"}
+        self.add(entry(supplier=..., coverage=["AK-character-sprites.V1"], touchups=[touchup]))
+        found = self.checks()
+        self.assertTrue(any("prompt" in f and "inputs" in f for f in found))
 
     def test_banned_tools_rejected(self) -> None:
         (self.root / "docs").mkdir()

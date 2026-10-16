@@ -60,4 +60,5 @@ Asset IDs, format, and integrity: [`catalog.md`](catalog.md). Fields: [`catalog/
 
 Global specs: [`glossary.md`](glossary.md), [`ids.md`](ids.md), [`traceability.md`](traceability.md), [`tools.md`](tools.md), [`procedures.md`](procedures.md), [`catalog.md`](catalog.md), [`access.md`](access.md).
 
+- **Procedures (split)**: [`procedures/generate.md`](procedures/generate.md), [`procedures/update.md`](procedures/update.md), [`procedures/touch-up.md`](procedures/touch-up.md), [`procedures/establish-style.md`](procedures/establish-style.md).
 - **Kinds**: <!-- fill in: links, or None yet — copy kinds/_template.md -->
