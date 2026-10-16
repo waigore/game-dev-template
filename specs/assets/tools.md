@@ -18,6 +18,6 @@ Credentials never enter the repository.
 
 ## Constraints on ADR
 
-Every role a recipe uses needs an Accepted Integration ADR that realizes all of its required capabilities, **or** realization by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) marks ADR-free (today: Recraft, ElevenLabs). Until then the role is Pending and its recipes do not run. An ADR that changes a role reopens every recipe that uses it for review.
+Every role a recipe uses needs an Accepted Integration ADR that realizes all of its required capabilities, **or** realization by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) marks ADR-free (today: Recraft for visual; ElevenLabs for music / SFX / voice). Until then the role is Pending and its recipes do not run. An ADR that changes a role reopens every recipe that uses it for review.
 
-Visual style-series establish and style-constrained generate require Recraft (ADR-free). Audio style-series establish and series-active generate require ElevenLabs (ADR-free). Touch-ups ([`APR.touch-up`](procedures/touch-up.md)) are not tool roles and need no ADR. No role is realized by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) bans.
+Style-series establish and style-constrained generate require the modality style-binding capability: visual → Recraft; music / SFX / voice → ElevenLabs (both ADR-free) per that doc. Touch-ups ([`APR.touch-up`](procedures/touch-up.md)) are not tool roles and need no ADR. No role is realized by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) bans.

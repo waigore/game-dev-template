@@ -10,7 +10,7 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 
 | Path | Covers |
 |------|--------|
-| [asset-tools.md](asset-tools.md) | Asset tools index: bans, preference; Recraft, ElevenLabs, and fal details linked |
+| [asset-tools.md](asset-tools.md) | Asset tools index: bans, preference; Recraft, ElevenLabs, fal linked |
 | [mcp.md](mcp.md) | Project MCP wiring for Cursor / OpenCode / Grok; auth rules; declared servers; smoke test |
 | [coding-conventions.md](coding-conventions.md) | Project-owned coding conventions and lint/format tooling; extends `solid.md` |
 | [demos.md](demos.md) | Gameplay demos under `demos/`: scope, what is relaxed, traceability, promotion |

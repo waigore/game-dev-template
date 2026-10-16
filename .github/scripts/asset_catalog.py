@@ -33,7 +33,9 @@ HUB = "specs/assets/assets.md"
 TOOLS_DOC = "docs/asset-tools.md"
 TOUCHUP_PARTS = ("operation", "tool", "terms", "date", "reason", "run_by")
 GENERATION_PARTS = ("prompt", "tool", "operation", "settings", "inputs", "seed")
-SERIES_PARTS = ("id", "recraft_style_id")
+SERIES_ID_PART = "id"
+SERIES_HARD_BINDINGS = ("recraft_style_id", "elevenlabs_finetune_id", "elevenlabs_voice_id")
+SERIES_BINDING_SETTINGS = ("input_style_id", "finetune_id", "voice_id")
 STATES = {"draft", "approved", "deprecated"}
 SOURCE_TYPES = {"ai-generation", "procedural-generation", "third-party", "human-made"}
 GENERATED = {"ai-generation", "procedural-generation"}
@@ -169,15 +171,43 @@ def check_entry(rel: str, stem: str, entry: dict[str, Any], hub: Hub) -> list[Fi
     return findings
 
 
+def _check_series(rel: str, series: Any) -> list[Finding]:
+    if not isinstance(series, dict):
+        return [Finding(rel, "fields", f"'series' must be an object with '{SERIES_ID_PART}' and a style binding")]
+    findings: list[Finding] = []
+    if not _non_empty(series, SERIES_ID_PART):
+        findings.append(Finding(rel, "fields", f"'series' is missing {SERIES_ID_PART}"))
+    hard = [k for k in SERIES_HARD_BINDINGS if _non_empty(series, k)]
+    soft = series.get("soft_enforce") is True
+    if soft and hard:
+        findings.append(Finding(rel, "fields", "'series' cannot combine soft_enforce with a hard style binding"))
+    elif soft:
+        pass
+    elif len(hard) == 1:
+        pass
+    elif len(hard) > 1:
+        findings.append(Finding(rel, "fields", f"'series' must have exactly one of {', '.join(SERIES_HARD_BINDINGS)}"))
+    else:
+        findings.append(
+            Finding(
+                rel,
+                "fields",
+                f"'series' needs one of {', '.join(SERIES_HARD_BINDINGS)} or soft_enforce: true",
+            )
+        )
+    return findings
+
+
 def _check_generation(rel: str, generation: Any) -> list[Finding]:
     if not isinstance(generation, dict):
         return [Finding(rel, "fields", f"'generation' must be an object with {', '.join(GENERATION_PARTS)}")]
     findings = _parts(rel, {"generation": generation}, "generation", GENERATION_PARTS, "fields")
     settings = generation.get("settings")
-    if isinstance(settings, dict) and (
-        _non_empty(settings, "input_style_id") or _non_empty(generation, "series")
-    ):
-        findings += _parts(rel, generation, "series", SERIES_PARTS, "fields")
+    needs_series = _non_empty(generation, "series") or (
+        isinstance(settings, dict) and any(_non_empty(settings, k) for k in SERIES_BINDING_SETTINGS)
+    )
+    if needs_series:
+        findings += _check_series(rel, generation.get("series"))
     return findings
 
 

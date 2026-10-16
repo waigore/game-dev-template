@@ -7,16 +7,15 @@ description: |-
   review-asset, and open a PR. Spec first: only assets a coverage rule
   requires, through tool roles realized by Accepted ADRs or ADR-free tools in
   docs/asset-tools.md (Recraft for visual gen/edit/touch-up and style series;
-  ElevenLabs for audio gen/edit/touch-up and style series; fal needs an ADR
-  and is not used when the kind series is active).
-  Never a banned tool.
+  ElevenLabs for music/SFX/voice and audio style series; fal needs an ADR and
+  is not used when the kind series is active). Never a banned tool.
   Use when the user asks to create, generate, source, regenerate, replace,
   touch up, or retire art, animation, interface art, fonts, or audio.
   For establishing a kind's style series, use establish-asset-style.
 
   Examples:
     - user: "Generate the player run sprites" → APR.generate from the kind recipe, checks, review, PR
-    - user: "Generate the jump SFX" → APR.generate with ElevenLabs binding when series-active
+    - user: "Generate the menu theme with the music series" → ElevenLabs + finetune_id
     - user: "Use this licensed tileset for the forest" → APR.import, license check, catalog, review
     - user: "Regenerate the slime with the new palette" → APR.update, version bump, re-review
     - user: "Retire the old HUD icons" → APR.deprecate with successor IDs

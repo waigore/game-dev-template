@@ -14,6 +14,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 | [`create-project-label`](create-project-label/SKILL.md) | Add a label to config + docs and sync to GitHub |
 | [`create-project-epic`](create-project-epic/SKILL.md) | Create an Epic issue (`type:epic`) on GitHub |
 | [`create-project-task`](create-project-task/SKILL.md) | Create a Task issue (`type:task`) with parent/blocked-by wiring |
+| [`plan-project-waves`](plan-project-waves/SKILL.md) | Inventory specs; cut waves (milestones) and vertical epics; file wave-1 leaf tasks + demo follow-ons |
 | [`create-project-defect`](create-project-defect/SKILL.md) | Create a Defect issue (`type:defect`) with related/blocked-by wiring |
 | [`enforce-task-workflow-status`](enforce-task-workflow-status/SKILL.md) | Gate or audit `status:*` labels for typed issues |
 | [`review-project-issue`](review-project-issue/SKILL.md) | Review pass / fail / clarify → next status |
@@ -31,7 +32,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 | [`audit-spec-tbd`](audit-spec-tbd/SKILL.md) | Find TBDs (undecided aspects), propose grounded answers, confirm with the user, then author-spec |
 | [`create-gameplay-demo`](create-gameplay-demo/SKILL.md) | Scope a demo aggressively, clarify blockers into specs, build it under `demos/` as a spec-traced reference artifact that expresses the aesthetics and uses only cataloged pipeline assets |
 | [`manage-asset`](manage-asset/SKILL.md) | Generate, import, update, or deprecate assets per `specs/assets/` procedures; catalog, review, PR |
-| [`establish-asset-style`](establish-asset-style/SKILL.md) | Establish or refresh a kind Style series (anchors → Recraft or ElevenLabs binding → registry); PR |
+| [`establish-asset-style`](establish-asset-style/SKILL.md) | Establish or refresh a kind Style series (anchors → Recraft / ElevenLabs / soft SFX → registry); PR |
 | [`register-asset`](register-asset/SKILL.md) | Catalog a person-supplied (human-made or third-party) asset; person-granted review exemption or review-asset; PR |
 | [`review-asset`](review-asset/SKILL.md) | Review produced assets vs kind spec and `specs/aesthetics/`; Pass/Fail by element ID, read-only |
 | [`promote-gameplay-demo`](promote-gameplay-demo/SKILL.md) | Reimplement demo behavior in main code: drift check, assumptions into specs, technical design, asset approval, code review |
