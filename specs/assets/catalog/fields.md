@@ -16,7 +16,7 @@ Part of [`catalog.md`](../catalog.md). Keys are the JSON keys of an entry file p
 | `F6` | Version | `version` | Always | Integer from 1, raised on every update |
 | `F7` | Files | `files` | Always | List of paths relative to the asset root |
 | `F8` | Source type | `source_type` | Always | `ai-generation`, `procedural-generation`, `third-party`, or `human-made` |
-| `F9` | Tool role | `tool_role` | Agent-generated | `role` (`TL.<n>`) and `adr` (its ADR ID) |
+| `F9` | Tool role | `tool_role` | Agent-generated | `role` (`TL.<n>`) and `adr` (its ADR ID, or `adr-free` when [`docs/asset-tools.md`](../../../docs/asset-tools.md) marks the tool ADR-free) |
 | `F10` | Recipe | `recipe` | Agent-generated | `AK-<name>.R<n>` |
 | `F11` | Generation record | `generation` | Generated | Prompt as run, seed, settings, input asset and `REF` IDs. Person-supplied: the tool, and whatever of these the person can supply |
 | `F12` | License | `license` | Always | Third-party: source, license, attribution, where proof of purchase is kept. Generated: the tool's terms. Human-made: rights the author grants |

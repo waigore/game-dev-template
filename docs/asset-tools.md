@@ -1,6 +1,6 @@
 # Asset tools
 
-Known tools for the asset pipeline, and the tools this project bans. Specs stay product-neutral: a generation tool realizes a tool role in [`specs/assets/tools.md`](../specs/assets/tools.md) through an Accepted Integration ADR. Touch-up tools listed here need no ADR; agents use them through `APR.touch-up` ([`specs/assets/procedures/touch-up.md`](../specs/assets/procedures/touch-up.md)).
+Known tools for image generation, editing, and touch-up, and the tools this project bans. Specs stay product-neutral: most generation tools realize a tool role in [`specs/assets/tools.md`](../specs/assets/tools.md) through an Accepted Integration ADR. Tools this file marks **ADR-free**, and touch-up options, need no ADR. Touch-ups run through `APR.touch-up` ([`specs/assets/procedures/touch-up.md`](../specs/assets/procedures/touch-up.md)).
 
 ## Banned tools
 
@@ -8,19 +8,39 @@ Known tools for the asset pipeline, and the tools this project bans. Specs stay 
 |------|-------|
 | Pixellab | Never used for anything. Agents do not call it, even when its MCP server is connected. No Integration ADR may name it. `register-asset` refuses assets made or edited with it. CI rejects catalog entries whose generation or touch-up tool names it. |
 
-## Touch-up
+## Preference
 
-A touch-up is an optional edit to an asset's files that brings it closer to its kind spec, the style in [`specs/aesthetics/`](../specs/aesthetics/aesthetics.md), or a quality target. It is never required and never replaces a recipe. Each one is recorded in the asset's catalog entry (`touchups`, `CAT.F19`); the source type stays as it was.
+| Situation | Prefer |
+|-----------|--------|
+| Exploratory work, style definition, editing, graphic design, vector art | Recraft |
+| Default when Recraft can do the job | Recraft |
+| High-throughput batch media generation (expect Recraft touch-up after) | fal.ai |
+| Specific model, capability Recraft lacks, or infrastructure-style runs | fal.ai |
+
+## Generation and design
 
 ### Recraft
 
-2D cleanup of raster or vector assets, such as background removal, inpainting, outpainting, and upscaling.
+Primary graphic design and 2D generation product for **any** work that needs image generation, editing, or touch-up — **raster and vector**. Create and refine illustration, icons, UI chrome, marketing stills, and similar; also inpaint, outpaint, background removal, upscale, and related edits.
 
-- **Options**: before choosing an operation, read Recraft's docs index, [`https://www.recraft.ai/docs/llms.txt`](https://www.recraft.ai/docs/llms.txt), and the pages it links for the operations that fit. Then check the connected MCP server's tool list. Operations, prices, and limits change, so do not rely on a remembered list.
-- **Access**: Recraft's hosted MCP server, `https://mcp.recraft.ai/mcp`. It signs in through the browser (OAuth) on first use, so no API key exists anywhere. Usage is billed to the person who signs in. If the server does not expose an operation, a person runs it in Recraft's web app, and the agent records that person as `run_by`.
-- **Terms**: before a touch-up, read Recraft's current terms and confirm the signed-in account's rights to output fit the definition's market constraints; record them in `terms`.
-- **Fit**: an operation that resamples or repaints pixels can break a pixel grid, a palette lock, or a fixed canvas. Rerun the kind spec's checks after every touch-up.
+- **ADR**: generation, editing, and touch-up with Recraft need **no** Integration ADR. A tool role may list Recraft as realized ADR-free; catalog `tool_role.adr` is then `adr-free`.
+- **Options**: before choosing an operation, read [`https://www.recraft.ai/docs/llms.txt`](https://www.recraft.ai/docs/llms.txt) and the pages it links. Then check the connected MCP tool list. Do not rely on a remembered list.
+- **Access**: hosted MCP `https://mcp.recraft.ai/mcp`, OAuth on first use, no API key in-repo. Usage billed to the signer. If MCP lacks an operation, a person runs it in Recraft's web app; record them as `run_by`.
+- **Terms**: confirm rights fit the definition's market constraints; record in `terms` / generation license fields.
+- **Fit**: resampling or repainting can break pixel grid, palette lock, or fixed canvas. Rerun kind checks after generation or touch-up.
 
-### Turning Recraft on
+### fal.ai
 
-The repository ships `recraft` disabled. Enable it locally per [`mcp.md`](mcp.md) (Cursor MCP toggle, or OpenCode/Grok `enabled` without committing), then sign in on first use. Use `setup-project-mcp` to discover, enable, or smoke-test.
+Raw generative-media infrastructure: search, price, and run many hosted models. High-throughput generation with more rough edges (setup, model choice, weaker style control). Output typically needs Recraft touch-up before it meets kind or style targets. Prefer Recraft for exploratory, style-definition, and editing work.
+
+- **ADR**: recipe tool roles that use fal need an Accepted Integration ADR (unlike Recraft).
+- **Access**: MCP per [`mcp.md`](mcp.md); `FAL_AI_KEY` outside the repo.
+- **Fit**: treat fal output as a draft pass; finish with Recraft when the kind or style requires it.
+
+## Touch-up
+
+A touch-up is an optional edit to an asset's files that brings it closer to its kind spec, aesthetics, or a quality target. It never replaces a recipe. Record in `touchups` (`CAT.F19`); source type stays as it was. Recraft (above) is the touch-up option; same access, terms, and fit rules.
+
+## Enabling MCP servers
+
+`recraft` and `fal` ship disabled. Enable locally per [`mcp.md`](mcp.md); use `setup-project-mcp`. Do not commit enabled state.
