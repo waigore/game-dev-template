@@ -10,6 +10,7 @@ Agents use the matching `create-project-*` skill so labels, sub-issues, and bloc
 | [body-shapes.md](body-shapes.md) | Canonical body templates (Epic / Task / Defect) |
 | [hierarchy.md](hierarchy.md) | Sub-issues, depth limit, blocked-by |
 | [workflow.md](workflow.md) | Status labels, transitions, evidence |
+| [workflow-dispatch.md](workflow-dispatch.md) | Background dispatch agents (one issue per run) |
 | [waves.md](waves.md) | Milestones as waves; description = expected deliverable; foundation; vertical epics; demo follow-on; wave audit |
 
 ## Types and labels

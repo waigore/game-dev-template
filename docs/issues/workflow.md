@@ -1,6 +1,6 @@
 # Issue workflow status
 
-Applies equally to Epic, Task, and Defect. Source of truth for status labels and transitions. Skills must follow this — do not invent parallel statuses.
+Applies equally to Epic, Task, and Defect. Source of truth for status labels and transitions. Skills must follow this — do not invent parallel statuses. Background dispatch: [workflow-dispatch.md](workflow-dispatch.md).
 
 ## Labels
 
@@ -58,4 +58,4 @@ Verification and acceptance must not be done in the same session that posted the
 | `verify-project-issue` | Independent verify pass / fail |
 | `accept-project-issue` | Accept / fail / clarify |
 
-Create skills always apply `status:pending-review` with the type label.
+Create skills always apply `status:pending-review` with the type label. Dispatch agents: [workflow-dispatch.md](workflow-dispatch.md).
