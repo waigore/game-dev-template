@@ -14,7 +14,7 @@ description: |-
 
 # Audit spec applicability
 
-Read-only audit of **Applies** / **N/A** claims across the spec stack. Fixes go through [`author-spec`](../author-spec/SKILL.md). Full checklist review is [`review-spec`](../review-spec/SKILL.md).
+Read-only audit of **Applies** / **N/A** claims across the spec stack. Fixes go through [`author-spec`](../author-spec/SKILL.md). Full checklist review is [`review-spec`](../review-spec/SKILL.md), which runs this audit on whole-spec review.
 
 **Edge list:** [`references/applicability-graph.md`](references/applicability-graph.md). Sourced from [`.agents/specs/rules/`](../../specs/rules/); do not invent edges.
 
@@ -59,5 +59,5 @@ Notes (optional): <non-blocking observations>
 
 - Read-only: do not edit `specs/` or `.agents/specs/rules/` while auditing.
 - Use only edges in the reference graph (or the rules files they cite). Do not invent carry-outs.
-- Do not run a full `review-spec` checklist unless the user also asked for a review.
-- Report back to the request source (chat, issue/PR comment, or calling agent), same as `review-spec`.
+- Do not run a full `review-spec` checklist. When invoked by `review-spec`, return the audit report to the caller; do not call `review-spec` back.
+- When run alone, report back to the request source (chat, issue/PR comment, or calling agent), same as `review-spec`.

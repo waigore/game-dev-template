@@ -3,14 +3,15 @@ name: review-spec
 description: |-
   Review a spec document (or the whole spec set) under specs/ against its review
   instructions in .agents/specs/, then report the verdict back to the requester
-  (chat, GitHub issue, PR, or calling agent).
+  (chat, GitHub issue, PR, or calling agent). Whole-spec review also runs the
+  applicability, terminology, and TBD audits; any Fail fails the overall verdict.
   Use when the user asks to review, check, or validate a spec such as the vision,
   definition, design, view, aesthetics, UX, playtest, asset pipeline, ADR, or
   technical design docs.
 
   Examples:
     - user: "Review specs/vision.md" → run vision review, reply in chat
-    - user: "Review the whole spec" → review every indexed spec, upstream first
+    - user: "Review the whole spec" → checklists upstream first, then audits
     - issue #14: "Review the design spec" → run design review, comment on #14
     - user: "Review specs/technical/" → run technical review, reply in chat
 ---
@@ -28,15 +29,21 @@ Review one spec document or the whole spec set and report the result to whoever 
    - **Whole spec**: every spec in the index, reviewed upstream first (in index order).
    - If a target has no review instructions, do not invent criteria; report it as not reviewable.
 2. **Review**: read [`.agents/specs/alignment.md`](../../specs/alignment.md), then follow the linked review instructions exactly, including their upstream reading and report shape. Run the aligned checks and the imposed conditions. Tag each finding `aligned` or `imposed`. Do not invent an imposed condition, a section, or a required field.
-3. **Summarize**: for a whole-spec review, open with an overall verdict (Fail if any spec fails), then each spec's report. Note when a downstream finding may stem from an upstream failure.
-4. **Report back to the source of the request**:
+3. **Whole-spec audits** (only when the target is the whole spec; skip for a specific doc or folder): run in this order, each at **whole set** scope, following that skill's steps and report shape:
+   1. [`audit-spec-applicability`](../audit-spec-applicability/SKILL.md)
+   2. [`audit-spec-terminology`](../audit-spec-terminology/SKILL.md)
+   3. [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) — full interactive flow (propose, confirm, `author-spec` for confirmed answers). TBDs are TBDs wherever they appear; use judgment when presenting them so the report stays clear (do not dump the same TBD twice without need). Open TBDs after that flow are Fail for the TBD audit.
+4. **Summarize**: for a whole-spec review, open with an overall verdict (**Fail** if any checklist Fail, or if applicability Fail, terminology Fail, or the TBD audit still has open TBDs), then each checklist report, then each audit report. Note when a downstream finding may stem from an upstream failure. For a single-doc review, the checklist verdict alone is the overall verdict.
+5. **Report back to the source of the request**:
    - **Chat**: reply with the report.
    - **GitHub issue or PR**: post the report as a comment on it (`gh issue comment` / `gh pr comment`); if the request also came through chat, reply there with the outcome and comment link.
    - **Another skill or agent**: return the report to the caller.
 
 ## Rules
 
-- Read-only: do not edit specs while reviewing. Fixes happen in a separate step.
+- Read-only for checklist review: do not edit specs while reviewing checklists. Fixes happen in a separate step. The TBD audit may edit via `author-spec` only for answers the user confirmed.
 - Writing rules live in [`.agents/specs/rules/`](../../specs/rules/README.md), not in the spec. Do not treat a missing rules section inside the spec as a defect. Fail a spec that pastes those rules back in, or that drops its authoring-rules link. [alignment.md](../../specs/alignment.md) is the contract between those rules and the checklist.
 - Do not change issue labels or status; callers that run the issue workflow gate status themselves via [`enforce-task-workflow-status`](../enforce-task-workflow-status/SKILL.md).
 - Use the report shape defined by the review instructions; do not restate their checklists here or in the report.
+- Do not run the three audits on a single-doc or folder review unless the user separately asks for an audit.
+- When invoking an audit skill, do not let it call back into this skill.
