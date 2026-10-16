@@ -35,7 +35,7 @@ Epic / Task / Defect forms live in `.github/ISSUE_TEMPLATE/`. Agents create issu
 
 ## Skills
 
-Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md)). Authoring and native facades: [`docs/skills.md`](docs/skills.md).
+Canonical skills and catalog: [`.agents/`](.agents/) ([README](.agents/README.md)). Authoring and native facades: [`docs/skills.md`](docs/skills.md). MCP setup (add / enable / test; no credentials in-repo): `setup-project-mcp` — [`docs/mcp.md`](docs/mcp.md).
 
 ## Key files and directories
 
