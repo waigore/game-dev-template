@@ -55,11 +55,11 @@ Required check ([`pr-hygiene.yml`](../.github/workflows/pr-hygiene.yml)); re-run
 
 ## Auto-merge
 
-Every same-repo, non-draft PR squash-merges as soon as required checks pass on a branch up to date with `main` ([`automerge.yml`](../.github/workflows/automerge.yml)). If `main` moves, update the branch (`gh pr update-branch`). Open ready for review by default. Instead:
+Every same-repo, non-draft PR squash-merges as soon as required checks pass on a branch up to date with `main` ([`automerge.yml`](../.github/workflows/automerge.yml)). If `main` moves, update the branch (`gh pr update-branch`). Open ready for review by default (no `no-automerge` label).
 
 - Open as **draft** (`gh pr create --draft`) while work is incomplete.
-- Add the **`no-automerge`** label when a human must review first, the PR depends on another unmerged PR, or you are unsure the change is safe to land.
+- Add the **`no-automerge`** label only when the user explicitly asks to hold auto-merge. Agents never apply it on their own.
 
 ## Spec PRs
 
-Spec content captured or decided with the user (`capture-requirements`, `audit-spec-tbd`), including [requirement notes](requirements/README.md), always opens with `no-automerge`, so the product owner reviews it before it lands: `gh pr create --label no-automerge …`. Branch `chore/spec-<slug>` unless an issue covers it. **Authority** cites the authoring-rules file and the upstream specs the content traces to.
+Spec content captured or decided with the user (`capture-requirements`, `audit-spec-tbd`), including [requirement notes](requirements/README.md), opens like any other PR (auto-merge on green). Branch `chore/spec-<slug>` unless an issue covers it. **Authority** cites the authoring-rules file and the upstream specs the content traces to.

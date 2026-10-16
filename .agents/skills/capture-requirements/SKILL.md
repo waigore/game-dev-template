@@ -57,7 +57,7 @@ When the user's input goes beyond the target (often a long first prompt), sort e
 3. **Sort and interview**. Sort the input per **Detailed input**. Derive questions from required sections, placeholders, and gaps vs the rules; lead each with its proposed answer from the input or notes when one exists. Prefer few focused rounds over a dump. For already-filled sections, ask only to confirm or revise. Raise conflicts. When the user has not decided something, record it as TBD per [Undecided aspects](../../specs/rules/README.md#undecided-aspects-tbd); do not invent product decisions. In the high-level stage, point out when a TBD would be blocking.
 4. **Confirm**. Short bullet summary per target of what will be written, each TBD with its open question, the notes to save, and the notes consumed or rejected; wait for user OK or corrections.
 5. **Author**. Run [`author-spec`](../author-spec/SKILL.md) for each target with the confirmed answers. Save new notes and prune consumed or rejected ones.
-6. **Open a spec PR** per [Spec PRs](../../../docs/pull-requests.md#spec-prs) (labeled `no-automerge`), covering the specs and notes of this run.
+6. **Open a spec PR** per [Spec PRs](../../../docs/pull-requests.md#spec-prs), covering the specs and notes of this run.
 7. **Offer the next target**: per step 1 with none named, and ask whether to continue now. A new target is a new run of these steps. Optionally note `review-spec` (whole-spec review runs the audit skills too), and `audit-spec-tbd` when TBDs remain; do not run them.
 
 ## Rules
