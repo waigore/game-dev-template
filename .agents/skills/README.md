@@ -10,6 +10,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules: [`docs/skills.md`
 |-------|---------|
 | [`ensure-project-setup`](ensure-project-setup/SKILL.md) | Check first-time setup is done; apply gaps via `setup-github-repo` |
 | [`setup-github-repo`](setup-github-repo/SKILL.md) | Apply and verify first-time GitHub settings (Actions, `main` ruleset, squash-only, auto-merge, labels) |
+| [`setup-project-mcp`](setup-project-mcp/SKILL.md) | Add, enable, disable, or smoke-test MCP servers for Cursor / OpenCode / Grok; credentials never in-repo |
 | [`create-project-label`](create-project-label/SKILL.md) | Add a label to config + docs and sync to GitHub |
 | [`create-project-epic`](create-project-epic/SKILL.md) | Create an Epic issue (`type:epic`) on GitHub |
 | [`create-project-task`](create-project-task/SKILL.md) | Create a Task issue (`type:task`) with parent/blocked-by wiring |

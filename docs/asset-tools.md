@@ -23,10 +23,4 @@ A touch-up is an optional edit to an asset's files that brings it closer to its 
 
 ### Turning Recraft on
 
-The repository ships the server disabled for each agent client. A person enables it locally and signs in on first use:
-
-| Client | Config | Enable |
-|--------|--------|--------|
-| Cursor | [`.cursor/mcp.json`](../.cursor/mcp.json) | Turn on `recraft` in Cursor's MCP settings |
-| OpenCode | [`opencode.json`](../opencode.json) | Set `mcp.recraft.enabled` to `true` locally, without committing it |
-| Grok | [`.grok/config.toml`](../.grok/config.toml) | Set `enabled = true` under `[mcp_servers.recraft]` locally, without committing it |
+The repository ships `recraft` disabled. Enable it locally per [`mcp.md`](mcp.md) (Cursor MCP toggle, or OpenCode/Grok `enabled` without committing), then sign in on first use. Use `setup-project-mcp` to discover, enable, or smoke-test.
