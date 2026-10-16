@@ -2,8 +2,9 @@
 name: review-asset
 description: |-
   Review produced assets against their kind spec in specs/assets/ and the
-  style in specs/aesthetics/: catalog record, specification, budgets, kind
-  checks, style pillars, readability at on-screen size, content limits, and
+  style in specs/aesthetics/: catalog record, style series binding,
+  structured generation, specification, budgets, kind checks, style pillars,
+  palette/hierarchy/silhouette/contrast, readability, content limits, and
   license. Pass/Fail with findings tagged by element ID. Read-only.
   Use from manage-asset after generation, from verify-project-issue when a PR
   adds or changes assets, or on demand.
@@ -21,23 +22,25 @@ Read-only review of produced assets. Spec review of `specs/assets/` itself is [`
 ## Steps
 
 1. **Resolve the scope**: named asset IDs, every catalog entry a PR adds or changes, or every entry of one kind. Drop review-exempt entries (`CAT.F17`) unless they were named explicitly; for each one dropped, check only that the exemption is valid (names the person who granted it, with date and reason) and the catalog checks below. A review of a named exempt entry is advisory: report it, but it does not change the asset's state.
-2. **Load** each entry file from the catalog root the asset hub names, its kind spec, the aesthetics elements the kind cites (and their pillars), `specs/aesthetics/aesthetics.md` content limits, the reference sheets and `REF` images they point to, and the view values the kind cites.
-3. **Inspect** each asset's files. Open images directly. Measure what can be measured (canvas size, colors used against the palette set, frame count, duration, loudness, file size) with commands in the repository's environment. Compare against reference sheets and style anchors.
+2. **Load** each entry file from the catalog root the asset hub names, its kind spec (including Style series `SS1`), the aesthetics elements the kind cites (and their pillars), content limits, reference sheets and `REF` images, style anchors, and the view values the kind cites.
+3. **Inspect** each asset's files. Open images directly. Measure what can be measured (canvas size, colors vs palette set, frame count, duration, loudness, file size). Compare against reference sheets, style anchors, and lineup/silhouette rules.
 4. **Check**, recording each failure with the ID it breaks:
-   - **Catalog**: every field `catalog/fields.md` requires for the entry's source type and state; the cited coverage, serves, recipe, and tool role IDs exist; per **Asset IDs** in `catalog.md`, the asset ID is a valid UUID version 7 (`is_asset_id` in `.github/scripts/new_asset_id.py`), and neither it nor the handle is used by any other entry, deprecated ones included; the handle's prefix is a kind spec the hub names; each touch-up (`CAT.F19`) is recorded in full, with `agreed_by` for a person-supplied asset; no generation or touch-up tool is one that [`docs/asset-tools.md`](../../../docs/asset-tools.md) bans.
-   - **Specification and budgets**: every `S` and `B` row of the kind spec.
-   - **Kind checks**: every `K` row, by its stated method.
-   - **Style**: each cited aesthetics element, and each cited pillar's "conforms if…" test.
-   - **Readability**: silhouette and color rules at the smallest on-screen size, when the kind is seen in play.
-   - **Content limits** and **license**: nothing the aesthetics forbid; license terms recorded and fit the definition's market constraints.
-5. **Judge what you cannot measure**. When a check needs a human, such as listening for sound style, report it as `needs human` rather than passing it.
-6. **Report** in the shape below to the request source (chat, issue or PR comment, or calling skill).
+   - **Catalog**: every field `catalog/fields.md` requires; cited coverage, serves, recipe, tool role IDs exist; asset ID is UUID v7 and unique with handle; touch-ups (`CAT.F19`) complete (`agreed_by` when person-supplied); for agent-generated entries, structured `generation` has `prompt`, `tool`, `operation`, `settings`, `inputs` (and `series` / `input_style_id` when the kind series is `active`); no banned tools.
+   - **Style series**: when the kind Style series is `active`, entry `generation.series` / `settings.input_style_id` matches the registry `recraft_style_id` and series id; bootstrap-only runs are allowed only when series is not `active`.
+   - **Specification and budgets**: every `S` and `B` row.
+   - **Kind checks**: every `K` row by its method.
+   - **Style / identity**: cited aesthetics elements and pillars; palette, size/shape hierarchy, silhouettes, and contrast the series `prompt_policy` cites (three pillars: styling, prompting record, this visual review).
+   - **Readability**: silhouette and color at smallest on-screen size when seen in play.
+   - **Content limits** and **license**.
+5. **Judge what you cannot measure** as `needs human` rather than passing it.
+6. **Report** in the shape below.
 
 ## Finding tags
 
 | Tag | Meaning |
 |-----|---------|
 | `catalog` | Entry missing a required field or citing an ID that does not exist |
+| `series` | Style series binding missing or mismatched vs kind registry |
 | `spec` | Breaks a kind specification row |
 | `budget` | Exceeds a kind budget |
 | `check` | Fails a kind check |
@@ -64,6 +67,6 @@ Needs human: <items, or none>
 
 ## Rules
 
-- Read-only: do not edit assets, the catalog, or specs. Fixes go through `manage-asset`. A suggested fix may be a touch-up (`APR.touch-up`) when an edit would fix the finding; name the touch-up option from `docs/asset-tools.md` and the operation its docs offer.
+- Read-only: do not edit assets, the catalog, or specs. Fixes go through `manage-asset` or `establish-asset-style`. A suggested fix may be a touch-up (`APR.touch-up`) when an edit would fix the finding.
 - Judge against the specs only. Do not invent style criteria; a gap in the specs is a note for `author-spec`, not a finding.
 - Do not change issue labels or status.

@@ -4,27 +4,25 @@ Read this before editing `specs/assets/procedures.md` or a file split from it. D
 
 Also read [assets.md](assets.md), [tools.md](tools.md), and [catalog.md](catalog.md).
 
-How an agent generates, imports, reviews, updates, and deprecates assets. Steps are agent-facing. Cite tools by role ID. Do not restate catalog fields (`catalog.md`) or recipes (kind specs). No product names.
+How an agent generates, imports, reviews, updates, and deprecates assets. Steps are agent-facing. Cite tools by role ID. Do not restate catalog fields (`catalog.md`) or recipes (kind specs). Product names only where `docs/asset-tools.md` locks a capability (style series uses Recraft).
 
 ## When to run
 
-State that asset work is tracked by a task issue whose deliverables name asset IDs or kind coverage rules (`AK-<name>.V<n>`), that assets land through PRs, that the `manage-asset` skill runs these procedures, and that the `register-asset` skill runs `APR.register`.
+State that asset work is tracked by a task issue whose deliverables name asset IDs or kind coverage rules (`AK-<name>.V<n>`), that assets land through PRs, that `manage-asset` runs generate/import/update/deprecate/touch-up, `establish-asset-style` runs `APR.establish-style`, and `register-asset` runs `APR.register`.
 
 ## Procedures
 
-One subsection per procedure, by name: `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, `APR.deprecate`, `APR.touch-up`. Each states its trigger, inputs, ordered steps, and outputs (files and catalog changes).
+One subsection per procedure: `APR.generate`, `APR.import`, `APR.register`, `APR.review`, `APR.update`, `APR.deprecate`, `APR.touch-up`, `APR.establish-style`. Each states trigger, inputs, ordered steps, and outputs.
 
-- **Generate**: pick the kind spec and coverage rule; add a draft entry with a new asset ID; run the recipe through its tool role; post-process; run the kind's checks; record the generation record; run `APR.review`.
-- **Import**: a third-party asset. Confirm the license against the definition's market constraints before download; record source, license, attribution, and proof of purchase; post-process to the kind's specification; run its checks and `APR.review`.
-- **Register**: an asset a person supplies, of any source type, including one they generated with their own tool. Record the supplier, the source type, and the rights or license (for a generated asset, the tool, its terms, and what generation record the person can supply); ask that person whether to grant a review exemption and record the answer; save files per the kind's naming; then approve on merge if exempt, or run `APR.review`.
-- **Review**: skip review-exempt entries unless review is requested, and then the verdict is advisory. Otherwise run `review-asset`; record the verdict; approve per the hub's **Approval** rule.
-- **Update**: keep the asset ID, raise its version, record the reason; regenerate or edit per the recipe; run checks and `APR.review`; re-check assets built from it.
-- **Deprecate**: set the state, the reason, and the successor ID if any. Main code stops using it first. State when its files may be deleted.
-- **Touch-up**: lives in `procedures/touch-up.md`, linked from an `APR.touch-up` subsection. Optional edits (such as background removal, inpainting, outpainting, upscaling, vectorizing) through the touch-up options in `docs/asset-tools.md`, which need no Integration ADR; never a banned tool. A person-supplied asset needs that person's agreement first. Keep the asset ID and source type; on an approved asset, run inside Update. Record each operation in the touch-up record; rerun checks and `APR.review`.
+- **Generate**: pick kind and coverage; if the kind’s style series is `active`, require its registered style id and series prompt template; if `none`/`bootstrapping`, only bootstrap seed runs (no full series generate). Compose prompt from recipe template + series `prompt_policy` (master + negative). Add draft entry; run recipe; post-process; checks; record structured generation (and series copy); `APR.review`.
+- **Import** / **Register** / **Review** / **Deprecate**: as today’s skeleton (license, supplier, exemption, review-asset, successor).
+- **Update**: keep asset ID; raise version; append `history` snapshot before overwriting generation; prefer prior prompt as guide; keep series style when `active`; checks and review; re-check dependents.
+- **Touch-up**: `procedures/touch-up.md`. Respect series negatives; do not clear series binding.
+- **Establish-style**: `procedures/establish-style.md`. Bootstrap anchors → create Recraft style → write kind Style series registry → `active`. Refresh when `stale`.
 
 ## Consistency
 
-How a set stays consistent: which approved assets serve as style anchors for each kind, how a set (all directions or frames of one subject) is made in one batch with shared inputs, and what triggers re-review (a changed aesthetics element, a changed recipe, or a changed tool role).
+Point **Style anchors** at each kind’s Style series registry (`SS1`). Visual identity uses three pillars: enforced styling (anchors + Recraft style id), master/negative `prompt_policy`, and visual review. Sets: variants of one subject in one batch with shared inputs. Re-review when aesthetics, recipe, tool role, or style series changes. Seed may be `n/a` when the tool has no seed.
 
 ## Failure handling
 

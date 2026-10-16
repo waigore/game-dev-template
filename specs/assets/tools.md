@@ -20,4 +20,4 @@ Credentials never enter the repository.
 
 Every role a recipe uses needs an Accepted Integration ADR that realizes all of its required capabilities, **or** realization by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) marks ADR-free (today: Recraft). Until then the role is Pending and its recipes do not run. An ADR that changes a role reopens every recipe that uses it for review.
 
-Touch-ups ([`APR.touch-up`](procedures/touch-up.md)) are not tool roles and need no ADR. No role is realized by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) bans.
+Style-series establish and style-constrained generate require the custom-style / apply-style-id capability, realized only by Recraft (ADR-free) per that doc. Touch-ups ([`APR.touch-up`](procedures/touch-up.md)) are not tool roles and need no ADR. No role is realized by a tool that [`docs/asset-tools.md`](../../docs/asset-tools.md) bans.
