@@ -14,7 +14,7 @@ description: |-
 
 # Audit spec terminology
 
-Read-only audit of **shared language** across design, view, aesthetics, UX, asset pipeline, and technical specs. Fixes go through [`author-spec`](../author-spec/SKILL.md). Full checklist review is [`review-spec`](../review-spec/SKILL.md). Applicability (Applies/N/A) is [`audit-spec-applicability`](../audit-spec-applicability/SKILL.md).
+Read-only audit of **shared language** across design, view, aesthetics, UX, asset pipeline, and technical specs. Fixes go through [`author-spec`](../author-spec/SKILL.md). Full checklist review is [`review-spec`](../review-spec/SKILL.md), which runs this audit on whole-spec review. Applicability (Applies/N/A) is [`audit-spec-applicability`](../audit-spec-applicability/SKILL.md).
 
 **Ownership:** [`references/glossary-ownership.md`](references/glossary-ownership.md). **Risk words:** [`references/risk-lexicon.md`](references/risk-lexicon.md). **Maintaining those files:** [`references/README.md`](references/README.md).
 
@@ -64,5 +64,5 @@ Notes (optional): <non-blocking observations>
 - Do not fail ordinary English used once in prose. Fail terms of art, repeated domain nouns, and risk-lexicon hits.
 - Homonyms across domains are OK when each sense lives in the right glossary and usages stay in-domain or use a qualifier (e.g. "UI screen" vs playfield).
 - Do not invent finding tags beyond the table above.
-- Do not run a full `review-spec` checklist unless the user also asked for a review.
-- Report back to the request source (chat, issue/PR comment, or calling agent), same as `review-spec`.
+- Do not run a full `review-spec` checklist. When invoked by `review-spec`, return the audit report to the caller; do not call `review-spec` back.
+- When run alone, report back to the request source (chat, issue/PR comment, or calling agent), same as `review-spec`.

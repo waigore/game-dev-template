@@ -44,5 +44,5 @@ Not captured: <files still holding `<!-- fill in -->`, or none>
 
 - Never resolve a TBD without the user's confirmation, and never present a suggestion as decided.
 - Suggestions stay inside the rules and the upstream specs; a suggestion that would change scope, an objective, a platform, a constraint, or a quality target says so.
-- Do not edit `.agents/specs/rules/`, and do not run `review-spec` unless the user also asks.
-- Report back to the request source (chat, issue/PR comment, or calling agent), same as `review-spec`.
+- Do not edit `.agents/specs/rules/`. Do not run `review-spec`. When invoked by `review-spec`, keep the interactive confirm → `author-spec` flow, then return the TBD audit report (including remaining open TBDs) to the caller; do not call `review-spec` back.
+- When run alone, report back to the request source (chat, issue/PR comment, or calling agent), same as `review-spec`.

@@ -58,7 +58,7 @@ When the user's input goes beyond the target (often a long first prompt), sort e
 4. **Confirm**. Short bullet summary per target of what will be written, each TBD with its open question, the notes to save, and the notes consumed or rejected; wait for user OK or corrections.
 5. **Author**. Run [`author-spec`](../author-spec/SKILL.md) for each target with the confirmed answers. Save new notes and prune consumed or rejected ones.
 6. **Open a spec PR** per [Spec PRs](../../../docs/pull-requests.md#spec-prs) (labeled `no-automerge`), covering the specs and notes of this run.
-7. **Offer the next target**: per step 1 with none named, and ask whether to continue now. A new target is a new run of these steps. Optionally note `review-spec`, and `audit-spec-tbd` when TBDs remain; do not run them.
+7. **Offer the next target**: per step 1 with none named, and ask whether to continue now. A new target is a new run of these steps. Optionally note `review-spec` (whole-spec review runs the audit skills too), and `audit-spec-tbd` when TBDs remain; do not run them.
 
 ## Rules
 
