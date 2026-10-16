@@ -5,9 +5,9 @@ description: |-
   pipeline procedures in specs/assets/ against the style in specs/aesthetics/,
   record every change in the catalog's entry files, get each draft reviewed with
   review-asset, and open a PR. Spec first: only assets a coverage rule
-  requires, only through tool roles realized by Accepted ADRs. Optionally
-  touches up assets (background removal, inpainting, upscaling, and so on)
-  with the touch-up options in docs/asset-tools.md; never a banned tool.
+  requires, through tool roles realized by Accepted ADRs or ADR-free tools in
+  docs/asset-tools.md (Recraft for gen/edit/touch-up; fal needs an ADR).
+  Never a banned tool.
   Use when the user asks to create, generate, source, regenerate, replace,
   touch up, or retire art, animation, interface art, fonts, or audio.
 

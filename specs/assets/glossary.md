@@ -20,6 +20,6 @@ Authoring rules: [`.agents/specs/rules/assets/glossary.md`](../../.agents/specs/
 | Recipe | The repeatable way to make an asset: inputs, prompt, settings, and post-processing. | [`kinds/`](kinds/) |
 | Review exemption | A person's recorded decision that one asset skips `review-asset`. | [`assets.md`](assets.md) |
 | Style anchor | An approved asset used as an input so new assets match it. | [`procedures.md`](procedures.md) |
-| Tool role | A capability the pipeline needs, realized by an Accepted ADR. | [`tools.md`](tools.md) |
+| Tool role | A capability the pipeline needs, realized by an Accepted ADR or an ADR-free tool in [`docs/asset-tools.md`](../../docs/asset-tools.md). | [`tools.md`](tools.md) |
 | Touch-up | An optional edit to an asset's files, such as background removal, inpainting, or upscaling, recorded in its entry. | [`procedures/touch-up.md`](procedures/touch-up.md) |
 | <!-- fill in --> | <!-- fill in --> | <!-- fill in --> |
