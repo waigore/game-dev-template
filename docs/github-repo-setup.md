@@ -22,11 +22,11 @@ A **ruleset** (**Settings → Rules → Rulesets**) targeting `main`, enforcemen
 | Restrict deletions | On |
 | Block force pushes | On |
 | Require a pull request before merging | On; 0 required approvals (baseline; tighten later if needed) |
-| Require status checks to pass | On; **require branches to be up to date**; checks `Spec lint` ([`spec-lint.yml`](../.github/workflows/spec-lint.yml)), `PR hygiene` ([`pr-hygiene.yml`](../.github/workflows/pr-hygiene.yml)), `Code lint` ([`code-lint.yml`](../.github/workflows/code-lint.yml)) |
+| Require status checks to pass | On; **require branches to be up to date**; checks: `Spec lint`, `PR hygiene`, `Code lint`, `Unit tests`, `Coverage` (workflows under [`.github/workflows/`](../.github/workflows/)) |
 
 Existing classic branch protection on `main` may stay; GitHub enforces the stricter of both. Do not remove or weaken it without the user's confirmation. A check appears in the UI picker only after it has run once; the API accepts check names before then.
 
-Outcome: changes reach `main` only via PR; no one bypasses; PRs merge (or auto-merge) only when the three checks pass on a branch up to date with `main`.
+Outcome: changes reach `main` only via PR; no one bypasses; PRs merge (or auto-merge) only when the five checks pass on a branch up to date with `main`.
 
 ## 3. Merge settings
 
