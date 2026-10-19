@@ -10,6 +10,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 |-------|---------|
 | [`ensure-project-setup`](ensure-project-setup/SKILL.md) | Check first-time setup is done; apply gaps via `setup-github-repo` |
 | [`ensure-dev-env-setup`](ensure-dev-env-setup/SKILL.md) | Explicit-only: invent and best-effort install/verify game stack + asset tools from Accepted ADRs; then `setup-unit-test-ci` |
+| [`ensure-open-design-skill-setup`](ensure-open-design-skill-setup/SKILL.md) | Explicit-only: git clone/pull Open Design skill + content under `~/.open-design-skill/`; optional user-local Cursor/OpenCode/Grok symlinks |
 | [`setup-github-repo`](setup-github-repo/SKILL.md) | Apply and verify first-time GitHub settings (Actions, `main` ruleset, squash-only, auto-merge, labels) |
 | [`setup-unit-test-ci`](setup-unit-test-ci/SKILL.md) | Wire Unit tests + Coverage CI from sources or Engine/framework ADRs; sync conventions + workflow; require both checks |
 | [`setup-project-mcp`](setup-project-mcp/SKILL.md) | Add, enable, disable, or smoke-test MCP servers for Cursor / OpenCode / Grok; credentials never in-repo |
