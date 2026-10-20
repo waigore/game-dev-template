@@ -14,6 +14,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`setup-github-repo`](setup-github-repo/SKILL.md) | Apply and verify first-time GitHub settings (Actions, `main` ruleset, squash-only, auto-merge, labels) |
 | [`setup-unit-test-ci`](setup-unit-test-ci/SKILL.md) | Wire Unit tests + Coverage CI from sources or Engine/framework ADRs; sync conventions + workflow; require both checks |
 | [`setup-project-mcp`](setup-project-mcp/SKILL.md) | Add, enable, disable, or smoke-test MCP servers for Cursor / OpenCode / Grok; credentials never in-repo |
+| [`manage-agent-orc`](manage-agent-orc/SKILL.md) | Set up, configure, run, and monitor the agent-orc skill-agent daemon (facade over `agent-orc/docs/`) |
 | [`create-project-label`](create-project-label/SKILL.md) | Add a label to config + docs and sync to GitHub |
 | [`create-project-epic`](create-project-epic/SKILL.md) | Create an Epic issue (`type:epic`) on GitHub |
 | [`create-project-task`](create-project-task/SKILL.md) | Create a Task issue (`type:task`) with parent/blocked-by wiring |
