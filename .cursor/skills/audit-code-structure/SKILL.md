@@ -3,8 +3,9 @@ name: audit-code-structure
 description: |-
   Audit implementation code for structure and technical debt against
   docs/solid.md, docs/coding-conventions.md, structure continuity, and four
-  smells (duplication, dead code, awkward seams, parallel structure). Each
-  finding includes a proposed target or a decision the target needs. Read-only.
+  smells (duplication, dead code, awkward seams, parallel structure). Prefer
+  code no accepted or closed refactor issue has named, then the oldest such
+  date. Extend each target to its structural boundary. Read-only.
   Use for the whole implementation tree or a named portion, when the user wants
   findings without filing issues, or when suggest-code-refactors asks for the audit.
 

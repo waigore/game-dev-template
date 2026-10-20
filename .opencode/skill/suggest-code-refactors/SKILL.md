@@ -2,9 +2,10 @@
 name: suggest-code-refactors
 description: |-
   Review implementation code for structure and technical debt and file the
-  refactor epics and tasks that judgement selects. Thin orchestrator over
-  audit-code-structure, create-project-epic, and create-project-task. Does not
-  edit the repo. Filing needs no second confirmation.
+  refactor epics and tasks that judgement selects, labeled refactor. A task
+  may exceed one PR when a split would hide the structure. Thin orchestrator
+  over audit-code-structure, create-project-epic, and create-project-task.
+  Does not edit the repo. Filing needs no second confirmation.
   Use when the user asks for a structure review, refactor suggestions, or a
   technical-debt pass over the implementation tree or a named portion.
 

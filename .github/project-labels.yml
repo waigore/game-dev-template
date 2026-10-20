@@ -34,3 +34,6 @@
 - name: no-automerge
   color: "B60205"
   description: "PR: opt out of automatic squash-merge (user-requested only)"
+- name: refactor
+  color: "C5DEF5"
+  description: "Structure refactor. An accepted or closed issue marks the paths it names as refactored."

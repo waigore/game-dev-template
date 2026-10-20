@@ -40,8 +40,9 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the whole set; whole-spec also runs applicability, terminology, and TBD audits; report verdict |
 | [`serve-ux-mockups`](serve-ux-mockups/SKILL.md) | Explicit-only: serve `specs/ux/mockups/` on the LAN with a generated index, open it in the browser, and report localhost and LAN URLs |
 | [`review-code`](review-code/SKILL.md) | Review code vs `docs/solid.md` (SOLID + continuity) and `docs/coding-conventions.md` (project rules + Code lint / Unit tests / Coverage); Pass/Fail, read-only |
-| [`audit-code-structure`](audit-code-structure/SKILL.md) | Audit implementation structure and debt (SOLID, conventions, continuity, duplication, dead code, seams, parallel structure); proposed targets; read-only |
-| [`suggest-code-refactors`](suggest-code-refactors/SKILL.md) | File refactor epics and tasks from an `audit-code-structure` pass; judgement sizes the cut; no repo edits |
+| [`audit-code-structure`](audit-code-structure/SKILL.md) | Audit implementation structure and debt; stale-first via the `refactor` label; targets extend to the structural boundary; read-only |
+| [`suggest-code-refactors`](suggest-code-refactors/SKILL.md) | File `refactor`-labeled epics and tasks from an `audit-code-structure` pass; a task may exceed one PR; no repo edits |
+| [`project-tech-debt-agent`](project-tech-debt-agent/SKILL.md) | Whole-tree tech-debt pass; thin facade over `suggest-code-refactors` |
 | [`audit-spec-applicability`](audit-spec-applicability/SKILL.md) | Audit Applies/N/A upstream grounds and downstream carry-outs; report for author-spec |
 | [`audit-spec-terminology`](audit-spec-terminology/SKILL.md) | Audit glossary ownership and term usage (undefined, drift, synonyms, homonyms); report for author-spec |
 | [`audit-spec-tbd`](audit-spec-tbd/SKILL.md) | Find TBDs (undecided aspects), propose grounded answers, confirm with the user, then author-spec |

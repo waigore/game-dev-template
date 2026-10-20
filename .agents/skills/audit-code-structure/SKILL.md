@@ -3,8 +3,9 @@ name: audit-code-structure
 description: |-
   Audit implementation code for structure and technical debt against
   docs/solid.md, docs/coding-conventions.md, structure continuity, and four
-  smells (duplication, dead code, awkward seams, parallel structure). Each
-  finding includes a proposed target or a decision the target needs. Read-only.
+  smells (duplication, dead code, awkward seams, parallel structure). Prefer
+  code no accepted or closed refactor issue has named, then the oldest such
+  date. Extend each target to its structural boundary. Read-only.
   Use for the whole implementation tree or a named portion, when the user wants
   findings without filing issues, or when suggest-code-refactors asks for the audit.
 
@@ -29,7 +30,7 @@ Use the first match:
 
 Always exclude `demos/` unless the user explicitly includes a path under `demos/`. Exclude docs, specs, agent skills and rules, and other non-implementation paths. If a named path is not implementation code, skip it and say so. If nothing remains, report no findings and stop.
 
-When the scope is a portion, read surrounding callers and siblings far enough to judge continuity and seams.
+Always read the whole implementation tree. A named portion prefers findings centered there. It does not limit what the audit reads.
 
 ## Sources
 
@@ -42,6 +43,12 @@ Apply, in precedence order:
 A higher source wins. Do not invent principles or convention rules.
 
 **Conventions file:** if the Rules table says `None — SOLID only`, skip convention checks and note that. If it still holds placeholders, skip them and note "conventions not filled in". A rule that contradicts `docs/solid.md` is one `CONV` finding against `docs/coding-conventions.md`; do not apply that rule to code.
+
+## Staleness
+
+List issues labeled `refactor` in every state. Count one only when it is closed or has `status:accepted`. A path named in that issue's body was refactored on the close date, or on the date it gained `status:accepted` if it is still open.
+
+Order findings by the oldest such date among the paths they touch. Paths with no such issue sort first.
 
 ## Smells
 
@@ -62,7 +69,7 @@ For the resolved scope:
 
 1. Check **SRP**, **OCP**, **LSP**, **ISP**, **DIP**, each applicable convention, continuity, then the smells.
 2. One problem, one finding, best-fitting tag. Cite paths and a line range when clear.
-3. **Proposed target:** name the structure change (extract, merge, delete, invert a dependency, extend an existing seam) and the paths it touches. Describe the target; do not paste a replacement implementation. The target must obey the source precedence.
+3. **Proposed target:** name the structure change (extract, merge, delete, invert a dependency, extend an existing seam) and the paths it touches. Extend it to every implementation path on that structural boundary, including recently refactored paths, when leaving them out would leave the structure broken. Describe the target; do not paste a replacement implementation. The target must obey the source precedence.
 4. If a sound target would invent an architecture or product decision that is not already specified, do not invent it. Mark the finding `needs decision` and state the question.
 5. Note finding ids that share a seam so the caller can group them.
 
@@ -75,8 +82,8 @@ For the resolved scope:
 **Excluded:** demos/ | <skipped paths>
 
 ### Findings
-- `F1` `[TAG]` — paths — evidence — proposed target
-- `F2` `[TAG]` — paths — evidence — needs decision: <question>
+- `F1` `[TAG]` stale | refactored <date> — paths — evidence — proposed target
+- `F2` `[TAG]` stale | refactored <date> — paths — evidence — needs decision: <question>
 
 ### Notes
 (optional: conventions status, shared seams, non-implementation paths skipped)
