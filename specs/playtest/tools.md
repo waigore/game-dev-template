@@ -31,7 +31,7 @@ Sinks and formats are ADR decisions. Seams live in technical verification.
 
 ## Capture affordance
 
-A running playtest session must be observable so screenshots and logs can be written under `docs/playtest/evidence/` per [`evidence.md`](evidence.md).
+A running playtest session must be observable. A headless session still yields inspect, telemetry, and logs. A graphical session can capture screenshots. Artifact rules, including when screenshots are required, live in [`evidence.md`](evidence.md).
 
 ## Situational
 

@@ -24,7 +24,7 @@ Required at `status:pending-acceptance` (`accept-project-issue`) when the issue'
 
 ## Evidence
 
-Root: [`docs/playtest/evidence/`](../../docs/playtest/evidence/). Each required run records story IDs, pass/fail, screenshots, notes, and logs. Schema: [`evidence.md`](evidence.md).
+Root: [`docs/playtest/evidence/`](../../docs/playtest/evidence/). Each required run records story IDs, pass/fail, notes, and logs. Screenshots come from a graphical re-run of the same build and are required before acceptance, unless the protocol says none. A headless run may omit them without a defect. Schema: [`evidence.md`](evidence.md).
 
 ## Architecture constraints
 
