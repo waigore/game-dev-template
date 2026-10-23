@@ -78,7 +78,7 @@ gate:
 
 `project-planner-agent` has no gate (always eligible).
 
-`babysit-pr-agent` gates with [`.agents/skills/babysit-pr-agent/scripts/gate.sh`](../../.agents/skills/babysit-pr-agent/scripts/gate.sh) (exit 0 when a same-repo open PR is conflicted, behind its base, or has a failing check). Provider: `cursor`.
+`babysit-pr-agent` gates with [`.agents/skills/babysit-pr-agent/scripts/gate.sh`](../../.agents/skills/babysit-pr-agent/scripts/gate.sh) (exit 0 when a same-repo open PR is conflicted, behind, or failing checks, or when more than three have queued/in-progress checks). Provider: `cursor`.
 
 ## Child projects
 
