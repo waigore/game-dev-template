@@ -1,7 +1,7 @@
 name: Task
 description: Concrete unit of work for agents with clear deliverables and acceptance criteria.
 title: ""
-labels: ["type:task", "status:pending-review"]
+labels: ["type:task", "status:pending-review", "priority:normal"]
 body:
   - type: markdown
     attributes:

@@ -26,14 +26,15 @@ Create a repository **Defect** (`type:defect`).
 2. **Collect** `title` and content for every required Defect section; optional reproduction, context, `related`, `parent`, `blocked_by`, `blocking`. Ask if required content is missing.
 3. **Build** the body exactly as specified in `body-shapes.md`.
 4. If `--no-create` / "draft only": print title + body and stop.
-5. **Create**: `gh issue create --title "…" --label "type:defect" --label "status:pending-review" --body "…"`.
+5. **Create**: `gh issue create --title "…" --label "type:defect" --label "status:pending-review" --label "priority:normal" --body "…"` (use `priority:high` or `priority:critical` only when the human explicitly requests that priority at create time).
 6. If `parent` is set: attach as sub-issue (linking reference); enforce depth rules from `hierarchy.md` when nesting under a task chain.
 7. **Blocked-by**: for each true blocker, follow the linking reference. Related-only issues stay in `## Related tasks or defects` per the docs.
-8. **Report** URL, labels (`type:defect`, `status:pending-review`), parent (if any), related links, and dependency wiring.
+8. **Report** URL, labels (`type:defect`, `status:pending-review`, `priority:*`), parent (if any), related links, and dependency wiring.
 
 ## Rules
 
-- Apply labels `type:defect` and `status:pending-review`.
+- Apply labels `type:defect`, `status:pending-review`, and exactly one `priority:*` (default `priority:normal`).
+- Do not change priority after create; only humans set or change priority later.
 - Default: create on GitHub.
 
 ## Related

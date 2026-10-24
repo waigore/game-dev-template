@@ -26,13 +26,14 @@ Create a repository **Epic** (`type:epic`).
 2. **Collect** `title` and content for every required Epic section; optional notes, `blocked_by`, `blocking`. Ask if required content is missing.
 3. **Build** the body exactly as specified in `body-shapes.md`.
 4. If `--no-create` / "draft only": print title + body and stop.
-5. **Create**: `gh issue create --title "…" --label "type:epic" --label "status:pending-review" --body "…"`.
+5. **Create**: `gh issue create --title "…" --label "type:epic" --label "status:pending-review" --label "priority:normal" --body "…"` (use `priority:high` or `priority:critical` only when the human explicitly requests that priority at create time).
 6. **Blocked-by**: for each blocker, follow the linking reference.
-7. **Report** URL, labels (`type:epic`, `status:pending-review`), and dependency wiring.
+7. **Report** URL, labels (`type:epic`, `status:pending-review`, `priority:*`), and dependency wiring.
 
 ## Rules
 
-- Apply labels `type:epic` and `status:pending-review`.
+- Apply labels `type:epic`, `status:pending-review`, and exactly one `priority:*` (default `priority:normal`).
+- Do not change priority after create; only humans set or change priority later.
 - Default: create on GitHub.
 - Do not create child tasks unless asked; use `create-project-task` for children.
 
