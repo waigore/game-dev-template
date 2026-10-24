@@ -37,7 +37,8 @@ Evidence is freeform prose; intent must be clear. Post evidence as an issue comm
 | pending-verification | Independent pass: checked each deliverable; standards followed; adequate tests | pending-acceptance |
 | pending-verification | Fail: detail issues | pending-implementation |
 | pending-acceptance | Accept: repo-locatable test evidence per AC; related PRs | accepted (acceptance leaves open; planner may close later) |
-| pending-acceptance | Fail: link created defect | pending-implementation |
+| pending-acceptance | Fail (game/interface): link created defect | pending-implementation |
+| pending-acceptance | Spec/ambiguity blocks testing (no defect) | pending-clarification |
 | pending-acceptance | Cannot test without PO input | pending-clarification |
 
 Reviews are holistic against the whole issue and its parent/sibling relationships, including after prior refinements.
