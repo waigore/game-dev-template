@@ -16,7 +16,7 @@ Higher wins. Extend `solid.md`; never contradict it (e.g. no central type switch
 
 ADRs ([`specs/adr/`](../specs/adr/adr.md)) and technical design ([`specs/technical/`](../specs/technical/technical.md)) decide tech; cite them, do not choose them here.
 
-Conventions do not apply under `demos/` ([demos](demos.md#what-is-relaxed)).
+Conventions do not apply under `pocs/` ([pocs](pocs.md#what-is-relaxed)).
 
 ## Rules
 
@@ -41,7 +41,7 @@ Every lint or format command listed here runs as a step in [`code-lint.yml`](../
 
 ## Unit tests
 
-Each command runs as a step in the `Unit tests` job of [`unit-tests.yml`](../.github/workflows/unit-tests.yml). Main code only (not `demos/` or `.github/scripts`). Placeholders or `None — <reason>`: job passes with a notice. Wire via `setup-unit-test-ci`.
+Each command runs as a step in the `Unit tests` job of [`unit-tests.yml`](../.github/workflows/unit-tests.yml). Main code only (not `pocs/` or `.github/scripts`). Placeholders or `None — <reason>`: job passes with a notice. Wire via `setup-unit-test-ci`.
 
 | Tool | Command | Scope |
 |------|---------|-------|

@@ -20,6 +20,7 @@ Authoring rules: [`.agents/specs/rules/design/traceability.md`](../../.agents/sp
 | Stages and scenes | [`stages/`](stages/) | <!-- fill in --> |
 | Game state | [`game-state.md`](game-state.md) | <!-- fill in --> |
 | Configuration | [`configuration.md`](configuration.md) | <!-- fill in --> |
+| Demo mode | [`demo.md`](demo.md) | <!-- fill in: Applies, N/A — not offered, or leave until Offering decided --> |
 | Difficulty settings | [`difficulty.md`](difficulty.md) | <!-- fill in --> |
 | Scenarios | [`scenarios/`](scenarios/) | <!-- fill in --> |
 | Progress management | [`progression.md`](progression.md) | <!-- fill in --> |
