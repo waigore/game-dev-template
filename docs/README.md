@@ -10,7 +10,8 @@ Every file under `docs/` must stay under **500 words**. If content would exceed 
 
 | Path | Covers |
 |------|--------|
-| [asset-tools.md](asset-tools.md) | Asset tools index: bans, preference; Recraft, ElevenLabs, fal, Poly Haven linked |
+| [asset-tools.md](asset-tools.md) | Asset tools index: bans, preference; Recraft, ElevenLabs, fal, Cheaper Inference, Poly Haven linked |
+| [asset-tools-cheaperinference-steps.md](asset-tools-cheaperinference-steps.md) | Locked Cheaper Inference generate / reference-anchor steps + script |
 | [asset-tools-polyhaven.md](asset-tools-polyhaven.md) | Poly Haven CC0 texture/model catalog (ADR-free REST) |
 | [asset-tools-polyhaven-steps.md](asset-tools-polyhaven-steps.md) | Locked Poly Haven search / pick / download steps |
 | [texture-pipeline.md](texture-pipeline.md) | Texture select → land → tile check → optional touch-up → review |

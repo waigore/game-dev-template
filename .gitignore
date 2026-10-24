@@ -13,3 +13,6 @@ agent-orc/.venv/
 agent-orc/dist/
 agent-orc/*.egg-info/
 agent-orc/src/*.egg-info/
+
+# local probes / scratch
+tmp/

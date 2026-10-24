@@ -40,7 +40,7 @@ Procedure: [`specs/assets/procedures/establish-style.md`](../../../specs/assets/
 
 ## Rules
 
-- Recraft is required for visual establish and style-constrained generate. ElevenLabs (CLI only; see [`docs/asset-tools-elevenlabs.md`](../../../docs/asset-tools-elevenlabs.md)) is required for music / SFX / voice. Do not use fal or an ElevenLabs MCP as a substitute.
+- Recraft is required for visual establish and style-constrained generate. ElevenLabs (CLI only; see [`docs/asset-tools-elevenlabs.md`](../../../docs/asset-tools-elevenlabs.md)) is required for music / SFX / voice. Do not use fal, Cheaper Inference, or an ElevenLabs MCP as a substitute.
 - Do not invent anchors, prompt_policy clauses, or aesthetics IDs. Missing ones go to specs first.
 - Three pillars: enforced styling, master/negative prompting, review (look or listen). Establishing style alone does not approve series members.
 - Credentials never enter the repository.
