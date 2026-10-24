@@ -6,7 +6,7 @@ Agents: `ensure-project-setup` (check, apply gaps, re-verify), or `setup-github-
 
 Contract **outcomes** below. Tools are judgement (`gh`, API, Settings UI); [examples](github-repo-setup-examples.md) are not binding.
 
-Apply in order. Remotes first so `gh` targets this project. Protect `main` before auto-merge.
+Apply in order. Remotes first so `gh` targets this project. Protect `main` before auto-merge. Creation policies (§5) may be set with other General settings.
 
 ## 1. Remotes
 
@@ -54,11 +54,22 @@ Settings → General → Pull Requests:
 - **Allow auto-merge** on. Same-repo non-draft PRs squash-merge when mergeable unless `no-automerge` ([`automerge.yml`](../.github/workflows/automerge.yml)).
 - **Automatically delete head branches** on. After a PR merges, GitHub deletes the head branch.
 
-## 5. Labels
+## 5. Issue and pull request creation
+
+Settings → General → Features. Issues stay enabled. Restrict who may open issues and pull requests to collaborators only (same policy for public and private):
+
+| Setting | Outcome |
+|---------|---------|
+| Issues → Creation allowed by | **Collaborators only** |
+| Pull requests → Creation allowed by | **Collaborators only** |
+
+Who counts as a collaborator: personal repos — anyone invited to the repository; organization repos — triage, write, maintain, or admin. Commenting on existing issues is unaffected. GraphQL fields: `issueCreationPolicy` / `pullRequestCreationPolicy` = `COLLABORATORS_ONLY`.
+
+## 6. Labels
 
 Every label in [`.github/project-labels.yml`](../.github/project-labels.yml) exists on GitHub. Missing → Actions → **Sync labels** → **Run workflow**, or `bash .github/scripts/sync-labels.sh` (`gh`, `yq`). See [`labels.md`](labels.md).
 
-## 6. Verify
+## 7. Verify
 
 Read every setting back from GitHub; a write is not proof. Confirm Actions can run (e.g. `Spec lint` on `main`). Pass only when every outcome holds.
 
