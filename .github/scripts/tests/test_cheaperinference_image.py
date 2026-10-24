@@ -5,10 +5,11 @@ from __future__ import annotations
 import base64
 import importlib.util
 import json
+import os
 import sys
+import tempfile
+import unittest
 from pathlib import Path
-
-import pytest
 
 SCRIPT = Path(__file__).resolve().parents[1] / "cheaperinference_image.py"
 
@@ -22,46 +23,50 @@ def _load():
     return mod
 
 
-@pytest.fixture(scope="module")
-def ci():
-    return _load()
+class CheaperInferenceImageTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.ci = _load()
+
+    def test_data_url_png(self) -> None:
+        png = b"\x89PNG\r\n\x1a\n" + b"\x00" * 8
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "a.png"
+            p.write_bytes(png)
+            url = self.ci._data_url(p)
+            self.assertTrue(url.startswith("data:image/png;base64,"))
+            self.assertEqual(base64.b64decode(url.split(",", 1)[1]), png)
+
+    def test_save_image_b64(self) -> None:
+        raw = b"\xff\xd8\xff" + b"jpeg-bytes"
+        payload = {"data": [{"b64_json": base64.b64encode(raw).decode()}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            out = self.ci._save_image(payload, Path(tmp) / "out.png")
+            self.assertEqual(out.read_bytes(), raw)
+
+    def test_generate_requires_key(self) -> None:
+        env = os.environ.copy()
+        os.environ.pop("CHEAPERINFERENCE_API_KEY", None)
+        try:
+            with self.assertRaises(SystemExit) as ctx:
+                self.ci.main(["generate", "--prompt", "x", "--out", "/tmp/x.png"])
+            self.assertEqual(ctx.exception.code, 1)
+        finally:
+            os.environ.clear()
+            os.environ.update(env)
+
+    def test_meta_shape(self) -> None:
+        meta = self.ci._meta(
+            {"request_id": "r1", "billing": {"billed_cost_usd": "0.01"}, "created": 1},
+            "flux-2-max",
+            "images.generations",
+            Path("o.png"),
+        )
+        self.assertEqual(meta["tool"], "Cheaper Inference")
+        self.assertEqual(meta["operation"], "images.generations")
+        self.assertEqual(meta["request_id"], "r1")
+        json.dumps(meta)  # serializable
 
 
-def test_data_url_png(ci, tmp_path: Path):
-    png = (
-        b"\x89PNG\r\n\x1a\n"
-        + b"\x00" * 8  # not a valid PNG body, but magic is enough for helper
-    )
-    # Write minimal valid-looking magic only — helper only checks magic
-    p = tmp_path / "a.png"
-    p.write_bytes(png)
-    url = ci._data_url(p)
-    assert url.startswith("data:image/png;base64,")
-    assert base64.b64decode(url.split(",", 1)[1]) == png
-
-
-def test_save_image_b64(ci, tmp_path: Path):
-    raw = b"\xff\xd8\xff" + b"jpeg-bytes"
-    payload = {"data": [{"b64_json": base64.b64encode(raw).decode()}]}
-    out = ci._save_image(payload, tmp_path / "out.png")
-    assert out.read_bytes() == raw
-
-
-def test_generate_requires_key(ci, monkeypatch: pytest.MonkeyPatch):
-    monkeypatch.delenv("CHEAPERINFERENCE_API_KEY", raising=False)
-    with pytest.raises(SystemExit) as e:
-        ci.main(["generate", "--prompt", "x", "--out", "/tmp/x.png"])
-    assert e.value.code == 1
-
-
-def test_meta_shape(ci):
-    meta = ci._meta(
-        {"request_id": "r1", "billing": {"billed_cost_usd": "0.01"}, "created": 1},
-        "flux-2-max",
-        "images.generations",
-        Path("o.png"),
-    )
-    assert meta["tool"] == "Cheaper Inference"
-    assert meta["operation"] == "images.generations"
-    assert meta["request_id"] == "r1"
-    json.dumps(meta)  # serializable
+if __name__ == "__main__":
+    unittest.main()
