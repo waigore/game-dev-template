@@ -81,6 +81,8 @@ gh api "repos/$REPO" --jq '{allow_squash_merge, allow_merge_commit, allow_rebase
 
 ## Issue and pull request creation
 
+UI: Settings → General → Features → Issues / Pull requests → Creation allowed by: **Collaborators only**. Collaborator = anyone invited (personal repo) or triage/write/maintain/admin (org). Commenting on existing issues is unaffected.
+
 GraphQL: read and set `issueCreationPolicy` / `pullRequestCreationPolicy` (`ALL` or `COLLABORATORS_ONLY`). Expect both `COLLABORATORS_ONLY`.
 
 ```bash

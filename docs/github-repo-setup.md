@@ -6,7 +6,7 @@ Agents: `ensure-project-setup` (check, apply gaps, re-verify), or `setup-github-
 
 Contract **outcomes** below. Tools are judgement (`gh`, API, Settings UI); [examples](github-repo-setup-examples.md) are not binding.
 
-Apply in order. Remotes first so `gh` targets this project. Protect `main` before auto-merge. Creation policies (§5) may be set with other General settings.
+Apply in order. Remotes first so `gh` targets this project. Protect `main` before auto-merge.
 
 ## 1. Remotes
 
@@ -40,9 +40,9 @@ Actions enabled; allowed-actions policy permits workflows' actions (e.g. `action
 | Require a pull request before merging | On; 0 required approvals (baseline) |
 | Require status checks to pass | On; **branches up to date**; checks: `Spec lint`, `PR hygiene`, `Code lint`, `Unit tests`, `Coverage` ([`.github/workflows/`](../.github/workflows/)) |
 
-Classic protection on `main` may stay; GitHub keeps the stricter of both. Do not remove or weaken without confirmation. UI check pickers need a prior run; the API accepts names before then.
+Classic protection may stay; GitHub keeps the stricter of both. Do not remove or weaken without confirmation. UI check pickers need a prior run; the API accepts names before then.
 
-Outcome: `main` only via PR; no bypass; merge/auto-merge only when those five checks pass on a branch up to date with `main`.
+Outcome: `main` only via PR; no bypass; those five checks must pass on a branch up to date with `main`.
 
 ## 4. Merge settings
 
@@ -52,18 +52,11 @@ Settings → General → Pull Requests:
 - Squash message default: **Pull request title and description**.
 - **Always suggest updating pull request branches** on.
 - **Allow auto-merge** on. Same-repo non-draft PRs squash-merge when mergeable unless `no-automerge` ([`automerge.yml`](../.github/workflows/automerge.yml)).
-- **Automatically delete head branches** on. After a PR merges, GitHub deletes the head branch.
+- **Automatically delete head branches** on.
 
 ## 5. Issue and pull request creation
 
-Settings → General → Features. Issues stay enabled. Restrict who may open issues and pull requests to collaborators only (same policy for public and private):
-
-| Setting | Outcome |
-|---------|---------|
-| Issues → Creation allowed by | **Collaborators only** |
-| Pull requests → Creation allowed by | **Collaborators only** |
-
-Who counts as a collaborator: personal repos — anyone invited to the repository; organization repos — triage, write, maintain, or admin. Commenting on existing issues is unaffected. GraphQL fields: `issueCreationPolicy` / `pullRequestCreationPolicy` = `COLLABORATORS_ONLY`.
+Issues enabled. Public and private: issue and PR creation **Collaborators only** (`issueCreationPolicy` / `pullRequestCreationPolicy` = `COLLABORATORS_ONLY`). Who counts and UI path: [examples](github-repo-setup-examples.md).
 
 ## 6. Labels
 
@@ -75,11 +68,7 @@ Read every setting back from GitHub; a write is not proof. Confirm Actions can r
 
 ## Blockers
 
-On tooling error, try another tool. When an outcome cannot be reached (plan limit, org policy, missing admin), setup **fails**:
-
-- Report the missing outcome, why, and options (public repo, upgrade plan, org owner).
-- Stop: no PRs until resolved.
-- Never substitute a weaker setting.
+On tooling error, try another tool. When an outcome cannot be reached (plan limit, org policy, missing admin), setup **fails**: report the missing outcome, why, and options; stop (no PRs until resolved); never substitute a weaker setting.
 
 ## Related
 
