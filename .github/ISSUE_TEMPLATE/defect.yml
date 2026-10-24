@@ -1,8 +1,7 @@
 name: Defect
 description: A problem with the game or some other deliverable.
 title: ""
-labels: ["type:defect", "status:pending-review"]
-body:
+labels: ["type:defect", "status:pending-review", "priority:normal"]body:
   - type: markdown
     attributes:
       value: |

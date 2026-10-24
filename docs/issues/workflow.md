@@ -18,6 +18,10 @@ Exactly **one** `status:*` label per typed issue. Skills swap via `enforce-task-
 
 Catalog: [`docs/labels.md`](../labels.md).
 
+## Priority
+
+Exactly one `priority:*` label (`critical` / `high` / `normal`). Create applies `priority:normal`. Unlabeled is treated as normal. Selection order when discovering work: [workflow-dispatch.md](workflow-dispatch.md). Humans only set or change priority; agents may only drop lower duplicates (hygiene).
+
 ## Transitions and evidence
 
 Evidence is freeform prose; intent must be clear. Post evidence as an issue comment (except refinement, which also edits the body). Then call `enforce-task-workflow-status` to apply the next label.
@@ -54,4 +58,4 @@ Move only the reviewed issue plus issues the fail comment **explicitly names** a
 | `verify-project-issue` | Independent verify pass / fail |
 | `accept-project-issue` | Accept / fail / clarify |
 
-Create skills always apply `status:pending-review` with the type label. Dispatch agents: [workflow-dispatch.md](workflow-dispatch.md).
+Create skills always apply `status:pending-review`, `priority:normal`, and the type label. Dispatch agents: [workflow-dispatch.md](workflow-dispatch.md).

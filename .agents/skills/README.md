@@ -23,7 +23,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`project-planner-agent`](project-planner-agent/SKILL.md) | Gap-drive specs vs demonstrated or planned work; mutate GitHub issues only (breadth or depth) |
 | [`unblock-project-issues`](unblock-project-issues/SKILL.md) | Remove blocked-by when the default branch satisfies the blocker or the edge is obsolete (acceptance is not a gate) |
 | [`create-project-defect`](create-project-defect/SKILL.md) | Create a Defect issue (`type:defect`) with related/blocked-by wiring |
-| [`enforce-task-workflow-status`](enforce-task-workflow-status/SKILL.md) | Gate or audit `status:*` labels for typed issues |
+| [`enforce-task-workflow-status`](enforce-task-workflow-status/SKILL.md) | Gate or audit `status:*` labels; hygiene for duplicate `priority:*` |
 | [`review-project-issue`](review-project-issue/SKILL.md) | Review pass / fail / clarify → next status |
 | [`refine-project-issue`](refine-project-issue/SKILL.md) | Refine issue body → pending-review |
 | [`clarify-project-issue`](clarify-project-issue/SKILL.md) | Record PO clarification → review or refinement |

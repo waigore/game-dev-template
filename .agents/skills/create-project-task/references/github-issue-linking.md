@@ -15,6 +15,8 @@ gh repo view --json nameWithOwner --jq .nameWithOwner
 gh issue create \
   --title "TITLE" \
   --label "type:task" \
+  --label "status:pending-review" \
+  --label "priority:normal" \
   --body "$(cat <<'EOF'
 ## Description
 ...
