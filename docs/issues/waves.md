@@ -29,9 +29,10 @@ At least one demo exists before foundation or vertical implementation leaves sta
 
 ## Filing
 
-- Confirm the wave map with the user before creating milestones or issues (`--no-create` / draft-only allowed).
+- Confirm the wave map with the user before creating milestones or issues (`--no-create` / draft-only allowed), except when [`project-planner-agent`](../../.agents/skills/project-planner-agent/SKILL.md) bootstraps **entirely new requirements** (not deficiencies in already-filed waves).
 - Create milestones for every planned wave (title + **expected-deliverable description**); file epics for those waves.
 - File **leaf tasks only for the wave being expanded** (first run: wave 1). Later waves keep epic stubs until a later `plan-project-waves` run expands them.
+- Do not cut new waves to cover gaps in old ones—expand existing epics/tasks instead.
 - Issue bodies use [body-shapes.md](body-shapes.md) only; wave metadata lives in Notes / AC / Dependencies.
 
 ## Auditing a filed wave
