@@ -50,7 +50,7 @@ Asset IDs, format, and integrity: [`catalog.md`](catalog.md). Fields: [`catalog/
 
 - **Approval**: <!-- fill in -->
 - **Review exemption**: Only a person may exempt an asset, of any source type, from review, recorded in `CAT.F17`. An exempt asset is approved when its entry merges.
-- **Use**: Main code uses only approved assets. A gameplay demo uses only cataloged assets with a `review-asset` Pass or a review exemption.
+- **Use**: Main code uses only approved assets. A PoC uses only cataloged assets with a `review-asset` Pass or a review exemption (see `docs/poc-style-assets.md`).
 
 ## Traceability
 
