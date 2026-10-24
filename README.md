@@ -13,6 +13,6 @@ After creating a repo from this template, ask your agent to:
 - [`specs/`](specs/)
 - [`docs/`](docs/)
 - [`.agents/`](.agents/)
-- [`demos/`](demos/)
+- [`pocs/`](pocs/)
 
 Agent orientation: [`AGENTS.md`](AGENTS.md).
