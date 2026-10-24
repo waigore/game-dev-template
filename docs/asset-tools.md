@@ -18,14 +18,16 @@ Known tools for image and audio generation, editing, and touch-up, and the tools
 | Audio style establish (finetune / voice) or style-constrained music/voice/SFX generate | ElevenLabs CLI (required) |
 | Exploratory image work, editing, graphic design, vector art | Recraft |
 | Default when Recraft can do the job | Recraft |
-| High-throughput batch image generation (expect Recraft touch-up after); visual series not `active` | fal.ai |
-| Specific image model Recraft lacks; visual series not `active` | fal.ai |
+| High-throughput batch image generation (expect Recraft touch-up after); visual series not `active` | fal.ai or Cheaper Inference |
+| Specific image model Recraft lacks; visual series not `active` | fal.ai or Cheaper Inference (default model `flux-2-max`) |
+| OpenAI-compatible REST image gen/edit without MCP; visual series not `active` | Cheaper Inference |
 
 ## Generation and design
 
 - **Recraft**: [`asset-tools-recraft.md`](asset-tools-recraft.md) (ADR-free; required for visual style series).
 - **ElevenLabs**: [`asset-tools-elevenlabs.md`](asset-tools-elevenlabs.md) (ADR-free; CLI only; required for audio style series).
 - **fal.ai**: [`asset-tools-fal.md`](asset-tools-fal.md) (needs Integration ADR; not for active style series).
+- **Cheaper Inference**: [`asset-tools-cheaperinference.md`](asset-tools-cheaperinference.md) (ADR-free; REST; default `flux-2-max`; locked steps in [`asset-tools-cheaperinference-steps.md`](asset-tools-cheaperinference-steps.md); not for active style series).
 
 ## Touch-up
 
@@ -35,3 +37,4 @@ A touch-up is an optional edit to an asset's files that brings it closer to its 
 
 - **Recraft / fal**: MCP servers `recraft` and `fal` ship disabled. Enable locally per [`mcp.md`](mcp.md); use `setup-project-mcp`. Do not commit enabled state.
 - **ElevenLabs**: CLI only ([`asset-tools-elevenlabs.md`](asset-tools-elevenlabs.md)). No MCP server. Assume `ELEVENLABS_API_KEY` is in the environment.
+- **Cheaper Inference**: REST only ([`asset-tools-cheaperinference.md`](asset-tools-cheaperinference.md)). No MCP server. Assume `CHEAPERINFERENCE_API_KEY` is in the environment.
