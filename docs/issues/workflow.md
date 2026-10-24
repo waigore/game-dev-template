@@ -29,7 +29,7 @@ Evidence is freeform prose; intent must be clear. Post evidence as an issue comm
 | From | Action / evidence | To |
 |------|-------------------|-----|
 | pending-review | Pass review (latest comment); body consistent; deliverables/AC align with parent or project vision; note new requirements | pending-implementation |
-| pending-review | Fail review: problems + refinement direction; name impacted related issues | pending-refinement (self + named related) |
+| pending-review | Fail review: problems + refinement direction. Cascade another issue only when [workflow-cascade.md](workflow-cascade.md) authorizes it | pending-refinement (self; others only when cascade is authorized) |
 | pending-review | Gaps that cannot be inferred from project scope: clarification questions | pending-clarification |
 | pending-refinement | Refined issue body + summary comment | pending-review |
 | pending-clarification | PO clarification comment | pending-review, or pending-refinement if refine still needed |
@@ -42,9 +42,7 @@ Evidence is freeform prose; intent must be clear. Post evidence as an issue comm
 
 Reviews are holistic against the whole issue and its parent/sibling relationships, including after prior refinements.
 
-## Cascade (fail review)
-
-Move only the reviewed issue plus issues the fail comment **explicitly names** as impacted. Do not auto-cascade the whole tree.
+Fail-review cascades: [workflow-cascade.md](workflow-cascade.md).
 
 ## Skills
 
