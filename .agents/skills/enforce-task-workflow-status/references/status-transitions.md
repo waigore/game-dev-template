@@ -32,7 +32,7 @@ Exactly one of these on each `type:epic` / `type:task` / `type:defect` issue.
 3. Remove them: `gh issue edit <n> --remove-label "status:…" …` (all current status labels).
 4. Add target: `gh issue edit <n> --add-label "status:<target>"`.
 
-Never close the issue when applying `status:accepted`.
+Never close the issue when applying `status:accepted` (closure is planner-only).
 
 ## Gate mode inputs
 

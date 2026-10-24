@@ -14,7 +14,7 @@ Exactly **one** `status:*` label per typed issue. Skills swap via `enforce-task-
 | `status:pending-implementation` | Passed review; ready or in progress |
 | `status:pending-verification` | Implemented; awaiting verification |
 | `status:pending-acceptance` | Verified; awaiting acceptance testing |
-| `status:accepted` | Accepted; **leave open** (do not close) |
+| `status:accepted` | Accepted; acceptance skills **leave open**. [`project-planner-agent`](../../.agents/skills/project-planner-agent/SKILL.md) may **close** accepted issues (leaves first, then parents when children are closed/catered for). |
 
 Catalog: [`docs/labels.md`](../labels.md).
 
@@ -36,7 +36,7 @@ Evidence is freeform prose; intent must be clear. Post evidence as an issue comm
 | pending-implementation | Comment summarizing deliverables (PRs/commits) | pending-verification |
 | pending-verification | Independent pass: checked each deliverable; standards followed; adequate tests | pending-acceptance |
 | pending-verification | Fail: detail issues | pending-implementation |
-| pending-acceptance | Accept: repo-locatable test evidence per AC; related PRs | accepted (keep open) |
+| pending-acceptance | Accept: repo-locatable test evidence per AC; related PRs | accepted (acceptance leaves open; planner may close later) |
 | pending-acceptance | Fail: link created defect | pending-implementation |
 | pending-acceptance | Cannot test without PO input | pending-clarification |
 

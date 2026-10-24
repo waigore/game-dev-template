@@ -49,6 +49,8 @@ Cut shippable **waves** (milestones) and **vertical epics** from `specs/`, then 
 
 **Expand later wave:** same steps; inventory delta; file leaves under that wave’s existing epics (create missing epics if needed). A new demo blocks further main-code leaves until its promotion act is done. Do not re-break wave 1 unless asked.
 
+**Planner-driven bootstrap:** [`project-planner-agent`](../project-planner-agent/SKILL.md) may invoke this skill without a separate human confirm only for **entirely new requirements**. Do not cut new waves to cover deficiencies in already-filed waves—expand those waves’ existing epics/tasks instead.
+
 ## Rules
 
 - Confirm before filing. Do not invent goal/scope/deliverables the user rejected.

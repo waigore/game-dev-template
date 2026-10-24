@@ -55,7 +55,7 @@ Inputs: one or more issue numbers, or “all open typed issues”.
 
 ## Rules
 
-- Never close an issue when setting `status:accepted`.
+- Never close an issue when setting `status:accepted` (closure is planner-only; see [`project-planner-agent`](../project-planner-agent/SKILL.md)).
 - Do not invent statuses outside the catalog.
 - Prefer report + ask over guessing mid-pipeline state.
 - Type labels (`type:*`) are never removed by this skill.
