@@ -18,7 +18,7 @@ Authoring rules: [`.agents/specs/rules/ux/traceability.md`](../../.agents/specs/
 | Navigation | [`navigation.md`](navigation.md) | <!-- fill in --> |
 | Exception states | [`exceptions.md`](exceptions.md) | <!-- fill in --> |
 | Controls and bindings | [`controls.md`](controls.md) | <!-- fill in --> |
-| Mockups | [`mockups/`](mockups/), [`presentation.md`](presentation.md) | <!-- fill in --> |
+| Mockups | [`mockups/`](mockups/), [`mockups/catalog.md`](mockups/catalog.md), [`presentation.md`](presentation.md) | Applies |
 | Accessibility presentation | [`screens/`](screens/), [`presentation.md`](presentation.md) | <!-- fill in --> |
 | Localization copy | screen copy tables | <!-- fill in --> |
 | Save-failure feedback | `EX.save-failure` | <!-- fill in --> |
