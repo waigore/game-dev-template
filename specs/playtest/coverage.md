@@ -22,3 +22,5 @@ View stories are never in the set. Prefer `full` for complex projects; `critical
 ## Issue mapping
 
 A required acceptance playtest runs protocols for the intersection of this coverage set and the design/UX IDs the issue's playable deliverables can affect. See [`procedures.md`](procedures.md).
+
+Delivery ownership (which epic/task owns a story, or `none` with a durable reason) lives in [`story-rows.md`](story-rows.md) — not in this file.

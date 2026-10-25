@@ -32,3 +32,4 @@ Apply refinements to a typed issue in `status:pending-refinement`.
 - Refinements belong in the body proper.
 - Keep body shapes from `docs/issues/body-shapes.md`.
 - Call `enforce-task-workflow-status` for the label change.
+- Strip or rewrite ACs that require story-row `none` cells to name a live `type:defect`; align with [`requirements.md`](../../../docs/issues/requirements.md) and [`story-rows.md`](../../../specs/playtest/story-rows.md).
