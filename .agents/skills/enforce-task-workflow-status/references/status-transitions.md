@@ -8,7 +8,7 @@ Contract: [`docs/issues/workflow.md`](../../../../docs/issues/workflow.md). Do n
 
 Exactly one of these on each `type:epic` / `type:task` / `type:defect` issue.
 
-`status:pending-redefinition` is applied only by [`.github/workflows/issue-comment-cap.yml`](../../../../.github/workflows/issue-comment-cap.yml). Skills must not gate to or from it; replacement is [`redefine-project-issue`](../../redefine-project-issue/SKILL.md) (close old, open new).
+`status:pending-redefinition` is Actions-only; skills must not gate to or from it. Contract: [`docs/issues/workflow-comment-cap.md`](../../../../docs/issues/workflow-comment-cap.md).
 
 ## Allowed transitions
 

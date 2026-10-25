@@ -2,7 +2,7 @@ name: Issue comment cap
 
 # Tasks and defects: at most 20 comments. When the 21st lands, swap to
 # status:pending-redefinition and lock the conversation permanently.
-# Epics are exempt. Contract: docs/issues/workflow.md
+# Epics are exempt. Contract: docs/issues/workflow-comment-cap.md
 
 on:
   issue_comment:

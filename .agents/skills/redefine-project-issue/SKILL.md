@@ -16,7 +16,7 @@ description: |-
 
 Replace one open `type:task` or `type:defect` in `status:pending-redefinition` with a **new task**. Do not unlock the old conversation. Do not continue work on the locked issue.
 
-**Contract:** [`docs/issues/workflow.md`](../../../docs/issues/workflow.md) (comment cap). **Body shape:** [`docs/issues/body-shapes.md`](../../../docs/issues/body-shapes.md) (Task). **Linking:** [`create-project-task/references/github-issue-linking.md`](../create-project-task/references/github-issue-linking.md).
+**Contract:** [`docs/issues/workflow-comment-cap.md`](../../../docs/issues/workflow-comment-cap.md). **Body shape:** [`docs/issues/body-shapes.md`](../../../docs/issues/body-shapes.md) (Task). **Linking:** [`create-project-task/references/github-issue-linking.md`](../create-project-task/references/github-issue-linking.md).
 
 ## Steps
 

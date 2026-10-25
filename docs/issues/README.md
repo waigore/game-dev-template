@@ -10,6 +10,7 @@ Agents use the matching `create-project-*` skill so labels, sub-issues, and bloc
 | [body-shapes.md](body-shapes.md) | Canonical body templates (Epic / Task / Defect) |
 | [hierarchy.md](hierarchy.md) | Sub-issues, depth limit, blocked-by |
 | [workflow.md](workflow.md) | Status labels, transitions, evidence |
+| [workflow-comment-cap.md](workflow-comment-cap.md) | Task/defect comment cap; `pending-redefinition` |
 | [workflow-cascade.md](workflow-cascade.md) | When a failed review moves another issue |
 | [workflow-dispatch.md](workflow-dispatch.md) | Background dispatch agents (one issue per run) |
 | [waves.md](waves.md) | Milestones as waves; description = expected deliverable; foundation; vertical epics; optional PoCs; wave audit |
@@ -35,4 +36,4 @@ Agent defaults: create on GitHub with `status:pending-review` and `priority:norm
 
 ## Workflow status
 
-After create, issues move through review → refinement/clarification (as needed) → implementation → verification → acceptance. Contract: [workflow.md](workflow.md). Use `enforce-task-workflow-status` and the `*-project-issue` action skills. Tasks/defects that hit the comment cap become `status:pending-redefinition` (locked); the planner runs `redefine-project-issue`.
+After create, issues move through review → refinement/clarification (as needed) → implementation → verification → acceptance. Contract: [workflow.md](workflow.md). Use `enforce-task-workflow-status` and the `*-project-issue` action skills. Comment cap: [workflow-comment-cap.md](workflow-comment-cap.md).
