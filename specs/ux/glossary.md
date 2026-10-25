@@ -11,7 +11,8 @@ Authoring rules: [`.agents/specs/rules/ux/glossary.md`](../../.agents/specs/rule
 | Control | A named thing an actor operates on a screen. | the screen spec |
 | Exception | A shared interface state, such as loading, empty, or error. | [`exceptions.md`](exceptions.md) |
 | Journey | An ordered path an actor takes through existing screens to reach a goal. | [`journeys/`](journeys/) |
-| Mockup | A self-contained HTML view of one screen, or a click-through of one journey. | [`mockups/`](mockups/) |
+| Mockup | A required HTML view of one screen or journey; catalog-approved before main-tree UI. | [`mockups/`](mockups/), [`docs/ux-mockups.md`](../../docs/ux-mockups.md) |
+| Mockup catalog | Approval record (`draft` / `approved` / `deprecated`) for each mockup. | [`mockups/catalog.md`](mockups/catalog.md) |
 | Region | A named part of a screen that shows specific content. | the screen spec |
 | Screen | One interface surface with one job. | [`screens/`](screens/) |
 | UI action | A named interface command, such as confirm or back. | [`controls.md`](controls.md) |

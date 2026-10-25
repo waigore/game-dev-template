@@ -7,6 +7,7 @@ Authoring rules: [`.agents/specs/rules/ux/presentation.md`](../../.agents/specs/
 - **Design system**: <!-- fill in -->
 - **Content root**: <!-- fill in -->
 - **Aesthetics fit**: <!-- fill in -->
+- **Catalog**: [`mockups/catalog.md`](mockups/catalog.md)
 
 ## Surfaces
 
