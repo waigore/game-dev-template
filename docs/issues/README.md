@@ -35,4 +35,4 @@ Agent defaults: create on GitHub with `status:pending-review` and `priority:norm
 
 ## Workflow status
 
-After create, issues move through review → refinement/clarification (as needed) → implementation → verification → acceptance. Contract: [workflow.md](workflow.md). Use `enforce-task-workflow-status` and the `*-project-issue` action skills.
+After create, issues move through review → refinement/clarification (as needed) → implementation → verification → acceptance. Contract: [workflow.md](workflow.md). Use `enforce-task-workflow-status` and the `*-project-issue` action skills. Tasks/defects that hit the comment cap become `status:pending-redefinition` (locked); the planner runs `redefine-project-issue`.

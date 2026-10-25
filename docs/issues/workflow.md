@@ -15,8 +15,13 @@ Exactly **one** `status:*` label per typed issue. Skills swap via `enforce-task-
 | `status:pending-verification` | Implemented; awaiting verification |
 | `status:pending-acceptance` | Verified; awaiting acceptance testing |
 | `status:accepted` | Accepted; acceptance skills **leave open**. [`project-planner-agent`](../../.agents/skills/project-planner-agent/SKILL.md) may **close** accepted issues (leaves first, then parents when children are closed/catered for). |
+| `status:pending-redefinition` | Task/defect hit the comment cap; conversation locked. Only [`project-planner-agent`](../../.agents/skills/project-planner-agent/SKILL.md) via [`redefine-project-issue`](../../.agents/skills/redefine-project-issue/SKILL.md) replaces it (new task → `pending-clarification`, close old). Applied only by [`.github/workflows/issue-comment-cap.yml`](../../.github/workflows/issue-comment-cap.yml) — not by action skills. |
 
 Catalog: [`docs/labels.md`](../labels.md).
+
+## Comment cap (tasks and defects)
+
+Open `type:task` and `type:defect` issues may have at most **20** comments. When the **21st** comment lands, [`.github/workflows/issue-comment-cap.yml`](../../.github/workflows/issue-comment-cap.yml) swaps `status:*` → `status:pending-redefinition` and **locks the conversation permanently** (do not unlock). Epics are exempt. All comments count. Replacement: [`redefine-project-issue`](../../.agents/skills/redefine-project-issue/SKILL.md).
 
 ## Priority
 
@@ -56,5 +61,6 @@ Fail-review cascades: [workflow-cascade.md](workflow-cascade.md).
 | `implement-project-issue` | Implementation summary → pending-verification |
 | `verify-project-issue` | Independent verify pass / fail |
 | `accept-project-issue` | Accept / fail / clarify |
+| `redefine-project-issue` | Replace `pending-redefinition` with a new task (planner) |
 
 Create skills always apply `status:pending-review`, `priority:normal`, and the type label. Dispatch agents: [workflow-dispatch.md](workflow-dispatch.md).
