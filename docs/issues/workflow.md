@@ -15,8 +15,9 @@ Exactly **one** `status:*` label per typed issue. Skills swap via `enforce-task-
 | `status:pending-verification` | Implemented; awaiting verification |
 | `status:pending-acceptance` | Verified; awaiting acceptance testing |
 | `status:accepted` | Accepted; acceptance skills **leave open**. [`project-planner-agent`](../../.agents/skills/project-planner-agent/SKILL.md) may **close** accepted issues (leaves first, then parents when children are closed/catered for). |
+| `status:pending-redefinition` | Comment cap hit; locked. Details: [workflow-comment-cap.md](workflow-comment-cap.md). |
 
-Catalog: [`docs/labels.md`](../labels.md).
+Catalog: [`docs/labels.md`](../labels.md). Comment cap: [workflow-comment-cap.md](workflow-comment-cap.md).
 
 ## Priority
 
@@ -57,4 +58,4 @@ Fail-review cascades: [workflow-cascade.md](workflow-cascade.md).
 | `verify-project-issue` | Independent verify pass / fail |
 | `accept-project-issue` | Accept / fail / clarify |
 
-Create skills always apply `status:pending-review`, `priority:normal`, and the type label. Dispatch agents: [workflow-dispatch.md](workflow-dispatch.md).
+Create skills always apply `status:pending-review`, `priority:normal`, and the type label. Dispatch agents: [workflow-dispatch.md](workflow-dispatch.md). `redefine-project-issue`: [workflow-comment-cap.md](workflow-comment-cap.md).

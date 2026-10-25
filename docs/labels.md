@@ -41,6 +41,7 @@ bash .github/scripts/sync-labels.sh
 | `status:pending-verification` | `0E8A16` | Implemented; awaiting verification |
 | `status:pending-acceptance` | `006B75` | Verified; awaiting acceptance testing |
 | `status:accepted` | `5319E7` | Accepted; leave open until planner closes |
+| `status:pending-redefinition` | `6E7781` | Comment cap hit; conversation locked pending redefine |
 | `no-automerge` | `B60205` | PR: opt out of automatic squash-merge (user-requested only) |
 | `priority:critical` | `B60205` | Handle before high and normal |
 | `priority:high` | `D93F0B` | Handle before normal; after critical |
