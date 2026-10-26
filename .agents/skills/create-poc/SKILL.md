@@ -24,11 +24,11 @@ Run [`scope-poc`](../scope-poc/SKILL.md). Continue only when it passes. Do not r
 
 ### Build
 
-1. **Branch** `task/<n>-poc-<slug>` and create `pocs/<slug>/`. Copy the template to `pocs/<slug>/README.md` and fill it (cite the issue and logged request).
+1. **Branch** `task/<n>-poc-<slug>` when a task owns the PoC, otherwise `chore/poc-<slug>`. Create `pocs/<slug>/`. Copy the template to `pocs/<slug>/README.md` and fill it. Issue may be none. Record the engine when the experiment needs one. Do not require an Engine ADR.
 2. **Produce assets** under the PoC task for each listed asset not yet cataloged: run [`manage-asset`](../manage-asset/SKILL.md) or [`register-asset`](../register-asset/SKILL.md) as chosen in scope. Record pipeline findings; land material spec fixes as tasks (or repair in place), and game/interface bugs as defects — see [`docs/issues/requirements.md`](../../../docs/issues/requirements.md). If assets would push the PoC PR past ~30 files, land them first.
 3. **Implement** only enough to answer the exploration question. Optional comments citing design/ADR IDs when drawn on. Do not touch code outside `pocs/<slug>/`.
 4. **Smoke run**: launch the PoC; record how to run it and what you saw vs the desired outcome. Playtest per `specs/playtest/` only if the user asks.
-5. **PR**: open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority may be N/A (PoC) plus any ADRs/design cited. Then run [`implement-project-issue`](../implement-project-issue/SKILL.md).
+5. **PR**: open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Authority may be N/A (PoC) plus any ADRs/design cited. When a task owns the PoC, run [`implement-project-issue`](../implement-project-issue/SKILL.md). When it does not, skip that skill.
 
 ## Rules
 

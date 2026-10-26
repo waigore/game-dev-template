@@ -18,7 +18,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`create-project-label`](create-project-label/SKILL.md) | Add a label to config + docs and sync to GitHub |
 | [`create-project-epic`](create-project-epic/SKILL.md) | Create an Epic issue (`type:epic`) on GitHub |
 | [`create-project-task`](create-project-task/SKILL.md) | Create a Task issue (`type:task`) with parent/blocked-by wiring |
-| [`plan-project-waves`](plan-project-waves/SKILL.md) | Cut coherent waves from specs; vertical epics + leaves for the expanded wave; confirm before filing |
+| [`plan-project-waves`](plan-project-waves/SKILL.md) | Cut coherent waves from formalized specs; vertical epics + leaves for the expanded wave; confirm before filing |
 | [`audit-project-wave`](audit-project-wave/SKILL.md) | Audit a filed wave (epics + tasks) for coherence, focus, completeness; confirm before mutating |
 | [`project-planner-agent`](project-planner-agent/SKILL.md) | Align plan with specs; shrink/distill (close non-gameplay defects); create only when necessary |
 | [`unblock-project-issues`](unblock-project-issues/SKILL.md) | Remove blocked-by when the default branch satisfies the blocker or the edge is obsolete (acceptance is not a gate) |
@@ -39,8 +39,8 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`issue-workflow-accept-agent`](issue-workflow-accept-agent/SKILL.md) | Background dispatch → `accept-project-issue` |
 | [`babysit-pr-agent`](babysit-pr-agent/SKILL.md) | Soft Actions check queue (~3 active), then one same-repo PR: conflicts, behind, in-scope CI for auto-merge |
 | [`author-spec`](author-spec/SKILL.md) | Write or edit a spec from `.agents/specs/rules/`; do not copy the rules into the spec |
-| [`capture-requirements`](capture-requirements/SKILL.md) | Interview for specs, high-level stage first; detail saved as notes; confirm, `author-spec`, open a spec PR |
-| [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the whole set; whole-spec also runs applicability, terminology, and TBD audits; report verdict |
+| [`capture-requirements`](capture-requirements/SKILL.md) | Interview for specs when a slice is formalized; a first prompt offers a PoC; confirm, `author-spec`, open a spec PR |
+| [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the formalized set; placeholder-only files are not a Fail; whole-spec also runs applicability, terminology, and TBD audits |
 | [`serve-ux-mockups`](serve-ux-mockups/SKILL.md) | Explicit-only: serve `specs/ux/mockups/` on the LAN with a generated index, open it in the browser, and report localhost and LAN URLs |
 | [`review-code`](review-code/SKILL.md) | Review code vs `docs/solid.md` (SOLID + continuity) and `docs/coding-conventions.md` (project rules + Code lint / Unit tests / Coverage); Pass/Fail, read-only |
 | [`audit-code-structure`](audit-code-structure/SKILL.md) | Audit implementation structure and debt (SOLID, conventions, continuity, duplication, dead code, seams, parallel structure); proposed targets; read-only |
@@ -54,7 +54,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`establish-asset-style`](establish-asset-style/SKILL.md) | Establish or refresh a kind Style series (anchors → Recraft / ElevenLabs CLI / soft SFX → registry); PR |
 | [`register-asset`](register-asset/SKILL.md) | Catalog a person-supplied (human-made or third-party) asset; person-granted review exemption or review-asset; PR |
 | [`review-asset`](review-asset/SKILL.md) | Review produced assets vs kind spec and `specs/aesthetics/`; Pass/Fail by element ID, read-only |
-| [`reconcile-poc`](reconcile-poc/SKILL.md) | Optional PoC reconcile act: keep/drop/adapt claims, resolve conflicts, record act |
+| [`reconcile-poc`](reconcile-poc/SKILL.md) | Formalize act: keep/drop/adapt claims, resolve conflicts into the keep list, record act |
 | [`promote-poc`](promote-poc/SKILL.md) | Reimplement one PoC's keep/adapt list: assumptions into specs, technical design, asset approval, code review |
 | [`sync-upstream-template`](sync-upstream-template/SKILL.md) | Merge upstream template changes downstream: baseline, per-file classify, confirm conflicts, one sync PR |
 

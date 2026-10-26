@@ -56,7 +56,7 @@ Findings:
 Notes (optional): <non-blocking observations>
 ```
 
-**Pass** only when there are no findings. Empty glossary placeholders (`<!-- fill in -->`) are Fail with `undefined` or `orphan entry` as appropriate when the seed requires those rows, not skipped.
+**Pass** only when there are no findings. Glossary rows that are still `<!-- fill in -->` are not formalized. Skip them. Do not tag them `undefined` or `orphan entry`.
 
 ## Rules
 
