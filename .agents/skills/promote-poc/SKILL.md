@@ -24,11 +24,11 @@ Promotion is a reimplementation in the main tree with the PoC as reference, not 
 
 0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session. Continue only on Pass.
 1. **Act**: run [`reconcile-poc`](../reconcile-poc/SKILL.md) unless it already passed for this PoC in this session. Continue only on pass.
-2. **Load** this PoC's Promotion act. If the keep/adapt list is empty, stop. Load its code, related specs/ADRs, and the technical design hub. Skip `specs/adr/archive/` and requirement notes as authority.
+2. **Load** this PoC's Promotion act. If the keep/adapt list is empty, stop. Load its code and any formalized specs or ADRs it cites. Do not assume the technical hub, glossaries, or mockup catalog exist. Skip `specs/adr/archive/` and requirement notes as authority.
 3. **Keep list only**: if a kept claim disagrees with the current spec, stop and run `reconcile-poc` again. Do not choose a winner here.
 4. **Find spec work** for the keep/adapt list: assumptions needing spec content; technical coverage the code needs; assets used (IDs/handles never change on promotion).
 5. **Propose and confirm** that spec work. Wait. Do not re-ask keep/drop/adapt.
-6. **Write the specs**: [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) / [`author-spec`](../author-spec/SKILL.md); open a spec PR per [Spec PRs](../../../docs/pull-requests.md#spec-prs). Remove elements whose assumptions were not confirmed.
+6. **Write the specs**: the keep list only, at spec depth per [`docs/poc-promotion.md`](../../../docs/poc-promotion.md). [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) / [`author-spec`](../author-spec/SKILL.md). Leave placeholders the keep list does not need. Open a spec PR per [Spec PRs](../../../docs/pull-requests.md#spec-prs). Remove elements whose assumptions were not confirmed.
 7. **Track**: use the given task, or create one with `create-project-task` naming the PoC, elements in scope, the spec PR, and where the code goes. Wait for `status:pending-implementation`.
 
 ### Implement

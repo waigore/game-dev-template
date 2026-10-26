@@ -53,7 +53,7 @@ Findings:
 Notes (optional): <non-blocking observations>
 ```
 
-**Pass** only when there are no findings. Empty specs still filled with `<!-- fill in -->` are Fail with `orphan Applies` or `stale N/A` as appropriate, not skipped.
+**Pass** only when there are no findings. Sections still only `<!-- fill in -->` are not formalized. Skip them. Do not tag them `orphan Applies` or `stale N/A`.
 
 ## Rules
 

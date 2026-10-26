@@ -3,19 +3,19 @@ name: capture-requirements
 description: |-
   Capture requirements via guided questions derived from each spec's authoring
   rules and template placeholders, confirm answers with the user, then hand off
-  to author-spec. Starts with the high-level stage (vision, definition,
-  quality), which may be captured in one run, and gates downstream specs until
-  it is locked in. Sorts detailed prompts: high-level facts become proposed
-  answers, design-level detail is saved as requirement notes for later.
+  to author-spec. A long first prompt does not lock specs: offer a PoC and save
+  downstream detail as notes. Downstream specs wait until a slice is being
+  formalized and its blocking high-level fields are set.
   Use when interviewing for any spec, or when the user asks to capture
   requirements, gather requirements, or fill a spec by asking questions.
 
   Examples:
-    - user: "Help me capture requirements" → next high-level file (vision first), interview, author-spec
-    - user: long prompt with pitch, platforms, and combat rules → high-level stage in one run; combat rules saved as notes
+    - user: "Help me capture requirements" → offer a PoC; do not interview the tree
+    - user: long prompt with pitch, platforms, and combat rules → save notes, offer a PoC, lock nothing
     - user: "Help me fill definition by asking questions" → specs/definition/definition.md only
-    - user: "Interview me for the movement feature" → only once the high-level stage is locked in; uses saved notes
-    - user: "Capture requirements for design and view" → ask which one path this session
+    - user: "Formalize the movement PoC" → blocking fields if unset, then the keep-list specs
+    - user: "Capture requirements for design and view" → ask which one path this session, and only while formalizing
+    - unclear rendering approach during technical capture → propose PoC; log purpose/scope/outcome; offer task when agent-orc or a wave will own it
 ---
 
 # Capture requirements (facade)
