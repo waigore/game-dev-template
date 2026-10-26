@@ -8,7 +8,7 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 
 ### Completeness
 
-- [ ] No `<!-- fill in -->` placeholders remain; unused template rows are deleted.
+- [ ] No `<!-- fill in -->` placeholders remain in formalized sections; unused template rows there are deleted. A section that is still only a placeholder is not formalized ([`alignment.md`](alignment.md)).
 - [ ] `definition.md` links [`rules/definition.md`](rules/definition.md), and `quality.md` links [`rules/quality.md`](rules/quality.md). Those rules are not pasted into the spec. A split file uses the rules file of the spec it came from.
 - [ ] Every section is present: scope, objectives, supported platforms, engine, constraints, spec depth, quality expectations.
 - [ ] [`quality.md`](../../specs/definition/quality.md) is linked from the quality expectations section and listed in [`specs/README.md`](../../specs/README.md).
