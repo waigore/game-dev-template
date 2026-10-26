@@ -39,6 +39,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (including **Invok
 | [`issue-workflow-accept-agent`](issue-workflow-accept-agent/SKILL.md) | Background dispatch → `accept-project-issue` |
 | [`babysit-pr-agent`](babysit-pr-agent/SKILL.md) | Soft Actions check queue (~3 active), then one same-repo PR: conflicts, behind, in-scope CI for auto-merge |
 | [`author-spec`](author-spec/SKILL.md) | Write or edit a spec from `.agents/specs/rules/`; do not copy the rules into the spec |
+| [`author-quality-rubrics`](author-quality-rubrics/SKILL.md) | Interview baseline targets and orthogonal domain axes; write via `author-spec`; do not run evaluators |
 | [`capture-requirements`](capture-requirements/SKILL.md) | Interview for specs when a slice is formalized; a first prompt offers a PoC; confirm, `author-spec`, open a spec PR |
 | [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the formalized set; placeholder-only files are not a Fail; whole-spec also runs applicability, terminology, and TBD audits |
 | [`serve-ux-mockups`](serve-ux-mockups/SKILL.md) | Explicit-only: serve `specs/ux/mockups/` on the LAN with a generated index, open it in the browser, and report localhost and LAN URLs |

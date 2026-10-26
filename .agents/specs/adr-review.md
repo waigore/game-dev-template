@@ -39,7 +39,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 ### Validation
 
 - [ ] Each ADR has at least one check that proves the decision works, with a method and when it runs.
-- [ ] Each Affects quality row has a check, or cites the how-checked method in `quality.md`.
+- [ ] Each Affects quality row has a check, or cites that row's rubric axis in `specs/definition/quality/rubrics.md`.
 
 ### Lifecycle and archive
 

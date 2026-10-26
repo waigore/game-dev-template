@@ -21,6 +21,8 @@ Add a row for each new spec file. Each hub indexes its own unit specs; its rules
 | [`vision.md`](vision.md) | Pitch, audience, qualities, non-goals | [`vision-review.md`](../.agents/specs/vision-review.md) |
 | [`definition/definition.md`](definition/definition.md) | Scope, objectives, platforms, constraints, spec depth | [`definition-review.md`](../.agents/specs/definition-review.md) |
 | [`definition/quality.md`](definition/quality.md) | Non-functional requirements | [`definition-review.md`](../.agents/specs/definition-review.md) |
+| [`definition/quality/rubrics.md`](definition/quality/rubrics.md) | Rubric axes and evaluators for those characteristics | [`definition-review.md`](../.agents/specs/definition-review.md) |
+| [`definition/quality/rubrics/baseline.md`](definition/quality/rubrics/baseline.md) | Fixed baseline axes | [`definition-review.md`](../.agents/specs/definition-review.md) |
 | [`design/design.md`](design/design.md) | Game design hub | [`design-review.md`](../.agents/specs/design-review.md) |
 | [`view/view.md`](view/view.md) | View hub: camera, projection, feel | [`view-review.md`](../.agents/specs/view-review.md) |
 | [`aesthetics/aesthetics.md`](aesthetics/aesthetics.md) | Aesthetics hub: medium, style pillars, palette, form, motion, interface and sound style | [`aesthetics-review.md`](../.agents/specs/aesthetics-review.md) |
