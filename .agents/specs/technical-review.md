@@ -8,7 +8,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 ### Completeness
 
-- [ ] No `<!-- fill in -->` placeholders remain in filled Markdown or in filled diagrams. Unused template rows and optional sections the rules say to delete are deleted.
+- [ ] No `<!-- fill in -->` placeholders remain in formalized Markdown or in formalized diagrams. Unused template rows and optional sections the rules say to delete are deleted there. A section that is still only a placeholder is not formalized ([`alignment.md`](alignment.md)).
 - [ ] Each Markdown file links its authoring-rules file from [`rules/README.md`](rules/README.md). Those rules are not pasted into the spec. HTML diagrams do not carry a rules link; their rules are [diagrams.md](rules/technical/diagrams.md). `diagrams/README.md` links its rules.
 - [ ] Overview and the index in `technical.md`, and the alignment and topic coverage tables in `traceability.md`, are filled in.
 - [ ] Every topic in the coverage table is Applies with a covering file, or N/A with a reason grounded in the definition, design profile, quality, or Accepted ADRs.

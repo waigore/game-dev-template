@@ -8,7 +8,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 ### Completeness
 
-- [ ] No `<!-- fill in -->` placeholders remain in filled Markdown. Unused rows the rules say to delete are deleted.
+- [ ] No `<!-- fill in -->` placeholders remain in formalized Markdown. Unused rows the rules say to delete are deleted there. A section that is still only a placeholder is not formalized ([`alignment.md`](alignment.md)).
 - [ ] Each Markdown file links its authoring-rules file from [`rules/README.md`](rules/README.md). Those rules are not pasted into the spec.
 - [ ] Purpose, levels, coverage, gate, evidence, architecture constraints, and index in `playtest.md` are filled per [playtest.md](rules/playtest/playtest.md).
 - [ ] Coverage mode on the hub is `full` or `critical-only`. Critical IDs follow [coverage.md](rules/playtest/coverage.md).
