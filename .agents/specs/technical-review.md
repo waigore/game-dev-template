@@ -49,7 +49,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 - [ ] Does not re-litigate ADR choices; stack boundaries match Accepted ADRs.
 - [ ] No Given/When/Then player, view, or user stories in this folder.
 - [ ] No deep performance budgets that belong only in `quality.md` or ADRs; no full UML dump as a substitute for the typed specs.
-- [ ] When `verification.md` is in scope, each automatable deterministic axis listed from [`quality/rubrics.md`](../../specs/definition/quality/rubrics.md) is cited by one invariant.
+- [ ] When `verification.md` is in scope, each automatable deterministic axis on an Applies row, listed from [`quality/rubrics.md`](../../specs/definition/quality/rubrics.md), is cited by one invariant.
 
 ### Format
 

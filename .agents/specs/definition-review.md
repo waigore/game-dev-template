@@ -50,9 +50,9 @@ Same sections and required content as [`rules/definition.md`](rules/definition.m
 ### Quality expectations
 
 - [ ] Performance, load time / latency, reliability, observability, save durability, accessibility, and localization are each present in [`quality.md`](../../specs/definition/quality.md).
-- [ ] Each category is Applies, or N/A with a reason that cites the vision or the supported platforms. At prototype depth, a category other than performance may instead cite spec depth.
+- [ ] Each row is Applies, N/A with a reason that cites the vision, the supported platforms, or (except performance) prototype spec depth, or Unconfirmed. `frame-time` and `hitch-bound`, once formalized, are Applies. A confirm-class axis may stay Unconfirmed.
 - [ ] Each Applies row has a measurable target, the platforms it covers, and exactly one axis id listed in the rubric files linked from [`quality/rubrics.md`](../../specs/definition/quality/rubrics.md). Platforms match the supported-platforms table.
-- [ ] An N/A row uses "—" for target and platforms. The axis id stays, and that axis is not scored.
+- [ ] An N/A or Unconfirmed row uses "—" for target and platforms. The axis id stays, and that axis is not scored.
 - [ ] [`quality/rubrics.md`](../../specs/definition/quality/rubrics.md) is linked from `quality.md` and listed in [`specs/README.md`](../../specs/README.md).
 - [ ] `quality.md` has Categories and Rubrics. `rubrics.md` has Baseline axes, Domain axes, and Judge record. Baseline axes are in that file or in `rubrics/baseline.md` linked from it.
 - [ ] Every baseline axis in [`rules/quality.md`](rules/quality.md) is present, on that characteristic, with evaluator `deterministic`, and "—" for scale and pass level.

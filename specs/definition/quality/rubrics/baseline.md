@@ -2,7 +2,7 @@
 
 Authoring rules: [`.agents/specs/rules/quality.md`](../../../../.agents/specs/rules/quality.md).
 
-These axes are fixed. The bar is the matching target in [`../../quality.md`](../../quality.md). Scale and pass level are — because every evaluator here is deterministic. Evidence is what the check observes.
+`frame-time` and `hitch-bound` are required. Every other axis stays unconfirmed until the owner says it is required. The bar is the matching target in [`../../quality.md`](../../quality.md). Scale and pass level are — because every evaluator here is deterministic.
 
 | Axis | Characteristic | Outcome | Evaluator | Evidence | Scale | Pass level |
 |------|----------------|---------|-----------|----------|-------|------------|

@@ -26,7 +26,7 @@ Same sections and required content as the rules file for each spec in scope. Fil
 
 ### Non-functional requirements
 
-- [ ] Quality expectations has one row per category in `quality.md`. Effect matches the category's applicability there. Each Affects row cites the target and says how it is met or limited.
+- [ ] Quality expectations has one row per category in `quality.md`. Effect matches the category's applicability there. A category whose rows are all Unconfirmed is "No effect". Each Affects row cites the target and says how it is met or limited.
 - [ ] Engineering qualities assess licensing and cost, maintainability, testability, portability, and security and privacy, or say "Not relevant — reason".
 - [ ] Portability covers every supported platform in the definition.
 

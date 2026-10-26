@@ -18,7 +18,7 @@ Edges for [`audit-spec-applicability`](../SKILL.md). From [`.agents/specs/rules/
 
 Performance, load time, reliability, and observability need no design/UX file beyond `quality.md`.
 
-Every characteristic row cites exactly one axis in `specs/definition/quality/rubrics.md`. An N/A row's axis is not a downstream carry-out. When `specs/technical/verification.md` exists, each automatable deterministic axis is cited by an invariant there.
+Every characteristic row cites exactly one axis in `specs/definition/quality/rubrics.md`. An N/A or Unconfirmed row is not a downstream carry-out. Unconfirmed is not a stale N/A. When `specs/technical/verification.md` exists, each automatable deterministic axis on an Applies row is cited by an invariant there.
 
 ## Hub topic follow-ons
 

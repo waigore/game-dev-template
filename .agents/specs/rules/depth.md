@@ -61,7 +61,7 @@ The table sets the minimum for other artifacts. An artifact beyond it is allowed
 ## Other effects
 
 - **Scenarios** (`specs/design/scenarios/`): at full, the scenario rules apply unchanged. At small, at least one scenario walks the core loop to an end condition, and more are optional. At prototype, the Scenarios topic may be N/A citing spec depth.
-- **Quality** (`specs/definition/quality.md`): at prototype, an N/A reason may cite spec depth for every category except performance.
+- **Quality** (`specs/definition/quality.md`): at prototype, an N/A reason may cite spec depth for every category except performance. That citation is the owner's confirmation on a confirm-class axis. It is not the default.
 - **Asset kinds** (`specs/assets/kinds/`): at prototype, Budgets may read "None — spec depth prototype". Coverage, recipes, and checks apply at every depth when that kind is formalized.
 
 ## Changing depth

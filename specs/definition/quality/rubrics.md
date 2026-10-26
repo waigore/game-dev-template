@@ -2,7 +2,7 @@
 
 Authoring rules: [`.agents/specs/rules/quality.md`](../../../.agents/specs/rules/quality.md).
 
-Each axis evaluates one outcome of one characteristic in [`../quality.md`](../quality.md). Applicable axes are scored separately. The product passes only when every applicable axis meets its bar. There is no combined score. The bar is that row's target. An N/A row's axis is not scored.
+Each axis evaluates one outcome of one characteristic in [`../quality.md`](../quality.md). Applicable axes are scored separately. The product passes only when every applicable axis meets its bar. There is no combined score. The bar is that row's target. An N/A or Unconfirmed axis is not scored.
 
 ## Baseline axes
 

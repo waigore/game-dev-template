@@ -10,7 +10,7 @@ Replace every `<!-- fill in -->`.
 
 ## Categories
 
-Each category is **Applies** or **N/A — reason**. An N/A reason cites the vision or the supported platforms. At prototype spec depth, a category other than performance may cite spec depth instead, per [depth.md](depth.md). An Applies row has a measurable target, the platforms it covers, and exactly one axis id listed in the rubric files linked from `specs/definition/quality/rubrics.md`. Those platforms match the definition's supported-platforms table. An N/A row uses "—" for target and platforms. The axis id stays, and that axis is not scored. Add a row when one category has more than one axis. Rows for the same category do not contradict each other, the constraints, or the vision. A target set or limited by an architecture decision cites its ID in the target, such as `(ADR-0003)`.
+Each category row is **Applies**, **N/A — reason**, or **Unconfirmed**. An N/A reason cites the vision, the supported platforms, or, except for performance, prototype spec depth per [depth.md](depth.md). An Applies row has a measurable target, the platforms it covers, and exactly one axis id listed in the rubric files linked from `specs/definition/quality/rubrics.md`. Those platforms match the definition's supported-platforms table. An N/A or Unconfirmed row uses "—" for target and platforms. The axis id stays. Neither is scored. Add a row when one category has more than one axis. Rows for the same category do not contradict each other, the constraints, or the vision. A target set or limited by an architecture decision cites its ID in the target, such as `(ADR-0003)`.
 
 These seven categories are always present. They are the baseline. A genre outcome that none of their axes measure is a new category row, then one new axis. A vision quality is not a category and not an axis.
 
@@ -28,23 +28,27 @@ These seven categories are always present. They are the baseline. A genre outcom
 
 `rubrics.md` sections are Baseline axes, Domain axes, and Judge record. Baseline axes may live in `specs/definition/quality/rubrics/baseline.md`, linked from that section. `quality.md` is the source of truth for characteristics. Each axis evaluates one outcome of one characteristic. Applicable axes are reported separately. The product passes only when every applicable axis meets its bar. There is no combined score. The target on the characteristic row is the bar.
 
-Baseline axis ids are fixed. Do not rename, remove, or change their evaluator. Set only Applies or N/A, the target, and the platforms.
+Baseline axis ids are fixed. Do not rename, remove, or change their evaluator.
 
-| Axis | Characteristic |
-|------|----------------|
-| `frame-time`, `hitch-bound` | Performance |
-| `time-to-playable`, `transition-latency`, `response-delay` | Load time / latency |
-| `crash-free`, `resume-after-failure` | Reliability |
-| `runtime-signals` | Observability |
-| `save-survives`, `failed-write` | Save durability |
-| `distinguishable-channels`, `adjustable-timing`, `text-audio-scale` | Accessibility |
-| `shipped-locales`, `translated-content`, `text-growth` | Localization |
+`frame-time` and `hitch-bound` are **required**. They are operational once the target and platforms are set. They are not N/A and not Unconfirmed.
+
+Every other baseline axis is **confirm**. It stays Unconfirmed, and is not operational, until the owner says it is required. Confirmation sets Applies, the target, and the platforms. A refusal sets N/A with the owner's reason. Do not operationalize a confirm axis without that confirmation.
+
+| Axis | Characteristic | Adoption |
+|------|----------------|----------|
+| `frame-time`, `hitch-bound` | Performance | required |
+| `time-to-playable`, `transition-latency`, `response-delay` | Load time / latency | confirm |
+| `crash-free`, `resume-after-failure` | Reliability | confirm |
+| `runtime-signals` | Observability | confirm |
+| `save-survives`, `failed-write` | Save durability | confirm |
+| `distinguishable-channels`, `adjustable-timing`, `text-audio-scale` | Accessibility | confirm |
+| `shipped-locales`, `translated-content`, `text-growth` | Localization | confirm |
 
 A domain axis uses a new kebab-case id that is not in that table. Add one only when no existing axis would already fail on the same outcome.
 
 The evaluator is `deterministic` or `llm-judge`. Use `deterministic` when a threshold or an invariant can decide pass or fail. Use `llm-judge` only when it cannot. A deterministic row uses "—" for scale and pass level. An `llm-judge` row records an ordinal scale of at least two levels, the minimum passing level, and the evidence the judge may see (build observations, screenshots, logs, or telemetry). The outcome is the criterion. The judge does not add criteria.
 
-A deterministic axis is the verification obligation for that outcome. When `specs/technical/verification.md` exists, one invariant cites each automatable deterministic axis id. An `llm-judge` result binds acceptance. When the rubric is the thing that is wrong, acceptance returns for clarification. The result is not waived while the axis stays as written. Playtest proves design and UX stories. It does not score these axes.
+A deterministic axis is the verification obligation for that outcome only when its row Applies. When `specs/technical/verification.md` exists, one invariant cites each automatable deterministic axis id on an Applies row. An `llm-judge` result binds acceptance. When the rubric is the thing that is wrong, acceptance returns for clarification. The result is not waived while the axis stays as written. Playtest proves design and UX stories. It does not score these axes.
 
 ## Where an Applies category is carried out
 

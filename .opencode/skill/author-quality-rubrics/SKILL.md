@@ -2,9 +2,11 @@
 name: author-quality-rubrics
 description: |-
   Interview the product owner for quality-characteristic targets and orthogonal
-  domain rubric axes, then write them through author-spec. Baseline axes stay
-  fixed. Deterministic evaluators are required when a threshold or invariant
-  can decide the outcome; llm-judge is only for qualitative outcomes.
+  domain rubric axes, then write them through author-spec. Required baseline
+  axes stay operational. Confirm-class baseline axes stay unconfirmed until
+  the owner says they are required. Deterministic evaluators are required
+  when a threshold or invariant can decide the outcome; llm-judge is only
+  for qualitative outcomes.
   Use when defining or revising quality rubrics, or when capture-requirements
   formalizes specs/definition/quality.md.
 
