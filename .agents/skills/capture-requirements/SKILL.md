@@ -28,7 +28,7 @@ These files set the big parameters every other spec builds on:
 
 1. `specs/vision.md`
 2. `specs/definition/definition.md`
-3. `specs/definition/quality.md`
+3. `specs/definition/quality.md` — targets, axis binding, and domain characteristics are [`author-quality-rubrics`](../author-quality-rubrics/SKILL.md). The performance blocking field is the `frame-time` and `hitch-bound` targets that skill records.
 
 **Blocking fields** for a slice being formalized: elevator pitch, essential qualities, scope, player objectives, supported platforms, engine, spec depth, and a performance target. A field is unset when it is still `<!-- fill in -->` or a TBD. Other placeholders in the three files may stay. At `prototype`, other quality categories may stay N/A until a kept slice needs them ([`docs/poc-promotion.md`](../../../docs/poc-promotion.md)).
 
@@ -50,7 +50,7 @@ When the user's input goes beyond the target (often a long first prompt), sort e
 1. **Resolve and confirm the target**:
    - **Not formalizing** (no keep list, and the user did not name a spec file): do not interview the tree. Sort the input per **Detailed input**, save notes, and offer [`scope-poc`](../scope-poc/SKILL.md). Stop.
    - **Formalizing**: capture unset blocking fields together, then the specs in the keep list. If those fields are set but a blocking TBD remains, run [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) on them instead.
-   - **A high-level file named**: capture that file. Do not expand into the rest of the tree.
+   - **A high-level file named**: capture that file. Do not expand into the rest of the tree. When the file is `specs/definition/quality.md`, run [`author-quality-rubrics`](../author-quality-rubrics/SKILL.md) for targets and axes, then stop this interview.
    - **Downstream named** while blocking fields are unset: do not capture it. Say which blocking fields are missing, keep its detail per **Detailed input**, and offer a PoC or the blocking fields.
    - **Downstream named** while formalizing and blocking fields are set: capture that slice.
    - **Ambiguous or several downstream named**: ask which **one** file this run.
@@ -58,7 +58,7 @@ When the user's input goes beyond the target (often a long first prompt), sort e
 3. **Sort and interview**. Sort the input per **Detailed input**. Derive questions from required sections, placeholders, and gaps vs the rules; lead each with its proposed answer from the input or notes when one exists. Prefer few focused rounds over a dump. For already-filled sections, ask only to confirm or revise. Raise conflicts. When the user has not decided something, record it as TBD per [Undecided aspects](../../specs/rules/README.md#undecided-aspects-tbd); do not invent product decisions. In the high-level stage, point out when a TBD would be blocking.
 4. **PoC requests**. When the slice is not formalized, or a claim rests on unproven achievability, **propose** a PoC, or **accept** one the user requests. Draft purpose, scope, and desired outcome. Same path for both. See [`docs/pocs.md`](../../../docs/pocs.md) and [`docs/requirements/poc-requests.md`](../../../docs/requirements/poc-requests.md). Do not treat a PoC as a gate for already-formalized main-tree work.
 5. **Confirm**. Short bullet summary per target of what will be written, each TBD with its open question, the notes to save, PoC requests to log (purpose/scope/outcome/trigger), and the notes consumed or rejected; wait for user OK or corrections.
-6. **Author**. Run [`author-spec`](../author-spec/SKILL.md) for each target with the confirmed answers. Save new notes and confirmed PoC request entries; prune consumed or rejected ones.
+6. **Author**. Run [`author-spec`](../author-spec/SKILL.md) for each target with the confirmed answers. For `specs/definition/quality.md`, that write is [`author-quality-rubrics`](../author-quality-rubrics/SKILL.md) step 5, which returns the paths. Save new notes and confirmed PoC request entries; prune consumed or rejected ones.
 7. **File PoCs** (optional same run): for each confirmed request, offer [`create-project-task`](../create-project-task/SKILL.md) or [`create-project-epic`](../create-project-epic/SKILL.md) with purpose/scope/outcome in the body, or defer to the planner. Update the log Status/Issue when filed. Dependents may use native blocked-by that issue only.
 8. **Open a spec PR** per [Spec PRs](../../../docs/pull-requests.md#spec-prs), covering the specs, notes, and PoC log of this run.
 9. **Offer the next target**: when formalizing, the next keep-list spec whose blocking fields are set. Otherwise stop. A new target is a new run of these steps. Optionally note `review-spec` and `audit-spec-tbd` when TBDs remain; do not run them unless the user asks.
