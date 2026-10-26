@@ -1,6 +1,6 @@
 # Implementation waves
 
-How agents slice a defined spec set into shippable waves. Skills: [`plan-project-waves`](../../.agents/skills/plan-project-waves/SKILL.md) (cut and file), [`audit-project-wave`](../../.agents/skills/audit-project-wave/SKILL.md) (audit filed wave). Index: [README.md](README.md).
+How agents slice formalized specs into shippable waves. A file or section that is still `<!-- fill in -->` is not scope. Skills: [`plan-project-waves`](../../.agents/skills/plan-project-waves/SKILL.md) (cut and file), [`audit-project-wave`](../../.agents/skills/audit-project-wave/SKILL.md) (audit filed wave). Index: [README.md](README.md).
 
 ## Wave vs epic
 
@@ -17,7 +17,7 @@ Every wave milestone **must** have a description that states the wave’s **expe
 
 ## Foundation
 
-Wave 1 always includes **bootstrap** and the **asset pipeline** in full, plus any other framework substrate the wave-1 verticals need. Foundation epics/tasks are ordered first with native **blocked-by** so later epics reuse them. Prefer thin foundation that unlocks the wave; do not hide vertical play inside a catch-all “systems” epic.
+Wave 1 always includes **bootstrap** and the **asset pipeline** where those are formalized, plus any other formalized framework substrate the wave-1 verticals need. Do not file tasks to fill placeholder specs. Foundation epics/tasks are ordered first with native **blocked-by** so later epics reuse them. Prefer thin foundation that unlocks the wave; do not hide vertical play inside a catch-all “systems” epic.
 
 ## Vertical epics
 
@@ -25,7 +25,7 @@ Prefer self-contained vertical slices (design + UX + tech + assets for one outco
 
 ## PoCs and demo mode
 
-There is **no** global “PoC before main code” gate. Open requests in [`docs/requirements/poc-requests.md`](../requirements/poc-requests.md) are planner debt to surface; file as tasks/epics when useful. Use native **blocked-by** only when a dependent claim must wait on that PoC. Optional reconcile: [`poc-promotion.md`](../poc-promotion.md).
+There is **no** global “PoC before every main-tree edit” gate. Already-specced work does not need a new PoC. Product behavior that is not in a formalized spec goes back to Explore ([`pocs.md`](../pocs.md)). Open requests in [`docs/requirements/poc-requests.md`](../requirements/poc-requests.md) are planner debt to surface; file as tasks/epics when useful. Use native **blocked-by** only when a dependent claim must wait on that PoC. Formalize a kept PoC through [`poc-promotion.md`](../poc-promotion.md).
 
 Product **demo mode** (when [`specs/design/demo.md`](../../specs/design/demo.md) Offering is offered) is ordinary main-tree work, not a `pocs/` folder and not a wave-start blocker by itself.
 
