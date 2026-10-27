@@ -9,7 +9,7 @@ How agents slice formalized specs into shippable waves. A file or section that i
 | **Wave** | A GitHub **milestone** — a set of epics that ship as one coherent deliverable |
 | **Epic** | One focused outcome: usually a **vertical** player-facing slice; sometimes a **foundation** epic |
 
-A wave is not an issue type. Milestone title: `Wave N — <coherent outcome>`.
+A wave is not an issue type. Milestone title: `Wave N — <coherent outcome>`. Soft size: at most 2–3 epics per wave, and about 10 implementation tasks per epic.
 
 ## Milestone description
 
