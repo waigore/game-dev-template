@@ -1,6 +1,6 @@
 # Pull requests
 
-Every change reaches `main` through a PR; `main` is protected ([`github-repo-setup.md`](github-repo-setup.md)). Agents open the PR themselves when a change is done; do not stop at local edits or commits.
+Every change reaches `main` through a PR; `main` is protected ([`github-repo-setup.md`](github-repo-setup.md)). Agents open the PR themselves when a change is done; do not stop at local edits or commits. PoC work asks first ([`pocs.md`](pocs.md#pull-requests)).
 
 ## Flow
 

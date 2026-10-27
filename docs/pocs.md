@@ -7,7 +7,7 @@ Product **demo mode** is different: [`demo.md`](demo.md).
 ## Explore, then formalize
 
 1. **Explore**: build the slice here. The README records the question, what is in and out, how to run it, and the engine when the experiment needs one.
-2. **Iterate**: change the PoC freely. Several PoCs may exist. Nothing here authorizes main-tree code.
+2. **Iterate**: change the PoC freely on the local branch. Several PoCs may exist. Nothing here authorizes main-tree code. Ask before a PR ([Pull requests](#pull-requests)).
 3. **Formalize**: a kept PoC enters the game through [`poc-promotion.md`](poc-promotion.md). Spec depth is the bar for that keep list.
 
 ## Request → track → build
@@ -18,6 +18,10 @@ Product **demo mode** is different: [`demo.md`](demo.md).
 4. **Scope / build**: [`scope-poc`](../.agents/skills/scope-poc/SKILL.md), then [`create-poc`](../.agents/skills/create-poc/SKILL.md).
 
 Already-specced main-tree work does not need a new PoC. Product behavior that is not in a formalized spec goes back to Explore.
+
+## Pull requests
+
+Commit on the local branch. Ask before any pull request for this PoC, including assets, style, and promotion ([`poc-promotion.md`](poc-promotion.md)). Open it only after the user agrees ([`pull-requests.md`](pull-requests.md)). A no leaves the branch unpushed, including when a task owns the work. Run `implement-project-issue` only after that PR exists.
 
 ## Types
 

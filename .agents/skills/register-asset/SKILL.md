@@ -47,7 +47,7 @@ Assets an agent generates or sources go through [`manage-asset`](../manage-asset
 10. **Review or approve**:
    - **Exempt**: set the state to approved; it takes effect when the PR merges. Run `review-asset` only if the user asks; its verdict is advisory and does not change the state.
    - **Not exempt**: run [`review-asset`](../review-asset/SKILL.md) (`APR.review`). On Pass, approve per the hub's **Approval** rule. On Fail, report the findings to the user; fixes come from the person who supplied the asset, or from a touch-up they agree to (step 4).
-11. **PR**: open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** cites the kind spec and coverage IDs (or the demo task), and the hub's **Review exemption** rule when used. **Test plan** lists touch-ups applied, `python3 .github/scripts/asset_catalog.py` passing, the handle collision check, and the `review-asset` verdict or "Exempt — granted by <person>". If the work delivers a typed issue, run `implement-project-issue`.
+11. **PR**: when the run is for a PoC under `pocs/`, ask first per [Pull requests](../../../docs/pocs.md#pull-requests); on no, leave the branch local and stop. Otherwise open per [`docs/pull-requests.md`](../../../docs/pull-requests.md). **Authority** cites the kind spec and coverage IDs (or the demo task), and the hub's **Review exemption** rule when used. **Test plan** lists touch-ups applied, `python3 .github/scripts/asset_catalog.py` passing, the handle collision check, and the `review-asset` verdict or "Exempt — granted by <person>". If the work delivers a typed issue and a PR is open, run `implement-project-issue`.
 
 ## Rules
 

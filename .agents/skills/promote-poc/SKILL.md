@@ -28,7 +28,7 @@ Promotion is a reimplementation in the main tree with the PoC as reference, not 
 3. **Keep list only**: if a kept claim disagrees with the current spec, stop and run `reconcile-poc` again. Do not choose a winner here.
 4. **Find spec work** for the keep/adapt list: assumptions needing spec content; technical coverage the code needs; assets used (IDs/handles never change on promotion).
 5. **Propose and confirm** that spec work. Wait. Do not re-ask keep/drop/adapt.
-6. **Write the specs**: the keep list only, at spec depth per [`docs/poc-promotion.md`](../../../docs/poc-promotion.md). [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) / [`author-spec`](../author-spec/SKILL.md). Leave placeholders the keep list does not need. Open a spec PR per [Spec PRs](../../../docs/pull-requests.md#spec-prs). Remove elements whose assumptions were not confirmed.
+6. **Write the specs**: the keep list only, at spec depth per [`docs/poc-promotion.md`](../../../docs/poc-promotion.md). [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) / [`author-spec`](../author-spec/SKILL.md). Leave placeholders the keep list does not need. When specs changed, ask before a spec PR per [Pull requests](../../../docs/pocs.md#pull-requests). On yes, open it per [Spec PRs](../../../docs/pull-requests.md#spec-prs). On no, leave the edits on the local branch and stop. Remove elements whose assumptions were not confirmed.
 7. **Track**: use the given task, or create one with `create-project-task` naming the PoC, elements in scope, the spec PR, and where the code goes. Wait for `status:pending-implementation`.
 
 ### Implement
@@ -38,7 +38,7 @@ Promotion is a reimplementation in the main tree with the PoC as reference, not 
 10. **UI mockups**: when the keep/adapt list includes interactive UI, ensure screen (and journey, when scoped) mockups exist, match the promoted UI, and are catalog-`approved` before main-tree UI merges ([`docs/ux-mockups.md`](../../../docs/ux-mockups.md), [`docs/poc-promotion.md`](../../../docs/poc-promotion.md)). Author or update mockups from the PoC as needed; approval may be PO or `review-project-issue`.
 11. **Reimplement** in the main tree per the technical design, [`docs/solid.md`](../../../docs/solid.md), [`docs/coding-conventions.md`](../../../docs/coding-conventions.md), and existing structure. Add tests per the project bar. Do not import from `pocs/` or copy its structure when SOLID/conventions/continuity disagree.
 12. **Leave the PoC unchanged**: no edits under `pocs/`.
-13. **PR** per [`docs/pull-requests.md`](../../../docs/pull-requests.md). Then run [`implement-project-issue`](../implement-project-issue/SKILL.md).
+13. **PR**: apply [Pull requests](../../../docs/pocs.md#pull-requests). On yes, open per [`docs/pull-requests.md`](../../../docs/pull-requests.md), then run [`implement-project-issue`](../implement-project-issue/SKILL.md). On no, leave the branch local and skip that skill.
 
 ## Rules
 
