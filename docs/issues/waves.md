@@ -25,7 +25,7 @@ Prefer self-contained vertical slices (design + UX + tech + assets for one outco
 
 ## PoCs and demo mode
 
-There is **no** global “PoC before every main-tree edit” gate. Already-specced work does not need a new PoC. Product behavior that is not in a formalized spec goes back to Explore ([`pocs.md`](../pocs.md)). Open requests in [`docs/requirements/poc-requests.md`](../requirements/poc-requests.md) are planner debt to surface; file as tasks/epics when useful. Use native **blocked-by** only when a dependent claim must wait on that PoC. Formalize a kept PoC through [`poc-promotion.md`](../poc-promotion.md).
+There is **no** global “PoC before every main-tree edit” gate. Already-specced work does not need a new PoC. Product behavior that is not in a formalized spec goes back to `capture-requirements`. Open requests in [`docs/requirements/poc-requests.md`](../requirements/poc-requests.md) are planner debt to surface; file as tasks/epics when useful. Use native **blocked-by** only when a dependent claim must wait on that PoC. A kept PoC returns through [`poc-promotion.md`](../poc-promotion.md).
 
 Product **demo mode** (when [`specs/design/demo.md`](../../specs/design/demo.md) Offering is offered) is ordinary main-tree work, not a `pocs/` folder and not a wave-start blocker by itself.
 

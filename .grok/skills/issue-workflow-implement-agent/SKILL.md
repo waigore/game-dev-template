@@ -4,8 +4,8 @@ description: |-
   Background dispatch for status:pending-implementation: resolve or discover one
   typed issue, perform the implementation work, then run implement-project-issue
   (deliverables comment + status gate). Product behavior with no formalized spec
-  stops for a PoC. Already-formalized work does not. Use when automation
-  dispatches an unattended implement agent.
+  stops for capture-requirements. A PoC starts only when the issue asks to
+  explore. Use when automation dispatches an unattended implement agent.
 
   Examples:
     - dispatch with no issue → discover pending-implementation, pick one, implement

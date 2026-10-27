@@ -41,7 +41,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (veneers, **Invoke
 | [`author-spec`](author-spec/SKILL.md) | Write or edit a spec from `.agents/specs/rules/`; do not copy the rules into the spec |
 | [`author-quality-rubrics`](author-quality-rubrics/SKILL.md) | Interview baseline targets and orthogonal domain axes; write via `author-spec`; execution is `run-quality-evaluators` |
 | [`run-quality-evaluators`](run-quality-evaluators/SKILL.md) | Execute Applies axes: deterministic from verify, llm-judge from accept; write `docs/quality/evidence/`; no status change |
-| [`capture-requirements`](capture-requirements/SKILL.md) | Interview for specs when a slice is formalized; a first prompt offers a PoC; confirm, `author-spec`, open a spec PR |
+| [`capture-requirements`](capture-requirements/SKILL.md) | Default path: interview specs the user picks, foundation first; confirm, `author-spec`, open a spec PR. A PoC only when they ask to explore |
 | [`review-spec`](review-spec/SKILL.md) | Review a spec doc or the formalized set; placeholder-only files are not a Fail; whole-spec also runs applicability, terminology, and TBD audits |
 | [`serve-ux-mockups`](serve-ux-mockups/SKILL.md) | Explicit-only: serve `specs/ux/mockups/` on the LAN with a generated index, open it in the browser, and report localhost and LAN URLs |
 | [`review-code`](review-code/SKILL.md) | Review code vs `docs/solid.md` (SOLID + continuity) and `docs/coding-conventions.md` (project rules + Code lint / Unit tests / Coverage); Pass/Fail, read-only |
@@ -51,7 +51,7 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (veneers, **Invoke
 | [`audit-spec-terminology`](audit-spec-terminology/SKILL.md) | Audit glossary ownership and term usage (undefined, drift, synonyms, homonyms); report for author-spec |
 | [`audit-spec-tbd`](audit-spec-tbd/SKILL.md) | Find TBDs (undecided aspects), propose grounded answers, confirm with the user, then author-spec |
 | [`scope-poc`](scope-poc/SKILL.md) | Clarify PoC purpose/scope/outcome from log or issue; tool/env blockers only; [Before building](../../docs/pocs.md#before-building) |
-| [`create-poc`](create-poc/SKILL.md) | Build a PoC under `pocs/` after `scope-poc` passes; freer exploration, not spec-bound |
+| [`create-poc`](create-poc/SKILL.md) | Build a PoC under `pocs/` after `scope-poc` passes; formalized specs constrain it; SOLID and conventions do not |
 | [`manage-asset`](manage-asset/SKILL.md) | Generate, import, update, or deprecate assets per `specs/assets/` procedures; catalog, review, PR |
 | [`establish-asset-style`](establish-asset-style/SKILL.md) | Establish or refresh a kind Style series (anchors → Recraft / ElevenLabs CLI / soft SFX → registry); PR |
 | [`register-asset`](register-asset/SKILL.md) | Catalog a person-supplied (human-made or third-party) asset; person-granted review exemption or review-asset; PR |

@@ -28,7 +28,7 @@ Promotion is a reimplementation in the main tree with the PoC as reference, not 
 3. **Keep list only**: if a kept claim disagrees with the current spec, stop and run `reconcile-poc` again. Do not choose a winner here.
 4. **Find spec work** for the keep/adapt list: assumptions needing spec content; technical coverage the code needs; assets used (IDs/handles never change on promotion).
 5. **Propose and confirm** that spec work. Wait. Do not re-ask keep/drop/adapt.
-6. **Write the specs**: the keep list only, at spec depth per [`docs/poc-promotion.md`](../../../docs/poc-promotion.md). [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) / [`author-spec`](../author-spec/SKILL.md). Leave placeholders the keep list does not need. When specs changed, ask before a spec PR per [Pull requests](../../../docs/pocs.md#pull-requests). On yes, open it per [Spec PRs](../../../docs/pull-requests.md#spec-prs). On no, leave the edits on the local branch and stop. Remove elements whose assumptions were not confirmed.
+6. **Write the specs**: the keep list only, through [`capture-requirements`](../capture-requirements/SKILL.md) (keep-list mode), at spec depth per [`docs/poc-promotion.md`](../../../docs/poc-promotion.md). Leave placeholders the keep list does not need. That skill asks before the spec PR. On a no, it leaves the edits on the local branch; stop. Remove elements whose assumptions were not confirmed.
 7. **Track**: use the given task, or create one with `create-project-task` naming the PoC, elements in scope, the spec PR, and where the code goes. Wait for `status:pending-implementation`.
 
 ### Implement
