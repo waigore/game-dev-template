@@ -22,7 +22,7 @@ Interview, then write via [`author-spec`](../author-spec/SKILL.md). Do not run e
 
 ## Steps
 
-0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session. Continue only on Pass. Skip this step when [`capture-requirements`](../capture-requirements/SKILL.md) is the caller and already passed setup.
+0. **Setup**: [`docs/skills.md`](../../../docs/skills.md) `ensure-project-setup` hook. Skip when [`capture-requirements`](../capture-requirements/SKILL.md) is the caller and already passed setup.
 1. **Load**. Read the quality rules, both spec files, `specs/vision.md`, and the definition's platforms and spec depth. Treat a confirmed performance target from `capture-requirements` as the proposed `frame-time` and `hitch-bound` bars.
 2. **Baseline**. For each of the seven characteristics, lead with the current row as the proposed answer. Ask Applies or N/A, the target, and the platforms. Do not rename, remove, or change the evaluator of a baseline axis. An N/A reason cites the vision, the supported platforms, or, except for performance, prototype spec depth. One characteristic may mix Applies and N/A across its axes.
 3. **Domain**. Ask whether the genre needs an outcome no baseline axis measures. For each candidate, record the new characteristic, the outcome, and the axis id. Ask which existing axis would already fail if this outcome failed. If the owner names one, drop the candidate. If a threshold or an invariant can decide pass or fail, the evaluator is `deterministic`. Otherwise it is `llm-judge`: record the ordinal scale, the minimum passing level, and the evidence the judge may see. A vision quality is not an axis.

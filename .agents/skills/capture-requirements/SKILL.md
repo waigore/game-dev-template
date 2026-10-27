@@ -46,7 +46,7 @@ When the user's input goes beyond the target (often a long first prompt), sort e
 
 ## Steps
 
-0. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session. Continue only on Pass.
+0. **Setup**: [`docs/skills.md`](../../../docs/skills.md) `ensure-project-setup` hook.
 1. **Resolve and confirm the target**:
    - **Not formalizing** (no keep list, and the user did not name a spec file): do not interview the tree. Sort the input per **Detailed input**, save notes, and offer [`scope-poc`](../scope-poc/SKILL.md). Stop.
    - **Formalizing**: capture unset blocking fields together, then the specs in the keep list. If those fields are set but a blocking TBD remains, run [`audit-spec-tbd`](../audit-spec-tbd/SKILL.md) on them instead.

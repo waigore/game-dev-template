@@ -18,7 +18,7 @@ Contract: [Before building](../../../docs/pocs.md#before-building) and [Types](.
 
 ## Steps
 
-1. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session. Continue only on Pass.
+1. **Setup**: [`docs/skills.md`](../../../docs/skills.md) `ensure-project-setup` hook.
 2. **Always-on**: apply [Before building](../../../docs/pocs.md#before-building). On a miss, stop. Do not add a high-level lock or an Engine ADR.
 3. **Load request**: prefer the given task body (purpose, scope, desired outcome). Else read [`docs/requirements/poc-requests.md`](../../../docs/requirements/poc-requests.md). If neither has a confirmed request, draft one with the user and log it per that file before continuing.
 4. **Already scoped**: when the task is `status:pending-implementation` and its body has confirmed purpose/scope/outcome, classify and return pass or the misses. Do not confirm again.

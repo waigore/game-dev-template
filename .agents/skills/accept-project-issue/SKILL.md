@@ -14,35 +14,21 @@ description: |-
 
 # Accept project issue
 
-Acceptance testing for a typed issue in `status:pending-acceptance`.
-
-**Contract:** [`docs/issues/workflow.md`](../../../docs/issues/workflow.md)
-
-**Status gate:** [`enforce-task-workflow-status`](../enforce-task-workflow-status/SKILL.md)
+Veneer over the [action shell](../enforce-task-workflow-status/references/action-shell.md) for `status:pending-acceptance`.
 
 **Type routing:** [`docs/issues/requirements.md`](../../../docs/issues/requirements.md) (When to file what).
 
-**Playtesting:** [`specs/playtest/playtest.md`](../../../specs/playtest/playtest.md) — required only when deliverables change playable behavior (see step 4).
+**Playtesting:** [`specs/playtest/playtest.md`](../../../specs/playtest/playtest.md) — required only when deliverables change playable behavior.
 
-## Steps
+Load acceptance criteria, the verification comment, and related PRs. Test against each acceptance criterion. Evidence must be locatable in the repo (logs, screenshots, paths). Summarize where to find it.
 
-1. **Load** issue `n`, acceptance criteria, verification comment, related PRs.
-2. **Assert** `status:pending-acceptance`.
-3. **Test** against each acceptance criterion. Evidence must be locatable in the repo (logs, screenshots, paths).
-   When the issue's deliverables change playable behavior (game or code), also run AI-agent playtesting per [`specs/playtest/playtest.md`](../../../specs/playtest/playtest.md) and cite evidence under [`docs/playtest/evidence/`](../../../docs/playtest/evidence/) (story IDs, pass/fail, notes, logs, and screenshots when required). Spec-only, docs-only, or other non-playable deliverables do not require playtesting.
-   A headless playtest run may judge and record pass/fail, notes, and logs. Acceptance still needs screenshots from a graphical re-run of that same build for every protocol that requires them. A protocol that says none may be accepted from the headless run alone.
-4. **Outcome:**
-   - **Accept** — comment summarizing evidence per criterion and related PRs, including the graphical-run screenshot paths when playtesting required them. Gate: `pending-acceptance` → `accepted`. **Do not close** the issue (only [`project-planner-agent`](../project-planner-agent/SKILL.md) closes accepted work).
-   - **Waiting on screenshots** — headless judgement is recorded and required screenshots are not in the repo yet. Comment with the evidence path and that acceptance waits on a graphical re-run of the same build. Stay on `pending-acceptance`. Do not file a defect. Do not call the status gate.
-   - **Fail** — a protocol failed for a **game or interface** reason. Create a Defect via `create-project-defect` when appropriate; link it in the comment. Gate: `pending-acceptance` → `pending-implementation`. Missing screenshots alone are not this outcome. Never file a defect for a spec/doc/map problem.
-   - **Clarify** — tests cannot proceed without PO input, **or** a wrong/ambiguous **spec** blocks judging the AC. Summarize questions. Gate: `pending-acceptance` → `pending-clarification`. No defect.
-5. **Report** URL, outcome, new status (and defect URL if any).
+When the issue's deliverables change playable behavior (game or code), also run AI-agent playtesting per [`specs/playtest/playtest.md`](../../../specs/playtest/playtest.md) and cite evidence under [`docs/playtest/evidence/`](../../../docs/playtest/evidence/) (story IDs, pass or fail, notes, logs, and screenshots when required). Spec-only, docs-only, or other non-playable deliverables do not require playtesting.
 
-## Rules
+A headless playtest run may judge and record pass or fail, notes, and logs. Acceptance still needs screenshots from a graphical re-run of that same build for every protocol that requires them. A protocol that says none may be accepted from the headless run alone.
 
-- Leave `status:accepted` issues open; do not close on accept. Closure is planner-only.
-- Evidence paths should be in-repo; summarize where to find them.
-- Call `enforce-task-workflow-status` for the label change.
-- Do not require playtest evidence when the issue does not change playable behavior.
-- Do not file a defect, and do not move status, when the only gap is screenshots from a headless run.
-- Defects are in-game/interface only; spec problems are clarification or a task ([`requirements.md`](../../../docs/issues/requirements.md)).
+## Outcome
+
+- **Accept** — comment summarizing evidence per criterion and related PRs, including the graphical-run screenshot paths when playtesting required them. Gate: `pending-acceptance` → `accepted`. Leave the issue open. Only [`project-planner-agent`](../project-planner-agent/SKILL.md) closes accepted work.
+- **Waiting on screenshots** — headless judgement is recorded and required screenshots are not in the repo yet. Comment with the evidence path and that acceptance waits on a graphical re-run of the same build. Stay on `pending-acceptance`. Do not file a defect. Do not call the status gate.
+- **Fail** — a protocol failed for a **game or interface** reason. Create a Defect via `create-project-defect` when appropriate and link it in the comment. Gate: `pending-acceptance` → `pending-implementation`. Missing screenshots alone are not this outcome. Never file a defect for a spec, doc, or map problem.
+- **Clarify** — tests cannot proceed without product-owner input, or a wrong or ambiguous **spec** blocks judging the acceptance criteria. Summarize questions. Gate: `pending-acceptance` → `pending-clarification`. No defect.

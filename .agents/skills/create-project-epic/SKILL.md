@@ -14,28 +14,14 @@ description: |-
 
 # Create project epic
 
-Create a repository **Epic** (`type:epic`).
+Veneer for a repository **Epic** (`type:epic`).
 
-**Issue contract:** [`docs/issues/`](../../../docs/issues/) (`requirements.md`, `body-shapes.md`, `hierarchy.md`). Do not redefine sections or invent a parallel template in this skill.
+**Create:** read and apply [`typed-issue-create.md`](../create-project-task/references/typed-issue-create.md).
 
-**Linking (sub-issues / blocked-by commands):** [`../create-project-task/references/github-issue-linking.md`](../create-project-task/references/github-issue-linking.md).
+## Deltas
 
-## Steps
-
-1. **Read** Epic requirements + body shape docs.
-2. **Collect** `title` and content for every required Epic section; optional notes, `blocked_by`, `blocking`. Ask if required content is missing.
-3. **Build** the body exactly as specified in `body-shapes.md`.
-4. If `--no-create` / "draft only": print title + body and stop.
-5. **Create**: `gh issue create --title "…" --label "type:epic" --label "status:pending-review" --label "priority:normal" --body "…"` (use `priority:high` or `priority:critical` only when the human explicitly requests that priority at create time).
-6. **Blocked-by**: for each blocker, follow the linking reference.
-7. **Report** URL, labels (`type:epic`, `status:pending-review`, `priority:*`), and dependency wiring.
-
-## Rules
-
-- Apply labels `type:epic`, `status:pending-review`, and exactly one `priority:*` (default `priority:normal`).
-- Do not change priority after create; only humans set or change priority later.
-- Default: create on GitHub.
-- Do not create child tasks unless asked; use `create-project-task` for children.
+- Collect optional notes, `blocked_by`, and `blocking`.
+- Do not create child tasks unless asked. Use `create-project-task` for children.
 
 ## Related
 

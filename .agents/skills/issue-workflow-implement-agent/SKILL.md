@@ -14,15 +14,13 @@ description: |-
 
 # Issue workflow implement agent
 
-Thin automation entrypoint for `status:pending-implementation`.
+Veneer for unattended `status:pending-implementation`.
 
-**Contract / discovery:** [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md)
+Resolve one issue per [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md). Do the work, then read and run [`implement-project-issue`](../implement-project-issue/SKILL.md). That skill records evidence only. Report its outcome and stop. Verification is a later `issue-workflow-verify-agent` run.
 
-**Delegates to:** [`implement-project-issue`](../implement-project-issue/SKILL.md) (after doing the work)
+## Work
 
-## Steps
-
-1. **Resolve** one target issue per the dispatch contract. Agent-orc `Assigned issue: N` is `#n`; `none` or no number means discover `status:pending-implementation`.
-2. **Perform** the implementation work required by that issue (branch, code/specs/assets as scoped, PR as appropriate). A PoC follows [`create-poc`](../create-poc/SKILL.md), including its pull-request ask. Respect native **blocked-by** edges (including a PoC task when one must prove a claim). If the issue asks for product behavior that has no formalized spec, stop and offer [`create-poc`](../create-poc/SKILL.md). Do not require a PoC when the spec for that work is already formalized. Before main-tree UI work, confirm the formalized screen mockup(s) are `approved` in [`specs/ux/mockups/catalog.md`](../../../specs/ux/mockups/catalog.md) ([`docs/ux-mockups.md`](../../../docs/ux-mockups.md)); if not, stop and report — do not implement UI. `implement-project-issue` records evidence only — it does not replace this step.
-3. **Read and run** `implement-project-issue` for that issue.
-4. **Report** the underlying skill's outcome (URL, evidence, new status). Stop after `implement-project-issue`. Verification is a later `issue-workflow-verify-agent` run.
+- Branch, change code, specs, or assets as the issue scopes, and open a PR when that is appropriate.
+- A PoC follows [`create-poc`](../create-poc/SKILL.md), including its pull-request ask. Respect native **blocked-by** edges, including a PoC task that must prove a claim.
+- If the issue asks for product behavior with no formalized spec, stop and offer `create-poc`. Do not require a PoC when that spec is already formalized.
+- Before main-tree UI, confirm the formalized screen mockup(s) are `approved` in [`specs/ux/mockups/catalog.md`](../../../specs/ux/mockups/catalog.md) ([`docs/ux-mockups.md`](../../../docs/ux-mockups.md)). If not, stop and report.

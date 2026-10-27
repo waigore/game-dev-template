@@ -17,7 +17,7 @@ Contract: [`docs/poc-promotion.md`](../../../docs/poc-promotion.md). Apply the A
 
 ## Steps
 
-1. **Setup**: run [`ensure-project-setup`](../ensure-project-setup/SKILL.md) unless it already passed in this session. Continue only on Pass.
+1. **Setup**: [`docs/skills.md`](../../../docs/skills.md) `ensure-project-setup` hook.
 2. **Select**: the PoC(s) the user named, or every incomplete act under `pocs/` if they asked to reconcile all. If none exist, stop and say so—do **not** block main-code work.
 3. **Already satisfied**: if every selected act is complete and no kept claim disagrees with another kept claim or the current spec, return pass. Do not walk a completed act again.
 4. **Walk**: for each incomplete PoC, for each claim/behavior, ask keep, drop, or adapt. Default keep. Wait for that item before the next.
