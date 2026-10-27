@@ -25,7 +25,7 @@ Exactly one `priority:*` label (`critical` / `high` / `normal`). Create applies 
 
 ## Transitions and evidence
 
-Evidence is freeform prose; intent must be clear. Post evidence as an issue comment (except refinement, which also edits the body). Then call `enforce-task-workflow-status` to apply the next label.
+Evidence is freeform prose; intent clear. Post it as an issue comment (refinement also edits the body). Then call `enforce-task-workflow-status`.
 
 | From | Action / evidence | To |
 |------|-------------------|-----|
@@ -35,9 +35,9 @@ Evidence is freeform prose; intent must be clear. Post evidence as an issue comm
 | pending-refinement | Refined issue body + summary comment | pending-review |
 | pending-clarification | PO clarification comment | pending-review, or pending-refinement if refine still needed |
 | pending-implementation | Comment summarizing deliverables (PRs/commits) | pending-verification |
-| pending-verification | Independent pass: checked each deliverable; standards followed; adequate tests | pending-acceptance |
+| pending-verification | Independent pass: deliverables, standards, tests; deterministic rubric record when an axis applies | pending-acceptance |
 | pending-verification | Fail: detail issues | pending-implementation |
-| pending-acceptance | Accept: repo-locatable test evidence per AC; related PRs | accepted (acceptance leaves open; planner may close later) |
+| pending-acceptance | Accept: AC evidence; related PRs; cite deterministic rubric record; llm-judge record when an axis applies | accepted (acceptance leaves open; planner may close later) |
 | pending-acceptance | Fail (game/interface): link created defect | pending-implementation |
 | pending-acceptance | Spec/ambiguity blocks testing (no defect) | pending-clarification |
 | pending-acceptance | Cannot test without PO input | pending-clarification |

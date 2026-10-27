@@ -44,7 +44,7 @@ A domain axis uses a new kebab-case id that is not in that table. Add one only w
 
 The evaluator is `deterministic` or `llm-judge`. Use `deterministic` when a threshold or an invariant can decide pass or fail. Use `llm-judge` only when it cannot. A deterministic row uses "—" for scale and pass level. An `llm-judge` row records an ordinal scale of at least two levels, the minimum passing level, and the evidence the judge may see (build observations, screenshots, logs, or telemetry). The outcome is the criterion. The judge does not add criteria.
 
-A deterministic axis is the verification obligation for that outcome. When `specs/technical/verification.md` exists, one invariant cites each automatable deterministic axis id. An `llm-judge` result binds acceptance. When the rubric is the thing that is wrong, acceptance returns for clarification. The result is not waived while the axis stays as written. Playtest proves design and UX stories. It does not score these axes.
+A deterministic axis is the verification obligation for that outcome. When `specs/technical/verification.md` exists, one invariant cites each automatable deterministic axis id. An `llm-judge` result binds acceptance. `run-quality-evaluators` executes the selected axes: `deterministic` during verification, `llm-judge` during acceptance. Verification fails when an in-scope deterministic axis has no citing invariant. Acceptance cites the deterministic evidence record and does not run those checks again. When the rubric is the thing that is wrong, acceptance returns for clarification. The result is not waived while the axis stays as written. Playtest proves design and UX stories. It does not score these axes.
 
 ## Where an Applies category is carried out
 

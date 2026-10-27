@@ -36,4 +36,4 @@ Interview, then write via [`author-spec`](../author-spec/SKILL.md). Do not run e
 - No combined score. Every applicable axis must pass on its own.
 - Do not waive an `llm-judge` result by editing nothing. A wrong rubric is a new run of this skill. Acceptance returns for clarification while the axis stays as written.
 - Do not score playtest protocols, vision qualities, or per-issue acceptance criteria as rubrics.
-- The runner that executes evaluators is a separate skill. Do not invent it here.
+- Executing evaluators is [`run-quality-evaluators`](../run-quality-evaluators/SKILL.md). Do not run them here.
