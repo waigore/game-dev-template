@@ -23,7 +23,7 @@ Technical shape covers the keep list only. Aesthetics, asset kinds, and playtest
 
 - Walk each claim or demonstrated behavior in the PoC README. Default **keep**. Choices: **keep** (land in specs + main), **drop**, or **adapt** (keep intent, change shape to fit design).
 - A kept/adapted claim that disagrees with another PoC or the current spec stops for the user. The winner is written into `specs/`. A losing claim is not promoted. PoC behavior stays as it was.
-- The act is complete only after any spec PR from those choices has merged.
+- The act is complete only after any agreed spec PR from those choices has merged. Ask first ([Pull requests](pocs.md#pull-requests)). A no leaves the edits on the local branch and the act incomplete.
 - Record keep/drop/adapt and conflict choices in the PoC README. Do not walk a completed act again unless a new conflict appears.
 
 ## Reimplementation

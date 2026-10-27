@@ -23,7 +23,7 @@ Surfaces undecided aspects marked per [Undecided aspects](../../specs/rules/READ
 3. **Order upstream first**, in [`specs/README.md`](../../../specs/README.md) index order. Mark a TBD **blocking** when a downstream TBD links it, or when it sits in a high-level field listed under [High-level stage](../capture-requirements/SKILL.md#high-level-stage).
 4. **Suggest**: for each TBD, read its rules file (per the path table) and the upstream specs that ground it. Propose one to three answers that satisfy the rules, each citing the upstream fact it rests on (a vision quality, scope item, constraint, platform, Accepted ADR). Mark one as recommended only when the upstream points to it. If nothing upstream grounds an answer, say so and pass the question on as written.
 5. **Report** in the shape below, then **ask the user to confirm**, upstream and blocking first, a few at a time. Use a structured multiple-choice question when available, always allowing a custom answer or "keep TBD".
-6. **Hand off**: for each confirmed answer, run `author-spec` on that file to replace the TBD. Then open a spec PR per [Spec PRs](../../../docs/pull-requests.md#spec-prs). A downstream TBD that cited a resolved one is re-asked, not resolved automatically.
+6. **Hand off**: for each confirmed answer, run `author-spec` on that file to replace the TBD. When `reconcile-poc` or `promote-poc` is the caller, return the written paths and do not open a PR. Otherwise open a spec PR per [Spec PRs](../../../docs/pull-requests.md#spec-prs). A downstream TBD that cited a resolved one is re-asked, not resolved automatically.
 
 ## Report shape
 
