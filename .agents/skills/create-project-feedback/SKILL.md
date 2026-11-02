@@ -19,7 +19,7 @@ Veneer for `type:feedback`. Contract: [`docs/issues/feedback.md`](../../../docs/
 
 - No parent and no blocked-by. Initial status `pending-analysis`. Priority `priority:normal`.
 - Required **Points**. Split prose into points; put the raw text in **Notes**. **Analysis** and **Related issues** are `None`.
-- Do not classify or file follow-up issues. That is `handle-feedback-agent`.
+- Do not classify or file follow-up issues. Next pass: `analyze-project-feedback`.
 
 ## Related
 

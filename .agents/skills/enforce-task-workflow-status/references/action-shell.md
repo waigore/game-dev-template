@@ -1,6 +1,6 @@
 # Issue workflow action shell
 
-Shared by `review-project-issue`, `refine-project-issue`, `clarify-project-issue`, `implement-project-issue`, `verify-project-issue`, and `accept-project-issue`. The calling skill names the expected status, the decision, and any extra checks. Do not copy this procedure into those skills.
+Shared by `review-project-issue`, `refine-project-issue`, `clarify-project-issue`, `implement-project-issue`, `verify-project-issue`, `accept-project-issue`, `analyze-project-feedback`, and `resolve-project-feedback`. The calling skill names the expected status, the decision, and any extra checks. Do not copy this procedure into those skills. Feedback callers also follow [`docs/issues/feedback.md`](../../../../docs/issues/feedback.md).
 
 **Contract:** [`docs/issues/workflow.md`](../../../../docs/issues/workflow.md)
 

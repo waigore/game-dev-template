@@ -17,7 +17,7 @@ Veneer over the [action shell](../enforce-task-workflow-status/references/action
 
 Load the outstanding clarification questions. Collect the product-owner clarification. Ask if it is missing. Do not invent answers. Comment with the clarification and attribute the product owner when known.
 
-- `type:feedback` → gate `pending-clarification` → `pending-analysis` ([`feedback.md`](../../../docs/issues/feedback.md)).
+- `type:feedback` → gate `pending-clarification` → `pending-analysis` ([`feedback.md`](../../../docs/issues/feedback.md)). Do not analyze here; the next pass is `analyze-project-feedback`.
 - Body still needs edits → gate `pending-clarification` → `pending-refinement`, then use `refine-project-issue` if refining now.
 - Otherwise → gate `pending-clarification` → `pending-review`.
 

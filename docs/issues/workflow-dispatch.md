@@ -7,7 +7,7 @@ Automation entrypoints for unattended runs of the [issue workflow](workflow.md).
 | `issue-workflow-review-agent` | `status:pending-review` | `review-project-issue` |
 | `issue-workflow-refine-agent` | `status:pending-refinement` | `refine-project-issue` |
 | `issue-workflow-clarify-agent` | `status:pending-clarification` | `clarify-project-issue` |
-| `handle-feedback-agent` | `type:feedback` in `pending-analysis`, else `pending-resolution` | [feedback.md](feedback.md) |
+| `handle-feedback-agent` | `type:feedback` in `pending-analysis`, else `pending-resolution` | `analyze-project-feedback` or `resolve-project-feedback` |
 | `issue-workflow-implement-agent` | `status:pending-implementation` | do the work, then `implement-project-issue` |
 | `issue-workflow-verify-agent` | `status:pending-verification` | `verify-project-issue` |
 | `issue-workflow-accept-agent` | `status:pending-acceptance` | `accept-project-issue` |

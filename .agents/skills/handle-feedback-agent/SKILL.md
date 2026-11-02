@@ -1,17 +1,17 @@
 ---
 name: handle-feedback-agent
 description: |-
-  Carry one type:feedback issue through analysis and resolution.
-  Use when automation dispatches handle-feedback-agent, or a feedback issue
-  needs that pass.
+  Background dispatch for open type:feedback that is not resolved: one issue,
+  then analyze-project-feedback or resolve-project-feedback.
+  Use when automation dispatches handle-feedback-agent.
 
   Examples:
-    - Assigned issue: 12 → handle #12
+    - Assigned issue: 12 in pending-analysis → analyze-project-feedback
     - Assigned issue: none → one pending-analysis issue, else pending-resolution
 ---
 
 # Handle feedback agent
 
-Veneer for one feedback issue. Contract: [`docs/issues/feedback.md`](../../../docs/issues/feedback.md). Discovery: [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md).
+Veneer for unattended feedback. Discovery: [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md). The orchestrator gate is any open `type:feedback` issue that is not `status:resolved`.
 
-The orchestrator runs when any open `type:feedback` issue is not `status:resolved`. Prefer `status:pending-analysis`, otherwise `status:pending-resolution`. If neither is open, stop. One issue, then stop. Do not edit the repo. Do not close the feedback issue. Gate status with `enforce-task-workflow-status`. File tasks and defects with `create-project-task` and `create-project-defect`. Product-owner answers on `pending-clarification` go through `clarify-project-issue`.
+Resolve one issue. `pending-analysis` → [`analyze-project-feedback`](../analyze-project-feedback/SKILL.md). `pending-resolution` → [`resolve-project-feedback`](../resolve-project-feedback/SKILL.md). If neither status is open, stop. Report that skill's outcome. Do not restate filing, analysis, or transitions.

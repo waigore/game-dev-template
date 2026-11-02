@@ -38,7 +38,9 @@ Native facades (Cursor / OpenCode / Grok) and authoring rules (veneers, **Invoke
 | [`issue-workflow-implement-agent`](issue-workflow-implement-agent/SKILL.md) | Background dispatch → implement work + `implement-project-issue` |
 | [`issue-workflow-verify-agent`](issue-workflow-verify-agent/SKILL.md) | Background dispatch → `verify-project-issue` |
 | [`issue-workflow-accept-agent`](issue-workflow-accept-agent/SKILL.md) | Background dispatch → `accept-project-issue` |
-| [`handle-feedback-agent`](handle-feedback-agent/SKILL.md) | One feedback issue: analysis, then resolution |
+| [`analyze-project-feedback`](analyze-project-feedback/SKILL.md) | Analyze one `pending-analysis` feedback issue |
+| [`resolve-project-feedback`](resolve-project-feedback/SKILL.md) | Gate one `pending-resolution` feedback issue to resolved when work is done |
+| [`handle-feedback-agent`](handle-feedback-agent/SKILL.md) | Dispatch one feedback issue to analyze or resolve |
 | [`babysit-pr-agent`](babysit-pr-agent/SKILL.md) | Soft Actions check queue (~3 active), then one same-repo PR: conflicts, behind, in-scope CI for auto-merge |
 | [`author-spec`](author-spec/SKILL.md) | Write or edit a spec from `.agents/specs/rules/`; do not copy the rules into the spec |
 | [`author-quality-rubrics`](author-quality-rubrics/SKILL.md) | Interview baseline targets and orthogonal domain axes; write via `author-spec`; execution is `run-quality-evaluators` |

@@ -1,12 +1,12 @@
 ---
 name: handle-feedback-agent
 description: |-
-  Carry one type:feedback issue through analysis and resolution.
-  Use when automation dispatches handle-feedback-agent, or a feedback issue
-  needs that pass.
+  Background dispatch for open type:feedback that is not resolved: one issue,
+  then analyze-project-feedback or resolve-project-feedback.
+  Use when automation dispatches handle-feedback-agent.
 
   Examples:
-    - Assigned issue: 12 → handle #12
+    - Assigned issue: 12 in pending-analysis → analyze-project-feedback
     - Assigned issue: none → one pending-analysis issue, else pending-resolution
 ---
 

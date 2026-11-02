@@ -1,6 +1,6 @@
 # Feedback issues
 
-`type:feedback` records user feedback until the work it starts is finished. Epic, task, and defect statuses stay in [workflow.md](workflow.md). Body: [body-shapes.md](body-shapes.md). File with `create-project-feedback`. Lifecycle: `handle-feedback-agent`.
+`type:feedback` records user feedback until the work it starts is finished. Epic, task, and defect statuses stay in [workflow.md](workflow.md). Body: [body-shapes.md](body-shapes.md). Skills: `create-project-feedback`, `analyze-project-feedback`, `resolve-project-feedback`. Dispatch: `handle-feedback-agent`.
 
 ## Record
 
@@ -43,7 +43,7 @@ Exactly one `status:*`. Gate with `enforce-task-workflow-status`.
 | `status:pending-resolution` | Analysis is done and a related issue is still open and not accepted. |
 | `status:resolved` | Every related issue is `status:accepted` or closed, including closed without acceptance. Points with no follow-up do not block. Leave the issue open. |
 
-Transitions: [`status-transitions.md`](../../.agents/skills/enforce-task-workflow-status/references/status-transitions.md). One issue per run (`pending-analysis`, else `pending-resolution`; [workflow-dispatch.md](workflow-dispatch.md)). **Related issues** lists open or newly filed work. Comment the evidence. Do not edit the repo or close the feedback issue.
+Transitions: [`status-transitions.md`](../../.agents/skills/enforce-task-workflow-status/references/status-transitions.md). Dispatch: [workflow-dispatch.md](workflow-dispatch.md). **Related issues** lists open or newly filed work. Comment the evidence. Do not edit the repo or close the feedback issue.
 
 An open owner for an already-covered point is a related issue.
 
