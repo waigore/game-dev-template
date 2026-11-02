@@ -10,8 +10,12 @@ Each results row is one axis: axis id, evaluator, observation or level, bar, pas
 
 ## When a folder is written
 
-A run writes a folder only when it selects at least one Applies axis. A run that selects nothing writes nothing.
+A run writes a folder only when it selects at least one Applies axis. A run that selects nothing writes nothing. Markdown under `issue-*` is outside the 500-word cap. This README stays inside it.
 
-## Who cites it
+## Reuse
 
-Verification cites the latest `deterministic` run for that issue and deliverable commit. Acceptance cites that same run for deterministic axes and cites the latest `llm-judge` run for qualitative axes. Acceptance does not replace the deterministic run.
+A passing `deterministic` record stays valid for that issue while `game/` at the deliverable commit matches `game/` at the recorded commit (`git diff <recorded> <deliverable> -- game/` is empty). Other paths may differ. A **fail** or **blocked** row still applies.
+
+Verification writes a new `deterministic` record only when no passing record covers that `game/` tree. Land it on the open fix PR. After that PR has merged, an evidence-only chore PR is allowed only when nothing reusable exists.
+
+Acceptance cites the matching passing record and does not re-run `deterministic`. It cites the latest `llm-judge` run for qualitative axes.
