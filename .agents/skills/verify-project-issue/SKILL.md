@@ -4,8 +4,8 @@ description: |-
   Independently verify an epic/task/defect in status:pending-verification against
   its deliverables; post pass or fail and advance or return status. When linked
   PRs contain code changes, run review-code and treat a Fail as verify Fail.
-  When an Applies deterministic axis can move, run run-quality-evaluators and
-  treat a failed or blocked axis as verify Fail.
+  When an Applies deterministic axis can move, reuse or write the deterministic
+  record; a failed or blocked axis is a verify Fail.
   Use when checking implemented work (smoke test) before acceptance.
 
   Examples:
@@ -33,7 +33,7 @@ Smoke-level, and independent of the implementor's claim:
 - If coding: unit-test coverage is adequate, and tests cover the program logic.
 - **If any linked PR contains code changes:** run [`review-code`](../review-code/SKILL.md) on those diffs. Include its report. A Fail from that skill fails verification. Do not skip it when linked PRs include implementation files.
 - **If any linked PR adds or changes cataloged assets:** run [`review-asset`](../review-asset/SKILL.md) on those entries. Include its report. A Fail from that skill fails verification.
-- **If the deliverable can move an Applies deterministic axis** in [`specs/definition/quality.md`](../../../specs/definition/quality.md): run [`run-quality-evaluators`](../run-quality-evaluators/SKILL.md) in `deterministic` mode. Include its report and the evidence path. A **fail** or **blocked** row fails verification. A missing invariant is this failure and is not a defect. **N/A** from that skill is not a Fail.
+- **If the deliverable can move an Applies deterministic axis** in [`specs/definition/quality.md`](../../../specs/definition/quality.md): cite a passing record that already covers this `game/` tree ([evidence README](../../../docs/quality/evidence/README.md)). Otherwise run [`run-quality-evaluators`](../run-quality-evaluators/SKILL.md) in `deterministic` mode and land that record as the README says. Include the report and the evidence path. A **fail** or **blocked** row fails verification. A missing invariant is this failure and is not a defect. **N/A** from that skill is not a Fail.
 - **If the deliverable is a PoC** (`pocs/<slug>/`): check per [Verification in `docs/pocs.md`](../../../docs/pocs.md#verification) and [`docs/poc-style-assets.md`](../../../docs/poc-style-assets.md#verification) instead of code review and unit-test coverage. A Fail there fails verification.
 - **If the deliverable is product demo mode** (main tree): verify against [`specs/design/demo.md`](../../../specs/design/demo.md) and normal code review and tests ([`docs/demo.md`](../../../docs/demo.md)).
 - **If main-tree UI changed:** compare to the **approved** screen mockup(s) per [`docs/ux-mockups.md`](../../../docs/ux-mockups.md). Material drift in layout, palette, or functional behavior → **Fail**, and file an interface defect via `create-project-defect` when appropriate. Not pixel-perfect. If the catalog row is no longer `approved`, Fail and return to implementation.
