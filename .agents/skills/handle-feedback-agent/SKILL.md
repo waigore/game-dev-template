@@ -14,4 +14,4 @@ description: |-
 
 Veneer for one feedback issue. Contract: [`docs/issues/feedback.md`](../../../docs/issues/feedback.md). Discovery: [`docs/issues/workflow-dispatch.md`](../../../docs/issues/workflow-dispatch.md).
 
-Prefer `status:pending-analysis`, otherwise `status:pending-resolution`. One issue, then stop. Do not edit the repo. Do not close the feedback issue. Gate status with `enforce-task-workflow-status`. File tasks and defects with `create-project-task` and `create-project-defect`. Product-owner answers on `pending-clarification` go through `clarify-project-issue`.
+The orchestrator runs when any open `type:feedback` issue is not `status:resolved`. Prefer `status:pending-analysis`, otherwise `status:pending-resolution`. If neither is open, stop. One issue, then stop. Do not edit the repo. Do not close the feedback issue. Gate status with `enforce-task-workflow-status`. File tasks and defects with `create-project-task` and `create-project-defect`. Product-owner answers on `pending-clarification` go through `clarify-project-issue`.

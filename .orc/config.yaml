@@ -176,7 +176,7 @@ agents:
       command:
         - sh
         - -c
-        - test "$(sh .orc/scripts/list-feedback-issues.sh)" != "[]"
+        - test "$(sh .orc/scripts/list-feedback-issues.sh --open)" != "[]"
     issues:
       command:
         - sh
