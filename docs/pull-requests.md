@@ -37,7 +37,7 @@ Fill every section of the template; write `N/A` with a reason rather than deleti
 | Authority | `specs/` paths and Accepted ADRs that authorize the change (spec first) |
 | Changes | Notable files or areas touched |
 | Test plan | Commands run and results; manual steps if any |
-| Evidence | In-repo `docs/playtest/evidence/` path and wiki page URL when playable behavior changes |
+| Evidence | Playtest: in-repo `docs/playtest/evidence/` path and wiki page URL when playable behavior changes. Quality: `docs/quality/evidence/` path when a quality-evaluator run lands. `N/A` with a reason when neither applies |
 
 ### `Refs`, not `Closes`
 
@@ -52,7 +52,8 @@ Required check ([`pr-hygiene.yml`](../.github/workflows/pr-hygiene.yml)); re-run
 | `closing-keywords` | Title or body has `Closes #n`, `Fixes #n`, `Resolves #n` (any form) |
 | `title-format` | Title is empty, over 72 characters, or ends with a period |
 | `template-sections` | A `##` section from the template is missing, empty (comments ignored), or a bare `N/A` |
-| `playtest-evidence-media` | PR adds/changes files under `docs/playtest/evidence/**/screenshots/` or `**/logs/` |
+| `evidence-media` | PR adds/changes files under `docs/playtest/evidence/**/screenshots/` or `**/logs/`, or the same under `docs/quality/evidence/` |
+| `evidence-section-paths` | PR changes non-media files under an evidence root but `## Evidence` does not cite that root (`docs/playtest/evidence` or `docs/quality/evidence`) |
 
 ## Auto-merge
 
