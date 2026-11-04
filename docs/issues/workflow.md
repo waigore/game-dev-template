@@ -25,7 +25,11 @@ Exactly one `priority:*` label (`critical` / `high` / `normal`). Create applies 
 
 ## Transitions and evidence
 
-Evidence is freeform prose; intent clear. Post it as an issue comment (refinement also edits the body). Then call `enforce-task-workflow-status`.
+Evidence is freeform prose; intent clear. Post it as an issue comment when [Comments](#comments) requires it (refinement also edits the body). Then call `enforce-task-workflow-status`.
+
+## Comments
+
+Comment only when something material happened: a status transition, pass/fail/clarify with new substance, new deliverables evidence, or a **blocker discovered for the first time** on that issue. One comment per distinct blocker; later re-runs that find the same blocker stay silent. Never post “still waiting,” “nothing to report,” or unchanged-status noise. Chat/dispatch may note a silent no-op. Be terse — no more than necessary. Feedback tracking: [feedback.md](feedback.md).
 
 | From | Action / evidence | To |
 |------|-------------------|-----|
