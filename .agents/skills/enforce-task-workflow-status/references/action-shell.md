@@ -10,7 +10,7 @@ Shared by `review-project-issue`, `refine-project-issue`, `clarify-project-issue
 
 1. **Load** issue `n` (title, body, labels, and whatever the calling skill names).
 2. **Assert** the expected `status:*` via the gate. Abort if the status is wrong.
-3. **Decide and evidence** exactly as the calling skill says. Evidence is freeform; intent must be clear. Post an issue comment when [`docs/issues/workflow.md`](../../../../docs/issues/workflow.md#comments) requires it (status change, new substance, or first discovery of a distinct blocker). Refinement also edits the body. Skip the comment on a silent no-op or a repeated same blocker.
+3. **Decide and evidence** exactly as the calling skill says. Evidence is freeform; intent must be clear. Post an issue comment when [`docs/issues/workflow-comments.md`](../../../../docs/issues/workflow-comments.md) requires it (status change, new substance, or first discovery of a distinct blocker). Refinement also edits the body. Skip the comment on a silent no-op or a repeated same blocker.
 4. **Gate** the calling skill's from→to via `enforce-task-workflow-status`. Skip the gate only when that skill says to stay put.
 5. **Report** URL, outcome, and new status, plus anything the calling skill adds (including silent no-ops in chat/dispatch only).
 
